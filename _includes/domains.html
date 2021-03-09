@@ -7,12 +7,15 @@
           <thead>
             <tr class="header">
               <th>Domains of Inquiry</th>
+              <th>Mentor</th>
             </tr>
           </thead>
           <tbody>
             {% for domain in site.data.domains %}
             <tr>
-              <td><a href="#{{ domain.num }}">{{ domain.name }}</a></td>
+              <td><a href="#{{ domain.num }}">{{ domain.name
+              }}</a></td>
+              <td>{{ domain.Mentor }}</td>
             </tr>
             {% endfor %}
           </tbody>
