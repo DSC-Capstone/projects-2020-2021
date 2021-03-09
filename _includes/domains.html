@@ -1,0 +1,23 @@
+<div id="content">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-12 content">
+        <table>
+          <thead>
+            <tr class="header">
+              <th>Domains of Inquiry</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for domain in site.data.domains %}
+            <tr>
+              <td><a href="#{{ domain.num }}">{{ domain.name }}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

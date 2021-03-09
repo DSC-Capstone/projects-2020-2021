@@ -1,0 +1,24 @@
+<div id="content">
+
+        {% for domain in site.data.domains %}
+        <div class="domain">
+        <h3 id="{{ domain.name }}">{{ domain.name }}</h3>
+        <hr/>
+        </div>
+        {% for project in site.data.class %}
+        {% if project.domain == domain.num %}
+        <h4 id="{{ project.title }}">{{ project.title }}<a name="{{ project.num }}"></a></h4>
+        <ul>
+          <li>Group members: {{ project.names }}</li>
+        </ul>
+        <p>Materials:</p>
+        <ul>
+          <li><a href="{{ project.website }}">Website</a></li>
+          <li><a href="{{ project.repo }}">Project GitHub Repository</a></li>
+        </ul>
+        <p>Abstract: {{ project.abstract }}</p>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+
+</div>

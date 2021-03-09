@@ -1,0 +1,36 @@
+- name: Explainable AI
+  num: domain_00
+- name: Autonomous Vehicles
+  num: domain_01
+- name: Malware and Graph Learning
+  num: domain_02
+- name: Text Mining and NLP
+  num: domain_03
+- name: Recommender Systems
+  num: domain_04
+- name: Opioid Overdose Prevalence Analysis
+  num: domain_05
+- name: Large-scale Multiple Testing
+  num: domain_06
+- name: Spatial-temporal Analyses of Infectious Disease Dynamics
+  num: domain_07
+- name: Graph Data Analysis
+  num: domain_08
+- name: The Spread of Misinformation
+  num: domain_09
+- name: Conflict and Collaboration in Online Communities
+  num: domain_10
+- name: Genetic Basis of Mental Health
+  num: domain_11
+- name: VPN X-Ray
+  num: domain_12
+- name: Particle Physics
+  num: domain_13
+- name: COVID-19 & Microbiome
+  num: domain_14
+- name: Cyber-Physical Systems (CPS) using IOT Devices
+  num: domain_15
+- name: System Usage Reporting (SUR, a.k.a. DCA)
+  num: domain_16
+- name: Spatial Agent-based Modeling for School Reopening
+  num: domain_17

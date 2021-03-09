@@ -1,0 +1,31 @@
+<div id="content">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-12 content">
+        <table>
+          <thead>
+            <tr class="header">
+              <th>Domain</th><th>Project</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for domain in site.data.domains %}
+            <tr>
+              <td><strong>{{ domain.name }}</strong> <a name="{{ domain.num }}"></a></td>
+            <td></td>
+            </tr>
+            {% for project in site.data.class %}
+            {% if project.domain == domain.num %}
+            <tr>
+            <td></td>
+            <td><a href="#{{ project.num }}">{{ project.title}}</a></td>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
