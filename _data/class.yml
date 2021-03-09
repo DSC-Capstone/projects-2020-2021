@@ -1,22 +1,3 @@
-- abstract: "Many advanced algorithms, specifically deep learning models, are considered\
-    \ \u201Cblack box\u201D to human understanding.\nTransparency to intrprete such\
-    \ models has become a key obstacle which prevents such algorithms from being put\
-    \ into \npractical use. Although algorithms, such as GradCam, are invented to\
-    \ provide\nvisual explanations from deep networks via gradient-based localization,\
-    \ they do not provide details of how the models\nreached their final decision\
-    \ step by step in detail. The goal of this project is to provide more interpretability\
-    \ \nto Convolutional Neural Networks (CNN) models by combining Grad-CAM with Neural\
-    \ Backed Decision Trees (NBDTs), \nand provide visual explanations with detailed\
-    \ decision making process of CNN models. This project\ndemonstrates the potential\
-    \ and limitations of jointly applying Grad-CAM and NBDTs on snake classification."
-  domain: domain_00
-  names: Rui Zheng, Weihua Zhao, Nikolas Racelis-Russell
-  num: project_61
-  repo: https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/tree/main
-  report: https://github.com/nikolettuce/artifact-directory-template/blob/main/report.pdf
-  section: A01
-  title: Snake Classification using Neural-Backed Decision Trees
-  website: https://nikolettuce.github.io/DSC180B_06_NeuralBackedDecisionTrees/
 - abstract: "Many models and algorithms in artificial intelligence are considered\
     \ \u201Cblack box models\u201D, or models that do not provide transparency into\
     \ how it reached a certain conclusion; ultimately, although they may be accurate,\
@@ -35,9 +16,9 @@
     \ Currently, we are able to reach a model with 96% accuracy."
   domain: domain_00
   names: Pratyush Juneja, Eric Kang, Minjoo Kim
-  num: project_60
+  num: project_53
   repo: https://github.com/eric-h-kang/FaceMaskDetection
-  report: https://github.com/elizabethmkim/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/elizabethmkim/artifact-directory-template/main/report.pdf
   section: A01
   title: Determining Correct Face Mask Usage with Inception Resnet and MaskedFace-Net
     Dataset
@@ -54,9 +35,9 @@
     a 95% accuracy on training set and both validation set and test set, respectively.
   domain: domain_00
   names: Gavin Tran, Athena Liu, Che-Wei Lin
-  num: project_59
+  num: project_52
   repo: https://github.com/gatran/DSC180B-Face-Mask-Detection.git
-  report: https://github.com/Jerryj00210/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Jerryj00210/artifact-directory-template/main/report.pdf
   section: A01
   title: Face Mask Detection with Explainable Artificial Intelligence
   website: https://athena112233.github.io/DSC180B_Project_Webpage/
@@ -83,9 +64,9 @@
     ated before and after the altering of the image.'
   domain: domain_00
   names: Yuexiang Zhang, Alejandro Fosado, Jordan Levy
-  num: project_58
+  num: project_51
   repo: https://github.com/Afosado/180b_capstone_xai
-  report: https://github.com/JordanLevy99/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/JordanLevy99/artifact-directory-template/main/report.pdf
   section: A01
   title: 'Explaining Image Captioning Models Through Attention Maps, Image
 
@@ -106,9 +87,9 @@
     \ Network by applying the Grad-CAM algorithm."
   domain: domain_00
   names: Sohyun Lee, Shin Ehara, Jou-Ying Lee
-  num: project_57
+  num: project_50
   repo: https://github.com/leeso1718/StockMarket_explainableAI
-  report: https://github.com/Connielee99/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Connielee99/artifact-directory-template/main/report.pdf
   section: A01
   title: Image Recognition in Stock Prediction with Visual Explanations from Grad-CAM
   website: https://connielee99.github.io/Explainable-AI-in-Finance/
@@ -127,31 +108,48 @@
     that stem from the imprudent use of machine learning.
   domain: domain_00
   names: Ting Hung, Sudiksha Sarvepalli, Nicole Lee
-  num: project_56
+  num: project_49
   repo: https://github.com/sudikshas/Racial_Classification_XAI_Model.git
-  report: https://github.com/nicole9925/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/nicole9925/artifact-directory-template/main/report.pdf
   section: A01
   title: Demystifying Machine Learning for Facial Analysis
   website: https://michael4706.github.io/XAI_Website/
-- abstract: In today's world, malware has grown so much. In 2020, there are more than
-    129 millions of Android users around the world. With Android applications dominating
-    the devices, we hope to produce a detection tool that is accessible to the general
-    public. We present a structure that analyze apps in the form of control flow graph.
-    With that, we build a common graph to capture how close the apps are to each other
-    and classify whether they are malicious or not. We compare our work with other
-    methods and show that using control flow graph is a good choice as a representation
-    of Android applications (APKs) and can outperform other models. We built features
-    using Metapath2Vec and Doc2Vec, and trained Random Forest, 1-Nearest Neighbors,
-    and 3-Nearest Neighbors Models.
+- abstract: "Many advanced algorithms, specifically deep learning models, are considered\
+    \ \u201Cblack box\u201D to human understanding.\nTransparency to intrprete such\
+    \ models has become a key obstacle which prevents such algorithms from being put\
+    \ into \npractical use. Although algorithms, such as GradCam, are invented to\
+    \ provide\nvisual explanations from deep networks via gradient-based localization,\
+    \ they do not provide details of how the models\nreached their final decision\
+    \ step by step in detail. The goal of this project is to provide more interpretability\
+    \ \nto Convolutional Neural Networks (CNN) models by combining Grad-CAM with Neural\
+    \ Backed Decision Trees (NBDTs), \nand provide visual explanations with detailed\
+    \ decision making process of CNN models. This project\ndemonstrates the potential\
+    \ and limitations of jointly applying Grad-CAM and NBDTs on snake classification."
+  domain: domain_00
+  names: Rui Zheng, Weihua Zhao, Nikolas Racelis-Russell
+  num: project_54
+  repo: https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/tree/main
+  report: https://raw.githubusercontent.com/nikolettuce/artifact-directory-template/main/report.pdf
+  section: A01
+  title: Snake Classification using Neural-Backed Decision Trees
+  website: https://nikolettuce.github.io/DSC180B_06_NeuralBackedDecisionTrees/
+- abstract: "As the technology grows fast in recent years, more and more people cannot\
+    \ live without cell phones. It is important to protect users\u2019 data for cell\
+    \ phone companies and operating system providers. Therefore, detecting malwares\
+    \ based on the code they have can avoid publishing of malwares and prohibiting\
+    \ them from the source. This report aims at finding a model which can detect malwares\
+    \ accurately and with a small computational cost. It uses different matrices and\
+    \ graphs to search the relationships between applications and detecting malwares\
+    \ based on the similarity. As a result, the best model can achieve a test accuracy\
+    \ around 99%."
   domain: domain_02
-  names: Sabrina Ho, Edwin Huang
-  num: project_35
-  repo: https://github.com/iamsabhoho/dsc180b-malware.git
-  report: https://github.com/iamsabhoho/artifact-directory-template/blob/main/report.pdf
+  names: Yu-Chieh Chen, Ruoyu Liu, Yikai Hao
+  num: project_55
+  repo: https://github.com/YikaiHao/DSC180_Winter.git
+  report: https://raw.githubusercontent.com/YikaiHao/artifact-directory-template/main/report.pdf
   section: A03
-  title: 'CoCoDroid: Detecting Malware By Building Common Graph Using Control Flow
-    Graph'
-  website: https://iamsabhoho.github.io/dsc180b-malware/
+  title: Malware Detection
+  website: https://yikaihao.github.io/DSC180_Webpage/
 - abstract: "Nowadays, smartphone is an indispensable part of people's daily life.\
     \ Android System is the most popular system running on smartphone. \nDue to this\
     \ popularity, malware detection on Android becomes on of the most significant\
@@ -165,12 +163,50 @@
     \ performance."
   domain: domain_02
   names: Zihan Qin, Jian Jiao
-  num: project_38
+  num: project_58
   repo: https://github.com/Kamui-Jiao/DSC180B-Project
-  report: https://github.com/Kamui-Jiao/DSC180-Artifact/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Kamui-Jiao/DSC180-Artifact/main/report.pdf
   section: A03
   title: Potential Improvement of MAMADROID System
   website: https://kamui-jiao.github.io/DSC180B-Page/
+- abstract: The Android app store and its open-source features make it extremely vulnerable
+    to malicious software, known as Malware. The current state of the art encompasses
+    the use of advanced code analysis and corresponding machine learning models. Although
+    along with our initial research we found that the Applications in the Android
+    app store along with their corresponding API calls behave a lot like a language.
+    They have their comparable own syntax, structure, and grammar. This inspired us
+    to use techniques from Natural Language Processing(NLP) and use the same idea
+    of creating graphical relationships between applications and APIs. Additionally,
+    we also show that the use of these graphical embeddings maintains the integrity
+    of classification metrics to even correctly identify and differentiate Malware
+    and Benign applications.
+  domain: domain_02
+  names: Neel Shah, Mandy Ma
+  num: project_57
+  repo: https://github.com/neelS-hah/hindroid_replication.git
+  report: https://raw.githubusercontent.com/yuxuanmaaa/artifact-directory-template/main/report.pdf
+  section: A03
+  title: Exploring the Language of Malware
+  website: https://neels-hah.github.io/vector-embedding-exploration/
+- abstract: In today's world, malware has grown so much. In 2020, there are more than
+    129 millions of Android users around the world. With Android applications dominating
+    the devices, we hope to produce a detection tool that is accessible to the general
+    public. We present a structure that analyze apps in the form of control flow graph.
+    With that, we build a common graph to capture how close the apps are to each other
+    and classify whether they are malicious or not. We compare our work with other
+    methods and show that using control flow graph is a good choice as a representation
+    of Android applications (APKs) and can outperform other models. We built features
+    using Metapath2Vec and Doc2Vec, and trained Random Forest, 1-Nearest Neighbors,
+    and 3-Nearest Neighbors Models.
+  domain: domain_02
+  names: Edwin Huang, Sabrina Ho
+  num: project_56
+  repo: https://github.com/iamsabhoho/dsc180b-malware.git
+  report: https://raw.githubusercontent.com/iamsabhoho/artifact-directory-template/main/report.pdf
+  section: A03
+  title: 'CoCoDroid: Detecting Malware By Building Common Graph Using Control Flow
+    Graph'
+  website: https://iamsabhoho.github.io/dsc180b-malware/
 - abstract: 'Over the past decade, malware has established itself as a constant issue
     for the Android operating system. In 2018, Symantec reported that they blocked
     more than 10 thousand malicious Android apps per day, while nearly 3 quarters
@@ -194,48 +230,79 @@
     examples have been added.'
   domain: domain_02
   names: Ruben Gonzalez, Amar Joea
-  num: project_39
+  num: project_59
   repo: https://github.com/rcgonzalez9061/m2v-adversarial-hindroid
-  report: https://github.com/amarjoea/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/AmarJoea/artifact-directory-template/main/report.pdf
   section: A03
   title: Attacking the HinDroid Malware Detector
   website: https://rcgonzalez9061.github.io/m2vDroid-blog/
-- abstract: The Android app store and its open-source features make it extremely vulnerable
-    to malicious software, known as Malware. The current state of the art encompasses
-    the use of advanced code analysis and corresponding machine learning models. Although
-    along with our initial research we found that the Applications in the Android
-    app store along with their corresponding API calls behave a lot like a language.
-    They have their comparable own syntax, structure, and grammar. This inspired us
-    to use techniques from Natural Language Processing(NLP) and use the same idea
-    of creating graphical relationships between applications and APIs. Additionally,
-    we also show that the use of these graphical embeddings maintains the integrity
-    of classification metrics to even correctly identify and differentiate Malware
-    and Benign applications.
-  domain: domain_02
-  names: Neel Shah, Mandy Ma
-  num: project_33
-  repo: https://github.com/neelS-hah/hindroid_replication.git
-  report: https://github.com/yuxuanmaaa/artifact-directory-template/blob/main/report.pdf
-  section: A03
-  title: Exploring the Language of Malware
-  website: https://neels-hah.github.io/vector-embedding-exploration/
-- abstract: "As the technology grows fast in recent years, more and more people cannot\
-    \ live without cell phones. It is important to protect users\u2019 data for cell\
-    \ phone companies and operating system providers. Therefore, detecting malwares\
-    \ based on the code they have can avoid publishing of malwares and prohibiting\
-    \ them from the source. This report aims at finding a model which can detect malwares\
-    \ accurately and with a small computational cost. It uses different matrices and\
-    \ graphs to search the relationships between applications and detecting malwares\
-    \ based on the similarity. As a result, the best model can achieve a test accuracy\
-    \ around 99%."
-  domain: domain_02
-  names: Yu-Chieh Chen, Ruoyu Liu, Yikai Hao
-  num: project_34
-  repo: https://github.com/YikaiHao/DSC180_Winter.git
-  report: https://github.com/YikaiHao/artifact-directory-template/blob/main/report.pdf
-  section: A03
-  title: Malware Detection
-  website: https://yikaihao.github.io/DSC180_Webpage/
+- abstract: "We propose the creation of a full-stack website as an extension of the\
+    \ AutoPhrase algorithm and text analysis to help the non-tech users understand\
+    \ their text efficiently. \nAlso, we provide a notebook with one specific dataset\
+    \ with text analysis to the users."
+  domain: domain_03
+  names: Tiange Wan, Yicen Ma, Anant Gandhi
+  num: project_38
+  repo: https://github.com/t2wan/DSC180B-Capstone.git
+  report: https://raw.githubusercontent.com/t2wan/artifact-directory-template/main/report.pdf
+  section: A04
+  title: AutoPhrase Application Web
+  website: https://white-wildflower-6469.fly.dev/python/
+- abstract: Movies are a rich source of human culture from which we can derive insight.
+    Previous work addresses either a textual analysis of movie plots or the use of
+    phrase mining for natural language processing, but not both. Here, we propose
+    a novel analysis of movies by extracting key phrases from movie plot summaries
+    using AutoPhrase, a phrase mining framework. Using these phrases, we analyze movies
+    through 1) an exploratory data analysis that examines the progression of human
+    culture over time, 2) the development and interpretation of a classification model
+    that predicts movie genre, and 3) the development and interpretation of a clustering
+    model that clusters movies. We see that this application of phrase mining to movie
+    plots provides a unique and valuable insight into human culture while remaining
+    accessible to a general audience, e.g., history and anthropology non-experts.
+  domain: domain_03
+  names: Daniel Lee, Yuxuan Fan, Huilai Miao
+  num: project_42
+  repo: https://github.com/A04-Capstone-Group-02/movie-analysis.git
+  report: https://raw.githubusercontent.com/A04-Capstone-Group-02/artifact-directory-template/main/report.pdf
+  section: A04
+  title: Analyzing Movies Using Phrase Mining
+  website: https://a04-capstone-group-02.github.io/movie-analysis-webpage/
+- abstract: The stock market is one of the most popular markets that the investors
+    like to put their money in. There are millions of investors who participate in
+    the stock market investment directly or indirectly, such as by mutual fund, defined-benefit
+    plan. The performance of the stock price is highly related to the latest news
+    information, such as the 8-K reports, the annual or quarter report. These reports
+    reflect the operating performance of the companies, which are the important fundaments
+    for the stock price. However, there are numerous news to the market for each day,
+    and we want to build a model to extract the features from the news and use them
+    to predict the price trend. In this project, we apply the AutoPhrase model from
+    Professor Jingbo Shang to extract the high-quality phrases from the news documents
+    and to predict stock price trends. We aim to explore if certain words or phrases
+    correlate to higher or lower stock prices after a release of an 8-K report.
+  domain: domain_03
+  names: Joey Hou, Shaoqing Yi, Zachary Ling
+  num: project_41
+  repo: https://github.com/shy218/dsc180-project.git
+  report: https://raw.githubusercontent.com/ZachWLing/artifact-directory-template/main/report.pdf
+  section: A04
+  title: AutoPhrase for Financial Documents Interpretation
+  website: https://shy218.github.io/dsc180-project/
+- abstract: Text Classification (TC) and Named-Entity Recognition (NER) are two fundamental
+    tasks for many Natural Language Processing (NLP) applications, which involve understanding,
+    extracting information, and categorizing the text. In order to achieve these goals,
+    we utilized AutoPhrase and a pre-trained language NER model to extract quality
+    phrases. Using these as part of our features, we are able to achieve very high
+    performance for a five-class and a twenty-class text classification dataset. Our
+    project will follow a similar setting as previous works with train, validation,
+    and test datasets and comparing the results across different methods.
+  domain: domain_03
+  names: Siyu Deng, Rachel Ung, Yang Li
+  num: project_40
+  repo: https://github.com/DSC180B-A04-Capstone-Group-06/DSC180B-NER-Project
+  report: https://raw.githubusercontent.com/DSC180B-A04-Capstone-Group-06/artifact-directory-template/main/report.pdf
+  section: A04
+  title: Text Classification with Named-Entity Recognition and AutoPhrase
+  website: https://dsc180b-a04-capstone-group-06.github.io/News-Classification-Webpage/
 - abstract: "When encountering scientific papers, it is challenging for readers themselves\
     \ to find other related works. First of all, it is hard to identify keywords that\
     \ summarize the papers to search for similar papers. This dilemma is most common\
@@ -262,11 +329,11 @@
     \ related papers of various domains and subdomains."
   domain: domain_03
   names: Bingqi Zhou, Jiayi Fan, Yichun Ren
-  num: project_46
+  num: project_39
   repo: https://github.com/jfan1998/AutoLibrary.git
-  report: https://github.com/YichunRen/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/YichunRen/artifact-directory-template/main/report.pdf
   section: A04
-  title: AutoLibrary - A Personal Digital Library to Find Related Works
+  title: AutoLibrary - A Personal Digital Library to Find Related Works via Text Analyzer
   website: https://yichunren.pythonanywhere.com/autolibrary/
 - abstract: "Over time, we rely more and more heavily on online platforms such as\
     \ Netflix, Amazon, Spotify, which are embedded with the recommendation system\
@@ -282,79 +349,43 @@
     \ our recommender system and showing its functionality."
   domain: domain_03
   names: Shenghan Liu, Catherine Hou, Vincent Le
-  num: project_44
+  num: project_37
   repo: https://github.com/catherinehou99/yelp-recommender-system.git
-  report: https://github.com/vil069/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/vil069/artifact-directory-template/main/report.pdf
   section: A04
   title: Restaurant Recommender System
   website: http://vil069.pythonanywhere.com/
-- abstract: "We propose the creation of a full-stack website as an extension of the\
-    \ AutoPhrase algorithm and text analysis to help the non-tech users understand\
-    \ their text efficiently. \nAlso, we provide a notebook with one specific dataset\
-    \ with text analysis to the users."
-  domain: domain_03
-  names: Tiange Wan, Yicen Ma, Anant Gandhi
-  num: project_45
-  repo: https://github.com/t2wan/DSC180B-Capstone.git
-  report: https://github.com/t2wan/artifact-directory-template/blob/main/report.pdf
-  section: A04
-  title: AutoPhrase Application Web
-  website: https://white-wildflower-6469.fly.dev/python/
-- abstract: Text Classification (TC) and Named-Entity Recognition (NER) are two fundamental
-    tasks for many Natural Language Processing (NLP) applications, which involve understanding,
-    extracting information, and categorizing the text. In order to achieve these goals,
-    we utilized AutoPhrase and a pre-trained language NER model to extract quality
-    phrases. Using these as part of our features, we are able to achieve very high
-    performance for a five-class and a twenty-class text classification dataset. Our
-    project will follow a similar setting as previous works with train, validation,
-    and test datasets and comparing the results across different methods.
-  domain: domain_03
-  names: Siyu Deng, Rachel Ung, Yang Li
-  num: project_47
-  repo: https://github.com/DSC180B-A04-Capstone-Group-06/DSC180B-NER-Project
-  report: https://github.com/DSC180B-A04-Capstone-Group-06/artifact-directory-template/blob/main/report.pdf
-  section: A04
-  title: Text Classification with Named-Entity Recognition and AutoPhrase
-  website: https://dsc180b-a04-capstone-group-06.github.io/News-Classification-Webpage/
-- abstract: The stock market is one of the most popular markets that the investors
-    like to put their money in. There are millions of investors who participate in
-    the stock market investment directly or indirectly, such as by mutual fund, defined-benefit
-    plan. The performance of the stock price is highly related to the latest news
-    information, such as the 8-K reports, the annual or quarter report. These reports
-    reflect the operating performance of the companies, which are the important fundaments
-    for the stock price. However, there are numerous news to the market for each day,
-    and we want to build a model to extract the features from the news and use them
-    to predict the price trend. In this project, we apply the AutoPhrase model from
-    Professor Jingbo Shang to extract the high-quality phrases from the news documents
-    and to predict stock price trends. We aim to explore if certain words or phrases
-    correlate to higher or lower stock prices after a release of an 8-K report.
-  domain: domain_03
-  names: Joey Hou, Shaoqing Yi, Zachary Ling
+- abstract: "The Super User forum exists on the internet as a medium for users to\
+    \ exchange information. In particular, the information shared here primarily related\
+    \ to questions pertaining to operating systems. The system we developed, ForumRec,\
+    \ aims to increase usability for the forum\u2019s participants by specifically\
+    \ recommending questions that may be more suitable for a user in particular to\
+    \ answer. The model we built uses a combination of technique content-based and\
+    \ collaborative filtering from the LightFM package to identify how well a novel\
+    \ question would fit for the desired user. In comparison to baseline models of\
+    \ how Super User already recommends questions, the model attains better performance\
+    \ for more recent data, scoring 0.0014, 0.0033, and 0.5160 on precision at 100,\
+    \ recall at 100, and AUC, which is markedly better than the baselines."
+  domain: domain_04
+  names: Yo Jeremijenko-Conley, Jack Lin, Jasraj Johl
   num: project_48
-  repo: https://github.com/shy218/dsc180-project.git
-  report: https://github.com/ZachWLing/artifact-directory-template/blob/main/report.pdf
-  section: A04
-  title: AutoPhrase for Financial Documents Interpretation
-  website: https://shy218.github.io/dsc180-project/
-- abstract: Movies are a rich source of human culture from which we can derive insight.
-    Previous work addresses either a textual analysis of movie plots or the use of
-    phrase mining for natural language processing, but not both. Here, we propose
-    a novel analysis of movies by extracting key phrases from movie plot summaries
-    using AutoPhrase, a phrase mining framework. Using these phrases, we analyze movies
-    through 1) an exploratory data analysis that examines the progression of human
-    culture over time, 2) the development and interpretation of a classification model
-    that predicts movie genre, and 3) the development and interpretation of a clustering
-    model that clusters movies. We see that this application of phrase mining to movie
-    plots provides a unique and valuable insight into human culture while remaining
-    accessible to a general audience, e.g., history and anthropology non-experts.
-  domain: domain_03
-  names: Daniel Lee, Yuxuan Fan, Huilai Miao
-  num: project_49
-  repo: https://github.com/A04-Capstone-Group-02/movie-analysis.git
-  report: https://github.com/A04-Capstone-Group-02/artifact-directory-template/blob/main/report.pdf
-  section: A04
-  title: Analyzing Movies Using Phrase Mining
-  website: https://a04-capstone-group-02.github.io/movie-analysis-webpage/
+  repo: https://github.com/okminz/ForumRec.git
+  report: https://raw.githubusercontent.com/jasrajjohl/artifact-directory-template/main/report.pdf
+  section: A05
+  title: ForumRec - A Question Recommender for the Super User Community
+  website: http://www.jackzlin.com/
+- abstract: Recommendations for outdoor rock climbing has historically been limited
+    to word of mouth, guide books, and most popular climbs. We aim to change that
+    with our project OnSight, offering personalized recommendations for outdoor rock
+    climbers.
+  domain: domain_04
+  names: Brent Min, Brian Cheng, Eric Liu
+  num: project_47
+  repo: https://github.com/DSC180-RC/Rock-Climbing-Recommender.git
+  report: https://raw.githubusercontent.com/twigtheoracle/artifact-directory-template/main/report.pdf
+  section: A05
+  title: 'OnSight: Outdoor Rock Climbing Recommendations'
+  website: https://dsc180b-rc-rec.herokuapp.com/
 - abstract: "Many have probably found themselves in an uncomfortable conversation\
     \ in which a parent is questioning why the song playing \nover a bedroom speaker\
     \ is so loud, repetitive, or profane. If someone has never had such a conversation,\
@@ -377,43 +408,12 @@
     \ \n\u201Cbridge the gap\u201D."
   domain: domain_04
   names: Nayoung Park, Sarat Sreepathy, Duncan Carlmark
-  num: project_53
-  repo: https://github.com/DuncanCarlmark/DSC180b-Capstone
-  report: https://github.com/DuncanCarlmark/artifact-directory-template/blob/main/report.pdf
+  num: project_46
+  repo: https://github.com/DuncanCarlmark/DSC180b-Capstone.git
+  report: https://raw.githubusercontent.com/DuncanCarlmark/artifact-directory-template/main/report.pdf
   section: A05
   title: 'Bridging the Gap: Solving Music Disputes with Recommendation Systems'
   website: http://bridgingthegapwithmusic.com/
-- abstract: "The Super User forum exists on the internet as a medium for users to\
-    \ exchange information. In particular, the information shared here primarily related\
-    \ to questions pertaining to operating systems. The system we developed, ForumRec,\
-    \ aims to increase usability for the forum\u2019s participants by specifically\
-    \ recommending questions that may be more suitable for a user in particular to\
-    \ answer. The model we built uses a combination of technique content-based and\
-    \ collaborative filtering from the LightFM package to identify how well a novel\
-    \ question would fit for the desired user. In comparison to baseline models of\
-    \ how Super User already recommends questions, the model attains better performance\
-    \ for more recent data, scoring 0.0014, 0.0033, and 0.5160 on precision at 100,\
-    \ recall at 100, and AUC, which is markedly better than the baselines."
-  domain: domain_04
-  names: Yo Jeremijenko-Conley, Jack Lin, Jasraj Johl
-  num: project_55
-  repo: https://github.com/okminz/ForumRec.git
-  report: https://github.com/jasrajjohl/artifact-directory-template/blob/main/report.pdf
-  section: A05
-  title: ForumRec - A Question Recommender for the Super User Community
-  website: http://www.jackzlin.com/
-- abstract: Recommendations for outdoor rock climbing has historically been limited
-    to word of mouth, guide books, and most popular climbs. We aim to change that
-    with our project OnSight, offering personalized recommendations for outdoor rock
-    climbers.
-  domain: domain_04
-  names: Brent Min, Brian Cheng, Eric Liu
-  num: project_54
-  repo: https://github.com/DSC180-RC/Rock-Climbing-Recommender.git
-  report: https://github.com/twigtheoracle/artifact-directory-template/blob/main/report.pdf
-  section: A05
-  title: 'OnSight: Outdoor Rock Climbing Recommendations'
-  website: https://dsc180b-rc-rec.herokuapp.com/
 - abstract: "For those who work out at home, finding a good workout routine is difficult.\
     \ Many of the workout options you may find online are non-personalized and do\
     \ not take into account your time and equipment constraints, as well as your workout\
@@ -427,9 +427,9 @@
     \ routine."
   domain: domain_04
   names: Peter Peng, Najeem Kanishka, Amanda Shu
-  num: project_52
+  num: project_45
   repo: https://github.com/amandashu/Workout_Recommender.git
-  report: https://github.com/najeemk/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/najeemk/artifact-directory-template/main/report.pdf
   section: A05
   title: Asnapp - Workout Video Recommender
   website: https://workout-recommender.herokuapp.com/
@@ -448,9 +448,9 @@
     create a hybrid recommender using collaborative techniques.'
   domain: domain_04
   names: Zachary Nguyen, Alex Pham, Anthony Fong
-  num: project_50
+  num: project_43
   repo: https://github.com/ajf01/Recipe-Recommendation.git
-  report: https://github.com/ajf01/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/ajf01/artifact-directory-template/main/report.pdf
   section: A05
   title: Plates4U
   website: https://recipe-rec-app.herokuapp.com/
@@ -474,9 +474,9 @@
     \ and success when creating their desired look."
   domain: domain_04
   names: Justin Lee, Shayal Singh, Alexandria Kim
-  num: project_51
+  num: project_44
   repo: https://github.com/alexxkim54/Aesthetic_Makeup_Recommender.git
-  report: https://github.com/alexxkim54/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/alexxkim54/artifact-directory-template/main/report.pdf
   section: A05
   title: Makeup Recommender
   website: https://makeup-recommender.herokuapp.com/
@@ -491,32 +491,12 @@
     fusing information from Governmental, News and Social Media data.
   domain: domain_05
   names: Gunther Schwartz, Flory Huang
-  num: project_73
+  num: project_71
   repo: https://github.com/floryhyy/Opioid-Overdose-Prevalence.git
-  report: https://github.com/floryhyy/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/floryhyy/artifact-directory-template/main/report.pdf
   section: A06
   title: Opioid Overdose Prevalence Analysis
   website: http://132.249.238.234:8081/#/
-- abstract: According to the World Health Organization, cardiovascular disease, such
-    as ischemic heart disease and stroke, is the leading cause of deaths globally.
-    We use features and some health conditions of a person to determine the signals
-    and the probability of whether he/she has cardiovascular disease. To achieve such
-    a goal, we implemented logistic regression and large-scale multiple testing methods
-    on a dataset with ample information. Empirical Null is applied to find outliers
-    and filter the dataset, we successfully removed about 10000 outliers out of the
-    70000 observations by applying the FDR and FPR method to find the upper and lower
-    bound. Finally, our product was a Logistic Regression model that predicts whether
-    a person has Cardiovascular disease with an accuracy score of .7220 on the test
-    set.
-  domain: domain_06
-  names: Wentao Chen, Leyang Zhang, Zimin Dai
-  num: project_64
-  repo: https://github.com/Dai0704/DSC180B_A07/tree/Final
-  report: https://github.com/DSC-Capstone/artifact-directory-template/blob/main/report.pdf
-  section: A07
-  title: Large-scale Multiple Testing with Empirical Null Distribution in Predicting
-    Cardiovascular Disease
-  website: https://larryzly.github.io/CardiovascularClassifier/
 - abstract: In genomics we are often faced with the task to identify genes correlated
     with a specific disease among a large number of candidate gene pools. A naive
     approach is to apply a hypothesis test to every individual gene. This method ignores
@@ -529,9 +509,9 @@
     methods such as k-Means and the Gaussian Mixture Model.
   domain: domain_06
   names: Raymond Wang
-  num: project_65
+  num: project_63
   repo: https://github.com/xiw483/dsc180b-capstone.git
-  report: https://github.com/xiw483/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/xiw483/artifact-directory-template/main/report.pdf
   section: A07
   title: Multiple Testing Method with Empirical Null Distribution in Leukemia Studies
   website: https://xiw483.github.io/dsc180b-website/
@@ -564,78 +544,11 @@
   names: Shuyuan Wang
   num: project_29
   repo: https://github.com/wendyw1999/epidemiology_capstone_project
-  report: https://github.com/SHUYUAN66/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/SHUYUAN66/artifact-directory-template/main/report.pdf
   section: A08
   title: Spatial-temporal Prediction of COVID-19 Case Counts Through Epidemiology
     Model
   website: https://shuyuan66.github.io/capstone_epidemiology__web/
-- abstract: The NBA contains many challenges when attempting to make predictions.
-    The performance of a team in the NBA is difficult because many things can happen
-    over the course of 81 games. Our analysis attempts to produce accurate results
-    by exploiting the natural structure of the NBA league and data of previous player
-    stats. Our analysis begins with identifying the players on each roster to create
-    an aggregated stat for each team, then we will take advantage of the schedules
-    of each team to learn the unique performance of a team against every other team.
-    Leveraging the features and the schedule of the teams, we expect to be able to
-    make decent predictions of NBA seedings before a season starts.
-  domain: domain_08
-  names: Steven Liu, Aurelio Barrios
-  num: project_21
-  repo: https://github.com/sdevinl/DSC180B_Project.git
-  report: https://github.com/aubarrio/artifact-directory-template/blob/main/report.pdf
-  section: B01
-  title: NBA Seeds with Graph Neural Networks
-  website: https://sdevinl.github.io/DSC180B_Project/
-- abstract: "This research focuses on 3D shape classification. Our goal is to predict\
-    \ the category of shapes consisting of 3D data points. We aim to implement Graph\
-    \ Neural Network models and compare the performances with the PointNet, a popular\
-    \ architecture for 3d points cloud classification tasks. Not only will we compare\
-    \ standard metrics such as accuracy and confusion matrix, we will also explore\
-    \ the model's resilience on data transformation. What\u2019s more, we tried combining\
-    \ PointNet with graph pooling layers. Our experiment shows that even though PointNet\
-    \ has a higher accuracy overall, GCN has much more reasonable misclassification\
-    \ and is much more robust to data augmentation."
-  domain: domain_08
-  names: Shang Li, Xinrui Zhan
-  num: project_20
-  repo: https://github.com/ctwayen/GNN-Points-Cloud.git
-  report: https://github.com/ctwayen/artifact-directory-template/blob/main/report.pdf
-  section: B01
-  title: GCN on 3d Points
-  website: https://ctwayen.github.io/Graph-Neural-Network-on-3D-Points/
-- abstract: Recommender systems are important, revenue-generating technologies in
-    many of the services today, providing recommendations for social, product, and
-    other networks. However, the majority of existing recommender system methods use
-    metrics of similarity to recommend other nodes through content-based and collaborative
-    filtering approaches, which do not take into account the graph structure of the
-    relationships between the nodes. A graph-based recommender system then is able
-    to utilize graph relationships to improve node embeddings for recommendation in
-    a way that conventional recommender systems cannot. Inspired by PinSage, we explore
-    an unsupervised graph-based recommendation method that can take advantage of the
-    relationships between nodes, in addition to the text and image features, and generate
-    more accurate and robust embeddings for Amazon product recommendation.
-  domain: domain_08
-  names: Abdullatif Jarkas, Nathan Tsai
-  num: project_19
-  repo: https://github.com/nhtsai/graph-rec.git
-  report: https://github.com/nhtsai/artifact-directory-template/blob/main/report.pdf
-  section: B01
-  title: Graph-Based Product Recommendation
-  website: https://nhtsai.github.io/graph-rec/
-- abstract: When working with an NBA dataset, we wanted to figure out the best way
-    to represent a network like structure amongst the teams and figured that the amount
-    of time that each player spends on the court with one another would prove useful.
-    By extracting this network and projecting player statistics upon each node, we
-    will utilize GraphSage, a framework that will embed node features onto each player
-    and aggregate each team to predict whether or not they can make the playoffs.
-  domain: domain_08
-  names: Austin Le, Mengyuan Shi
-  num: project_18
-  repo: https://github.com/Rebecca9785/NBA_Game_Prediction.git
-  report: https://github.com/AustinLe/artifact-directory-template/blob/main/report.pdf
-  section: B01
-  title: NBA Game Prediction
-  website: https://austinle.github.io
 - abstract: "This project\u2019s main inquiry is into whether there is a tangible\
     \ difference in the way that Democrat members of Congress speak and interact on\
     \ social media in comparison to Republican members of Congress. If there are such\
@@ -669,10 +582,77 @@
   names: Yueting Wu, Yimei Zhao, Anurag Pamuru
   num: project_22
   repo: https://github.com/AnuragPamuru/dsc-180b-capstone-b03
-  report: https://github.com/AnuragPamuru/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/AnuragPamuru/artifact-directory-template/main/report.pdf
   section: B01
   title: A Graph ML Analysis of Senatorial Twitter Accounts
   website: https://anuragpamuru.github.io/dsc-180b-capstone-b03
+- abstract: "This research focuses on 3D shape classification. Our goal is to predict\
+    \ the category of shapes consisting of 3D data points. We aim to implement Graph\
+    \ Neural Network models and compare the performances with the PointNet, a popular\
+    \ architecture for 3d points cloud classification tasks. Not only will we compare\
+    \ standard metrics such as accuracy and confusion matrix, we will also explore\
+    \ the model's resilience on data transformation. What\u2019s more, we tried combining\
+    \ PointNet with graph pooling layers. Our experiment shows that even though PointNet\
+    \ has a higher accuracy overall, GCN has much more reasonable misclassification\
+    \ and is much more robust to data augmentation."
+  domain: domain_08
+  names: Shang Li, Xinrui Zhan
+  num: project_20
+  repo: https://github.com/ctwayen/GNN-Points-Cloud.git
+  report: https://raw.githubusercontent.com/ctwayen/artifact-directory-template/main/report.pdf
+  section: B01
+  title: GCN on 3d Points
+  website: https://ctwayen.github.io/Graph-Neural-Network-on-3D-Points/
+- abstract: Recommender systems are important, revenue-generating technologies in
+    many of the services today, providing recommendations for social, product, and
+    other networks. However, the majority of existing recommender system methods use
+    metrics of similarity to recommend other nodes through content-based and collaborative
+    filtering approaches, which do not take into account the graph structure of the
+    relationships between the nodes. A graph-based recommender system then is able
+    to utilize graph relationships to improve node embeddings for recommendation in
+    a way that conventional recommender systems cannot. Inspired by PinSage, we explore
+    an unsupervised graph-based recommendation method that can take advantage of the
+    relationships between nodes, in addition to the text and image features, and generate
+    more accurate and robust embeddings for Amazon product recommendation.
+  domain: domain_08
+  names: Abdullatif Jarkas, Nathan Tsai
+  num: project_19
+  repo: https://github.com/nhtsai/graph-rec.git
+  report: https://raw.githubusercontent.com/nhtsai/artifact-directory-template/main/DSC180B_Report.pdf
+  section: B01
+  title: Graph-Based Product Recommendation
+  website: https://nhtsai.github.io/graph-rec/
+- abstract: When working with an NBA dataset, we wanted to figure out the best way
+    to represent a network like structure amongst the teams and figured that the amount
+    of time that each player spends on the court with one another would prove useful.
+    By extracting this network and projecting player statistics upon each node, we
+    will utilize GraphSage, a framework that will embed node features onto each player
+    and aggregate each team to predict whether or not they can make the playoffs.
+  domain: domain_08
+  names: Austin Le, Mengyuan Shi
+  num: project_18
+  repo: https://github.com/Rebecca9785/NBA_Game_Prediction.git
+  report: https://raw.githubusercontent.com/AustinLe/artifact-directory-template/main/report.pdf
+  section: B01
+  title: NBA Game Prediction
+  website: https://austinle.github.io
+- abstract: The NBA contains many challenges when attempting to make predictions.
+    The performance of a team in the NBA is difficult because many things can happen
+    over the course of 81 games. Our analysis attempts to produce accurate results
+    by exploiting the natural structure of the NBA league and data of previous player
+    stats. Our analysis begins with identifying the players on each roster to create
+    an aggregated stat for each team, then we will take advantage of the schedules
+    of each team to learn the unique performance of a team against every other team.
+    Leveraging the features and the schedule of the teams, we expect to be able to
+    make decent predictions of NBA seedings before a season starts.
+  domain: domain_08
+  names: Steven Liu, Aurelio Barrios
+  num: project_21
+  repo: https://github.com/sdevinl/DSC180B_Project.git
+  report: https://raw.githubusercontent.com/aubarrio/artifact-directory-template/main/report.pdf
+  section: B01
+  title: NBA Seeds with Graph Neural Networks
+  website: https://sdevinl.github.io/DSC180B_Project/
 - abstract: For our research on Political Popularity of Misinformation, we want to
     research the influence politicians have on Twitter, a well known social media
     platform for users to voice their opinions to a wider audience. The information
@@ -694,50 +674,10 @@
   names: Catherine Tao, Aaron Chan, Matthew Sao
   num: project_0
   repo: https://github.com/aychan3089/PoliticalPopularityofMisinformation
-  report: https://github.com/Baymatt/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Baymatt/artifact-directory-template/main/report.pdf
   section: B02
   title: Political Popularity of Misinformation
   website: https://baymatt.github.io/TwitterPoliticianMisinformation/
-- abstract: The rise of social media has dominated every aspect of our daily lives.
-    In the height of the 2020 presidential election and as COVID-19 rampaged throughout
-    the world, it facilitated increased online discussion, as well asthe spread of
-    information and misinformation. This project investigates the relationship that
-    discussion on social media has with election outcomes. It finds that in comparing
-    two distinct presidential elections, both of whichtook place as Twitter usage
-    grew steadily, increased discussion levels were present in a Democratic win of
-    the election.
-  domain: domain_09
-  names: Prem Pathuri, Zhi Lin
-  num: project_4
-  repo: https://github.com/prem1835213/Election-Sentiment.git
-  report: https://github.com/zclin99/artifact-directory-template/blob/main/report.pdf
-  section: B02
-  title: "Twitter\u2019s Impact on Elections"
-  website: https://prem1835213.github.io/Election_Twitter/
-- abstract: Recent events including the 2016 election, COVID-19 pandemic, the 2020
-    election, and the development of a COVID-19 vaccine has laid bare the essential
-    need to prevent misinformation from spreading uncontrollably on social networks.
-    Social media companies have developed systems for preventing the further spread
-    of misinformation. Most notably, some companies have begun placing flags that
-    warn a user of the misinformative content of the post. Research has addressed
-    a way to analyze Twitter users on how conservative versus liberal, moderate versus
-    extreme, and pro-science versus anti-science they are based on their tweet history.
-    We detail a novel machine learning approach to classify users based on three similar
-    dimensions. We then conduct an analysis comparing Twitter users who retweeted
-    flagged tweets versus those who retweeted unflagged tweets, with the tweets coming
-    from high profile conservative Twitter users, such as Eric Trump. Results from
-    the analysis suggest that users who are sharing these flagged tweets tend to be
-    slightly more liberal and more moderate than the users who are sharing unflagged
-    tweets. We propose possible explanations, as well as future work to better understand
-    the impact of misinformation flags.
-  domain: domain_09
-  names: Nigel Doering, Tanuj Pankaj, Raechel Walker
-  num: project_2
-  repo: https://github.com/NigelDoering/DSC-Capstone-Project
-  report: https://github.com/raechelwalker/artifact-directory-template/blob/main/report.pdf
-  section: B02
-  title: Community Effects From Misinformation Flags on Twitter
-  website: https://raechelwalker.github.io/visual_presentation/
 - abstract: "Political tensions in the United States came to a head in 2020 as the\
     \ public responded to various major events such as the onset of the COVID-19 pandemic\
     \ and the murder of George Floyd, as well as the 2020 presidential election. Here\
@@ -759,10 +699,67 @@
   names: Zahra Masood, Sravya Voleti, Hannah Peterson
   num: project_1
   repo: https://github.com/hbpeters/2016-2020_elections_on_twitter
-  report: https://github.com/hbpeters/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/hbpeters/artifact-directory-template/main/report.pdf
   section: B02
   title: The Sentiment of U.S. Presidential Elections on Twitter
   website: https://hbpeters.github.io/2016-2020_pres_elections_twitter
+- abstract: Recent events including the 2016 election, COVID-19 pandemic, the 2020
+    election, and the development of a COVID-19 vaccine has laid bare the essential
+    need to prevent misinformation from spreading uncontrollably on social networks.
+    Social media companies have developed systems for preventing the further spread
+    of misinformation. Most notably, some companies have begun placing flags that
+    warn a user of the misinformative content of the post. Research has addressed
+    a way to analyze Twitter users on how conservative versus liberal, moderate versus
+    extreme, and pro-science versus anti-science they are based on their tweet history.
+    We detail a novel machine learning approach to classify users based on three similar
+    dimensions. We then conduct an analysis comparing Twitter users who retweeted
+    flagged tweets versus those who retweeted unflagged tweets, with the tweets coming
+    from high profile conservative Twitter users, such as Eric Trump. Results from
+    the analysis suggest that users who are sharing these flagged tweets tend to be
+    slightly more liberal and more moderate than the users who are sharing unflagged
+    tweets. We propose possible explanations, as well as future work to better understand
+    the impact of misinformation flags.
+  domain: domain_09
+  names: Nigel Doering, Tanuj Pankaj, Raechel Walker
+  num: project_2
+  repo: https://github.com/NigelDoering/DSC-Capstone-Project
+  report: https://raw.githubusercontent.com/raechelwalker/artifact-directory-template/main/report.pdf
+  section: B02
+  title: Community Effects From Misinformation Flags on Twitter
+  website: https://raechelwalker.github.io/visual_presentation/
+- abstract: We will construct a geometric definition of the political spectrum of
+    major US news outlets through an unsupervised approach. We model the political
+    alignments of the outlets in terms of pairwise political similarity among pairs
+    of outlets using graphs and embed the graph onto a Euclidean space for result.
+    We will be collecting hashtags used in the users' own timelines and cross reference
+    it with the hashtags used during election period to classify their political stance
+    as well as create a graph analysis between the news networks as a whole. Through
+    this, we demonstrate the location where each news network lies on the U.S. political
+    spectrum and how they lie relative in hashtag vector space to one another.
+  domain: domain_09
+  names: Christopher Ly, Shutong Li, Mark Chang
+  num: project_3
+  repo: https://github.com/ChrisLy99/political_bots
+  report: https://raw.githubusercontent.com/mmarkchang/artifact-directory-template/main/report.pdf
+  section: B02
+  title: Political Polarization of Major News Networks on Twitter
+  website: https://chrisly99.github.io/political_bots_site/
+- abstract: The rise of social media has dominated every aspect of our daily lives.
+    In the height of the 2020 presidential election and as COVID-19 rampaged throughout
+    the world, it facilitated increased online discussion, as well asthe spread of
+    information and misinformation. This project investigates the relationship that
+    discussion on social media has with election outcomes. It finds that in comparing
+    two distinct presidential elections, both of whichtook place as Twitter usage
+    grew steadily, increased discussion levels were present in a Democratic win of
+    the election.
+  domain: domain_09
+  names: Prem Pathuri, Zhi Lin
+  num: project_4
+  repo: https://github.com/prem1835213/Election-Sentiment.git
+  report: https://raw.githubusercontent.com/zclin99/artifact-directory-template/main/report.pdf
+  section: B02
+  title: "Twitter\u2019s Impact on Elections"
+  website: https://prem1835213.github.io/Election_Twitter/
 - abstract: "Misinformation has taken social media by storm. It reaches every corner\
     \ of these kinds of platforms, from topics like the existence of aliens or even\
     \ contesting the outcomes of a presidential election. The consequences of such\
@@ -782,7 +779,7 @@
   names: Cindy Huynh, Hasan Liou, Helen Chung
   num: project_5
   repo: https://github.com/yunghas/reddit-misinformation
-  report: https://github.com/helenhc/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/helenhc/artifact-directory-template/main/report.pdf
   section: B02
   title: Analyzing the the Diffusions of Various Forms of Misinformation on Reddit
   website: https://helenhc.github.io/reddit-site/
@@ -800,63 +797,31 @@
   names: Jiawei Zheng, Yunlin Tang, Zhou Li
   num: project_6
   repo: https://github.com/yunlintang/DSC180B-Project.git
-  report: https://github.com/ZhouLi050399/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/ZhouLi050399/artifact-directory-template/main/report.pdf
   section: B02
   title: COVID-19 Sentiment and Daily ases Analysis on Social Media
   website: https://yunlintang.github.io/DSC180B-Blog/
-- abstract: We will construct a geometric definition of the political spectrum of
-    major US news outlets through an unsupervised approach. We model the political
-    alignments of the outlets in terms of pairwise political similarity among pairs
-    of outlets using graphs and embed the graph onto a Euclidean space for result.
-    We will be collecting hashtags used in the users' own timelines and cross reference
-    it with the hashtags used during election period to classify their political stance
-    as well as create a graph analysis between the news networks as a whole. Through
-    this, we demonstrate the location where each news network lies on the U.S. political
-    spectrum and how they lie relative in hashtag vector space to one another.
-  domain: domain_09
-  names: Christopher Ly, Shutong Li, Mark Chang
-  num: project_3
-  repo: https://github.com/ChrisLy99/political_bots
-  report: https://github.com/mmarkchang/artifact-directory-template/blob/main/report.pdf
-  section: B02
-  title: Political Polarization of Major News Networks on Twitter
-  website: https://chrisly99.github.io/political_bots_site/
-- abstract: This paper seeks to analyze the degree and prevalence of political bias
-    and controversy in Wikipedia. Using pre-trained models from Rheault and Cochrane
-    (2019) and Shapiro and Gentzkow (2019) we validate our methods for generalizability
-    on the ideological books corpus (Sim et al., 2013) with sub-sentential annotations
-    (Iyyer et al., 2014) and attempt to apply these methods to receive insight into
-    political bias in Wikipedia. We attempt to combat overlap in political slants
-    and avoid labeling political bias whose detection is unavoidable due to the topic
-    of the article in question. With insight into political bias on Wikipedia gained
-    we hope it will be able to prove useful in combating counterproductive activity
-    on Wikipedia and allow for more precise and targeted activity by Wikipedia monitors.
+- abstract: "There are \u201Cwars\u201D going on every day online, but instead of\
+    \ cities, they are defending their options and perspects. This phenomenon is especially\
+    \ common on the Wikipedia platform where users are free to edit others' revisions.\
+    \ In fact, there are \u201Cabout 12% of discussions are devoted to reverts and\
+    \ vandalism, suggesting that the WP development process is highly contentious.\u201D\
+    \ (Robert 1) As Wikipedia has become a trusted source of information and knowledge\
+    \ which is freely accessible, It is important to investigate how editors collaborate\
+    \ and controvert each other in such a platform. This paper will discuss a new\
+    \ method of measuring controvisality in Wikipedia articles. We have found out\
+    \ that controversiality is highly related to the number of revert edits, the sentiment\
+    \ level among one article comments, and the view counts of that article. Thus\
+    \ we developed a weighted sum formula, which combines those three factors to accurately\
+    \ measure the controversy level within articles in Wikipedia."
   domain: domain_10
-  names: Cameron Thomas, Iakov Vasilyev, Joseph Del-Val
-  num: project_24
-  repo: https://github.com/MrYanchos/Politics_on_Wikipedia.git
-  report: https://github.com/jtdelval/artifact-directory-template/blob/main/report.pdf
+  names: Hengyu Liu, Xiangchen Zhao, Xingyu Jiang
+  num: project_25
+  repo: https://github.com/zxchen98/DSC180B.git
+  report: https://raw.githubusercontent.com/cherrito/artifact-directory-template/main/report.pdf
   section: B03
-  title: Politics on Wikipedia
-  website: https://mryanchos.github.io/PoW/
-- abstract: We detail a specific method that determines how, if at all, sentiment
-    changes over time for a category of Wikipedia articles, which, in our study, are
-    articles categorized by Wikipedia as LGBT articles. This method uses three different
-    sentiment analyzers, one for each of the three different language editions of
-    Wikipedia we are analyzing, to calculate the sentiment of a Wikipedia article,
-    doing so for all edits in the article's revision history and for all articles
-    in each language's LGBT category. This enables us to calculate a fixed effects
-    regression for each language's sentiment scores, allowing us to determine whether
-    or not time has a positive effect on the articles' sentiment scores, as well as
-    to compare these trends across languages.
-  domain: domain_10
-  names: Henry Lozada, Emma Logomasini, Parth Patel, Yuanbo Shi
-  num: project_23
-  repo: https://github.com/DSC180b-group5/final-pipeline.git
-  report: https://github.com/DSC180b-group5/artifact-directory-template/blob/main/report.pdf
-  section: B03
-  title: A Study of LGBTQ+ Wikipedia Articles Sentiment over Time
-  website: https://dsc180b-group5.github.io/emmalogo.github.io/
+  title: Controversy In Wikipedia Articles
+  website: https://zxchen98.github.io/Controversy_Visual_output/
 - abstract: "Fan communities exist within every industry, and there has been little\
     \ study on understanding their scale and how they influence the media and their\
     \ industries. As technology and social media have made it easier than ever for\
@@ -875,7 +840,7 @@
   names: Casey Duong, Kylee Peng, Darren Liu
   num: project_26
   repo: https://github.com/dliu9999/Fandom-Online-Collaboration
-  report: https://github.com/dliu9999/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/dliu9999/artifact-directory-template/main/report.pdf
   section: B03
   title: The Large-Scale Collaborative Presence of Online Fandoms
   website: https://kyleepeng.github.io/Fandom-Online-Collaboration/
@@ -893,31 +858,80 @@
   names: Michael Lam, Gabrielle Avila, Yiheng Ye
   num: project_27
   repo: https://github.com/ggavila/DSC180BProject
-  report: https://github.com/YihengYe/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/YihengYe/artifact-directory-template/main/report.pdf
   section: B03
   title: "Wikipedia\u2019s Response to the COVID-19 Pandemic"
   website: https://ggavila.github.io/WikipediaProjectWebsite/
-- abstract: "There are \u201Cwars\u201D going on every day online, but instead of\
-    \ cities, they are defending their options and perspects. This phenomenon is especially\
-    \ common on the Wikipedia platform where users are free to edit others' revisions.\
-    \ In fact, there are \u201Cabout 12% of discussions are devoted to reverts and\
-    \ vandalism, suggesting that the WP development process is highly contentious.\u201D\
-    \ (Robert 1) As Wikipedia has become a trusted source of information and knowledge\
-    \ which is freely accessible, It is important to investigate how editors collaborate\
-    \ and controvert each other in such a platform. This paper will discuss a new\
-    \ method of measuring controvisality in Wikipedia articles. We have found out\
-    \ that controversiality is highly related to the number of revert edits, the sentiment\
-    \ level among one article comments, and the view counts of that article. Thus\
-    \ we developed a weighted sum formula, which combines those three factors to accurately\
-    \ measure the controversy level within articles in Wikipedia."
+- abstract: We detail a specific method that determines how, if at all, sentiment
+    changes over time for a category of Wikipedia articles, which, in our study, are
+    articles categorized by Wikipedia as LGBT articles. This method uses three different
+    sentiment analyzers, one for each of the three different language editions of
+    Wikipedia we are analyzing, to calculate the sentiment of a Wikipedia article,
+    doing so for all edits in the article's revision history and for all articles
+    in each language's LGBT category. This enables us to calculate a fixed effects
+    regression for each language's sentiment scores, allowing us to determine whether
+    or not time has a positive effect on the articles' sentiment scores, as well as
+    to compare these trends across languages.
   domain: domain_10
-  names: Hengyu Liu, Xiangchen Zhao, Xingyu Jiang
-  num: project_25
-  repo: https://github.com/zxchen98/DSC180B.git
-  report: https://github.com/cherrito/artifact-directory-template/blob/main/report.pdf
+  names: Henry Lozada, Emma Logomasini, Parth Patel, Yuanbo Shi
+  num: project_23
+  repo: https://github.com/DSC180b-group5/final-pipeline.git
+  report: https://raw.githubusercontent.com/DSC180b-group5/artifact-directory-template/main/report.pdf
   section: B03
-  title: Controversy In Wikipedia Articles
-  website: https://zxchen98.github.io/Controversy_Visual_output/
+  title: A Study of LGBTQ+ Wikipedia Articles Sentiment over Time
+  website: https://dsc180b-group5.github.io/emmalogo.github.io/
+- abstract: This paper seeks to analyze the degree and prevalence of political bias
+    and controversy in Wikipedia. Using pre-trained models from Rheault and Cochrane
+    (2019) and Shapiro and Gentzkow (2019) we validate our methods for generalizability
+    on the ideological books corpus (Sim et al., 2013) with sub-sentential annotations
+    (Iyyer et al., 2014) and attempt to apply these methods to receive insight into
+    political bias in Wikipedia. We attempt to combat overlap in political slants
+    and avoid labeling political bias whose detection is unavoidable due to the topic
+    of the article in question. With insight into political bias on Wikipedia gained
+    we hope it will be able to prove useful in combating counterproductive activity
+    on Wikipedia and allow for more precise and targeted activity by Wikipedia monitors.
+  domain: domain_10
+  names: Cameron Thomas, Iakov Vasilyev, Joseph Del-Val
+  num: project_24
+  repo: https://github.com/MrYanchos/Politics_on_Wikipedia.git
+  report: https://raw.githubusercontent.com/jtdelval/artifact-directory-template/main/report.pdf
+  section: B03
+  title: Politics on Wikipedia
+  website: https://mryanchos.github.io/PoW/
+- abstract: Opioid abuse is a serious national crisis. The opioid epidemic is unique
+    and important because 21-29% of patients who are prescribed opioids end up misusing
+    them [16]. Opioids increase the amount of dopamine made in the brain by increasing
+    dopamine-synthesizing neurons- making them very easy to become addicted to. This
+    study explores the long-lasting changes in gene expression that may contribute
+    to addiction, cravings, and relapse by studying subjects who continuously used
+    opioids. Using DESeq2 [7] and WGCNA [8], our analyses identified differentially
+    expressed genes by finding which genes were up-regulated and down-regualted. We
+    also found distinct gene networks associated with opioid abuse. Overall, 28 genes
+    were found to be down-regualted and 16 genes were up-regulated. The opioid-regulated
+    genes identified from our project could possibly serve as new therapeutic targets
+    to help combat opioid addiction.
+  domain: domain_11
+  names: Cathleen Pena, Dennis Wu, Zhaoyi Guo
+  num: project_70
+  repo: https://github.com/denncc/opioids-od-genome-analysis
+  report: https://raw.githubusercontent.com/zhg061/artifact-directory-template/main/report.pdf
+  section: B04
+  title: Differential Gene Expression Analysis of Human Opioid Abusers
+  website: https://genetics.denncc.com/blog/2021/02/differential-gene-expression-analysis-of-human-opioid-abusers/
+- abstract: One of the greatest challenges in public health is the growing number
+    of bacterial species that have developed resistance to antibiotics through point
+    mutations in the genome. Our project aims to identify these genetic markers of
+    antibiotic resistance through a genome wide association study between 36 antibiotic
+    resistant E.Coli samples and 36 controls. Variants were identified in both groups,
+    checked for statistical significance, and analyzed for any functional effects.
+  domain: domain_11
+  names: Jiayi Wu, Alan Chen, Myra Haider
+  num: project_68
+  repo: https://github.com/myhaider/antibiotic-resistance
+  report: https://raw.githubusercontent.com/myhaider/artifact-directory-template/main/report.pdf
+  section: B04
+  title: The Genetic Basis of Antibiotic Resistance in E. Coli
+  website: https://alandsc.github.io/GWAS/
 - abstract: "Alzheimer\u2019s Disease (AD) is an irreversible, progressive neurodegenerative\
     \ disorder that slowly destroys a person's cognitive and physical abilities. The\
     \ cause of AD is unclear, but is believed to be a combination of genetic, environmental\
@@ -937,60 +951,12 @@
     \ samples to perform further analysis on its relationship and effect to AD."
   domain: domain_11
   names: Gregory Thein, Justin Kang, Ryan Cummings
-  num: project_69
+  num: project_67
   repo: https://github.com/justjk139/alzheimers_gene_analysis
-  report: https://github.com/r1cummings/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/r1cummings/artifact-directory-template/main/report.pdf
   section: B04
   title: Blood-based Analysis of Alzheimer's Disease from miRNA Data
   website: https://justjk139.github.io
-- abstract: One of the greatest challenges in public health is the growing number
-    of bacterial species that have developed resistance to antibiotics through point
-    mutations in the genome. Our project aims to identify these genetic markers of
-    antibiotic resistance through a genome wide association study between 36 antibiotic
-    resistant E.Coli samples and 36 controls. Variants were identified in both groups,
-    checked for statistical significance, and analyzed for any functional effects.
-  domain: domain_11
-  names: Jiayi Wu, Alan Chen, Myra Haider
-  num: project_70
-  repo: https://github.com/myhaider/antibiotic-resistance
-  report: https://github.com/myhaider/artifact-directory-template/blob/main/report.pdf
-  section: B04
-  title: The Genetic Basis of Antibiotic Resistance in E. Coli
-  website: https://alandsc.github.io/GWAS/
-- abstract: "Our research compares overlapping patterns in miRNA between patients\
-    \ with Alzheimer's and Parkinson\u2019s across two biofluids, cerebrospinal fluid\
-    \ and serum, by pinpointing significant transcription factors that the diseases\
-    \ share. We hope the results of our gene analysis can be leveraged by researchers\
-    \ to help alleviate the effects of the disorders and potentially develop medicines\
-    \ and therapies that target these genes."
-  domain: domain_11
-  names: Xuanyu Wu, Justin Lu, Saroop Samra
-  num: project_71
-  repo: https://github.com/sksamra/miRNA_overlap_between_AD_PD.git
-  report: https://github.com/sksamra/artifact-directory-template/blob/main/report.pdf
-  section: B04
-  title: "Genetic Overlap between Alzheimer's, Parkinson\u2019s, and healthy patients"
-  website: https://xuanyuw.github.io/miRNA_overlap_AD_PD.github.io/
-- abstract: Opioid abuse is a serious national crisis. The opioid epidemic is unique
-    and important because 21-29% of patients who are prescribed opioids end up misusing
-    them [16]. Opioids increase the amount of dopamine made in the brain by increasing
-    dopamine-synthesizing neurons- making them very easy to become addicted to. This
-    study explores the long-lasting changes in gene expression that may contribute
-    to addiction, cravings, and relapse by studying subjects who continuously used
-    opioids. Using DESeq2 [7] and WGCNA [8], our analyses identified differentially
-    expressed genes by finding which genes were up-regulated and down-regualted. We
-    also found distinct gene networks associated with opioid abuse. Overall, 28 genes
-    were found to be down-regualted and 16 genes were up-regulated. The opioid-regulated
-    genes identified from our project could possibly serve as new therapeutic targets
-    to help combat opioid addiction.
-  domain: domain_11
-  names: Cathleen Pena, Dennis Wu, Zhaoyi Guo
-  num: project_72
-  repo: https://github.com/denncc/opioids-od-genome-analysis
-  report: https://github.com/zhg061/artifact-directory-template/blob/main/report.pdf
-  section: B04
-  title: Differential Gene Expression Analysis of Human Opioid Abusers
-  website: https://genetics.denncc.com/blog/2021/02/differential-gene-expression-analysis-of-human-opioid-abusers/
 - abstract: 'RNA-Seq (named as an abbreviation of "RNA sequencing") is a technology-based
     sequencing technique which uses next-generation sequencing (NGS) to reveal the
     presence and quantity of RNA in a biological sample at a given moment, analyzing
@@ -1007,30 +973,26 @@
     (FDR), Type I error rate, and Sensitivity.'
   domain: domain_11
   names: Brandon Tsui, Joseph Bui, Weijie Cheng
-  num: project_68
+  num: project_66
   repo: https://github.com/JosephBui21/RNASeqToolComparison
-  report: https://github.com/iLuigi98/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/iLuigi98/artifact-directory-template/main/report.pdf
   section: B04
   title: Comparison of Differential Gene Expression Analysis Tools
   website: https://iLuigi98.github.io
-- abstract: Whether to access another country's Netflix library or for privacy, more
-    people are using Virtual Private Networks (VPN) to stream videos than ever before.
-    However, many of the different service providers offer different user experiences
-    that can lead to differences in the network transmissions. In this project we
-    will discuss the methods in which we made a classifying model to determine what
-    streaming service provider was being used over a VPN. The streaming providers
-    that the model identifies are Amazon Prime, Youtube, Netflix, Youtube Live and
-    Twitch. This is valuable in understanding the differences in the network work
-    patterns for the different streaming service providers. Across all providers,
-    our Random Forest model achieves a 96.5% accuracy in provider classification.
-  domain: domain_12
-  names: Arely Vasquez, Chang Yuan, Raimundo Castro, Jerry Qian, Molly Rowland
-  num: project_10
-  repo: https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn
-  report: https://github.com/mhrowlan/artifact-directory-SPICIVPN/blob/main/report.pdf
-  section: B05
-  title: SPICIVPN
-  website: https://mhrowlan.github.io/streaming_provider_classifier_inside_vpn/
+- abstract: "Our research compares overlapping patterns in miRNA between patients\
+    \ with Alzheimer's and Parkinson\u2019s across two biofluids, cerebrospinal fluid\
+    \ and serum, by pinpointing significant transcription factors that the diseases\
+    \ share. We hope the results of our gene analysis can be leveraged by researchers\
+    \ to help alleviate the effects of the disorders and potentially develop medicines\
+    \ and therapies that target these genes."
+  domain: domain_11
+  names: Xuanyu Wu, Justin Lu, Saroop Samra
+  num: project_69
+  repo: https://github.com/sksamra/miRNA_overlap_between_AD_PD.git
+  report: https://raw.githubusercontent.com/sksamra/artifact-directory-template/main/report.pdf
+  section: B04
+  title: "Genetic Overlap between Alzheimer's, Parkinson\u2019s, and healthy patients"
+  website: https://xuanyuw.github.io/miRNA_overlap_AD_PD.github.io/
 - abstract: "Due to the variety, affordability and convenience of online video streaming,\
     \ there are more subscribers than ever to video streaming platforms. Moreover,\
     \ the decreased operation of non-essential businesses and increase in the number\
@@ -1052,7 +1014,7 @@
   names: Da Gong, Mariam Qader, Andrey Pristinsky, Tianran Qiu, Zishun Jin
   num: project_9
   repo: https://github.com/pristinsky1/live_vs_video_on_demand_VPN_detection
-  report: https://github.com/354352231/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/354352231/artifact-directory-template/main/report.pdf
   section: B05
   title: Live vs. Video on Demand Inside VPN Detection
   website: https://pristinsky1.github.io/live_vs_video_on_demand_VPN_detection/
@@ -1070,7 +1032,7 @@
   names: Danial Yaseen, Sahil Altekar, Parker Addison
   num: project_8
   repo: https://github.com/dane-tool/dane.git
-  report: https://github.com/parkeraddison/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/parkeraddison/artifact-directory-template/main/report.pdf
   section: B05
   title: 'DANE: Data Automation and Network Emulation Tool'
   website: https://dane-tool.github.io/dane/
@@ -1084,27 +1046,45 @@
   names: Samson Qian, Shrimant Singh, Soon Shin, Iman Nematollahi, Stephen Doan
   num: project_7
   repo: https://github.com/stephdoan/ResRecovery/tree/main
-  report: https://github.com/stephdoan/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/stephdoan/artifact-directory-template/main/report.pdf
   section: B05
   title: 'Res Recovery: Classifying Video Resolutions Through a VPN Tunnel'
   website: https://stephdoan.github.io/ResRecovery/
-- abstract: "While graph interaction networks achieve exceptional results in Higgs\
-    \ boson identification, GNN explainer methodology is still in its infancy.  We\
-    \ apply layerwise relevance propagation (LRP) to our existing Higgs boson interaction\
-    \ network (HIN) to calculate relevance scores and reveal what features, nodes,\
-    \ and connections are most influential in prediction. We call this union HIN-LRP.\
-    \ The synergy between the LRP interpretation and the inherent structure of the\
-    \ HIN is such that HIN-LRP  is able to illuminate which particles and particle\
-    \ features in a given jet are most significant in Higgs boson identification.\
-    \ The resulting interpretations are ultimately congruent with what extant particle\
-    \ physics theory would suggest is most relevant\u2014the presence of muons, the\
-    \ characteristics of secondary decay, and features such as impact parameter and\
-    \ momentum."
+- abstract: Whether to access another country's Netflix library or for privacy, more
+    people are using Virtual Private Networks (VPN) to stream videos than ever before.
+    However, many of the different service providers offer different user experiences
+    that can lead to differences in the network transmissions. In this project we
+    will discuss the methods in which we made a classifying model to determine what
+    streaming service provider was being used over a VPN. The streaming providers
+    that the model identifies are Amazon Prime, Youtube, Netflix, Youtube Live and
+    Twitch. This is valuable in understanding the differences in the network work
+    patterns for the different streaming service providers. Across all providers,
+    our Random Forest model achieves a 96.5% accuracy in provider classification.
+  domain: domain_12
+  names: Arely Vasquez, Chang Yuan, Raimundo Castro, Jerry Qian, Molly Rowland
+  num: project_10
+  repo: https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn
+  report: https://raw.githubusercontent.com/mhrowlan/artifact-directory-SPICIVPN/main/report.pdf
+  section: B05
+  title: SPICIVPN
+  website: https://mhrowlan.github.io/streaming_provider_classifier_inside_vpn/
+- abstract: While graph interaction networks achieve exceptional results in Higgs
+    boson identification, GNN explainer methodology is still in its infancy. To introduce
+    GNN interpretation to the particle physics domain, we apply layerwise relevance
+    propagation (LRP) to our existing Higgs boson interaction network (HIN) to calculate
+    relevance scores and reveal what features, nodes, and connections are most influential
+    in prediction. We call this application HIN-LRP. The synergy between the LRP interpretation
+    and the inherent structure of the HIN is such that HIN-LRP is able to illuminate
+    which particles and particle features in a given jet are most significant in Higgs
+    boson identification. The resulting interpretations are ultimately congruent with
+    extant particle physics theory, with the model demonstrably learning the importance
+    of concepts like the presence of muons, characteristics of secondary decay, and
+    salient features such as impact parameter and momentum.
   domain: domain_13
   names: Alex Luo, Cecilia Xiao
-  num: project_67
+  num: project_65
   repo: https://github.com/HIN-LRP/Interpret-InteractionNetwork.git
-  report: https://github.com/Indigo410/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Indigo410/artifact-directory-template/main/report.pdf
   section: B06
   title: Interpreting Higgs Boson Interaction Network with Layerwise Relevance Propagation
   website: https://hin-lrp.github.io/
@@ -1126,9 +1106,9 @@
     \ we strive to achieve a higher level of model performance."
   domain: domain_13
   names: Nathan Roberts, Darren Chang, Sharmi Mathur
-  num: project_66
+  num: project_64
   repo: https://github.com/Nroberts23/Multiclass-Particle-Jets-DSCB06.git
-  report: https://github.com/sharmimathur/b06-project-artifact/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/sharmimathur/b06-project-artifact/main/report.pdf
   section: B06
   title: Deep Learning for Particle Jet Multiclassification
   website: https://sharmimathur.github.io/multiclassification-particle-jets/
@@ -1140,9 +1120,9 @@
     end this pandemic.'
   domain: domain_14
   names: Richard Duong, Nick Lin, Yijian Zong
-  num: project_74
+  num: project_72
   repo: https://github.com/CrisZong/DSC180A-Project
-  report: https://github.com/CrisZong/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/CrisZong/artifact-directory-template/main/report.pdf
   section: B07
   title: RTL Automation
   website: http://rtl-automation.herokuapp.com/
@@ -1169,9 +1149,9 @@
     of magnitude greater speed up (90x) over the current state of the art.'
   domain: domain_15
   names: Advitya Gemawat, Devanshu Desai
-  num: project_62
+  num: project_60
   repo: https://github.com/Advitya17/AutoBrickify
-  report: https://github.com/devanshuDesai/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/devanshuDesai/artifact-directory-template/main/report.pdf
   section: B08
   title: 'AUTOBRICK: A system for end-to-end automation of building point labels to
     Brick turtle files'
@@ -1186,12 +1166,66 @@
     detailed as a building manager needs it to be.
   domain: domain_15
   names: Etienne Doidic, Zhexu Li, Nicholas Kho
-  num: project_63
+  num: project_61
   repo: https://github.com/nichkho/Infection-Risk-App
-  report: https://github.com/nichkho/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/nichkho/artifact-directory-template/main/presentation3.7.21.pdf
   section: B08
   title: Airborne Infection Risk Estimator for COVID-19
   website: https://hinanawits.github.io/DSC-180B-Presentation-Website/
+- abstract: This thesis describes an study of machine learning and its application
+    to mouse wait time in computers. Specifically, we are building a classification
+    model of mouse wait time based on dynamic and static system information within
+    the 2020 time interval to classify if a mouse wait event would last within 0-5
+    secs, 5-10 secs, or 10+ secs. Dynamic system information, such as CPU utilization,
+    is subject to the configuration of each system. Therefore, by incorporating static
+    system information which includes the computer configuration of each system into
+    the model, we could significantly improve the accuracy of the prediction. Currently,
+    the model reaches an accuracy of 70\% with Decision Tree Classifier.
+  domain: domain_16
+  names: Pan Yeung, Sijie Mei, Yingyin Xiao
+  num: project_34
+  repo: https://github.com/panyeung/UserWaitPrediction.git
+  report: https://raw.githubusercontent.com/carmelbythesea/artifact-directory-template/main/report.pdf
+  section: B09
+  title: Mouse Wait Classification
+  website: https://panyeung.github.io/UserWaitVisual/
+- abstract: "Our goal for this project is to understand and discover features that\
+    \ affect the battery\u2019s estimated remaining time. Through our exploratory\
+    \ data analysis, we have discovered eight features, namely the number of devices,\
+    \ number of processes, average memory, average page faults, designed capacity,\
+    \ cpu percentage, cpu seconds, and cpu tempera- ture. Using these eight features,\
+    \ we decided to come up with several different models, Linear Regression, Decision\
+    \ Tree Regressor, SVM, Random Forest Regressor, Adaboost Regressor, Gradient Boosting\
+    \ Regressor and Bagging Re- gressor. To understand which model performs the best\
+    \ given these features, we performed hypothesis testing. In the end, our results\
+    \ show that Gradient Boosting Regressor performs the best out of all in that the\
+    \ maes generated on the train and test set are quite low and very similar. This\
+    \ indicates that Gradient Boosting Regressor has less of an overfitting issue\
+    \ than the other two models. Another indication is that through our hypothesis\
+    \ testing, our P-values indicate that Gradient Boosting Regressor performs the\
+    \ best among all others."
+  domain: domain_16
+  names: Jinzong Que, Yijun Liu, Kaixin Huang
+  num: project_33
+  repo: https://github.com/k3huang/docker.git
+  report: https://raw.githubusercontent.com/k3huang/artifact-directory-template/main/report.pdf
+  section: B09
+  title: Predicting Battery Remaining Minutes based Related Features
+  website: https://k3huang.github.io/dsc180b-visual-presentation-/
+- abstract: In this project, our goal is to find the relationship between the Persona
+    and their PC system. We are trying to compare the performances of different models
+    and use the features in the system to predict the type of a user. To achieve this,
+    we collect data from the user end, clean the data, explore the data using hypothesis
+    tests and fit our data into some classification machine learning  models, and
+    also test the performance and optimizing parameters of our models.
+  domain: domain_16
+  names: Ruotian Gao, Xin Yu, Weihang Gao
+  num: project_35
+  repo: https://github.com/LeoGao1/DSC180B_Project.git
+  report: https://raw.githubusercontent.com/LeoGao1/artifact-directory-template/main/report.pdf
+  section: B09
+  title: Persona Analysis
+  website: https://roygrt.github.io/Visual_presentation_180B/
 - abstract: "During the first half of this project, we learned about Intel\u2019s\
     \ telemetry framework. The framework allows remote data collection from devices\
     \ with Windows operating systems. Two important components of the telemetry framework\
@@ -1214,76 +1248,13 @@
     \ processes, methodologies, and results."
   domain: domain_16
   names: Jon Zhang, Keshan Chen, Vince Wong
-  num: project_43
+  num: project_36
   repo: https://github.com/jonxsong/DSC180AB-Capstone
-  report: https://github.com/vlw003/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/vlw003/artifact-directory-template/main/report.pdf
   section: B09
   title: "Predicting a User\u2019s Persona Using Computer\u2019s Specifications, CPU\
     \ Utilization, CPU Temperature & Application Usage Time"
   website: https://vlw003.github.io/
-- abstract: In this project, our goal is to find the relationship between the Persona
-    and their PC system. We are trying to compare the performances of different models
-    and use the features in the system to predict the type of a user. To achieve this,
-    we collect data from the user end, clean the data, explore the data using hypothesis
-    tests and fit our data into some classification machine learning  models, and
-    also test the performance and optimizing parameters of our models.
-  domain: domain_16
-  names: Ruotian Gao, Xin Yu, Weihang Gao
-  num: project_42
-  repo: https://github.com/LeoGao1/DSC180B_Project.git
-  report: https://github.com/LeoGao1/artifact-directory-template/blob/main/report.pdf
-  section: B09
-  title: Persona Analysis
-  website: https://roygrt.github.io/Visual_presentation_180B/
-- abstract: This thesis describes an study of machine learning and its application
-    to mouse wait time in computers. Specifically, we are building a classification
-    model of mouse wait time based on dynamic and static system information within
-    the 2020 time interval to classify if a mouse wait event would last within 0-5
-    secs, 5-10 secs, or 10+ secs. Dynamic system information, such as CPU utilization,
-    is subject to the configuration of each system. Therefore, by incorporating static
-    system information which includes the computer configuration of each system into
-    the model, we could significantly improve the accuracy of the prediction. Currently,
-    the model reaches an accuracy of 70\% with Decision Tree Classifier.
-  domain: domain_16
-  names: Pan Yeung, Sijie Mei, Yingyin Xiao
-  num: project_41
-  repo: https://github.com/panyeung/UserWaitPrediction.git
-  report: https://github.com/carmelbythesea/artifact-directory-template/blob/main/report.pdf
-  section: B09
-  title: Mouse Wait Classification
-  website: https://panyeung.github.io/UserWaitVisual/
-- abstract: "Our goal for this project is to understand and discover features that\
-    \ affect the battery\u2019s estimated remaining time. Through our exploratory\
-    \ data analysis, we have discovered eight features, namely the number of devices,\
-    \ number of processes, average memory, average page faults, designed capacity,\
-    \ cpu percentage, cpu seconds, and cpu tempera- ture. Using these eight features,\
-    \ we decided to come up with several different models, Linear Regression, Decision\
-    \ Tree Regressor, SVM, Random Forest Regressor, Adaboost Regressor, Gradient Boosting\
-    \ Regressor and Bagging Re- gressor. To understand which model performs the best\
-    \ given these features, we performed hypothesis testing. In the end, our results\
-    \ show that Gradient Boosting Regressor performs the best out of all in that the\
-    \ maes generated on the train and test set are quite low and very similar. This\
-    \ indicates that Gradient Boosting Regressor has less of an overfitting issue\
-    \ than the other two models. Another indication is that through our hypothesis\
-    \ testing, our P-values indicate that Gradient Boosting Regressor performs the\
-    \ best among all others."
-  domain: domain_16
-  names: Jinzong Que, Yijun Liu, Kaixin Huang
-  num: project_40
-  repo: https://github.com/k3huang/docker.git
-  report: https://github.com/k3huang/artifact-directory-template/blob/main/report.pdf
-  section: B09
-  title: Predicting Battery Remaining Minutes based Related Features
-  website: https://k3huang.github.io/dsc180b-visual-presentation-/
-- abstract: ""
-  domain: domain_17
-  names: Bailey Man, Michael Kusnadi, Songling Lu, Eric Yu
-  num: project_30
-  repo: https://github.com/Bailey-Man/OneRoomABM
-  report: https://github.com/DSC-Capstone/artifact-directory-template/blob/main/report.pdf
-  section: B10
-  title: One Room Agent-Based Modeling
-  website: https://ery010.github.io/OneRoomABMSite/
 - abstract: As schools attempt to reopen amid the COVID-19 pandemic, there is an increasing
     need to detect and quantify potentially risky activities in schools to help schools
     test out their individual reopening plans in order to prevent an outbreak. In
@@ -1300,7 +1271,7 @@
   names: Johnny Lei, Akshay Bhide, Evan Price, Kaushik Ganapathy
   num: project_32
   repo: https://github.com/Krganapa/0527291751.git
-  report: https://github.com/Krganapa/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/Krganapa/artifact-directory-template/main/report.pdf
   section: B10
   title: Geographically Assisted Agent-based Model for COVID-19 Transmission (GeoACT)
   website: https://geoact.sdsc.edu/
@@ -1312,57 +1283,10 @@
   names: Ziqian Cui, Bernard Wong, Farhood Ensan, Areeb Syed
   num: project_31
   repo: https://github.com/farhoodensan/Bus_Simulation_Model
-  report: https://github.com/aas050/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/aas050/artifact-directory-template/main/report.pdf
   section: B10
   title: Modelling COVID-19 Transmission in San Diego School Buses
   website: https://farhoodensan.github.io/BusPresentation/
-- abstract: "For a vehicle to successfully navigate istelf and even race autonomously,\
-    \ it is essential for the vehicle to be able localize itself within its environment.\
-    \ This is where Odometry and IMU data can greatly support the robot\u2019s navigational\
-    \ ability. Wheel Odometry provides useful measurements to estimate the position\
-    \ of the car through the use of wheel\u2019s circumference and rotations per second.\
-    \ IMU, which stands for Interial Measurement Unit, is 9 axis sensor that can sense\
-    \ linear acceleration, angular velocity, and magnetic fields. Together, these\
-    \ data sources can provide us crucial information in deriving a Position Estimate\
-    \ (how far our robot has traveled) and a Compass Heading (orientation of the robot/where\
-    \ it\u2019s headed).\n\nWhile most navigation stacks rely on GPS or Computer Vision\
-    \ to achieve successful navigation, this leaves the robot vulnerable to unfavorable\
-    \ scenarios. For example, GPS is prone to lag and may be infeasible in unfamiliar\
-    \ terrain. Computer Vision approaches often depend heavily on training data and\
-    \ cannot always provide continouos and accurate orientation. Odometry and IMU\
-    \ readings are thus invaluable sources of sensing information that can easily\
-    \ complement and enhance navigational stacks in place to build more robust and\
-    \ accurate autonomous navigation models."
-  domain: domain_01
-  names: Pranav Deshmane, Sally Poon
-  num: project_11
-  repo: https://github.com/SallyPoon/DSC180Q2
-  report: https://github.com/SallyPoon/artifact-directory-template/blob/main/report.pdf
-  section: C01
-  title: 'Autonomous: Odometry and IMU'
-  website: https://sallypoon.github.io/autonomousvehicles.github.io/
-- abstract: "Self-driving vehicles are revolutionizing the automotive industry with\
-    \ companies like Tesla, Toyota, Audi and many more pouring a substantial amount\
-    \ of money into research and development. While many of these self-driving systems\
-    \ use a combination of cameras, lidars, and radars for local perception and navigation,\
-    \ the fundamental global localization system that they use relies upon a GPS.\
-    \ The challenge in building a navigation system around a GPS derives from the\
-    \ inherent issues of the sensor itself. In general, GPS\u2019s tend to suffer\
-    \ from issues of signal interference that lead to infrequent positional updates\
-    \ and lower precision. On the 1/5th car scale, positional inaccuracies are magnified,\
-    \ so it is crucial that we know the location of our vehicle with speed and precision.\
-    \ In this project, we compare the performance of different GPS\u2019s in order\
-    \ to determine what level of performance is best suited at the 1/5th scale. Using\
-    \ the best-suited GPS, we design a navigation system that can mitigate the shortcomings\
-    \ of the GPS and provide both a reliable autonomous vehicle."
-  domain: domain_01
-  names: Shiyin Liang, Garrett Gibo, Neghena Faizyar
-  num: project_12
-  repo: https://github.com/garrettgibo/DSC-180-Autonomous-Systems.git
-  report: https://github.com/neghena/artifact-directory-template/blob/main/report.pdf
-  section: C01
-  title: GPS Based Autonomous Navigation on the 1/5th Scale
-  website: https://neghena.github.io/GPS_Autonomous_Nav/
 - abstract: Autonomous navigation requires a wide-range of engineering expertise and
     a well-developed technological architecture in order to operate. The focus of
     this project and report is to illustrate the significance of data visualizations
@@ -1380,13 +1304,46 @@
     functionality of the interactive interface. Results, implications of the interface,
     and further improvements will also be discussed.
   domain: domain_01
-  names: Jia Shi, Seokmin Hong
-  num: project_13
+  names: Yuxi Luo
+  num: project_17
   repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
-  report: https://github.com/dannyluo12/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/dannyluo12/artifact-directory-template/main/report.pdf
   section: C01
   title: Data Visualizations and Interface For Autonomous Robots
   website: https://elvishelvis.github.io/
+- abstract: We were able to replicate the ThunderHill race track using the Unity 3D
+    game engine and integrated Unity with the track and robot into the LGSVL simulator.
+    Once the integration was complete we were able to see our robot with the Thunderhill
+    Track as our map in the simulator. We were then able to virtualize the functions
+    of the IMU, odometry and lidar sensors and RGB-D cameras to better visualize what
+    our robot perceives in the simulation. Finally we were able to fully visualize
+    what our robot sees with the virtual sensors using Autoware Rviz which displays
+    the location and point cloud map of the vehicle and its surroundings.
+  domain: domain_01
+  names: Andres Bernal, Amir Uqdah, Jie Wang
+  num: project_16
+  repo: https://github.com/jeniwang/DSC-180B-Team6
+  report: https://raw.githubusercontent.com/jeniwang/artifact-directory-template/main/report.pdf
+  section: C01
+  title: Autoware and LGSVL
+  website: https://a3bernal.github.io/180-visualization/
+- abstract: Perception is absolutely vital to navigation. Without perception, any
+    corporeal entity cannot localize itself in its environment and move around obstacles.
+    To create an autonomous vehicle (AV) capable of racing on the Thunderhill Raceway
+    track in Berkeley, California, the team must supplement a stereo camera capable
+    of supporting image perception and computer vision. The team was given two cameras,
+    the Intel RealSense D455 and the ZED camera. In this analysis, the team will compare
+    the capabilities of the two cameras and responsibly select a camera capable of
+    supporting the object detection, and will develop a lane segmentation algorithm
+    that will help extract lanes from the camera feed.
+  domain: domain_01
+  names: Evan Kim, Joseph Fallon, Ka Chan
+  num: project_15
+  repo: https://github.com/kmc026/DSC180B-Team5-Code
+  report: https://raw.githubusercontent.com/kmc026/artifact-directory-template/main/report.pdf
+  section: C01
+  title: Computer Vision and Lane Segmentation in Autonomous Vehicles
+  website: https://joseph-fallon.medium.com/dsc-180b-team-5-computer-vision-and-image-processing-for-autonomous-vehicles-applications-ee494d954093
 - abstract: "One of the main tools used in autonomous mapping and navigation is a\
     \ 3D Lidar. A 3D Lidar provides various advantages. It is not sensitive to light\
     \ conditions, \nit can detect color through reflective channels, it has a complete\
@@ -1410,44 +1367,11 @@
   names: Youngseo Do, Jay Chong, Siddharth Saha
   num: project_14
   repo: https://github.com/UCSDAutonomousVehicles2021Team1
-  report: https://github.com/sisaha9/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/sisaha9/artifact-directory-template/main/report.pdf
   section: C01
   title: Autonomous Mapping, Localization and Navigation using Computer Vision as
     well as Tuning of Camera
   website: https://sisaha9.github.io/camera_mapping_navigation_website/
-- abstract: Perception is absolutely vital to navigation. Without perception, any
-    corporeal entity cannot localize itself in its environment and move around obstacles.
-    To create an autonomous vehicle (AV) capable of racing on the Thunderhill Raceway
-    track in Berkeley, California, the team must supplement a stereo camera capable
-    of supporting image perception and computer vision. The team was given two cameras,
-    the Intel RealSense D455 and the ZED camera. In this analysis, the team will compare
-    the capabilities of the two cameras and responsibly select a camera capable of
-    supporting the object detection, and will develop a lane segmentation algorithm
-    that will help extract lanes from the camera feed.
-  domain: domain_01
-  names: Evan Kim, Joseph Fallon, Ka Chan
-  num: project_15
-  repo: https://github.com/kmc026/DSC180B-Team5-Code
-  report: https://github.com/kmc026/artifact-directory-template/blob/main/report.pdf
-  section: C01
-  title: Computer Vision and Lane Segmentation in Autonomous Vehicles
-  website: https://joseph-fallon.medium.com/dsc-180b-team-5-computer-vision-and-image-processing-for-autonomous-vehicles-applications-ee494d954093
-- abstract: We were able to replicate the ThunderHill race track using the Unity 3D
-    game engine and integrated Unity with the track and robot into the LGSVL simulator.
-    Once the integration was complete we were able to see our robot with the Thunderhill
-    Track as our map in the simulator. We were then able to virtualize the functions
-    of the IMU, odometry and lidar sensors and RGB-D cameras to better visualize what
-    our robot perceives in the simulation. Finally we were able to fully visualize
-    what our robot sees with the virtual sensors using Autoware Rviz which displays
-    the location and point cloud map of the vehicle and its surroundings.
-  domain: domain_01
-  names: Andres Bernal, Amir Uqdah, Jie Wang
-  num: project_16
-  repo: https://github.com/jeniwang/DSC-180B-Team6
-  report: https://github.com/jeniwang/artifact-directory-template/blob/main/report.pdf
-  section: C01
-  title: Autoware and LGSVL
-  website: https://a3bernal.github.io/180-visualization/
 - abstract: Autonomous navigation requires a wide-range of engineering expertise and
     a well-developed technological architecture in order to operate. The focus of
     this project and report is to illustrate the significance of data visualizations
@@ -1465,10 +1389,57 @@
     functionality of the interactive interface. Results, implications of the interface,
     and further improvements will also be discussed.
   domain: domain_01
-  names: Yuxi Luo
-  num: project_17
+  names: Jia Shi, Seokmin Hong
+  num: project_13
   repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
-  report: https://github.com/dannyluo12/artifact-directory-template/blob/main/report.pdf
+  report: https://raw.githubusercontent.com/dannyluo12/artifact-directory-template/main/report.pdf
   section: C01
   title: Data Visualizations and Interface For Autonomous Robots
   website: https://elvishelvis.github.io/
+- abstract: "Self-driving vehicles are revolutionizing the automotive industry with\
+    \ companies like Tesla, Toyota, Audi and many more pouring a substantial amount\
+    \ of money into research and development. While many of these self-driving systems\
+    \ use a combination of cameras, lidars, and radars for local perception and navigation,\
+    \ the fundamental global localization system that they use relies upon a GPS.\
+    \ The challenge in building a navigation system around a GPS derives from the\
+    \ inherent issues of the sensor itself. In general, GPS\u2019s tend to suffer\
+    \ from issues of signal interference that lead to infrequent positional updates\
+    \ and lower precision. On the 1/5th car scale, positional inaccuracies are magnified,\
+    \ so it is crucial that we know the location of our vehicle with speed and precision.\
+    \ In this project, we compare the performance of different GPS\u2019s in order\
+    \ to determine what level of performance is best suited at the 1/5th scale. Using\
+    \ the best-suited GPS, we design a navigation system that can mitigate the shortcomings\
+    \ of the GPS and provide both a reliable autonomous vehicle."
+  domain: domain_01
+  names: Shiyin Liang, Garrett Gibo, Neghena Faizyar
+  num: project_12
+  repo: https://github.com/garrettgibo/DSC-180-Autonomous-Systems.git
+  report: https://raw.githubusercontent.com/neghena/artifact-directory-template/main/report.pdf
+  section: C01
+  title: GPS Based Autonomous Navigation on the 1/5th Scale
+  website: https://neghena.github.io/GPS_Autonomous_Nav/
+- abstract: "For a vehicle to successfully navigate istelf and even race autonomously,\
+    \ it is essential for the vehicle to be able localize itself within its environment.\
+    \ This is where Odometry and IMU data can greatly support the robot\u2019s navigational\
+    \ ability. Wheel Odometry provides useful measurements to estimate the position\
+    \ of the car through the use of wheel\u2019s circumference and rotations per second.\
+    \ IMU, which stands for Interial Measurement Unit, is 9 axis sensor that can sense\
+    \ linear acceleration, angular velocity, and magnetic fields. Together, these\
+    \ data sources can provide us crucial information in deriving a Position Estimate\
+    \ (how far our robot has traveled) and a Compass Heading (orientation of the robot/where\
+    \ it\u2019s headed).\n\nWhile most navigation stacks rely on GPS or Computer Vision\
+    \ to achieve successful navigation, this leaves the robot vulnerable to unfavorable\
+    \ scenarios. For example, GPS is prone to lag and may be infeasible in unfamiliar\
+    \ terrain. Computer Vision approaches often depend heavily on training data and\
+    \ cannot always provide continouos and accurate orientation. Odometry and IMU\
+    \ readings are thus invaluable sources of sensing information that can easily\
+    \ complement and enhance navigational stacks in place to build more robust and\
+    \ accurate autonomous navigation models."
+  domain: domain_01
+  names: Pranav Deshmane, Sally Poon
+  num: project_11
+  repo: https://github.com/SallyPoon/DSC180Q2
+  report: https://raw.githubusercontent.com/SallyPoon/artifact-directory-template/main/report.pdf
+  section: C01
+  title: 'Autonomous: Odometry and IMU'
+  website: https://sallypoon.github.io/autonomousvehicles.github.io/
