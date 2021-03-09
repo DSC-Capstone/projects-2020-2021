@@ -12,7 +12,8 @@
   domain: domain_00
   names: Rui Zheng, Weihua Zhao, Nikolas Racelis-Russell
   num: project_61
-  repo: https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/tree/website
+  repo: https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/tree/main
+  report: https://github.com/nikolettuce/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: Snake Classification using Neural-Backed Decision Trees
   website: https://nikolettuce.github.io/DSC180B_06_NeuralBackedDecisionTrees/
@@ -35,7 +36,8 @@
   domain: domain_00
   names: Pratyush Juneja, Eric Kang, Minjoo Kim
   num: project_60
-  repo: https://github.com/elizabethmkim/FaceMaskDetection
+  repo: https://github.com/eric-h-kang/FaceMaskDetection
+  report: https://github.com/elizabethmkim/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: Determining Correct Face Mask Usage with Inception Resnet and MaskedFace-Net
     Dataset
@@ -53,7 +55,8 @@
   domain: domain_00
   names: Gavin Tran, Athena Liu, Che-Wei Lin
   num: project_59
-  repo: https://github.com/Athena112233/DSC180B_Project_Webpage.git
+  repo: https://github.com/gatran/DSC180B-Face-Mask-Detection.git
+  report: https://github.com/Jerryj00210/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: Face Mask Detection with Explainable Artificial Intelligence
   website: https://athena112233.github.io/DSC180B_Project_Webpage/
@@ -81,7 +84,8 @@
   domain: domain_00
   names: Yuexiang Zhang, Alejandro Fosado, Jordan Levy
   num: project_58
-  repo: https://github.com/Afosado/180b_capstone_xai.git
+  repo: https://github.com/Afosado/180b_capstone_xai
+  report: https://github.com/JordanLevy99/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: 'Explaining Image Captioning Models Through Attention Maps, Image
 
@@ -103,7 +107,8 @@
   domain: domain_00
   names: Sohyun Lee, Shin Ehara, Jou-Ying Lee
   num: project_57
-  repo: https://github.com/Connielee99/Explainable-AI-in-Finance
+  repo: https://github.com/leeso1718/StockMarket_explainableAI
+  report: https://github.com/Connielee99/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: Image Recognition in Stock Prediction with Visual Explanations from Grad-CAM
   website: https://connielee99.github.io/Explainable-AI-in-Finance/
@@ -123,7 +128,8 @@
   domain: domain_00
   names: Ting Hung, Sudiksha Sarvepalli, Nicole Lee
   num: project_56
-  repo: https://github.com/nicole9925/facial-analysis-webapp.git
+  repo: https://github.com/sudikshas/Racial_Classification_XAI_Model.git
+  report: https://github.com/nicole9925/artifact-directory-template/blob/main/report.pdf
   section: A01
   title: Demystifying Machine Learning for Facial Analysis
   website: https://michael4706.github.io/XAI_Website/
@@ -138,9 +144,10 @@
     using Metapath2Vec and Doc2Vec, and trained Random Forest, 1-Nearest Neighbors,
     and 3-Nearest Neighbors Models.
   domain: domain_02
-  names: Edwin Huang, Sabrina Ho
-  num: project_36
-  repo: https://github.com/iamsabhoho/iamsabhoho.github.io.git
+  names: Sabrina Ho, Edwin Huang
+  num: project_35
+  repo: https://github.com/iamsabhoho/dsc180b-malware.git
+  report: https://github.com/iamsabhoho/artifact-directory-template/blob/main/report.pdf
   section: A03
   title: 'CoCoDroid: Detecting Malware By Building Common Graph Using Control Flow
     Graph'
@@ -159,7 +166,8 @@
   domain: domain_02
   names: Zihan Qin, Jian Jiao
   num: project_38
-  repo: https://github.com/Kamui-Jiao/DSC180B-Page
+  repo: https://github.com/Kamui-Jiao/DSC180B-Project
+  report: https://github.com/Kamui-Jiao/DSC180-Artifact/blob/main/report.pdf
   section: A03
   title: Potential Improvement of MAMADROID System
   website: https://kamui-jiao.github.io/DSC180B-Page/
@@ -187,7 +195,8 @@
   domain: domain_02
   names: Ruben Gonzalez, Amar Joea
   num: project_39
-  repo: https://github.com/rcgonzalez9061/m2vDroid-blog
+  repo: https://github.com/rcgonzalez9061/m2v-adversarial-hindroid
+  report: https://github.com/amarjoea/artifact-directory-template/blob/main/report.pdf
   section: A03
   title: Attacking the HinDroid Malware Detector
   website: https://rcgonzalez9061.github.io/m2vDroid-blog/
@@ -205,7 +214,8 @@
   domain: domain_02
   names: Neel Shah, Mandy Ma
   num: project_33
-  repo: https://github.com/neelS-hah/vector-embedding-exploration.git
+  repo: https://github.com/neelS-hah/hindroid_replication.git
+  report: https://github.com/yuxuanmaaa/artifact-directory-template/blob/main/report.pdf
   section: A03
   title: Exploring the Language of Malware
   website: https://neels-hah.github.io/vector-embedding-exploration/
@@ -221,7 +231,8 @@
   domain: domain_02
   names: Yu-Chieh Chen, Ruoyu Liu, Yikai Hao
   num: project_34
-  repo: https://github.com/YikaiHao/DSC180_Webpage.git
+  repo: https://github.com/YikaiHao/DSC180_Winter.git
+  report: https://github.com/YikaiHao/artifact-directory-template/blob/main/report.pdf
   section: A03
   title: Malware Detection
   website: https://yikaihao.github.io/DSC180_Webpage/
@@ -253,6 +264,7 @@
   names: Bingqi Zhou, Jiayi Fan, Yichun Ren
   num: project_46
   repo: https://github.com/jfan1998/AutoLibrary.git
+  report: https://github.com/YichunRen/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: AutoLibrary - A Personal Digital Library to Find Related Works
   website: https://yichunren.pythonanywhere.com/autolibrary/
@@ -271,7 +283,8 @@
   domain: domain_03
   names: Shenghan Liu, Catherine Hou, Vincent Le
   num: project_44
-  repo: https://github.com/catherinehou99/yelp-recommender-system/tree/website
+  repo: https://github.com/catherinehou99/yelp-recommender-system.git
+  report: https://github.com/vil069/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: Restaurant Recommender System
   website: http://vil069.pythonanywhere.com/
@@ -282,7 +295,8 @@
   domain: domain_03
   names: Tiange Wan, Yicen Ma, Anant Gandhi
   num: project_45
-  repo: https://github.com/a5gandhi/DSC180-Capstone-Web.git
+  repo: https://github.com/t2wan/DSC180B-Capstone.git
+  report: https://github.com/t2wan/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: AutoPhrase Application Web
   website: https://white-wildflower-6469.fly.dev/python/
@@ -297,7 +311,8 @@
   domain: domain_03
   names: Siyu Deng, Rachel Ung, Yang Li
   num: project_47
-  repo: https://github.com/DSC180B-A04-Capstone-Group-06/News-Classification-Webpage
+  repo: https://github.com/DSC180B-A04-Capstone-Group-06/DSC180B-NER-Project
+  report: https://github.com/DSC180B-A04-Capstone-Group-06/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: Text Classification with Named-Entity Recognition and AutoPhrase
   website: https://dsc180b-a04-capstone-group-06.github.io/News-Classification-Webpage/
@@ -316,7 +331,8 @@
   domain: domain_03
   names: Joey Hou, Shaoqing Yi, Zachary Ling
   num: project_48
-  repo: https://github.com/shy218/dsc180-project/tree/gh-pages
+  repo: https://github.com/shy218/dsc180-project.git
+  report: https://github.com/ZachWLing/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: AutoPhrase for Financial Documents Interpretation
   website: https://shy218.github.io/dsc180-project/
@@ -334,7 +350,8 @@
   domain: domain_03
   names: Daniel Lee, Yuxuan Fan, Huilai Miao
   num: project_49
-  repo: https://github.com/A04-Capstone-Group-02/movie-analysis-webpage.git
+  repo: https://github.com/A04-Capstone-Group-02/movie-analysis.git
+  report: https://github.com/A04-Capstone-Group-02/artifact-directory-template/blob/main/report.pdf
   section: A04
   title: Analyzing Movies Using Phrase Mining
   website: https://a04-capstone-group-02.github.io/movie-analysis-webpage/
@@ -361,7 +378,8 @@
   domain: domain_04
   names: Nayoung Park, Sarat Sreepathy, Duncan Carlmark
   num: project_53
-  repo: https://github.com/DuncanCarlmark/capstone-website
+  repo: https://github.com/DuncanCarlmark/DSC180b-Capstone
+  report: https://github.com/DuncanCarlmark/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: 'Bridging the Gap: Solving Music Disputes with Recommendation Systems'
   website: http://bridgingthegapwithmusic.com/
@@ -379,7 +397,8 @@
   domain: domain_04
   names: Yo Jeremijenko-Conley, Jack Lin, Jasraj Johl
   num: project_55
-  repo: https://github.com/okminz/ForumRecWeb.git
+  repo: https://github.com/okminz/ForumRec.git
+  report: https://github.com/jasrajjohl/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: ForumRec - A Question Recommender for the Super User Community
   website: http://www.jackzlin.com/
@@ -391,6 +410,7 @@
   names: Brent Min, Brian Cheng, Eric Liu
   num: project_54
   repo: https://github.com/DSC180-RC/Rock-Climbing-Recommender.git
+  report: https://github.com/twigtheoracle/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: 'OnSight: Outdoor Rock Climbing Recommendations'
   website: https://dsc180b-rc-rec.herokuapp.com/
@@ -409,6 +429,7 @@
   names: Peter Peng, Najeem Kanishka, Amanda Shu
   num: project_52
   repo: https://github.com/amandashu/Workout_Recommender.git
+  report: https://github.com/najeemk/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: Asnapp - Workout Video Recommender
   website: https://workout-recommender.herokuapp.com/
@@ -428,7 +449,8 @@
   domain: domain_04
   names: Zachary Nguyen, Alex Pham, Anthony Fong
   num: project_50
-  repo: https://github.com/ajf01/Recipe-Recommender-Website.git
+  repo: https://github.com/ajf01/Recipe-Recommendation.git
+  report: https://github.com/ajf01/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: Plates4U
   website: https://recipe-rec-app.herokuapp.com/
@@ -453,7 +475,8 @@
   domain: domain_04
   names: Justin Lee, Shayal Singh, Alexandria Kim
   num: project_51
-  repo: https://github.com/alexxkim54/AMR_Website.git
+  repo: https://github.com/alexxkim54/Aesthetic_Makeup_Recommender.git
+  report: https://github.com/alexxkim54/artifact-directory-template/blob/main/report.pdf
   section: A05
   title: Makeup Recommender
   website: https://makeup-recommender.herokuapp.com/
@@ -469,7 +492,8 @@
   domain: domain_05
   names: Gunther Schwartz, Flory Huang
   num: project_73
-  repo: https://github.com/smartypantsgc9/website_dsc180a.git
+  repo: https://github.com/floryhyy/Opioid-Overdose-Prevalence.git
+  report: https://github.com/floryhyy/artifact-directory-template/blob/main/report.pdf
   section: A06
   title: Opioid Overdose Prevalence Analysis
   website: http://132.249.238.234:8081/#/
@@ -487,7 +511,8 @@
   domain: domain_06
   names: Wentao Chen, Leyang Zhang, Zimin Dai
   num: project_64
-  repo: https://github.com/larryzly/CardiovascularClassifier
+  repo: https://github.com/Dai0704/DSC180B_A07/tree/Final
+  report: https://github.com/DSC-Capstone/artifact-directory-template/blob/main/report.pdf
   section: A07
   title: Large-scale Multiple Testing with Empirical Null Distribution in Predicting
     Cardiovascular Disease
@@ -505,7 +530,8 @@
   domain: domain_06
   names: Raymond Wang
   num: project_65
-  repo: https://github.com/xiw483/dsc180b-website.git
+  repo: https://github.com/xiw483/dsc180b-capstone.git
+  report: https://github.com/xiw483/artifact-directory-template/blob/main/report.pdf
   section: A07
   title: Multiple Testing Method with Empirical Null Distribution in Leukemia Studies
   website: https://xiw483.github.io/dsc180b-website/
@@ -537,7 +563,8 @@
   domain: domain_07
   names: Shuyuan Wang
   num: project_29
-  repo: https://github.com/SHUYUAN66/capstone_epidemiology__web
+  repo: https://github.com/wendyw1999/epidemiology_capstone_project
+  report: https://github.com/SHUYUAN66/artifact-directory-template/blob/main/report.pdf
   section: A08
   title: Spatial-temporal Prediction of COVID-19 Case Counts Through Epidemiology
     Model
@@ -554,7 +581,8 @@
   domain: domain_08
   names: Steven Liu, Aurelio Barrios
   num: project_21
-  repo: https://github.com/sdevinl/DSC180B_Project/blob/main/index.md
+  repo: https://github.com/sdevinl/DSC180B_Project.git
+  report: https://github.com/aubarrio/artifact-directory-template/blob/main/report.pdf
   section: B01
   title: NBA Seeds with Graph Neural Networks
   website: https://sdevinl.github.io/DSC180B_Project/
@@ -570,7 +598,8 @@
   domain: domain_08
   names: Shang Li, Xinrui Zhan
   num: project_20
-  repo: https://github.com/ctwayen/Graph-Neural-Network-on-3D-Points.git
+  repo: https://github.com/ctwayen/GNN-Points-Cloud.git
+  report: https://github.com/ctwayen/artifact-directory-template/blob/main/report.pdf
   section: B01
   title: GCN on 3d Points
   website: https://ctwayen.github.io/Graph-Neural-Network-on-3D-Points/
@@ -589,6 +618,7 @@
   names: Abdullatif Jarkas, Nathan Tsai
   num: project_19
   repo: https://github.com/nhtsai/graph-rec.git
+  report: https://github.com/nhtsai/artifact-directory-template/blob/main/report.pdf
   section: B01
   title: Graph-Based Product Recommendation
   website: https://nhtsai.github.io/graph-rec/
@@ -601,7 +631,8 @@
   domain: domain_08
   names: Austin Le, Mengyuan Shi
   num: project_18
-  repo: https://github.com/AustinLe/AustinLe.github.io.git
+  repo: https://github.com/Rebecca9785/NBA_Game_Prediction.git
+  report: https://github.com/AustinLe/artifact-directory-template/blob/main/report.pdf
   section: B01
   title: NBA Game Prediction
   website: https://austinle.github.io
@@ -637,7 +668,8 @@
   domain: domain_08
   names: Yueting Wu, Yimei Zhao, Anurag Pamuru
   num: project_22
-  repo: https://github.com/AnuragPamuru/dsc-180b-capstone-b03/tree/main/docs
+  repo: https://github.com/AnuragPamuru/dsc-180b-capstone-b03
+  report: https://github.com/AnuragPamuru/artifact-directory-template/blob/main/report.pdf
   section: B01
   title: A Graph ML Analysis of Senatorial Twitter Accounts
   website: https://anuragpamuru.github.io/dsc-180b-capstone-b03
@@ -661,7 +693,8 @@
   domain: domain_09
   names: Catherine Tao, Aaron Chan, Matthew Sao
   num: project_0
-  repo: https://github.com/Baymatt/TwitterPoliticianMisinformation
+  repo: https://github.com/aychan3089/PoliticalPopularityofMisinformation
+  report: https://github.com/Baymatt/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: Political Popularity of Misinformation
   website: https://baymatt.github.io/TwitterPoliticianMisinformation/
@@ -676,7 +709,8 @@
   domain: domain_09
   names: Prem Pathuri, Zhi Lin
   num: project_4
-  repo: https://github.com/prem1835213/Election_Twitter.git
+  repo: https://github.com/prem1835213/Election-Sentiment.git
+  report: https://github.com/zclin99/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: "Twitter\u2019s Impact on Elections"
   website: https://prem1835213.github.io/Election_Twitter/
@@ -699,7 +733,8 @@
   domain: domain_09
   names: Nigel Doering, Tanuj Pankaj, Raechel Walker
   num: project_2
-  repo: https://github.com/raechelwalker/visual_presentation
+  repo: https://github.com/NigelDoering/DSC-Capstone-Project
+  report: https://github.com/raechelwalker/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: Community Effects From Misinformation Flags on Twitter
   website: https://raechelwalker.github.io/visual_presentation/
@@ -723,7 +758,8 @@
   domain: domain_09
   names: Zahra Masood, Sravya Voleti, Hannah Peterson
   num: project_1
-  repo: https://github.com/hbpeters/2016-2020_pres_elections_twitter
+  repo: https://github.com/hbpeters/2016-2020_elections_on_twitter
+  report: https://github.com/hbpeters/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: The Sentiment of U.S. Presidential Elections on Twitter
   website: https://hbpeters.github.io/2016-2020_pres_elections_twitter
@@ -745,7 +781,8 @@
   domain: domain_09
   names: Cindy Huynh, Hasan Liou, Helen Chung
   num: project_5
-  repo: https://github.com/helenhc/reddit-site
+  repo: https://github.com/yunghas/reddit-misinformation
+  report: https://github.com/helenhc/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: Analyzing the the Diffusions of Various Forms of Misinformation on Reddit
   website: https://helenhc.github.io/reddit-site/
@@ -762,7 +799,8 @@
   domain: domain_09
   names: Jiawei Zheng, Yunlin Tang, Zhou Li
   num: project_6
-  repo: https://github.com/yunlintang/DSC180B-Blog.git
+  repo: https://github.com/yunlintang/DSC180B-Project.git
+  report: https://github.com/ZhouLi050399/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: COVID-19 Sentiment and Daily ases Analysis on Social Media
   website: https://yunlintang.github.io/DSC180B-Blog/
@@ -778,7 +816,8 @@
   domain: domain_09
   names: Christopher Ly, Shutong Li, Mark Chang
   num: project_3
-  repo: https://github.com/ChrisLy99/political_bots_site
+  repo: https://github.com/ChrisLy99/political_bots
+  report: https://github.com/mmarkchang/artifact-directory-template/blob/main/report.pdf
   section: B02
   title: Political Polarization of Major News Networks on Twitter
   website: https://chrisly99.github.io/political_bots_site/
@@ -795,7 +834,8 @@
   domain: domain_10
   names: Cameron Thomas, Iakov Vasilyev, Joseph Del-Val
   num: project_24
-  repo: https://github.com/MrYanchos/PoW.git
+  repo: https://github.com/MrYanchos/Politics_on_Wikipedia.git
+  report: https://github.com/jtdelval/artifact-directory-template/blob/main/report.pdf
   section: B03
   title: Politics on Wikipedia
   website: https://mryanchos.github.io/PoW/
@@ -812,7 +852,8 @@
   domain: domain_10
   names: Henry Lozada, Emma Logomasini, Parth Patel, Yuanbo Shi
   num: project_23
-  repo: https://github.com/DSC180b-group5/emmalogo.github.io.git
+  repo: https://github.com/DSC180b-group5/final-pipeline.git
+  report: https://github.com/DSC180b-group5/artifact-directory-template/blob/main/report.pdf
   section: B03
   title: A Study of LGBTQ+ Wikipedia Articles Sentiment over Time
   website: https://dsc180b-group5.github.io/emmalogo.github.io/
@@ -833,7 +874,8 @@
   domain: domain_10
   names: Casey Duong, Kylee Peng, Darren Liu
   num: project_26
-  repo: https://github.com/kyleepeng/Fandom-Online-Collaboration
+  repo: https://github.com/dliu9999/Fandom-Online-Collaboration
+  report: https://github.com/dliu9999/artifact-directory-template/blob/main/report.pdf
   section: B03
   title: The Large-Scale Collaborative Presence of Online Fandoms
   website: https://kyleepeng.github.io/Fandom-Online-Collaboration/
@@ -850,7 +892,8 @@
   domain: domain_10
   names: Michael Lam, Gabrielle Avila, Yiheng Ye
   num: project_27
-  repo: https://github.com/ggavila/WikipediaProjectWebsite
+  repo: https://github.com/ggavila/DSC180BProject
+  report: https://github.com/YihengYe/artifact-directory-template/blob/main/report.pdf
   section: B03
   title: "Wikipedia\u2019s Response to the COVID-19 Pandemic"
   website: https://ggavila.github.io/WikipediaProjectWebsite/
@@ -870,7 +913,8 @@
   domain: domain_10
   names: Hengyu Liu, Xiangchen Zhao, Xingyu Jiang
   num: project_25
-  repo: https://github.com/zxchen98/Controversy_Visual_output.git
+  repo: https://github.com/zxchen98/DSC180B.git
+  report: https://github.com/cherrito/artifact-directory-template/blob/main/report.pdf
   section: B03
   title: Controversy In Wikipedia Articles
   website: https://zxchen98.github.io/Controversy_Visual_output/
@@ -894,7 +938,8 @@
   domain: domain_11
   names: Gregory Thein, Justin Kang, Ryan Cummings
   num: project_69
-  repo: https://github.com/justjk139/justjk139.github.io
+  repo: https://github.com/justjk139/alzheimers_gene_analysis
+  report: https://github.com/r1cummings/artifact-directory-template/blob/main/report.pdf
   section: B04
   title: Blood-based Analysis of Alzheimer's Disease from miRNA Data
   website: https://justjk139.github.io
@@ -907,7 +952,8 @@
   domain: domain_11
   names: Jiayi Wu, Alan Chen, Myra Haider
   num: project_70
-  repo: https://github.com/AlanDSC/GWAS
+  repo: https://github.com/myhaider/antibiotic-resistance
+  report: https://github.com/myhaider/artifact-directory-template/blob/main/report.pdf
   section: B04
   title: The Genetic Basis of Antibiotic Resistance in E. Coli
   website: https://alandsc.github.io/GWAS/
@@ -920,7 +966,8 @@
   domain: domain_11
   names: Xuanyu Wu, Justin Lu, Saroop Samra
   num: project_71
-  repo: https://github.com/xuanyuw/miRNA_overlap_AD_PD.github.io.git
+  repo: https://github.com/sksamra/miRNA_overlap_between_AD_PD.git
+  report: https://github.com/sksamra/artifact-directory-template/blob/main/report.pdf
   section: B04
   title: "Genetic Overlap between Alzheimer's, Parkinson\u2019s, and healthy patients"
   website: https://xuanyuw.github.io/miRNA_overlap_AD_PD.github.io/
@@ -939,7 +986,8 @@
   domain: domain_11
   names: Cathleen Pena, Dennis Wu, Zhaoyi Guo
   num: project_72
-  repo: https://github.com/denncc/sanity-gatsby-blog
+  repo: https://github.com/denncc/opioids-od-genome-analysis
+  report: https://github.com/zhg061/artifact-directory-template/blob/main/report.pdf
   section: B04
   title: Differential Gene Expression Analysis of Human Opioid Abusers
   website: https://genetics.denncc.com/blog/2021/02/differential-gene-expression-analysis-of-human-opioid-abusers/
@@ -960,7 +1008,8 @@
   domain: domain_11
   names: Brandon Tsui, Joseph Bui, Weijie Cheng
   num: project_68
-  repo: https://github.com/iLuigi98/iLuigi98.github.io
+  repo: https://github.com/JosephBui21/RNASeqToolComparison
+  report: https://github.com/iLuigi98/artifact-directory-template/blob/main/report.pdf
   section: B04
   title: Comparison of Differential Gene Expression Analysis Tools
   website: https://iLuigi98.github.io
@@ -977,7 +1026,8 @@
   domain: domain_12
   names: Arely Vasquez, Chang Yuan, Raimundo Castro, Jerry Qian, Molly Rowland
   num: project_10
-  repo: https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn/tree/gh-pages
+  repo: https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn
+  report: https://github.com/mhrowlan/artifact-directory-SPICIVPN/blob/main/report.pdf
   section: B05
   title: SPICIVPN
   website: https://mhrowlan.github.io/streaming_provider_classifier_inside_vpn/
@@ -1001,9 +1051,10 @@
   domain: domain_12
   names: Da Gong, Mariam Qader, Andrey Pristinsky, Tianran Qiu, Zishun Jin
   num: project_9
-  repo: https://github.com/pristinsky1/live_vs_video_on_demand_VPN_detection/tree/gh-pages
+  repo: https://github.com/pristinsky1/live_vs_video_on_demand_VPN_detection
+  report: https://github.com/354352231/artifact-directory-template/blob/main/report.pdf
   section: B05
-  title: Live vs Video on Demand Inside VPN Detection
+  title: Live vs. Video on Demand Inside VPN Detection
   website: https://pristinsky1.github.io/live_vs_video_on_demand_VPN_detection/
 - abstract: "In the field of network traffic research, datasets are often manually\
     \ generated with in-house methods using fast internet connections. This creates\
@@ -1019,6 +1070,7 @@
   names: Danial Yaseen, Sahil Altekar, Parker Addison
   num: project_8
   repo: https://github.com/dane-tool/dane.git
+  report: https://github.com/parkeraddison/artifact-directory-template/blob/main/report.pdf
   section: B05
   title: 'DANE: Data Automation and Network Emulation Tool'
   website: https://dane-tool.github.io/dane/
@@ -1031,7 +1083,8 @@
   domain: domain_12
   names: Samson Qian, Shrimant Singh, Soon Shin, Iman Nematollahi, Stephen Doan
   num: project_7
-  repo: https://github.com/stephdoan/ResRecovery/tree/gh-pages
+  repo: https://github.com/stephdoan/ResRecovery/tree/main
+  report: https://github.com/stephdoan/artifact-directory-template/blob/main/report.pdf
   section: B05
   title: 'Res Recovery: Classifying Video Resolutions Through a VPN Tunnel'
   website: https://stephdoan.github.io/ResRecovery/
@@ -1050,7 +1103,8 @@
   domain: domain_13
   names: Alex Luo, Cecilia Xiao
   num: project_67
-  repo: https://github.com/HIN-LRP/HIN-LRP.github.io.git
+  repo: https://github.com/HIN-LRP/Interpret-InteractionNetwork.git
+  report: https://github.com/Indigo410/artifact-directory-template/blob/main/report.pdf
   section: B06
   title: Interpreting Higgs Boson Interaction Network with Layerwise Relevance Propagation
   website: https://hin-lrp.github.io/
@@ -1073,7 +1127,8 @@
   domain: domain_13
   names: Nathan Roberts, Darren Chang, Sharmi Mathur
   num: project_66
-  repo: https://github.com/sharmimathur/multiclassification-particle-jets.git
+  repo: https://github.com/Nroberts23/Multiclass-Particle-Jets-DSCB06.git
+  report: https://github.com/sharmimathur/b06-project-artifact/blob/main/report.pdf
   section: B06
   title: Deep Learning for Particle Jet Multiclassification
   website: https://sharmimathur.github.io/multiclassification-particle-jets/
@@ -1086,9 +1141,10 @@
   domain: domain_14
   names: Richard Duong, Nick Lin, Yijian Zong
   num: project_74
-  repo: https://github.com/Nlin2/dsc180_frontend
+  repo: https://github.com/CrisZong/DSC180A-Project
+  report: https://github.com/CrisZong/artifact-directory-template/blob/main/report.pdf
   section: B07
-  title: Return to Learn Automation
+  title: RTL Automation
   website: http://rtl-automation.herokuapp.com/
 - abstract: 'BRICK is a schema for representing various building equipment,
 
@@ -1114,7 +1170,8 @@
   domain: domain_15
   names: Advitya Gemawat, Devanshu Desai
   num: project_62
-  repo: https://github.com/devanshuDesai/AutoBrick
+  repo: https://github.com/Advitya17/AutoBrickify
+  report: https://github.com/devanshuDesai/artifact-directory-template/blob/main/report.pdf
   section: B08
   title: 'AUTOBRICK: A system for end-to-end automation of building point labels to
     Brick turtle files'
@@ -1130,7 +1187,8 @@
   domain: domain_15
   names: Etienne Doidic, Zhexu Li, Nicholas Kho
   num: project_63
-  repo: https://github.com/HinanawiTS/DSC-180B-Presentation-Website
+  repo: https://github.com/nichkho/Infection-Risk-App
+  report: https://github.com/nichkho/artifact-directory-template/blob/main/report.pdf
   section: B08
   title: Airborne Infection Risk Estimator for COVID-19
   website: https://hinanawits.github.io/DSC-180B-Presentation-Website/
@@ -1157,7 +1215,8 @@
   domain: domain_16
   names: Jon Zhang, Keshan Chen, Vince Wong
   num: project_43
-  repo: https://github.com/vlw003/vlw003.github.io
+  repo: https://github.com/jonxsong/DSC180AB-Capstone
+  report: https://github.com/vlw003/artifact-directory-template/blob/main/report.pdf
   section: B09
   title: "Predicting a User\u2019s Persona Using Computer\u2019s Specifications, CPU\
     \ Utilization, CPU Temperature & Application Usage Time"
@@ -1171,7 +1230,8 @@
   domain: domain_16
   names: Ruotian Gao, Xin Yu, Weihang Gao
   num: project_42
-  repo: https://github.com/RoyGRT/Visual_presentation_180B/tree/gh-pages
+  repo: https://github.com/LeoGao1/DSC180B_Project.git
+  report: https://github.com/LeoGao1/artifact-directory-template/blob/main/report.pdf
   section: B09
   title: Persona Analysis
   website: https://roygrt.github.io/Visual_presentation_180B/
@@ -1187,7 +1247,8 @@
   domain: domain_16
   names: Pan Yeung, Sijie Mei, Yingyin Xiao
   num: project_41
-  repo: https://github.com/panyeung/UserWaitVisual.git
+  repo: https://github.com/panyeung/UserWaitPrediction.git
+  report: https://github.com/carmelbythesea/artifact-directory-template/blob/main/report.pdf
   section: B09
   title: Mouse Wait Classification
   website: https://panyeung.github.io/UserWaitVisual/
@@ -1209,17 +1270,19 @@
   domain: domain_16
   names: Jinzong Que, Yijun Liu, Kaixin Huang
   num: project_40
-  repo: https://github.com/k3huang/dsc180b-visual-presentation-.git
+  repo: https://github.com/k3huang/docker.git
+  report: https://github.com/k3huang/artifact-directory-template/blob/main/report.pdf
   section: B09
   title: Predicting Battery Remaining Minutes based Related Features
   website: https://k3huang.github.io/dsc180b-visual-presentation-/
 - abstract: ""
   domain: domain_17
-  names: Michael Kusnadi, Songling Lu, Eric Yu, Bailey Man
+  names: Bailey Man, Michael Kusnadi, Songling Lu, Eric Yu
   num: project_30
-  repo: https://github.com/ery010/OneRoomABMSite
+  repo: https://github.com/Bailey-Man/OneRoomABM
+  report: https://github.com/DSC-Capstone/artifact-directory-template/blob/main/report.pdf
   section: B10
-  title: One room Agent-based Modeling
+  title: One Room Agent-Based Modeling
   website: https://ery010.github.io/OneRoomABMSite/
 - abstract: As schools attempt to reopen amid the COVID-19 pandemic, there is an increasing
     need to detect and quantify potentially risky activities in schools to help schools
@@ -1236,7 +1299,8 @@
   domain: domain_17
   names: Johnny Lei, Akshay Bhide, Evan Price, Kaushik Ganapathy
   num: project_32
-  repo: https://github.com/evprice/website_180b.git
+  repo: https://github.com/Krganapa/0527291751.git
+  report: https://github.com/Krganapa/artifact-directory-template/blob/main/report.pdf
   section: B10
   title: Geographically Assisted Agent-based Model for COVID-19 Transmission (GeoACT)
   website: https://geoact.sdsc.edu/
@@ -1247,7 +1311,8 @@
   domain: domain_17
   names: Ziqian Cui, Bernard Wong, Farhood Ensan, Areeb Syed
   num: project_31
-  repo: https://github.com/farhoodensan/BusPresentation/tree/gh-pages
+  repo: https://github.com/farhoodensan/Bus_Simulation_Model
+  report: https://github.com/aas050/artifact-directory-template/blob/main/report.pdf
   section: B10
   title: Modelling COVID-19 Transmission in San Diego School Buses
   website: https://farhoodensan.github.io/BusPresentation/
@@ -1271,7 +1336,8 @@
   domain: domain_01
   names: Pranav Deshmane, Sally Poon
   num: project_11
-  repo: https://github.com/SallyPoon/autonomousvehicles.github.io.git
+  repo: https://github.com/SallyPoon/DSC180Q2
+  report: https://github.com/SallyPoon/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: 'Autonomous: Odometry and IMU'
   website: https://sallypoon.github.io/autonomousvehicles.github.io/
@@ -1292,7 +1358,8 @@
   domain: domain_01
   names: Shiyin Liang, Garrett Gibo, Neghena Faizyar
   num: project_12
-  repo: https://github.com/neghena/GPS_Autonomous_Nav.git
+  repo: https://github.com/garrettgibo/DSC-180-Autonomous-Systems.git
+  report: https://github.com/neghena/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: GPS Based Autonomous Navigation on the 1/5th Scale
   website: https://neghena.github.io/GPS_Autonomous_Nav/
@@ -1315,7 +1382,8 @@
   domain: domain_01
   names: Jia Shi, Seokmin Hong
   num: project_13
-  repo: https://github.com/ElvishElvis/ElvishElvis.github.io.git
+  repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
+  report: https://github.com/dannyluo12/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: Data Visualizations and Interface For Autonomous Robots
   website: https://elvishelvis.github.io/
@@ -1341,7 +1409,8 @@
   domain: domain_01
   names: Youngseo Do, Jay Chong, Siddharth Saha
   num: project_14
-  repo: https://github.com/sisaha9/camera_mapping_navigation_website.git
+  repo: https://github.com/UCSDAutonomousVehicles2021Team1
+  report: https://github.com/sisaha9/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: Autonomous Mapping, Localization and Navigation using Computer Vision as
     well as Tuning of Camera
@@ -1359,6 +1428,7 @@
   names: Evan Kim, Joseph Fallon, Ka Chan
   num: project_15
   repo: https://github.com/kmc026/DSC180B-Team5-Code
+  report: https://github.com/kmc026/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: Computer Vision and Lane Segmentation in Autonomous Vehicles
   website: https://joseph-fallon.medium.com/dsc-180b-team-5-computer-vision-and-image-processing-for-autonomous-vehicles-applications-ee494d954093
@@ -1373,7 +1443,8 @@
   domain: domain_01
   names: Andres Bernal, Amir Uqdah, Jie Wang
   num: project_16
-  repo: https://github.com/a3bernal/180-visualization/blob/gh-pages/index.md
+  repo: https://github.com/jeniwang/DSC-180B-Team6
+  report: https://github.com/jeniwang/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: Autoware and LGSVL
   website: https://a3bernal.github.io/180-visualization/
@@ -1396,7 +1467,8 @@
   domain: domain_01
   names: Yuxi Luo
   num: project_17
-  repo: https://github.com/ElvishElvis/ElvishElvis.github.io.git
+  repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
+  report: https://github.com/dannyluo12/artifact-directory-template/blob/main/report.pdf
   section: C01
   title: Data Visualizations and Interface For Autonomous Robots
   website: https://elvishelvis.github.io/
