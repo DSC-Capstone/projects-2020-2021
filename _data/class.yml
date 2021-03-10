@@ -1287,30 +1287,6 @@
   section: B10
   title: Modelling COVID-19 Transmission in San Diego School Buses
   website: https://farhoodensan.github.io/BusPresentation/
-- abstract: Autonomous navigation requires a wide-range of engineering expertise and
-    a well-developed technological architecture in order to operate. The focus of
-    this project and report is to illustrate the significance of data visualizations
-    and an interactive interface with regards to autonomous navigation in a racing
-    environment. In order to yield the best results in an autonomous navigation race,
-    the users must be able to understand the behavior of the vehicle when training
-    navigation models and during the live race. In order to address these concerns,
-    teams working on autonomous navigation must be able to visualize and interact
-    with the robot. In this project, different algorithms such as A* search and RRT*
-    (Rapidly-exploring random tree) are implemented to create path planning and obstacle
-    avoidance. Visualizations of these respective algorithms and a user interface
-    to send/receive commands will help to enhance model testing, debug unexpected
-    behavior, and improve upon existing autonomous navigation models. Simulations
-    with the most optimal navigation algorithm will also be run to demonstrate the
-    functionality of the interactive interface. Results, implications of the interface,
-    and further improvements will also be discussed.
-  domain: domain_01
-  names: Yuxi Luo
-  num: project_17
-  repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
-  report: https://raw.githubusercontent.com/dannyluo12/artifact-directory-template/main/report.pdf
-  section: C01
-  title: Data Visualizations and Interface For Autonomous Robots
-  website: https://elvishelvis.github.io/
 - abstract: We were able to replicate the ThunderHill race track using the Unity 3D
     game engine and integrated Unity with the track and robot into the LGSVL simulator.
     Once the integration was complete we were able to see our robot with the Thunderhill
@@ -1389,7 +1365,7 @@
     functionality of the interactive interface. Results, implications of the interface,
     and further improvements will also be discussed.
   domain: domain_01
-  names: Jia Shi, Seokmin Hong
+  names: Jia Shi, Seokmin Hong, Yuxi Luo
   num: project_13
   repo: https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
   report: https://raw.githubusercontent.com/dannyluo12/artifact-directory-template/main/report.pdf
