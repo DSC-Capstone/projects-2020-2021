@@ -1429,3 +1429,18 @@
   section: B01
   title: Stock Market Sentiment Predictor
   website: https://sleasian.github.io/
+- abstract: "According to the World Health Organization, cardiovascular disease, such as ischemic heart\
+    \ disease and stroke, is the leading cause of deaths globally. We use features and some health\
+    \ conditions of a person to determine the signals and the probability of whether he/she has\
+    \ cardiovascular disease. To achieve such a goal, we implemented logistic regression and\
+    \ large-scale multiple testing methods on a dataset with ample information. Empirical Null\
+    \ is applied to find outliers and filter the dataset, we successfully removed about 10000 outliers\
+    \ out of the 70000 observations by applying the FDR and FPR method to find the upper and lower bound.\
+    \ Finally, our product was a Logistic Regression model that predicts whether a person has Cardiovascular\
+    disease with an accuracy score of .7220 on the test set."
+  names: Zimin Dai, Leyang Zhang, Wentao Chen
+  repo: https://github.com/Dai0704/DSC180B_A07/tree/Final
+  report: ""
+  section: A07
+  title: Large-scale Multiple Testing with Empirical Null Distribution in Predicting Cardiovascular Disease
+  website: https://larryzly.github.io/CardiovascularClassifier/
