@@ -490,13 +490,13 @@
     and Machine Learning techniques to automatically construct a Knowledge Graph by
     fusing information from Governmental, News and Social Media data.
   domain: domain_05
-  names: Gunther Schwartz, Flory Huang
+  names: Gunther Schwartz, Flory Huang, Hanbyul Ryu
   num: project_71
   repo: https://github.com/floryhyy/Opioid-Overdose-Prevalence.git
   report: https://raw.githubusercontent.com/floryhyy/artifact-directory-template/main/report.pdf
   section: A06
   title: Opioid Overdose Prevalence Analysis
-  website: http://132.249.238.234:8081/#/
+  website: http://137.110.40.139:8080/#/reddit
 - abstract: In genomics we are often faced with the task to identify genes correlated
     with a specific disease among a large number of candidate gene pools. A naive
     approach is to apply a hypothesis test to every individual gene. This method ignores
