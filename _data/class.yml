@@ -1444,3 +1444,24 @@
   section: A07
   title: Large-scale Multiple Testing with Empirical Null Distribution in Predicting Cardiovascular Disease
   website: https://larryzly.github.io/CardiovascularClassifier/
+- abstract: "Several models exist for the transmission of SARS-CoV-2 (severe acute respiratory syndrome\
+    \ coronavirus 2) based on varying assumptions and parameters. The Chu and Chen models investigate\
+    \ coronavirus transmission and infection as functions of nonpharmaceutical interventions (physical\
+    \ distances, masks) and respiratory droplets, respectively. The results of the Chu model suggest\
+    \ guidelines for social distancing (1 meter or more) between individuals and public usage of facial\
+    \ and eye protection, while the Chen model shows the relationship between droplet size and transmission\
+    \ range. The two models both attempt to examine coronavirus transmission, but they report results that\
+    \ are not necessarily conflicting, but rather, incomplete on their own. The significance of this problem\
+    \ is that because models vary depending on the parameters and underlying assumptions, there is uncertainty\
+    \ on how to filter out the valid and optimal inputs. In this replication study, we develop a simple infection\
+    \ rate model based on the results and parameters reported by the Chu and Chen models, the MIT COVID-19 Indoor\
+    \ Safety Tool, and the airborne.cam tool by Cambridge. The output of this experiment will be primarily a\
+    \ simulation where a user will be able to set parameters to see the resulting risks and infections caused\
+    \ by in person instructions. This report will be a secondary output along with the website and visual\
+    \ presentation and will be used as a guide to explain methods as well as theory behind the work."
+  names: Eric Yu, Bailey Man, Songling Lu, Michael Kusnadi
+  repo: "https://github.com/Bailey-Man/OneRoomABM"
+  report: "https://github.com/ery010/artifact-directory-template/raw/main/report.pdf"
+  section: B10
+  title: "COVID-19 Spatial Agent-based Modeling: Single Room Infection"
+  website: "https://ery010.github.io/OneRoomABMSite"
