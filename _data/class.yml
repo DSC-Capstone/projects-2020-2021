@@ -1429,6 +1429,8 @@
   section: B01
   title: Stock Market Sentiment Predictor
   website: https://sleasian.github.io/
+  domain: domain_08
+  num: project_76
 - abstract: "According to the World Health Organization, cardiovascular disease, such as ischemic heart\
     \ disease and stroke, is the leading cause of deaths globally. We use features and some health\
     \ conditions of a person to determine the signals and the probability of whether he/she has\
@@ -1442,6 +1444,8 @@
   repo: https://github.com/Dai0704/DSC180B_A07/tree/Final
   report: ""
   section: A07
+  domain: domain_06
+  num: project_77
   title: Large-scale Multiple Testing with Empirical Null Distribution in Predicting Cardiovascular Disease
   website: https://larryzly.github.io/CardiovascularClassifier/
 - abstract: "Several models exist for the transmission of SARS-CoV-2 (severe acute respiratory syndrome\
@@ -1460,8 +1464,11 @@
     \ by in person instructions. This report will be a secondary output along with the website and visual\
     \ presentation and will be used as a guide to explain methods as well as theory behind the work."
   names: Eric Yu, Bailey Man, Songling Lu, Michael Kusnadi
-  repo: "https://github.com/Bailey-Man/OneRoomABM"
-  report: "https://github.com/ery010/artifact-directory-template/raw/main/report.pdf"
+  repo: https://github.com/Bailey-Man/OneRoomABM
+  report: https://github.com/ery010/artifact-directory-template/raw/main/report.pdf
   section: B10
   title: "COVID-19 Spatial Agent-based Modeling: Single Room Infection"
-  website: "https://ery010.github.io/OneRoomABMSite"
+  website: https://ery010.github.io/OneRoomABMSite
+  domain: domain_17
+  num: project_78
+
