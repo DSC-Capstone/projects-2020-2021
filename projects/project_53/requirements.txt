@@ -1,0 +1,11 @@
+1 GPU, 4 CPU, 32 GB RAM
+
+python 3.7
+numpy=1.19.4
+pandas=1.2.0
+scipy=1.5.3
+tensorflow=2.4.1
+torch=1.7.1
+sklearn=0.24.0
+json=2.0.9
+lightfm=1.16

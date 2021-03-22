@@ -1,0 +1,6 @@
+{
+    "map_" : "testdata/test_images/thunderhill_cropped.PNG",
+    "stepsize" : "10",
+    "step_dir": "data/viz_steps/",
+    "out_dir":"data/viz_final/"
+}

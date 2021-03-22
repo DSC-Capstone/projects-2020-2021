@@ -1,0 +1,39 @@
+# NOTE: The Compose file takes relative paths. It will be located in the
+# `/built` directory, so all mount paths should be prefixed by `../` to access
+# the root project directory.
+
+client:
+  depends_on:
+    - daemon
+  image: parkeraddison/dane-client
+  networks: []
+  cap_add:
+    - NET_ADMIN
+  volumes:
+    - ../scripts/:/scripts/
+  env_file: []
+  labels:
+    com.dane.type: client
+    com.dane.behavior: BEHAVIOR_VALUE
+
+router:
+  depends_on:
+    - daemon
+  image: parkeraddison/dane-router
+  networks:
+    default:
+      priority: 1000 # Ensure we use the eth0 interface (doesn't work in practice)
+      aliases: []
+    NETWORK_VALUE:
+      aliases:
+        - router
+  cap_add:
+    - NET_ADMIN
+  volumes:
+    - ../scripts/:/scripts/
+  labels:
+    com.dane.type: router
+    com.dane.tc.latency: LATENCY_VALUE
+    com.dane.tc.bandwidth: BANDWIDTH_VALUE
+
+network: {}

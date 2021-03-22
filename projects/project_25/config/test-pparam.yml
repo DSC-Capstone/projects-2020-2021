@@ -1,0 +1,10 @@
+- lang: EN
+  param:
+    targets:
+    - Category:Intersex
+    skip_cats:
+    - Category:Same-sex sexuality
+    - Category:LGBT and society
+    - Category:Homosexuality
+    
+    outdir: data/testpagesout

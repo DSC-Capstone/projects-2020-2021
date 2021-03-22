@@ -1,0 +1,4 @@
+{
+    "command": "dronekit-sitl",
+    "vehicle_type": "rover-2.50"
+}

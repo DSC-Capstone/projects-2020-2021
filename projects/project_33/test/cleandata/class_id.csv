@@ -1,0 +1,13 @@
+,class_id,class_id_id
+0,Lcom/mal4/aa,0
+1,abstract,1
+2,Lcom/mal2/c,2
+3,Lcom/mal5/zzz,3
+4,Lcom/mal1/b,4
+5,interface,5
+6,Lcom/peach/smali/GetFruit,6
+7,Lcom/kiwi/smali/GetUser,7
+8,Lcom/kaktus/GetName,8
+9,Lcom/mango/smali/WorldClient,9
+10,Lcom/apple/SetName,10
+11,banana/GetName,11

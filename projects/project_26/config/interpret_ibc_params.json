@@ -1,0 +1,7 @@
+{
+    'temp_directory' = 'data/temp/', 
+    'out_directory' = 'data/out/', 
+    'agg_func' = 'mean',
+    'ibc_path'='data/full_ibc/ibcData.pkl',
+    'test'=False
+}

@@ -1,0 +1,5 @@
+psaw==0.0.12
+pandas==1.1.4
+numpy==1.18.5
+matplotlib==3.2.1
+seaborn==0.10.1

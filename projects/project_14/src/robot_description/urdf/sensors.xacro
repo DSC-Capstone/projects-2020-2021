@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<robot name="sensors" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="robot_namespace" value="/"/>
+
+  <!-- IMU -->
+  <gazebo>
+    <plugin name="imu_plugin" filename="libhector_gazebo_ros_imu.so">
+      <robotNamespace>${robot_namespace}</robotNamespace>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>imu/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005 </rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <!-- GPS -->
+  <gazebo>
+    <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
+      <robotNamespace>${robot_namespace}</robotNamespace>
+      <updateRate>40</updateRate>
+      <bodyName>base_link</bodyName>
+      <frameId>base_link</frameId>
+      <topicName>gps/fix</topicName>
+      <velocityTopicName>gps/vel</velocityTopicName>
+      <referenceLatitude>49.9</referenceLatitude>
+      <referenceLongitude>8.9</referenceLongitude>
+      <referenceHeading>0</referenceHeading>
+      <referenceAltitude>0</referenceAltitude>
+      <drift>0.0001 0.0001 0.0001</drift>
+      <!-- <drift>0.01 0.01 0.0001</drift> -->
+    </plugin>
+  </gazebo>
+
+  <!-- ODOM -->
+  <gazebo>
+    <plugin name="odom_plugin" filename="libgazebo_ros_p3d.so">
+      <frameName>map</frameName>
+      <bodyName>base_link</bodyName>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <topicName>odom</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+  </gazebo>
+
+  <!-- Intel RealSense Camera -->
+  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/realsense-RS200.macro.xacro"/>
+  <xacro:realsense-rs200 prefix="" parent="chassis">
+    <origin xyz="0.15 0 0.15" rpy="0 0 0" />
+  </xacro:realsense-rs200>
+
+</robot>

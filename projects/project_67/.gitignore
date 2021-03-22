@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+.Rhistory
+
+tempcode.Rmd
+
+out/test
+
+.ipynb_checkpoints
+
+data

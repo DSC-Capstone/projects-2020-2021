@@ -1,0 +1,9 @@
+{
+    "raw_data_path": "data/raw/raw_id/",
+    "rehydrated_json_path": "data/temp/rehydration/",
+    "api_keys": "api_keys.json",
+    "from_time": "2020-03-01",
+    "to_time": "2020-12-01",
+    "id_column": "tweet_id",
+    "sample_rate": 1000
+}

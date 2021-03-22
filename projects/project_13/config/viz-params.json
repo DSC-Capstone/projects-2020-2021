@@ -1,0 +1,35 @@
+{	
+	"outdir": "Final_Viz_Analysis",
+	
+	"IMU": {
+			
+			"Mounting": ["data/clean/razor_imu/imu_30.csv", "data/clean/razor_imu/imu_70.csv"],
+			
+			"Report": "data/clean/razor_imu/imu_90.csv",
+			
+			"Half_Arc": [{"f": "data/clean/razor_yaw/yaw_90_to_180_v2.csv", "r": -100}, 
+				         {"f": "data/clean/razor_yaw/yaw_90_to_180_undershoot.csv", "r": null}, 
+				         {"f": "data/clean/razor_yaw/yaw_90_to_180_overshoot.csv", "r": -350}],
+
+			"S_Line": ["data/clean/razor_yaw/yaw_80.csv"]
+			
+			},
+
+	"Odom": {
+
+			"Vesc": ["data/clean/vesc_odom/straight_3412.csv", 
+					 "data/clean/vesc_odom//straight_3912.csv", 
+					 "data/clean/vesc_odom/straight_4112.csv", 
+					 "data/clean/vesc_odom/straight_4612.csv",
+					 "data/clean/vesc_odom/straight_5112.csv",
+					 "data/clean/vesc_odom/straight_5612.csv"],
+
+			"Servo": ["data/clean/vesc_odom/vesc_servo_gain_m10_0.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m2_0.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m1_5.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m1_2.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m1_1v2.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m1_1.csv",
+					  "data/clean/vesc_odom/vesc_servo_gain_m1_0.csv"]
+			}
+}

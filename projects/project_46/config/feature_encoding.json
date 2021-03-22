@@ -1,0 +1,8 @@
+{
+    "data_dir": "./data/",
+    "data_file": "processed/merged_all_data.csv",
+    "phrase_file": "financial_phrases_sample.txt",
+    "out_dir": "processed/",
+    "n_unigrams": 2319,
+    "threshhold": 0.95
+}

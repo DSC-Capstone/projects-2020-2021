@@ -1,0 +1,10 @@
+{
+    "data_path": "data/interim/",
+    "score_path": "data/final/",
+    "case_csv": "new_cases.csv",
+    "score_csv": "score.csv",
+    "score_plot": "detrended_score.png",
+    "fourier_plots": ["fourier_score.png","fourier_case.png"],
+    "dates": ["2020-03-22", "2020-12-01"],
+    "dates_test": ["2020-05-01", "2020-05-21"]
+}

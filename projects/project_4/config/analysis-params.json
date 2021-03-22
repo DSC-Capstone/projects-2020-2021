@@ -1,0 +1,8 @@
+{
+    "model_path": "test/model/",
+    "user_data_path": "test/user_data/",
+    "dims": ["a", "b", "c"],
+    "tweet_ids": ["123", "456"],
+    "flagged": {"123": true, "456": false},
+    "outdir": "test/visualizations/"
+}

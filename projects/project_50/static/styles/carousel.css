@@ -1,0 +1,15 @@
+/*  Broken on Safari and has a weird alignment issue 
+.slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 100px; line-height: 1; color: white; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }   
+
+.slick-prev:before { content: "‹"; }
+[dir="rtl"] .slick-prev:before { content: "›"; }
+
+[dir="rtl"] .slick-next { left: -10px; top: 70px; right: auto; }
+.slick-next:before { content: "›"; }
+[dir="rtl"] .slick-next:before { content: "‹"; }
+*/
+
+.slick-dots li.slick-active button:before {
+    color: #45A29E;
+    font-size: 10px;
+}

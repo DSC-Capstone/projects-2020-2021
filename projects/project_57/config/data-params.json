@@ -1,0 +1,5 @@
+{
+    "notebook_path": "src/models/gradcam.py",
+    "test_model": "src/models/test.py",
+    "img": "test/COCOimg.jpg"
+}

@@ -1,0 +1,5 @@
+{
+    "news_path": "config/news_stations.txt",
+    "raw_data_path": "data/raw/news",
+    "proc_data_path": "data/processed/news"
+}

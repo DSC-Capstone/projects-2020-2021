@@ -1,0 +1,17 @@
+name: dsc180A
+channels:
+    - conda-forge
+    - defaults
+dependencies:
+    - python=3.7
+    - numpy=1.16.4
+    - matplotlib
+    - tqdm
+    - pip
+    - jupyter
+    - ros
+    - bagpy
+    - pyrosbag
+    - pip:
+      - pandas
+      - json

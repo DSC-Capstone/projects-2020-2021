@@ -1,0 +1,8 @@
+./data/*.csv
+__pycache__
+*.ipynb_checkpoints
+.env
+./model/*.pickle
+.DS_Store
+.idea
+*.pyc

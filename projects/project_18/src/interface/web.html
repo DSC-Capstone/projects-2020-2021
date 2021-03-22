@@ -1,0 +1,270 @@
+<html>
+
+<head>
+    <title>Robot Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="code.css">
+     <script src="js/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+
+    </script>
+    <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js">
+
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <style type="text/css">* { padding: 0; margin: 0; }
+    div {
+  background-color: white;
+}
+</style>
+    <!-- <script type="text/javascript" src="mjpegcanvas.min.js"></script> -->
+    <!-- <meta http-equiv="refresh" content="1"> -->
+</head>
+
+<body class="d-flex flex-column h-100" >
+    <!-- header of the page -->
+    <header class="header">
+
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Autonomous Robot Interface</h1>
+                <p>Demo of interface that will visualize the autonomous vehicle and its sensors</p>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- main content -->
+    <main id="vueApp">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <figure>
+                        <div id="container"></div>
+                        <div id="container-angle"></div>
+                                          
+                        </figure>
+                        <br /><br /><br />
+                        <figure class="highcharts-figure">
+                        <div id="container-bat" class="chart-container"></div>
+                            <div id="container-speed" class="chart-container"></div>
+                        </figure>      
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The navigation image" style="width:500px;height:200px;">
+                            <br><br><br>
+<!--                             <img src="camera.png" id='img_camera' alt="The camera image" style="width:500px;height:200px;"> -->
+                        <img src="http://localhost:8080/stream?topic=/mybot/camera1/image_raw" style="width:500px;height:200px;">
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>{{ menu_title }}</h3>
+                            <hr>
+                            <label>RosBridge Adress:</label>
+                            <br>
+                            <input type="text" v-model="rosbridge_address" />
+                            <br>
+                            <button class="mt-2 btn btn-success" v-if="connected" @click="disconnect">Connected!</button>
+                            <button class="mt-2 btn btn-primary" v-else @click="connect">Connect!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ sub_title }}</h2>
+                            <hr>
+                            <p>ROS topics that the interface <br /> is currently subscribed to:</p>
+                            <button class="mt-2 btn btn-primary" >/move_base_simple/goal</button>
+			    <br />
+                            <button class="mt-2 btn btn-primary" >/cmd_vel</button>
+                            <button class="mt-2 btn btn-primary" >/tf</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ pub_title }}</h2>
+                            <hr>
+                            <p>Input position and orientation data:</p>
+                            <form>
+                            <label for="positionx">X:</label>
+                            <input type="text" id="positionx" name="positionx" size="10">
+                            <label for="positiony">Y:</label>
+                            <input type="text" id="positiony" name="positiony" size="10"><br>
+                            <label for="orientationz">Z:</label>
+                            <input type="text" id="orientationz" name="orientationz" size="10">
+                            <label for="orientationw">W:</label>
+                            <input type="text" id="orientationw" name="orientationw" size="10"><br><br>
+                          </form>
+                            <button class="mt-2 btn btn-primary"  @click="publish">Submit</button>
+                            <button class="mt-2 btn btn-primary"  @click="preset">Preset Value</button>
+                            <!-- <button class="mt-2 btn btn-primary" :disabled="!connected" @click="turnRight">Turn right!</button> -->
+                            <!-- <button class="mt-2 btn btn-danger" :disabled="!connected" @click="stop">Stop!</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">Robot Position</h2>
+                            <textarea id="mappos" name="mappos" rows="4" cols="117">
+                             </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                    
+                
+
+
+<!--                 <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ camera_title }}</h2>
+                            <hr>
+                    
+                            <button  id="command_vision" onclick="send_command('command_vision','vision')"> Play camera demo</button>
+                            <img src="camera.png" id='img_camera' alt="The camera image" style="width:400px;height:300px;">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+             <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ navi_title }}</h2>
+                            <hr>
+                            
+                            <button  id="command_rrt" onclick="send_command('command_rrt','rrt')"> Play RRT demo</button>
+
+                            <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The navigation image" style="width:400px;height:300px;">
+                            
+                            
+                        </div>
+                    </div>
+                </div> -->
+
+ <!--                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ IMU_title }}</h2>
+                            <hr>
+                            <button  id="command_imu" onclick="send_command('command_imu','imu')"> Play IMU demo</button>
+                            <h3 >pose</h3>
+                            <p >position</p>
+                            <p id="position"></p>
+                            <p >orientation</p>
+                            <p id="orientation"></p>
+                            <h3 >twist</h3>
+                            <p >linear</p>
+                            <p id="linear"></p>
+                            <p >angular</p>
+                            <p id="angular"></p>
+
+                            <h3 >imu data</h3>
+                            <p >angular_velocity</p>
+                            <p id="angular_velocity"></p>
+                            <p >linear_acceleration</p>
+                            <p id="linear_acceleration"></p>
+                            <p >orientation_imu</p>
+                            <p id="orientation_imu"></p>
+                            <p >orientation_angle</p>
+                            <p id="angle"></p>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ IMU_G1_title }}</h2>
+                            <hr>
+                            
+
+
+                            <figure class="highcharts-figure">
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2 class="text-center">{{ bat_title }}</h2>
+                            <hr>
+
+
+                            
+                            
+                        </div>
+                    </div>
+                                        <div class="card">
+                        <div class="card-body">
+                            <
+                            <h2 class="text-center">{{ speed_title }}</h2>
+                            <hr>
+
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                </div> -->
+
+            </div>
+        </div>
+    </main>
+
+    
+
+
+    <!-- footer -->
+    <footer class="footer mt-auto bg-dark text-light">
+        <div class="container">
+            <h5>page ends here!</h5>
+        </div>
+    </footer>
+
+    <script src="main.js">
+
+    </script>
+</body>
+
+</html>

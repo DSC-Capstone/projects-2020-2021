@@ -1,0 +1,4 @@
+# Python module requirements (Not currently needed)
+
+brickschema
+rdflib

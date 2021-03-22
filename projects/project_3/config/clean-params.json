@@ -1,0 +1,22 @@
+{
+    "hydrated_twts_path_2016": "data/temp/2016/hydrated_tweets",
+    "hydrated_twts_path_2020": "data/temp/2020/hydrated_tweets",
+    "output_dir_2016": "data/temp/2016/clean",
+    "output_dir_2020": "data/temp/2020/clean",
+    "feats_of_interest": ["full_text", "created_at", "entities-hashtags", "entities-user_mentions", "user-screen_name", "user-location", "user-followers_count", 
+        "user-friends_count", "retweet_count", "lang"],
+    "keywords_2016": ["philly convention", "philadelphia convention", "democratic convention", "dnc convention", 
+        "#demsinphilly", "#dnc", "#philly", "#demconvention", "#electionday", "#decision2016", "election2016", 
+        "election", "clinton", "kaine", "trump", "pence", "#debate", "#debates", "#debatenight", 
+        "#debate2016", "#debates2016", "gop cleveland", "cleveland convention", "gop convention", 
+        "#gopconvention", "#cleveland", "#rnc", "#gop", "#2016cle", "#rncincle", 
+        "#republicationnationalconvention", "vice-presidential debate", "vice presidential debate", 
+        "vp debate"],
+    "keywords_2020": ["biden", "harris", "kamala", "#decision2020", "election2020", "debate2020", "debates2020",
+        "#demsinmilwaukee", "#milwaukee", "milwaukee convention", "republican convention"],
+    "users": ["timkaine", "SenSanders", "BernieSanders", "MartinOMalley", "HillaryClinton", "SenateDems", 
+        "HouseDemocrats", "TheDemocrats", "GovPenceIN", "mike_pence", "GovChristie", "gov_gilmore", 
+        "RealBenCarson", "JebBush", "marcorubio", "realDonaldTrump", "JohnKasich", "tedcruz", "GovMikeHuckabee",
+        "ChrisChristie", "RandPaul", "CarlyFiorina", "RickSantorum", "SenateGOP", "HouseGOP", "GOP",
+        "debates", "GOPconvention", "KamalaHarris", "SenKamalaHarris"]
+ }

@@ -1,0 +1,9 @@
+{
+    "outpath":"data/raw",
+    "category":["pageviews"],
+    "articles":"data/raw/top1000.csv",
+    "pageview":"data/pageview",
+    "eda":"data/eda",
+    "essential":["COVID-19 pandemic","Coronavirus","COVID-19 pandemic by country and territory"]
+
+}

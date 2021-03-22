@@ -1,0 +1,7 @@
+{
+  "data1":"mootha",
+  "data2":"fmri",
+  "datadir1":"test/testdata/mootha_test.txt",
+  "datadir2":"test/testdata/fmri_test.txt",
+  "outdir":"data/out/test"
+}

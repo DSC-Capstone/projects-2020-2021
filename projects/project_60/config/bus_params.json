@@ -1,0 +1,23 @@
+{
+  "steps" : 50,
+  "student_num": 38,
+  "sick_num": 2,
+  "highrisk_radius":1,
+  "highrisk": 0.005,
+  "medrisk_radius":3,
+  "medrisk":0.003,  
+  "lowrisk_radius":8,
+  "lowrisk":0.0003,
+  "masks":0,
+
+  "breathe_rate":0.02,
+  "bus_rows": 10,
+  "bus_cols" : 4,
+  "bus_stop_student_count": [10,18,22,29,38],
+  "bus_stop_minutes_count": [0,10,20,30,40],
+  "windows_open": 0,
+  "seating_array":[2,2],
+  "seat_width" : 50,
+  "seat_length" : 50,
+  "window_width": 5
+}

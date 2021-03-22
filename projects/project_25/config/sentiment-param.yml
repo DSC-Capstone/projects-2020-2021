@@ -1,0 +1,12 @@
+- lang: EN
+  param:
+    indir: data/en_articles
+    outfile: data/en_sentiment.json
+- lang: ES
+  param:
+    indir: data/es_articles
+    outfile: data/es_sentiment.json
+- lang: ZH
+  param:
+    indir: data/zh_articles
+    outfile: data/zh_sentiment.json

@@ -1,0 +1,27 @@
+name: r-bio
+channels:
+- conda-forge
+- defaults
+- bioconda
+- r
+- anaconda
+dependencies:
+- bioconductor-compcodeR
+- bioconductor-deseq2
+- bioconductor-ABSSeq
+- bioconductor-edgeR
+- bioconductor-limma
+- bioconductor-baySeq
+- bioconductor-NOISeq
+- r-rpanel
+- r-poissonseq
+- r-essentials
+- r-dplyr
+- r-cvAUC
+- r-magrittr
+- r-ggplot2
+- r-devtools
+- r-venndiagram
+- python=3.8
+- pip
+

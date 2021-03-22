@@ -1,0 +1,14 @@
+{
+    
+    "esbl_1" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/esbl/DRR242170_1.fastq",
+    "esbl_2" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/esbl/DRR242170_2.fastq",
+    "ctrl_1" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/ctrl/SRR10013025_1.fastq",
+    "ctrl_2" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/ctrl/SRR10013025_2.fastq",
+    "subset_size" : 1,
+    "idx" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/ref/e_coli",
+    "drop_bad_samples" : false,
+    "adapter_sequence" : "AACCGGTT",
+    "vcf" : "/teams/DSC180A_FA20_A00/b04genetics/group_3/vcfs/final.vcf.gz",
+    "Chromosome" : "NZ_CP050215.1"
+    
+}

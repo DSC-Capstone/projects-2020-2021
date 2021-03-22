@@ -1,0 +1,14 @@
+django
+gunicorn
+bs4
+tqdm
+requests
+requests[security]
+pyopenssl
+pandas
+dnspython
+pymongo
+pymongo[srv]
+pymongo[tls]
+jupyter
+sklearn

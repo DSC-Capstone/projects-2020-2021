@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ucsd_f1tenth_description</name>
+  <version>1.0.0</version>
+  <description>The ucsd_f1tenth_description package</description>
+
+  <maintainer email="ggibo@uscd.edu">Garrett Gibo</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

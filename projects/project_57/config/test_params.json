@@ -1,0 +1,1 @@
+{"model_name": "resnet", "model_path": "../DSC180B-Face-Mask-Detection/models/model_resnet_best_val_acc_0.955.pt", "batch_size": 128, "test_size": 100}

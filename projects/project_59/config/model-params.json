@@ -1,0 +1,12 @@
+{
+    "modelName": "densenet",
+    "inputSize": 224,
+    "batchSize": 16,
+    "featureExtract": "False",
+    "lr": 3e-4,
+    "nEpochs": 5,
+    "performancePath": "data/model_logs",
+    "model_state": "../teams/DSC180B_WI21_A00/a01capstonegroup06",
+    "nClasses": 45
+}
+

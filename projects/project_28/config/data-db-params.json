@@ -1,0 +1,5 @@
+{
+    "xml_fp":["data/raw/Kpop.xml","data/raw/Wpop.xml","data/raw/all-lives-matter.xml"],
+    "ld_outfp": ["data/raw/light_dump/Kpop_ld.txt", "data/raw/light_dump/Wpop_ld.txt", "data/raw/light_dump/ALM_ld.txt"],
+    "content_outfp": ["data/raw/content/kpop_content.txt", "data/raw/content/wpop_content.txt","data/raw/content/ALM_content.txt"]
+}

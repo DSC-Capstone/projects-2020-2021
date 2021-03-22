@@ -1,0 +1,18 @@
+{
+    "output_prefix" : "data/out/%biofluid_region%",
+    "DESeq2" : {
+        "Rscript" : "/opt/conda/envs/r-bio/bin/Rscript",
+        "biofluid_regions" : ["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "control" : "Control",
+        "input_counts" : "data/out/pca_normalized_counts.tsv",
+	    "input_features" : "data/out/features.tsv",
+        "source" : "src/analysis/analysis.r",
+    	"full" : "expired_age+sex+PMI+sn_depigmentation+Braak_Score+TangleTotal+Plaque_density+PlaqueTotal+Disorder",
+	    "reduced" : "expired_age+sex+PMI+sn_depigmentation+Braak_Score+TangleTotal+Plaque_density+PlaqueTotal",
+        "parallel" : 0
+    },
+    "cleanup" : 0,
+    "verbose": 1
+}
+

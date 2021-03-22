@@ -1,0 +1,14 @@
+{
+  "steps" : 50,
+  "student_num": 68,
+  "sick_num": 1,
+  "bus_rows": 14,
+  "bus_cols" : 5,
+  "highrisk_radius":2,
+  "highrisk": 0.02,
+  "medrisk_radius":5,
+  "medrisk":0.008,
+  "lowrisk_radius":12,
+  "lowrisk":0.003,
+  "masks":0
+}

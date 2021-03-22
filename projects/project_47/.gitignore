@@ -1,0 +1,8 @@
+/data/
+/model/
+.idea/
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+*.html
+.DS_Store

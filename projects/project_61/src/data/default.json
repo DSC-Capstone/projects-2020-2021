@@ -1,0 +1,12 @@
+{"floor_area": 900,
+ "mean_ceiling_height": 12,
+ "air_exchange_rate": 3,
+ "primary_outdoor_air_fraction": 0.2,
+ "aerosol_filtration_eff": 0,
+ "relative_humidity": 0.69,
+ "breathing_flow_rate": 0.5,
+ "max_aerosol_radius": 2,
+ "exhaled_air_inf": 30,
+ "max_viral_deact_rate": 0.3,
+ "mask_passage_prob": 0.1,
+"risk_tolerance": 0.1}

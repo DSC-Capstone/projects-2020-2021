@@ -1,0 +1,9 @@
+{
+	"raw_path": "data/TSLA/TestData",
+	"file_name": "test_20210115.csv",
+	"market_name": "test_market_vol_20210115.csv",
+	"result_path": "result/",
+	"time_wdw": 5,
+	"output_img_path": "data/imgs/test",
+	"output_lable_path": "data/imgs/test"
+}

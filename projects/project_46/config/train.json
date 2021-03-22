@@ -1,0 +1,6 @@
+{
+    "data_dir": "./data/",
+    "input_file": "processed/",
+    "output_file": "models/",
+    "testing": false
+}

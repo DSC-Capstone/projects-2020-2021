@@ -1,0 +1,10 @@
+{
+    "training_data_path": "test/training_data/",
+    "model_path": "test/model/",
+    "dims": ["a", "b", "c"],
+    "fit_priors": [false, false, false],
+    "max_dfs": [1.0, 1.0, 1.0],
+    "min_dfs": [0.0, 0.0, 0.0],
+    "n_splits": 3, 
+    "outdir": "test/visualizations/"
+}

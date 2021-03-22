@@ -1,0 +1,10 @@
+{
+    "url": "tcp:127.0.0.1:5760",
+    "log_path": "data/raw/",
+    "save_logs": true,
+    "debug": true,
+    "track": "original",
+    "laps": 1,
+    "speed": 0.5,
+    "side": "left"
+}

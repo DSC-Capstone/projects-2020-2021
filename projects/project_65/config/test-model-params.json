@@ -1,0 +1,42 @@
+
+{
+	
+	"train_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_9.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_11.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_12.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_13.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_14.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_15.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_16.root",
+                    "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_17.root"],
+    
+    "test_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_0.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_1.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_2.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_3.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_4.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_5.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_6.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_7.root",
+                   "/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_8.root"],
+    
+    "val_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_19.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_20.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_21.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_22.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_23.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_24.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_25.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_26.root",
+                  "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_27.root"],
+    
+    "batch_size": 1024,
+
+	"remove_mass_pt_window":"False",
+    
+    "remove_unlabeled": "True",
+
+	"max_entry": 5000
+
+}

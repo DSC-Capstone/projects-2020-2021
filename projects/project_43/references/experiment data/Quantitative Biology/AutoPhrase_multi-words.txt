@@ -1,0 +1,44 @@
+0.8917833333	finite element
+0.8561500000	steady state
+0.7961666667	quasi static
+0.7198000000	poro hyperelastic
+0.7178666667	fracture toughness
+0.6637500000	brain tissue
+0.6047000000	et al
+0.6023833333	energy dissipation
+0.5705500000	rate dependent
+0.5702166667	crack tip region
+0.5562833333	wire diameter
+0.5364666667	wire cutting
+0.5123833333	process zone
+0.5015666667	crack tip
+0.4955166667	with respect to
+0.4865500000	forte et al
+0.4814500000	crack propagation
+0.3947500000	fluid draining
+0.3517500000	fracture process
+0.3507500000	due to
+0.3208500000	dw =
+0.3155166667	− 1
+0.2794166667	journal of
+0.2678166667	the crack tip
+0.2379833333	v =
+0.2266833333	in fig
+0.2117166667	the brain tissue
+0.2097166667	the fracture process
+0.2087166667	the wire diameter
+0.1868666667	of crack
+0.1609666667	toughness of
+0.1565500000	of crack propagation
+0.1440166667	the material
+0.1431333333	= 0
+0.1337833333	the brain
+0.1031000000	the solid
+0.1031000000	the crack
+0.1021000000	of fluid
+0.1020166667	of soft
+0.0866000000	the fracture
+0.0866000000	of brain
+0.0856833333	the rate
+0.0856833333	the wire
+0.0846833333	the process

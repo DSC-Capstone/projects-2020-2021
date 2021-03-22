@@ -1,0 +1,7 @@
+{
+    "train_path": "src/models/training.py",
+    "model_path": "src/models/nn_model.py",
+    "test_path": "src/models/testing.py",
+    "gradcam_path": "src/models/gradcam.py",
+    "ig_path": "src/models/IntegratedGradient.py"
+}

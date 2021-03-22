@@ -1,0 +1,22 @@
+{
+    "source": "data/features/features.csv",
+    "out": "data/out/model.pkl",
+    "validation_size": 0.3,
+    "classifier": "RandomForest",
+    "model_params": {
+        "RandomForest": {
+            "bootstrap": true,
+            "max_depth": null,
+            "max_features": "auto",
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "n_estimators": 100
+        },
+
+        "KNN": {
+            "metric": "manhattan", 
+            "n_neighbors": 3, 
+            "weights": "distance"
+        }
+    }
+}

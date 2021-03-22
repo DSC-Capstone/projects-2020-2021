@@ -1,0 +1,17 @@
+{
+	
+	"train_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root"],
+    
+    "test_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_0.root"],
+    
+    "val_files": ["/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_11.root"],
+    
+    "batch_size": 1024,
+
+	"remove_mass_pt_window":"False",
+    
+    "remove_unlabeled": "True",
+
+	"max_entry": 5000
+
+}

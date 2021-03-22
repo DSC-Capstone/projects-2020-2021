@@ -1,0 +1,80 @@
+import allantools
+import matplotlib.pyplot as plt
+import numpy as np
+from allantools import noise
+
+"""
+Citation: Functions adapted from Allantools on PyPI and @imrehg on github
+"""
+
+"""
+Function for plotting Allan Variance Test
+
+Input: Plot, data, sampling rate, frequencies, style
+Output: Plot 
+"""
+def plotallan(plt, y, rate, taus, style):
+    (t2, ad, ade, adn) = allantools.oadev(y, rate=rate, data_type="freq", taus=taus)
+    plt.loglog(t2, ad, style)
+
+
+"""
+Function for plotting Allan Phase Test
+
+Input: Plot, data, sampling rate, frequencies, style
+Output: Plot 
+"""
+def plotallan_phase(plt, y, rate, taus, style):
+    (t2, ad, ade, adn) = allantools.oadev(y, rate=rate, taus=taus)
+    plt.loglog(t2, ad, style)
+
+
+"""
+Function for plotting Allan Phase Test
+
+Input: Plot, data, sampling rate, frequencies, style
+Output: Plot 
+"""
+
+def plotline(plt, alpha, taus, style):
+    """ plot a line with the slope alpha """
+    y = [pow(tt, alpha) for tt in taus]
+
+
+    plt.loglog(taus, y, style)
+
+
+"""
+Function for fitting Noise Model for Allan Variance Test
+
+Input: frequency, tau
+Output: Noise fit model 
+"""
+def noisefit(h, t):
+    for i in xrange(len(h)):
+        if h[i] < 0:
+            h[i] = 0
+    return h[0]*t**-3 + h[1]*t**-2 + h[2]*t**-1 + h[3] + h[4]*t + h[5]*t**2
+
+
+"""
+Function for fitting Noise Model for Allan Variance Test
+
+Input: x, y, frequency
+Output: Noise fit model output 
+"""
+
+def dofit(x, y, h0):
+    data = odr.Data(x, y)
+    model = odr.Model(noisefit)
+    fit = odr.ODR(data, model, h0)
+    fit.set_job(fit_type=2)
+    output = fit.run()
+    return output
+
+
+
+(t2, ad, ade, adn) = allantools.oadev(y, rate=r, data_type="freq", taus=t)  # Compute the overlapping ADEV
+
+# Plot the results
+fig = plt.loglog(t2, ad)

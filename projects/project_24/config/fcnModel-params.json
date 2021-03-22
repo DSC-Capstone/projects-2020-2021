@@ -1,0 +1,8 @@
+{
+"num_days" : 5,
+"learning_rate" : 0.001,
+"input_size" : 20,
+"hidden_size" : 16,
+"num_classes" : 1,
+"NUM_EPOCHS" : 100
+}

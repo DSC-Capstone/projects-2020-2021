@@ -1,0 +1,9 @@
+{
+    "save_path": "./data/outputs/",
+    "direct_path": "./data/outputs/example/",
+    "raw_path": "./data/raw/",
+    "segmentation":"segmentation.txt",
+    "sample": "sample_example.txt",
+    "words":"web_publishing,competitive_factor,uncertain_parameter"
+
+}

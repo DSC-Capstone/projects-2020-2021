@@ -1,0 +1,82 @@
+{
+    "out_dir" : "data/out",
+    "plot_path" : "data/out/EDA_plots",
+    "gene_hist" : {
+        "enable" : 1,
+        "max_genes" : 8000,
+        "nbins" : 100,
+        "title" : "Distribution of Genes Based on Spread Metric: All vs Top Genes"
+    },
+    "missing_plot" : {
+        "enable" : 1,
+        "title" : "Percentage of Missing Genes over"
+    },
+    "sra_lm" : {
+        "enable" : 1,
+        "sra" : ["SRR1568567", "SRR1568584"],
+        "normalized_counts" : "data/out/normalized_counts.tsv",
+        "vst_counts" : "data/out/vst_transformed_counts.tsv",
+        "title" : "%sra% Regression Log(Norm) v VST counts"
+    },
+    "ma_plot" : {
+        "enable" : 1,
+        "biofluid_regions" : ["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "src_image" : "MAplot.png",
+        "title" : "MA Plot: Biofluid Region vs Disorder"
+    },
+    "heat_map" : {
+        "enable" : 1,
+        "biofluid_regions" : ["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "src_image" : "heatmap.png",
+        "title" : "Heat Map: Biofluid Region vs Disorder"
+    },
+    "histogram" : {
+        "enable" : 1,
+        "biofluid_regions" : ["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "title" : "Histograms Differential Gene Expression vs Control",
+        "ylim" : 240
+    },
+    "corrmatrix" : {
+        "enable" : 1,
+        "title" : "Spearman Correlations of log2 fold gene expression"
+    },
+    "venn" : {
+        "enable" : 1,
+        "biofluid_regions" : ["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "pvalue_cutoff" : 0.30,
+        "title" : "Venn Diagram Disorders"
+    },
+    "volcano" : {
+        "enable" : 1,
+        "pcutoff": 0.30,
+        "biofluids" :["Cerebrospinal", "Serum"],
+        "disorders" : ["Parkinson", "Alzheimer"],
+        "title" : "Volcano Plots Biofluid vs Disorder",
+        "show_details" : 1
+    },
+    
+    "box_all" : {
+        "enable" : 1,
+        "gm_path" : "data/out/gene_matrix.tsv",
+        "sra_path" : "data/raw/exRNA_Atlas_CORE_Results.csv",
+        "up_down_path" : "data/out/%s/%s/updown_miRNAs.csv",
+        "selected_ft" : ["Run","CONDITION","expired_age", "PMI", "PlaqueTotal", "TangleTotal","Braak score", "sn_depigmentation"]
+    },
+
+    "reg_corr" :{
+        "enable" : 1,
+        "gm_path" : "data/out/gene_matrix.tsv",
+        "up_down_path" : "data/out/%s/%s/updown_miRNAs.csv",
+        "sra_path" : "data/raw/exRNA_Atlas_CORE_Results.csv",
+        "num_fts" : 6,
+        "selected_ft" : ["Run","CONDITION","expired_age", "PMI", "PlaqueTotal", "TangleTotal","Braak score", "sn_depigmentation"],
+        "fts_names" : ["expired_age", "PMI", "PlaqueTotal", "TangleTotal","Braak score", "sn_depigmentation"]
+    },
+      
+    "verbose": 1
+}
+

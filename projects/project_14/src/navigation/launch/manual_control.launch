@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="wp_log_output" default="$(find navigation)/paths/logged_wps.csv" />
+  <arg name="joy_teleop_config"
+       default="$(find navigation)/config/joy_teleop.yaml" />
+
+  <group ns="joy">
+    <rosparam file="$(arg joy_teleop_config)" command="load" />
+
+	  <!--  **************** Joystick Reader ****************  -->
+    <node pkg="joy" type="joy_node" name="joy_node" />
+
+	  <!--  **************** Joystick Forwarder ****************  -->
+    <node pkg="navigation"
+          type="joy_teleop.py"
+          name="joy_teleop" />
+
+	  <!--  **************** Waypoint Logger ****************  -->
+    <!-- <node pkg="navigation" -->
+    <!--       type="waypoint_logger.py" -->
+    <!--       name="odom_waypoint_logger" > -->
+    <!--   <param name="wp_log_output" value="$(arg wp_log_output)" /> -->
+    <!-- </node> -->
+  </group>
+</launch>

@@ -1,0 +1,16 @@
+data/*
+test/models/*
+test/tmp/*
+test/reports/*
+
+notebooks/archived/*
+
+.DS_Store
+*/.DS_Store
+
+.ipynb_checkpoints
+.ftpconfig
+
+*/__pycache__
+
+*/typescript

@@ -1,0 +1,5 @@
+twarc
+vaderSentiment
+pandas
+ast
+requests

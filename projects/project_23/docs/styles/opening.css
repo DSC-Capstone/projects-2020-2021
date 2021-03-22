@@ -1,0 +1,37 @@
+*{
+    font-family: 'Paytone One', sans-serif;
+}
+body{
+    background: url("/images/background_opening.jpg") center no-repeat fixed;
+    background-size: cover;
+    padding: 50px;
+}
+
+#main{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    border-radius: 30px;
+    border: 10px solid #f8e3ca;
+}
+
+#travel{
+    border-radius: 30px;
+    margin-left: 24%;
+    margin-right: 24%;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 23px;
+    cursor: pointer;
+    margin-left: 26.5%;
+    margin-right: 26.5%;
+    border-radius: 30px;
+  }
+
+.button1 {background-color: rgb(141, 196, 218);}

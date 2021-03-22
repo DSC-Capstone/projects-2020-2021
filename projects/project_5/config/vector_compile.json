@@ -1,0 +1,6 @@
+{"keywords": ["covid19","coronavirus","covid","covid_19","covidー19"],
+ "save_path":"./news_vectors.json",
+ "user_fp": "../q2_data/news/",
+ "vector_fp": "vector.json",
+ "fig_path":"data/spectrum"
+}

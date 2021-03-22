@@ -1,0 +1,7 @@
+{
+    "data_dir": "/data/raw/system_sysinfo_unique_normalized.csv000",
+    "guid": "Unique identifier of the client",
+    "chassistype": "Type of device",
+    "modelvendor_normalized": "Names of all the device providers",
+    "persona": "purposes of the client behind the device"
+}

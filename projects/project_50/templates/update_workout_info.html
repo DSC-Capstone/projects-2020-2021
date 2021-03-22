@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <header class="jumbotron my-4">
+    <h1 class="display-5">Thank you for using Asnapp!</h1>
+    <p class="lead">Got new equipment or want to change your workout preferences? Update your preferences here!</p>
+  </header>
+
+  <div class="container-fluid container-scroll">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <fieldset>
+        <div class="lead-color">
+          <div>
+            {% include 'workout_info.html' %}
+          </div>
+        </div>
+      </fieldset>
+      <input id='submit' name='submit' type='submit' value="Update" class="btn btn-primary btn-lg"></input>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript" src="static/js/workout_info.js"></script>
+<script type="text/javascript">
+  let user = JSON.parse('{{ user | tojson}}');
+  $(document).ready(function() {
+    fillLists('equipment', user);
+    fillLists('training_type', user);
+    fillRange('min_duration', user);
+    fillRange('max_duration', user);
+    fillRange('min_calories', user);
+    fillRange('max_calories', user);
+    fillRange('min_difficulty', user);
+    fillRange('max_difficulty', user);
+  })
+</script>
+{% endblock scripts %}

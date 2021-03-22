@@ -1,0 +1,10 @@
+{
+  "all_links_pickle_path": "data/raw/all_links.pickle",
+  "comments_path": "data/raw/comments.csv",
+  "fbworkouts_path" : "data/raw/fbworkouts.csv",
+  "fbcommenters": "data/preprocessed/fbcommenters.csv",
+  "fbworkouts_clean_path" : "data/preprocessed/fbworkouts_clean.csv",
+  "fbworkouts_meta_path": "data/preprocessed/fbworkouts_meta.csv",
+  "user_item_interactions_path": "data/preprocessed/user_item_interactions.csv",
+  "youtube_csv_path": "data/raw/workouts_yt.csv"
+}

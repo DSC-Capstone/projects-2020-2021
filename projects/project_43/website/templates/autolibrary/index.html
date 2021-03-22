@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoLibrary</title>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'autolibrary/css/main.css' %}" type="text/css" media="screen, projection" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body style="background-color:rgb(175, 161, 130);" onload="initiate()">
+    <div id="outer-wrapper">
+      <div id="inner-wrapper">
+        <div id="content-wrapper">
+          <div id="content">
+            <ul id="nav">
+              <li><a href="http://127.0.0.1:8000/autolibrary">AutoLibrary</a></li>
+              <!-- <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li> -->
+              <li><a href="http://127.0.0.1:8000/blog">Blog</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+              <li><a href="http://127.0.0.1:8000/contact">Contact Us</a></li>
+            </ul>
+            <div id="content-inner">
+              <div class="content-left"> <img src="{% static 'autolibrary/images/library.jpg' %}" alt="library Photo" height="100%" width="100%"/>
+                <p>Capstone Project<br />
+                  <span>DSC180B A04 G03</span></p>
+              </div>
+              <div class="content-right">
+                <h2>Welcome to AutoLibrary!</h2>
+                <p> </p>
+                <p class="intro">To address the difficulty of manually extracting keywords from papers and poor recommender system for related work of other websites, we built a website called AutoLibrary where users could use it as their personal digital library to save their documents and could find similar papers for each input scientific paper. </p>
+                <br></br>
+                <p class="end-story-links"></p>
+              </div>
+              <div class="content-full">
+                <h2>How to Use:</h2>
+                <p> </p>
+                <p class="intro">1. <b>Uploads</b> papers (URLs/Local Upload). The uploaded documents of each user will not be visible to other users.</p>
+                <p class="intro">2. Select the <b>paper</b> you want to find similar works or keywords.</p>
+                <p class="intro">3. Select the <b>domain</b> of the selected paper. Right now, we only support STEM domains.</p>
+                <p class="intro">4. Select the <b>subdomain</b> of the selected paper if you want more domain-specific results.</p>
+                <p class="intro">5. Click <b>“Find Keywords”</b>. It would take about 5 minutes for the first time since it needs to extract keywords from the papers. In the end, the recommendations finding by using the top 3 quality phrases will be displayed.</p>
+                <p class="intro">6. Open the <b>“More Customization”</b> widget to see and select the keywords or entering your own keywords.</p>
+                <p class="intro">7. Click <b>“Generate Results”</b> to find similar works with new keywords.</p>
+                <div><img src="{% static 'autolibrary/images/research.jpg' %}" alt="research photo" class="content-img" id="research"/></div>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+            <div id="logo"> <img src="{% static 'autolibrary/images/logo.png' %}" alt="Nautica X" width="180px" height="110px"/> </div>
+            <h4>Documents</h4>
+            <ul id="doc_list" class="side-nav"></ul>
+          </div>
+        </div>
+        <div id="footer">
+          <ul id="footer-nav">
+            <li><a href="#">AutoLibrary</a></li>
+            <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+            <li class="last"><a href="#">Contact Us</a></li>
+          </ul>
+          <p class="copyright">Copyright 2021 Yichun Ren & Jiayi Fan & Bingqi Zhou</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function initiate(){ 
+    // sidebar
+    var data = JSON.parse("{{data|escapejs}}"); 
+    if (data.length > 0) {
+      var ul = document.getElementById("doc_list");
+      var li = document.createElement("li");
+      for(var x in data){ 
+        if (data[x] != '.DS_Store') {
+          var btn = document.createElement("BUTTON");
+          btn.className = "btn-group";
+          btn.innerHTML = data[x];
+          li.appendChild(btn);
+        }
+      } 
+      ul.appendChild(li);
+      var buttons = document.getElementById('doc_list').getElementsByTagName('button');
+      var max = buttons.length;
+      for(var i = 0; i < max; i++) {
+          buttons[i].addEventListener('click', select_doc, true);
+      }
+    }
+  } 
+
+  function select_doc(e) {
+    var selected = {"file_name": e.target.innerHTML};
+    var URL = "{% url 'get_file' %}";
+    $.post(URL, selected, function(response){
+      if (response === 'get file'){ 
+        window.location.href = "http://127.0.0.1:8000/autolibrary/result";
+      } else { 
+        alert('Error! :('); 
+      }
+    });
+  }
+</script>

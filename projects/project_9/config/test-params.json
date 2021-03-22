@@ -1,0 +1,23 @@
+[
+  {
+    "folder_path": "test/",
+    "interval": 300,
+    "threshold": 5,
+    "prominence_fs": 1,
+    "binned_fs": 0.5
+  }, 
+  {
+    "training_data": "test_training.csv",
+    "n_estimators": 10,
+    "max_depth": 10,
+    "min_samples_split": 3
+  },
+  {
+    "path": "test/1080p/test_1080p.csv",
+    "interval": 300,
+    "threshold": 5,
+    "prominence_fs": 1,
+    "binned_fs": 0.5
+  }
+  
+]

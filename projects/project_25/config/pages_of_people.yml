@@ -1,0 +1,21 @@
+- lang: EN
+  param:
+    targets:
+    - Category:LGBT people
+    skip_cats:
+    - Category:Same-sex sexuality
+    - Category:LGBT and society
+    - Category:Homosexuality
+    outdir: data/en
+- lang: ES
+  param:
+    targets:
+    - Categoría:Personas LGBT
+    skip_cats:
+    - Categoría:Orientación sexual y sociedad
+    outdir: data/es 
+- lang: ZH
+  param:
+    targets:
+    - Category:LGBT人物
+    outdir: data/zh

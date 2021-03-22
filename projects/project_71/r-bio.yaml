@@ -1,0 +1,25 @@
+name: r-bio
+channels:
+- conda-forge
+- defaults
+- bioconda
+- r
+- anaconda
+dependencies:
+- bioconductor-deseq2
+- r-essentials
+- python=3.8
+- pip
+- r-vegan
+- r-nhanes
+- bowtie2
+- plink
+- homer
+- bedtools
+- samtools
+- bcftools
+- subread
+- htseq
+- bwa
+- bwa-mem2
+- r-sleuth

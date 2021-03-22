@@ -1,0 +1,7 @@
+{
+  "network_stats_path": "../network-stats/network_stats.py",
+  "interface": "user_interface",
+  "playlist": "https://youtube.com/playlist",
+  "outdir": "../data/generated/",
+  "resolutions": ["144p", "240p", "360p", "480p", "720p", "1080p"]
+}

@@ -1,0 +1,185 @@
+{
+    "etl-params": {        
+        "out_path":"data/dictionaries/data_extract/",
+        "out_path_test":"data/dictionaries-test/data_extract/",
+        
+        "verbose":true,
+        "truncate": false,
+        "lower_bound_api_count": 1,    
+        "dict_directory":"data/dictionaries/",
+        "dict_directory-test":"test/data/dictionaries/",
+        
+        "mal_fp": "/home/apfriend/Documents/ucsd/dsc180/shne/results/apps/malicious",
+        "benign_fp": "/home/apfriend/Documents/ucsd/dsc180/shne/results/apps/benign",       
+        "mal_fp_test": "test/test-apps/malware",
+        "benign_fp_test": "test/test-apps/benign",
+        
+        "data_extract_loc":"data/dictionaries/data_extract/",
+        "data_extract_loc_test": "data/test/dictionaries/data_extract/",
+        "data_naming_key_dir":"data/dictionaries",        
+        "data_naming_key_dir_test": "data/test/dictionaries",
+        "data_naming_key_filename": "naming_key.json",
+        "api_call_filename":"api_calls.json",
+        
+        "limiter": true,
+        "lim_mal": 650,
+        "lim_benign": 650,
+        "lim_apps":500
+    },
+    
+    "stellargraph": {
+        "save_dir": "model/"
+    },
+    
+    "node2vec-params": {
+        "length": 120,
+        "n": 10,
+        "p": 0.5,
+        "q": 2.0 ,
+        "save_dir":"model",
+        "filename":"het_random_walk_full.txt",
+        "verbose":true
+    },
+    
+    "metapath2vec-params": {
+        "walk_length": 50,
+        "n": 10,
+        "metapaths": 
+        [["app_nodes", "api_call_nodes", "block_nodes","api_call_nodes", "block_nodes","api_call_nodes","package_nodes","api_call_nodes","block_nodes","api_call_nodes", "block_nodes","api_call_nodes", "app_nodes"],
+         ["app_nodes", "api_call_nodes", "block_nodes","api_call_nodes", "package_nodes","api_call_nodes", "block_nodes","api_call_nodes","package_nodes","api_call_nodes","block_nodes","api_call_nodes", "app_nodes"],
+         ["app_nodes", "api_call_nodes", "package_nodes","api_call_nodes", "package_nodes","api_call_nodes", "block_nodes","api_call_nodes","package_nodes","api_call_nodes","package_nodes","api_call_nodes", "app_nodes"]
+    ],
+        "save_dir":"model",
+        "filename":"het_random_walk_full.txt",
+        "verbose":true
+    },
+             
+    "word2vec-params": {
+        "size": 50,
+        "window": 5,
+        "min_count": 0,
+        "sg": 1,
+        "workers": 8,
+        "iter": 1,
+        "save_dir":"model",
+        "embeddings_filename": "word_embedding.txt",
+        "unique_api_filename": "unique_api_dict.json",
+        "content_filename": "content.pkl",
+        "model_filename": "word2vec.wordvectors",
+        "verbose":true
+    },
+    
+    "shne-params": {
+        "skip_data_extraction": false,
+        "datapath": "model",
+        "model_path": "model",
+        "embedding_dimention":100,
+        "learning_rate": 0.001,
+        "mini_batch_size":  10,
+        "batch_size": 50,
+        "max_training_itter": 120,
+        "max_len_semantic":100,
+        "itter_save_freq": 10,
+        "train":1,
+        "random_seed":"10",
+        "walk_l":"50",
+        "window_s":"5", 
+        "cuda":0,
+        "node_counts_filename":"node_counts.json",
+        "model_filename": "SHNE.pt"
+    },
+    
+    "eda-params": {
+        "limit_eda":false,
+        "limit_amount":0,
+        "out_path":"eda/dictionaries/data_extract/",
+        "mal_fp":"/home/apfriend/Documents/ucsd/dsc180/shne/results/apps/malicious",
+        "benign_fp":"/home/apfriend/Documents/ucsd/dsc180/shne/results/apps/benign",
+        "data_naming_key_filename":"naming_key.json",
+        "dict_directory":"data/dictionaries/",
+        "data_extract_loc":"data/dictionaries/data_extract/",
+        "m2v_filepath": "data/m2v_het_random_walk_full.txt",
+        "w2v_filepath": "data/w2v_word_embedding.txt",
+        "n2v_filepath": "data/n2v_word_embedding.txt",
+        "save_dir": "eda-new/results",
+        "command_line_options": {
+            "time" : ["time"],
+            "limit": ["limit"]
+        },
+        "save_node_data": true,
+        "malware_node_filename": "malware_nodes.csv",
+        "benign_node_filename": "benign_nodes.csv",
+        "structured_embedding_hist_filename" : "node_structured_embeddings_hist.pdf",
+        "unstructured_embedding_hist_filename" : "node_unstructured_embeddings_hist.pdf",
+        "plots_dir": "eda/plots",
+        "w2v_embeddings_hist": "w2v_embeddings_hist.pdf",
+        "w2v_from_m2v_embeddings_hist" : "w2v_from_m2v_embeddings_hist.pdf",
+        "eda_dir": "/home/apfriend/Documents/ucsd/dsc180/shne/appSHNE/notebooks",
+        "eda_notebook" : "EDA.ipynb"
+    },
+    
+    "options": {
+        "test" : ["-test","-Test", "-t"],
+        "node2vec_walk" : ["-node2vec", "-n2v"],
+        "embeddings_only" : ["-e" , "-embeddings"],
+        "skip_embeddings" : ["--skip-embeddings"],
+        "skip_shne" : ["--skip-shne"],
+        "silent": ["-silent"],
+        "parse_only": ["-p","-parse"],
+        "overwrite": ["-o", "-overwrite"],
+        "redirect_std_out" : ["--save-out", "-log"],
+        "time": ["-time"],
+        "eda": ["-eda"],
+        "force_single": ["--force-single"],
+        "force_multi": ["--force-multi"],
+        "show_params": ["--show-params"]
+    },
+    
+    "update_dirs": {
+        "etl-params": [
+            "out_path",
+            "out_path_test",
+            "dict_directory",
+            "dict_directory-test",
+            "data_extract_loc",
+            "data_extract_loc_test",
+            "data_naming_key_dir",
+            "data_naming_key_dir_test"
+        ],
+        "node2vec-params": ["save_dir"],
+        "metapath2vec-params" : ["save_dir"],
+        "word2vec-params" :["save_dir"],
+        "eda-params": [
+            "out_path",
+            "data_extract_loc",
+            "dict_directory",
+            "m2v_filepath",
+            "n2v_filepath",
+            "save_dir",
+            "w2v_filepath"
+        ],
+        "shne-params":[
+            "datapath",
+            "model_path"
+        ],
+        "stellargraph":["save_dir"]
+    },
+    
+    "update_verbose":{
+        "etl-params": ["verbose"],
+        "word2vec-params":["verbose"],
+        "metapath2vec-params":["verbose"],
+        "node2vec-params":["verbose"]
+    },
+    
+    "check_files" : ["api_calls.json","dict_A.json","dict_B.json","dict_I.json","dict_P.json","naming_key.json"],
+    "check_files2": ["content.pkl","het_random_walk_full.txt","node_counts.json","word_embedding.txt"],
+    "out_path":"/home/apfriend/Documents/ucsd/dsc180/shne/results/out",
+    "test_out_path":"out/test-shne-src",
+    "verbose": true,
+    "params_name":"params_log.json",
+    "log_filename" : "out.log",
+    "core_count": 8,
+    "multithreading": true,
+    "hide_warnings":true
+}

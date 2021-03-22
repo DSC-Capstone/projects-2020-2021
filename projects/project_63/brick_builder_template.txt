@@ -1,0 +1,12 @@
+brick = https://brickschema.org/schema/1.1/Brick#
+rdf = http://www.w3.org/1999/02/22-rdf-syntax-ns#
+bldg = http://example.org/building#
+
+bldg:$2 rdf:type brick:AHU
+bldg:$3 rdf:type brick:HVAC_Zone
+bldg:$4 rdf:type brick:VAV
+bldg:$1 rdf:type brick:$5
+
+bldg:$4 brick:isFedBy bldg:$2
+bldg:$4 brick:feeds bldg:$3
+bldg:$4 brick:hasPt bldg:$1

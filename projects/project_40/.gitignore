@@ -1,0 +1,11 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+data/
+__pycache__
+
+dask-worker-space/
+
+
+
+

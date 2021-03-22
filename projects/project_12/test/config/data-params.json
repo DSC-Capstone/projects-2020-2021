@@ -1,0 +1,4 @@
+{
+    "source_dir": "test/data/",
+    "out_dir": "data/test/preprocessed/"
+}

@@ -1,0 +1,11 @@
+{
+    "label_path": "test/feature/label.json",
+    "mat_dict": {"A": "test/feature/A_train.npz",
+        "B": "test/feature/B_train.npz",
+        "P": "test/feature/P_train.npz"},
+    "num_sentences":50,
+    "input_path": "AA",
+    "num_tokens":2,
+    "vec_size":2,
+    "output_path": "test/model"
+}

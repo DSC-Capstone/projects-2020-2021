@@ -1,0 +1,179 @@
+body{
+    background: url("/images/inner_back.jpg") center fixed;
+    padding: 50px;
+}
+h1{
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+#main{
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    background-color: white;
+    border-radius: 30px;
+    border: 10px solid #99d0e9;
+}
+
+#titlename{
+    font-family: 'Paytone One', sans-serif;
+    margin-left: 30%;
+    font-size: 40px;
+    color: rgb(104, 102, 102);
+}
+#title{
+    font-size: 50px;
+    grid-row: 50px 50px;
+    
+}
+p{
+    font-family: 'Courier', monospace;
+    color: rgb(104, 102, 102);
+    font-size: 18px;
+    line-height: 1.5;
+}
+#authorname{
+    margin-left: 80%;
+    text-shadow: 2px 2px 8px #80d2f3;
+    color: rgb(138, 135, 135);
+}
+#dashboard{
+    display: grid;
+    margin-left: 40px;
+    color: rgb(104, 102, 102);
+}
+
+.eda_vis{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+#info1{
+    margin-left: 30%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+#cloudname{
+    font-family: 'Courier', Courier, monospace;
+    font-size: 25px;
+    color:rgb(104, 102, 102);
+    margin-left: 300px;
+
+}
+
+#caption1{
+    font-family: 'Courier', Courier, monospace;
+    font-size: 15px;
+    color:rgb(104, 102, 102);
+
+}
+
+b{
+    color: rgb(238, 147, 113);
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #3a8bac;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #3a8bac;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #3a8bac;
+}
+
+.highcharts-point {
+ stroke: white;
+}
+.main-color, .main-color .highcharts-point {
+ fill: rgb(122, 192, 169);
+}
+/* .highcharts-graph.highcharts-negative {
+ stroke: blue;
+} */
+.highcharts-area.highcharts-negative {
+    fill: rgb(243, 165, 159);
+}
+.highcharts-point.highcharts-negative {
+    fill: rgb(243, 165, 159);
+}
+#map{
+    margin-left: 180px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.highcharts-figure{
+    margin-bottom: 100px;
+}
+#line{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#wordcloud{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.chart-parent{
+    display: flex;
+}
+
+#endimg{
+    border-radius: 30px;
+}
+#end{
+    margin-left: 350px;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 23px;
+    cursor: pointer;
+    margin-left: 410px;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-family: 'Paytone One', sans-serif;
+
+
+  }
+
+.button2 {background-color: rgb(250, 161, 158);}
+
+#cloudsource{
+    margin-left: 300px;
+}

@@ -1,0 +1,13 @@
+{
+    "train_data_dir": "/datasets/MaskedFace-Net/train/",
+    "train_batch_size": 1,
+    "train_shuffle_dl": "True",
+    "num_workers_dl": 4,
+    "num_classes": 10,
+    "num_epochs": 1,
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.005,
+    "result_file": "classifier_loss_score.txt",
+    "max_num_images": 5
+}

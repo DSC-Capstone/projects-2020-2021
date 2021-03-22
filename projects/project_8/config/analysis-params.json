@@ -1,0 +1,14 @@
+{
+    "test_path": "test/testdata/",
+    "data_path": "data/interim/",
+    "out_path": "data/analysis/",
+    "start_date": "2020-03-22",
+    "end_date": "2020-12-01",
+    "test_sd": "2020-05-01",
+    "test_ed": "2020-05-21",
+    "freq_names": ["freq_terms_count.csv", "freq_terms_tfidf.csv"],
+    "case_name": "new_cases.csv",
+    "detrend_name": "detrended_plot.png",
+    "daily_name": "daily_case_plot.png",
+    "words_toplot": ["sick", "great"]
+}

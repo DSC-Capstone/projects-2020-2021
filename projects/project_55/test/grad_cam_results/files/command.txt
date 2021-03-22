@@ -1,0 +1,1 @@
+grad-cam-pytorch % python3 main.py demo1 -a resnet34 -t layer4 -i test.png -k 1

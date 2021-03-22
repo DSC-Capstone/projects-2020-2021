@@ -1,0 +1,9 @@
+{
+    "news_path": "test/testdata/news_stations.txt",
+    "raw_data_path": "test/testdata",
+    "proc_data_path": "test/testdata",
+    "n": 20,
+    "outdir": "test/testreport",
+    "report_in_path": "test/report.ipynb",
+    "report_out_path": "test/report.html"
+}

@@ -1,0 +1,3 @@
+Error in sort.list(n) : failed to open ICU collator (4)
+Calls: local ... eval -> eval -> Sys.getenv -> structure -> sort.list
+Execution halted

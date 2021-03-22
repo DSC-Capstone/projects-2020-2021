@@ -1,0 +1,17 @@
+{
+  "data_in": "data/out/data.pkl",
+  "data_out": "data/figures",
+  "example_movie": "Star Wars Episode IV: A New Hope",
+  "year_start": 1928,
+  "year_end": 2012,
+  "decade_start": 1900,
+  "decade_end": 2014,
+  "phrase_count_threshold": 10,
+  "stop_words": ["black", "car", "city", "death", "family", "film", "friends", "house", "led", "life", "live", "long", "lost", "love", "money", "movie", "order", "police", "shot", "town"],
+  "compact": false,
+  "n_bars": 7,
+  "movie_name_overflow": 35,
+  "dpi": 300,
+  "fps": 60,
+  "seconds_per_period": 4
+}

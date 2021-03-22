@@ -1,0 +1,7 @@
+{
+"rm": "CENTER 101", 
+"time": 1.25, 
+"n_occupants": 50, 
+"activity": "resting", 
+"expiratory_activity": "speaking"
+}

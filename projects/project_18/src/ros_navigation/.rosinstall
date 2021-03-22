@@ -1,0 +1,3 @@
+- git:
+    local-name: realsense_gazebo_plugin
+    uri: https://github.com/SyrianSpock/realsense_gazebo_plugin

@@ -1,0 +1,10 @@
+{
+    "ABSSeq_dir" : "out/ABSSeq",
+    "DESeq_dir" : "out/DESeq2",
+    "edgeR_dir" : "out/edgeR.exact",
+    "NOISeq_dir" : "out/NOISeq",
+    "ttest_dir" : "out/ttest",
+    "PoissonSeq_dir" : "out/PoissonSeq",
+    "voom_dir" : "out/voom.limma",
+    "out_dir": "out/results"
+}

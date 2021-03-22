@@ -1,0 +1,37 @@
+# folders/files
+debug.log
+/data/
+config/chromedriver.json
+chromedriver
+.vscode/
+*.pyc
+notebook/test.ipynb
+config/db_config.json
+config/api_key.json
+config/flask_keys.json
+test
+testdata/preprocessed/*
+
+# pycache
+__pycache__
+/__pycache__
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

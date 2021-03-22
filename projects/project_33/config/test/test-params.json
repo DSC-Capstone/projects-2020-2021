@@ -1,0 +1,12 @@
+{
+    "X_paths":[ 
+        "test/feature/A_train.npz",
+        "test/feature/A_test.npz",
+        "test/feature/B_train.npz",
+        "test/feature/P_train.npz"
+    ],
+    "type_list": ["A_train","A_test","B_train", "P_train"],
+    "y_path": "test/feature/label.json",
+    "metapaths": ["AA","ABA", "APA","APBPA"],
+    "output_path": "test/model/"
+}

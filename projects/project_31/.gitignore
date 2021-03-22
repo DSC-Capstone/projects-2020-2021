@@ -1,0 +1,6 @@
+
+./test
+./data
+__pycache__/
+.vscode
+.ipynb_checkpoints

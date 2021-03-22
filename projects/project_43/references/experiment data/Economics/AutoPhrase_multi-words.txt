@@ -1,0 +1,254 @@
+0.9479869048	scheduled castes
+0.9226607143	supreme court
+0.9006892857	affirmative action
+0.9006630952	tamannaben ashokbhai desai
+0.8996630952	anil kumar gupta
+0.8507559524	school choice
+0.8218178571	sci akg choice rule
+0.8098892857	incentive compatibility
+0.7791511905	horizontal reservations
+0.7585940476	tayfun sönmez
+0.7489892857	high court
+0.7430369048	minimum guarantee
+0.7341250000	single category
+0.7283773810	sönmez and yenmez
+0.7151083333	justified envy
+0.7041035714	∣ ∣
+0.7025178571	vertical reservations
+0.7004750000	indiankanoon.org doc
+0.6927678571	merit score
+0.6740773810	affirmative action in india
+0.6561369048	ĉ2s m
+0.6471559524	horizontal adjustment
+0.6303178571	hr protections
+0.6280559524	vr protections
+0.6278178571	choice rule
+0.6214226190	backward class
+0.5964226190	⊆ iv
+0.5707559524	reserve eligible
+0.5629559524	choice rules
+0.5599559524	∩ ig
+0.5561226190	maximally accommodates
+0.5315892857	highest merit score
+0.5298845238	cv m
+0.5289678571	horizontally reserved
+0.5252892857	hr protected position
+0.5247428571	non wasteful
+0.5247285714	et al
+0.5150250000	hr graph
+0.5083785714	meritorious horizontal choice rule
+0.5055892857	december 2020
+0.4775726190	horizontal reservation
+0.4704976190	minimum guarantee choice rule
+0.4700535714	co m
+0.4614226190	higher merit score
+0.4589059524	horizontal adjustments
+0.4546714286	the substitutes condition
+0.4445761905	the irrelevance of rejected individuals condition
+0.4426226190	affirmative action policies
+0.4351761905	last accessed
+0.4350511905	hr protected positions
+0.4271845238	available at https
+0.4209369048	at most one
+0.4143226190	maximally accommodates hr protections
+0.4027178571	reserve eligible category
+0.3980702381	c ∈ r
+0.3895702381	the k th
+0.3808547619	c2s m
+0.3720190476	overlapping horizontal reservations
+0.3710726190	highest merit
+0.3651369048	prior to
+0.3630654762	qualify for
+0.3630250000	trait tk
+0.3625250000	2smh choice rule
+0.3607095238	vertical reservation
+0.3601678571	open category
+0.3587595238	open category positions
+0.3549702381	belonging to
+0.3544261905	cc m
+0.3507416667	category v
+0.3503107143	chosen at step
+0.3480928571	open category hr protections
+0.3441904762	the 2smh choice
+0.3433047619	general category
+0.3393833333	in addition
+0.3363250000	vertical and horizontal
+0.3327166667	a single
+0.3313357143	the sci akg choice rule
+0.3306142857	merit scores
+0.3271678571	trait t1
+0.3264130952	every i ⊆
+0.3144702381	based on
+0.3140440476	due to
+0.3129845238	the construction of
+0.3125428571	sc women
+0.3121821429	construction of cv m
+0.3030428571	reservation policies
+0.2971642857	single category choice rule
+0.2964571429	meritorious horizontal
+0.2932595238	no justified envy
+0.2835428571	highest merit score individual
+0.2727583333	does not
+0.2691642857	reserve eligible category c ∈
+0.2690428571	′ ∈
+0.2637202381	in section
+0.2604702381	last accessed on
+0.2557702381	v ∈ v
+0.2483309524	the sci
+0.2475321429	j ∈ i \
+0.2414071429	the state of
+0.2391642857	the supreme
+0.2295666667	sc candidates
+0.2268630952	an individual
+0.2252476190	category c positions
+0.2227654762	eligible for
+0.2214940476	∈ i \
+0.2096130952	the supreme court
+0.2088119048	i \ j
+0.2062773810	at step
+0.2034000000	horizontal reservation policies
+0.2031785714	i ∈
+0.2009107143	the meritorious horizontal choice rule
+0.2003547619	∈ v
+0.1883869048	in india
+0.1858166667	implementation of vertical
+0.1840928571	state of
+0.1801583333	two step
+0.1767797619	a set of individuals
+0.1739797619	the set of individuals
+0.1649500000	trait t
+0.1640928571	reservations in
+0.1621821429	the sci akg
+0.1619321429	members of
+0.1619321429	number of
+0.1585190476	protected positions
+0.1578869048	i ′
+0.1529071429	a category v ∈ v
+0.1484071429	i ∈ i \
+0.1473988095	the hr graph
+0.1455547619	− 1
+0.1440738095	the number of
+0.1433119048	i \ i
+0.1430190476	merit score individual
+0.1412619048	more than
+0.1410654762	the general category
+0.1390654762	the high court
+0.1380190476	category positions
+0.1369071429	the set of
+0.1355547619	step 2
+0.1303988095	the 2smh choice rule
+0.1294202381	in chile
+0.1286238095	merit score individuals
+0.1286238095	hr protected
+0.1256238095	∈ cv
+0.1250059524	the same
+0.1244702381	the construction of cv
+0.1232642857	the construction of cv m
+0.1211928571	the individual with
+0.1206238095	open category hr
+0.1176500000	set of individuals
+0.1146511905	i ∈ cv m
+0.1113071429	matched with
+0.1113011905	a choice rule
+0.1074595238	step 1
+0.1069023810	category v ∈ v
+0.1050238095	qv t
+0.1043071429	implementation of
+0.1007119048	∪ j
+0.1004678571	each individual
+0.0968809524	the following
+0.0963488095	the open category
+0.0959738095	individuals in
+0.0939738095	list of
+0.0934857143	do not
+0.0873095238	all individuals in
+0.0822857143	\ j
+0.0789738095	proof of
+0.0782595238	version of
+0.0782119048	aygün and
+0.0780869048	the constitution
+0.0779202381	a position
+0.0769202381	of india
+0.0762142857	not only
+0.0748250000	j ∈
+0.0747535714	the akg
+0.0731642857	set of
+0.0721642857	journal of
+0.0720928571	reserved for
+0.0707595238	shortcomings of
+0.0677595238	m1 and
+0.0650476190	the first
+0.0648404762	individual i ∈
+0.0647595238	presented in
+0.0640476190	| =
+0.0639261905	hr protections for
+0.0635928571	∪ i
+0.0606642857	individuals with
+0.0599261905	category c
+0.0572142857	the second
+0.0566916667	= nv
+0.0565869048	for women
+0.0557595238	position for
+0.0544261905	individual with
+0.0539261905	individual i
+0.0533642857	∈ cv m
+0.0530928571	category c ∈ r
+0.0530392857	the basis
+0.0529976190	affirmative action in
+0.0529261905	rule in
+0.0527595238	positions in
+0.0521642857	∈ r
+0.0519976190	reserve eligible category c
+0.0505309524	sönmez and
+0.0502595238	individual in
+0.0484261905	vertical and
+0.0483107143	\ cv
+0.0482857143	6 =
+0.0480392857	the case
+0.0475476190	the last
+0.0465392857	the procedure
+0.0447535714	a single category
+0.0438333333	\ i
+0.0422059524	a matching
+0.0407773810	this case
+0.0393333333	for example
+0.0383726190	i ⊆
+0.0380392857	and horizontal reservation
+0.0373726190	the state
+0.0373726190	of gujarat
+0.0365392857	i ∈ cv
+0.0364380952	c =
+0.0353726190	of positions
+0.0353726190	the individual
+0.0353726190	the number
+0.0353726190	the minimum
+0.0353726190	the meritorious
+0.0353726190	a category
+0.0353107143	| cv
+0.0342059524	the hr
+0.0342059524	the high
+0.0342059524	all individuals
+0.0336107143	= ∅
+0.0316857143	and j ∈
+0.0306666667	of individuals in
+0.0306666667	a set of
+0.0306666667	i ∈ i
+0.0298333333	| i
+0.0295000000	j ∈ i
+0.0294773810	in cv
+0.0294773810	a set
+0.0283726190	the open
+0.0283726190	of individuals
+0.0277714286	\ cv m
+0.0276666667	the k
+0.0276666667	i \
+0.0276666667	every i
+0.0271666667	a category v
+0.0268333333	if i
+0.0263333333	the only
+0.0262773810	and yenmez
+0.0259380952	available at
+0.0259380952	= co
+0.0256666667	for category v
+0.0246666667	\ co m
+0.0245714286	in cv m

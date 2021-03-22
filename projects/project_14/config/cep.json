@@ -1,0 +1,5 @@
+{
+    "neo_fixed_gps": "data/CEP/neo_m8n_fixed.csv",
+    "zed_fixed_gps_park": "data/CEP/zed_f9p_fixed_park.csv",
+    "zed_fixed_gps_street": "data/CEP/zed_f9p_fixed_street.csv"
+}

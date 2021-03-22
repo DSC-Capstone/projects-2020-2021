@@ -1,0 +1,9 @@
+{
+    "config": ["config/data-params.json", "config/model-params.json"],
+    "build": "run.py",
+    "library": ["src"],
+    "notebook": ["notebooks/cp2.ipynb","notebooks/POC_Automation_Ingestion_Pipeline.ipynb","notebooks/POC_Correlation.ipynb","notebooks/POC_Graph.ipynb"],
+    "targets": ["data","graph"],
+    "DockerHub Repository": "yizong/dsc180:latest",
+    "GitHub Repository": "https://github.com/CrisZong/DSC180A-Project.git"
+}

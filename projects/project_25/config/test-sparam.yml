@@ -1,0 +1,4 @@
+- lang: EN
+  param:
+    indir: data/testpagesout
+    outfile: data/test_sentiment_out.json

@@ -1,0 +1,24 @@
+- lang: EN
+  param:
+    targets:
+    - cat1
+    - cat2
+    skip_cats:
+    - Category:Same-sex sexuality
+    - Category:LGBT and society
+    - Category:Homosexuality
+    outdir: data/en_articles
+- lang: ES
+  param:
+    targets:
+    - cat1
+    - cat2
+    skip_cats:
+    - Categoría:Orientación sexual y sociedad
+    outdir: data/es_articles
+- lang: ZH
+  param:
+    targets:
+    - cat1
+    - cat2
+    outdir: data/zh_articles

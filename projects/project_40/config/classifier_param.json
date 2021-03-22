@@ -1,0 +1,5 @@
+{
+  "classifier_list" : ["knn","random forest","decision tree","neural network","sgd","logistic"],
+  "output_path" : "result/classifier_performance.csv",
+  "trail_num" :5
+}

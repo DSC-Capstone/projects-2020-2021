@@ -1,0 +1,8 @@
+{
+    "HIGHLIGHT_MULTI": 0.5, 
+    "HIGHLIGHT_SINGLE": 0.8,
+    "MIN_SUP": 30,
+    "MODEL": "../model/20news/",
+    "RAW_TRAIN": "../data/temp/20news.txt",
+    "TEXT_TO_SEG": "../data/temp/20news.txt"
+}

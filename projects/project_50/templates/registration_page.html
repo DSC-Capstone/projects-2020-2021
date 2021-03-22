@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-4">Welcome to Workout Recommender!</h1>
+    <p class="lead">Have an account? Log in <a href="{{ url_for('login_page') }}">here</a>.</p>
+    <p class="lead display-7">We would love to have you onboard! If you have any questions, please do not hesitate to <a href="{{ url_for('contact_page') }}">contact us</a>.</p>
+  </header>
+
+  <div class="container-fluid container-scroll">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <fieldset>
+        <div class="lead-color">
+          <div class="">
+            <h2 class="display-5">Account Information</h2>
+            <div>
+              {{ form.name.label(class='display-6') }}<br>
+              {{ form.name(size=20, placeholder='Your Name') }}
+              {% if form.name.errors %}
+              {% for e in form.name.errors %}
+              <span>{{ e}} </span>
+              {% endfor %}
+              {% endif %}
+            </div>
+
+            <div>
+              {{ form.email.label(class='display-6') }}<br>
+              {{ form.email(size=20, placeholder='email@example.com') }}
+              {% if form.email.errors %}
+              {% for e in form.email.errors %}
+              <span>{{ e}} </span>
+              {% endfor %}
+              {% elif email_error %}
+              <span>An account with this email has already been created</span>
+              {% endif %}
+            </div>
+
+            <div>
+              {{ form.password.label(class='display-6') }}<br>
+              {{ form.password(size=20) }}
+              {% if form.password.errors %}
+              {% for e in form.password.errors %}
+              <span>{{ e}} </span>
+              {% endfor %}
+              {% endif %}
+            </div>
+
+            <div>
+              {{ form.confirm_password.label(class='display-6') }}<br>
+              {{ form.confirm_password(size=20) }}
+              {% if form.confirm_password.errors %}
+              {% for e in form.confirm_password.errors %}
+              <span>{{ e}} </span>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="">
+          {% include 'workout_info.html' %}
+          </div>
+
+        </div>
+      </fieldset>
+      <input id='submit' name='submit' type='submit' value="Register" class="btn btn-primary btn-lg"></input>
+
+    </form>
+  </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static',filename='js/workout_info.js') }}"></script>
+{% endblock scripts %}

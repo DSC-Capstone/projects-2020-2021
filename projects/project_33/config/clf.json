@@ -1,0 +1,9 @@
+{
+    "model_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/nlp/metapath2vec_AA_vec10_tok5_sen50000_original.model",
+    "train_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/A_train.npz",
+    "test_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/A_test.npz",
+    "label_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/label.json",
+    "clf_lst": ["svm", "rf","gb"],
+    "plot_path": "data/report/metapath2vec_AA_vec10_tok5_sen50000_original.png",
+    "vec_size": 10
+}

@@ -1,0 +1,17 @@
+{
+    "test": "False",
+    "start_date": "2020-03-22",
+    "end_date": "2020-12-01",
+    "script_path": "src/data/collect_data.sh",
+    "script_type": "sh",
+    "data_path": "data/raw/",
+    "out_path": "data/interim/",
+    "url": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv",
+    "case_csv": "new_cases.csv",
+    "sd_test": "2020-05-01",
+    "ed_test": "2020-05-21",
+    "path_test": "test/testdata/",
+    "kaggle_url": "kazanova/sentiment140",
+    "kaggle_data": "training.1600000.processed.noemoticon.csv",
+    "train_csv": "trained_clean.csv"
+}

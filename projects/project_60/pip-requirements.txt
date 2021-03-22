@@ -1,0 +1,8 @@
+
+pysal
+pyshp
+Rtree
+Geopandas
+folium
+geopy
+mesa-geo

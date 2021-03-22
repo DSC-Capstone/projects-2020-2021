@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style type="text/css">
+        /* general css */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        body {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #ffffff;
+            font-family: 'Lato', sans-serif;
+        }
+        #title {
+            font-family: 'Rock Salt', cursive;
+            font-size: 40px;
+            color: black;
+        }
+        .margin-right {
+            margin-right: 20px;
+        }
+        }
+    </style>
+    <style type="text/css">
+        /* css for styling form elements */
+        #id_url {
+            width: 70%;
+        }
+        #id_latitude {
+            width: 80px;
+        }
+        #id_longitude {
+            width: 80px;
+        }
+        #id_max_distance {
+            width: 36px;
+        }
+        label[for=id_num_recs] {
+            margin-bottom: 0px;
+            margin-top: 5px;
+        }
+        #id_num_recs {
+            width: 50px;
+        }
+        #id_boulder_lower {
+            width: 30px;
+        }
+        #id_boulder_upper {
+            width: 30px;
+        }
+        #id_route_lower {
+            width: 35px;
+        }
+        #id_route_upper {
+            width: 35px;
+        }
+        #boulder-check {
+            margin-top: 30px;
+        }
+        #route-check {
+            margin-top: 30px;
+        }
+        #rec-box {
+            margin-top: 30px;
+        }
+        #submit-button {
+            margin-top: 30px;
+        }
+        #recommendations {
+            max-width: 1000px; 
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <title>ONSIGHT: Home</title>
+</head>
+
+<body>
+    <div class="text-center bg-white">
+        <!-- Nav bar and title -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0;">
+                <a class="navbar-brand" href="#" style="padding: 20px 20px;"><span id="title">OnSight</span></a>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav" style="padding: 20px 20px;">
+                        <a class="nav-item nav-link margin-right" href="/">Home</a>
+                        <a class="nav-item nav-link margin-right" href="/about/">About</a>
+                        <a class="nav-item nav-link margin-right" href="/algorithms/">Algorithms</a>
+                        <a class="nav-item nav-link margin-right" href="/developers/">Developers</a>
+                        <a class="nav-item nav-link margin-right" href="https://github.com/DSC180-RC/Rock-Climbing-Recommender" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="text-left" style="margin-bottom: 10px; margin-left: 30px">Outdoor Rock Climbing Recommendations</div>
+        </div>
+
+        <!-- Page title -->
+        <h3 style="margin-top: 0px;">Recommendations</h3>
+
+        <!-- Recommendation input -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Custom bs4 grid for form layout -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 text-left">
+                        <p><b>Usage Instructions:</b></p>
+                        <p>The Mountain Project URL is only required if you desire personalized recommendations. The Mountain Project URL can be found be logging into <a href="https://www.mountainproject.com" target="_blank" rel="noopener noreferrer">Mountain Project</a>, clicking on your profile picture in the top right, then clicking on "Your Page".</p>
+                        <p>For location we recommend you use the search bar on the map, but you can also manually type in latitude/longitude.</p>
+                        <p>For difficulties, select what type(s) of climbs you want and enter in the difficulty range. If you are confused about what "V_" and "5._" mean, REI has an amazing article about climbing difficulty <a href="https://www.rei.com/learn/expert-advice/climbing-bouldering-rating.html" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                        <p>Finally, recommendations will appear below the map when the submit button is clicked.</p>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-12">{{ form.url.label_tag }} {{ form.url }}</div>
+                        </div>
+                        <div class="row" style="display: flex; align-items: center;">
+                            <div class="col-md-3">{{ form.latitude.label_tag }} {{ form.latitude }}</div>
+                            <div class="col-md-3">{{ form.longitude.label_tag }} {{ form.longitude }}</div>
+                            <div class="col-md-3">{{ form.max_distance.label_tag }} {{ form.max_distance }}</div>
+                            <div class="col-md-3">{{ form.num_recs.label_tag }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <input type="text" id="pac-input" class="controls", placeholder="Search Box">
+                                <div id="googleMap" style="width:100%;height:400px;"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="short-div">{{ form.num_recs }}</div>
+                                <div class="short-div" id="boulder-check">{{ form.get_boulder.label_tag }} {{ form.get_boulder }}</div>
+                                <div class="short-div">{{ form.boulder_lower.label_tag }} {{ form.boulder_lower }} - {{ form.boulder_upper.label_tag }} {{ form.boulder_upper }}</div>
+                                <div class="short-div" id="route-check">{{ form.get_route.label_tag }} {{ form.get_route }}</div>
+                                <div class="short-div">{{ form.route_lower.label_tag }} {{ form.route_lower }} - {{ form.route_upper.label_tag }} {{ form.route_upper }}</div>
+                                <div class="short-div" id="rec-box">{{ form.rec.label_tag }} {{ form.rec }}</div>
+                                <div class="short-div"><button type="submit" name="run_script" id="submit-button">Submit</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="margin: 10px 0 0 0;"><b>Disclaimer:</b></p>
+                        <p>With rock climbing, especially outdoors, there is an inherent risk that is taken when you decide to climb. Although our recommender tries to offer routes similar to the ones users have done, there is still a risk that the route may be too hard and therefore dangerous. This is not a problem that is solely put on the recommender, but a problem with rock climbing as a whole. There is no standard in climbing grades, but rather it is an agreement among the climbers that have climbed that route. Therefore climbing grades are subjective, and climbs may be harder and more dangerous than a user expects. We realize this, and we encourage everyone to look at the safety information of each climb on its corresponding climbing page on Mountain Project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Only put in notes if they are present -->
+        {% if notes %}
+        <div style="margin-top: 20px;">
+            {% for n in notes %}
+                <p style="margin-top: 0px; margin-bottom: 0px;">{{ n }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Only put in recommendations if they are present -->
+        {% if results %}
+        <div class="container-fluid" id="recommendations">
+            <div class="row">
+                <div class="col-md-2"><b>Climb Name</b></div>
+                <div class="col-md-1"><b>Grade</b></div>
+                <div class="col-md-9"><b>Description</b></div>
+            </div>
+            <!-- Loop over the recommendations -->
+            {% for r in results %}
+            <div class="row" style="margin-top: 8px;">
+                <div class="col-md-2"><a href="https://www.mountainproject.com/route/{{ r.url }}">{{ r.name }}</a></div>
+                <div class="col-md-1">{{ r.difficulty|default:"None" }}</div>
+                <div class="col-md-9 js-truncate text-left">{{ r.description|default:"None" }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        // Code to truncate the descriptions to a certain number of characters
+        // source: https://stackoverflow.com/questions/21447269/how-to-limit-the-length-of-text-in-a-paragraph/21447588
+        function truncateText(text, maxLength) {
+            if (text.length > maxLength) {
+                // truncate based on char length
+                text = text.substr(0, maxLength);
+
+                // make sure that the truncation ends with a full word
+                text = text.split(" ").slice(0, -1).join(" ");
+                text = text + "...";
+            }
+            return text;
+        }
+
+        // apply the truncateText function to all recommendation descriptions
+        var to_truncate = document.getElementsByClassName("js-truncate")
+        for(var i = 0; i < to_truncate.length; i ++) {
+            description = to_truncate.item(i)
+            description.innerText = truncateText(description.innerText, 600);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function set_readonly(element, b) {
+            if(b) {
+                document.getElementById(element).setAttribute("readonly", true);
+                document.getElementById(element).style.backgroundColor = "#CCCCCC";
+            }
+            else {
+                document.getElementById(element).removeAttribute("readonly");
+                document.getElementById(element).style.backgroundColor = "#FFFFFF";
+            }
+        }
+
+        // js to connect boulder checkboxes with the grade selector dynamically
+        document.getElementById("id_get_boulder").addEventListener("change", (event) => {
+            if(event.currentTarget.checked) {
+                // if the box is checked, then enable the form elements
+                set_readonly("id_boulder_upper", false);
+                set_readonly("id_boulder_lower", false);
+            } else {
+                // if the box is not checked, then disable the form elements
+                set_readonly("id_boulder_upper", true);
+                set_readonly("id_boulder_lower", true);
+            }
+        });
+
+        // js to connect route checkboxes with the grade selector dynamically
+        document.getElementById("id_get_route").addEventListener("change", (event) => {
+            if(event.currentTarget.checked) {
+                // if the box is checked, then set form element to be not readonly
+                set_readonly("id_route_upper", false);
+                set_readonly("id_route_lower", false);
+            } else {
+                // if the box is checked, then set form element to be readonly
+                set_readonly("id_route_upper", true);
+                set_readonly("id_route_lower", true);
+            }
+        });
+
+        // also make sure that the checkboxes correctly enable/disable difficulty selection fields
+        // on page load
+
+        // check for boulder
+        if(document.getElementById("id_get_boulder").checked) {
+            // if the box is checked, then enable the form elements
+            set_readonly("id_boulder_upper", false);
+            set_readonly("id_boulder_lower", false);
+        } else {
+            // if the box is not checked, then disable the form elements
+            set_readonly("id_boulder_upper", true);
+            set_readonly("id_boulder_lower", true);
+        }
+
+        // check for route
+        if(document.getElementById("id_get_route").checked) {
+            // if the box is checked, then enable the form elements
+            set_readonly("id_route_upper", false);
+            set_readonly("id_route_lower", false);
+        } else {
+            // if the box is not checked, then disable the form elements
+            set_readonly("id_route_upper", true);
+            set_readonly("id_route_lower", true);
+        }
+    </script>
+
+    <script>
+      function initAutocomplete() {
+        const map = new google.maps.Map(document.getElementById("googleMap"), {
+          center: { lat: parseFloat("{{latitude}}"), lng: parseFloat("{{longitude}}") },
+          zoom: 10,
+          mapTypeId: "roadmap",
+        });
+
+        function getLatLong() {
+            x = parseFloat(document.getElementById('id_latitude').value);
+            y = parseFloat(document.getElementById('id_longitude').value);
+            return{lat: x, lng:y}
+        }
+
+        // add event listeners to the lat/long input fields to update the map position when the
+        // value is changed
+        document.getElementById('id_latitude').addEventListener("change", function() {
+            map.setCenter(getLatLong())
+        });
+        document.getElementById('id_longitude').addEventListener("change", function() {
+            map.setCenter(getLatLong())
+        });
+
+        // Add event listeners to update the lat and long as the map is dragged around
+        google.maps.event.addListener(map,'drag',function(event) {
+            document.getElementById('id_latitude').value = map.getCenter().lat().toFixed(6);
+            document.getElementById('id_longitude').value = map.getCenter().lng().toFixed(6);
+        });
+        google.maps.event.addListener(map,'dragend',function(event) {
+            document.getElementById('id_latitude').value = map.getCenter().lat().toFixed(6);
+            document.getElementById('id_longitude').value = map.getCenter().lng().toFixed(6);
+        });
+
+        // Add event listeners to update the lat/lng when the map is zoomed (for some reason in
+        // google maps, zoom does not have a fixed center but depends on where the mouse is)
+        google.maps.event.addListener(map,'zoom_changed',function(event) {
+            document.getElementById('id_latitude').value = map.getCenter().lat().toFixed(6);
+            document.getElementById('id_longitude').value = map.getCenter().lng().toFixed(6);
+        });
+
+        // Create the search box and link it to the UI element.
+        const input = document.getElementById("pac-input");
+        const searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener("bounds_changed", () => {
+          searchBox.setBounds(map.getBounds());
+        });
+        let markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener("places_changed", () => {
+          const places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+          // Clear out the old markers.
+          markers.forEach((marker) => {
+            marker.setMap(null);
+          });
+          markers = [];
+          // For each place, get the icon, name and location.
+          const bounds = new google.maps.LatLngBounds();
+          places.forEach((place) => {
+            if (!place.geometry || !place.geometry.location) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            const icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25),
+            };
+            // Create a marker for each place.
+            markers.push(
+              new google.maps.Marker({
+                map,
+                icon,
+                title: place.name,
+                position: place.geometry.location,
+              })
+            );
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+
+          // update lag/long when search box updates the map
+          document.getElementById('id_latitude').value = map.getCenter().lat().toFixed(6);
+          document.getElementById('id_longitude').value = map.getCenter().lng().toFixed(6);
+        });
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key={{google_maps_api_key}}&callback=initAutocomplete&libraries=places&v=weekly" async></script>
+
+</body>
+
+</html>

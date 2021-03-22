@@ -1,0 +1,5 @@
+{
+    "keywords_path": "data/out/selected_keywords.json",
+    "fos_path": "data/out/fos.json",
+    "out_path": "data/out/scraped_AutoPhrase.json"
+}

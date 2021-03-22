@@ -1,0 +1,5 @@
+{
+    "indir":"./test/out",
+    "indir2":"./test/testdata",
+    "outdir":"./test/out"
+}

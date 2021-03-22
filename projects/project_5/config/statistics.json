@@ -1,0 +1,4 @@
+{
+    "user_timeline":"data/processed/user/",
+    "news_tweets": "data/processed/news/"
+}

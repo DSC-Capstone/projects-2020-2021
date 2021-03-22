@@ -1,0 +1,31 @@
+{
+    "jet_features": ["fj_pt",
+                     "fj_sdmass",
+                     "fj_mass",
+                     "fj_tau21",
+                     "fj_jetNTracks",
+                     "fj_trackSipdSig_0",
+                     "fj_trackSipdSig_1"],
+
+	"track_features": ["track_pt",
+                       "track_dxy",
+                       "track_dxysig",
+                       "track_dz",
+                       "track_dzsig",
+                       "trackBTag_Sip2dSig",
+                       "trackBTag_Sip2dVal",
+                       "trackBTag_Sip3dSig",
+                       "trackBTag_Sip3dVal",
+                       "trackBTag_PtRatio",
+                       "trackBTag_PParRatio"],
+
+	"sv_features":  ["sv_pt",
+                     "sv_mass",
+                     "nsv"],
+
+	"entrystop": 20000,
+
+	"namedecode": "utf-8"
+
+
+}

@@ -1,0 +1,9 @@
+{
+    "input_path": [
+        "test/testdata/malware/",
+        "test/testdata/benign/"  
+    ],
+    "app_type": ["malware", "benign"],
+    "output_path": "test/cleandata/",
+    "sampling_lst": [12, 9]
+}

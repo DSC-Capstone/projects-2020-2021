@@ -1,0 +1,100 @@
+0.9549637301	vlsi chips	0
+0.9522551585	mr angiography	0
+0.947829057	scatter search	1
+0.9472901071	vliw processors	0
+0.9352953225	digital watermarking	1
+0.9344418748	gpl license	0
+0.9338689303	cerebral hemispheres	1
+0.9240815598	nested datatypes	1
+0.9134046545	cpg island	0
+0.9061481005	dispersion relation	1
+0.8902931538	joint decoding	1
+0.8818931774	mispredicted branch	1
+0.8807599093	web publishing	1
+0.8630293967	real roots	1
+0.8568547287999999	etl workflows	0
+0.8559101256	fixed sized	1
+0.8518404959	packet injections	0
+0.8469632572	snort ids	0
+0.8469170178000001	small rna	0
+0.8449876547	classroom experience	1
+0.840564367	symmetric monoidal closed	0
+0.8337212626	hydraulic valve	1
+0.8271736527	epsilon dominance	0
+0.8228952538	preliminary performance measurements	1
+0.8199872806999999	induction principle	0
+0.8154689127	distributed interactive simulation dis	0
+0.8151156923	shoe manufacturing	1
+0.8088858953	spoken input	0
+0.8049067062	current consumption	1
+0.7986591856	human negotiators	0
+0.7888302364	quality factors	1
+0.7639207101000001	community care	1
+0.7626822494	feedback signals	1
+0.7607498022	cooperative design	1
+0.7515968686	uncorrelated linear discriminant analysis	1
+0.7487616501000001	printed version	1
+0.7447776702	idle processor	1
+0.7372674495	virtual clothing	0
+0.7350716444	viewing positions	1
+0.7348956168	structure called	0
+0.7346452873	timed process algebras	0
+0.7327504867	link robot arm	0
+0.7326363168000001	open hypermedia systems	0
+0.7282383454000001	target values	1
+0.7203248374	ghost fluid	0
+0.7167095148	ary fsk	0
+0.7118597281999999	human demonstrator	1
+0.7101495546	reduces power consumption	1
+0.7098917579999999	89 benchmark circuits	0
+0.7073377723000001	5th acm	0
+0.7047972153000001	implementation cost	1
+0.7021228861	multimodal emotion recognition	1
+0.6958935605	uniformly chosen	1
+0.6944592994	competitive factor	1
+0.6860407433	reachability checking	0
+0.6812697784	shooter games	1
+0.6722616364	group membership service	1
+0.6722430751	tag spam	0
+0.6666991198	fusion engines	1
+0.6637523067000001	equalities and inequalities	0
+0.6600300943999999	social science research	1
+0.6558366007	challenges and future directions	0
+0.6541184221	load balancing and locality	0
+0.652700097	sampling frequency offset	1
+0.6523293979	impaired users	1
+0.6511688479	smil 20	0
+0.6394797039	problem remains open	0
+0.6374134747	multiple synchronized	0
+0.6310624189	uncertain parameter	1
+0.6305142313000001	strongly multiplicative	1
+0.6294067399000001	near end crosstalk	0
+0.6272707761	july 8 11	0
+0.6265403064	dynamic adjustment	1
+0.6165477666	complex embedded systems	1
+0.6126240726	sign language animation	0
+0.6067618913	depth order	0
+0.605341224	efficiently managed	1
+0.6008503736	proceedings 8th	0
+0.5999835253	complicated geometry	1
+0.5996282054	scene contents	1
+0.5970066552000001	halftoning algorithms	0
+0.5963162992000001	wyner ziv video	0
+0.5947960025	computing centre	1
+0.5944598926	qos based multicast routing	0
+0.5920333726	tight approximation	1
+0.5898634612	acquisition decisions	1
+0.5897406551	surface based registration	0
+0.5857859546	safety evaluation	1
+0.5842236437	performance degrading	0
+0.5836888637	xml document collection	0
+0.5749657989	health research	1
+0.5659883773	predicting rna	1
+0.5507130979	progress rate	1
+0.5450178761	attitude and position	1
+0.5440284615	ongoing investigation	0
+0.5412514287	\ xc3 \ xa4nkungen	0
+0.5404110283	individual and collective	0
+0.5369065117	number of tester channels	1
+0.525437114	connected trees	1
+0.5169073036	problem on bipartite graphs	0

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ucsd_navigation</name>
+  <version>0.0.0</version>
+  <description>The ucsd_navigation package</description>
+
+  <maintainer email="jetson@todo.todo">jetson</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

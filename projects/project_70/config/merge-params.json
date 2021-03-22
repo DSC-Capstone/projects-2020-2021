@@ -1,0 +1,31 @@
+{
+    "input" : "data/tmp",
+    "count" : {
+    	"enable" : 1,
+        "format" : "download",
+        "skiprows" : 4,
+        "column_count" : 1,
+        "skip_samples" : ["SRR1568391"],
+        "enable_filter" : 0,
+        "filter_keep_genes" : "NM_",
+        "filter_remove_genes" : ["chrX", "chrY"],
+        "filter_names" : "/datasets/srp073813/reference/Gene_Naming.csv",
+        "run_database" : "data/raw/exRNA_Atlas_CORE_Results.csv",
+        "imputes" : ["TangleTotal"],
+        "features" : ["Run", "CONDITION", "expired_age", "BIOFLUID", "sex", "PMI", "sn_depigmentation", "Braak score", "TangleTotal", "Plaque density", "PlaqueTotal"],
+        "rename" : {"CONDITION" : "Disorder", "BIOFLUID" : "Biofluid", "Braak score" : "Braak_Score", "Plaque density" : "Plaque_density"},
+        "replace" : {"from":["Parkinson's Disease", "Alzheimer's Disease", "Cerebrospinal fluid", "Healthy Control"], "to":["Parkinson", "Alzheimer", "Cerebrospinal", "Control"]},
+        "output_matrix" : "data/out/gene_matrix.tsv",
+        "output_features" : "data/out/features.tsv",
+        "thresh" : 8
+    },
+    "bam" : {
+    	"enable" : 0,
+    	"output" : "data/tmp/merged.bam",
+    	"tool" : "/usr/local/bin/samtools",
+    	"arguments" : "merge --threads 8"
+    },
+    "cleanup" : 0,
+    "verbose": 1
+}
+

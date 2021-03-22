@@ -1,0 +1,8 @@
+{
+    "data_path": "data/out/all-apps",
+    "jobs": {
+        "plots": {
+            "update_figs": true
+        }
+    }
+}

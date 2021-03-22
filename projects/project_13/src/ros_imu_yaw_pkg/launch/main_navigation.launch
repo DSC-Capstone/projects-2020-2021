@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Run the ekf for map to odom config -->
+  <node pkg="robot_localization"
+        type="ekf_localization_node"
+        name="ekf_localization_with_gps">
+    <rosparam command="load"
+              file="$(find ucsd_navigation)/config/robot_localization.yaml" />
+  </node>
+
+  <!-- launch razor imu node -->
+  <include file="$(find razor_imu_9dof)/launch/razor-pub.launch"> </include>
+
+  <!-- convert raw imu orientation to yaw -->
+  <node pkg="ucsd_navigation" type="imu_to_yaw.py" name="imu_to_yaw" output="screen" />
+
+</launch>

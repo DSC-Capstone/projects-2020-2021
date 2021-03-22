@@ -1,0 +1,5 @@
+{
+    "user_data_path": "test/user_data/",
+    "dims": ["a", "b", "c"],
+    "outdir": "test/visualizations/"
+}

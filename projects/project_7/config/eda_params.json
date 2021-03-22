@@ -1,0 +1,17 @@
+{
+    "science_path": "data/raw/science.csv",
+    "myth_path": "data/raw/myth.csv",
+    "politics_path": "data/raw/politics.csv",
+    "politics_colors": "['#041d2f', '#192e42', '#2d4156', '#41556b', '#566a81', '#6b7f97', '#8195ae', '#98acc5', '#afc3dd', '#c7dbf5', '#e0f4ff']",
+    "science_colors": "['#260000', '#371618', '#4c2829', '#613b3b', '#774e4f', '#8d6363', '#a47878', '#bb8e8e', '#d3a5a5', '#ebbcbc', '#ffd5d5']",
+    "myth_colors": "['#2a002e', '#410c44', '#552157', '#6a356c', '#7f4880', '#955d96', '#ab71ac', '#c287c2', '#d99dd9', '#f1b3f1', '#ffcfff']",
+    "num_rows_out": "visualizations/num_rows_chart.png",
+    "politics_rows_out": "visualizations/politics_rows.png",
+    "science_rows_out": "visualizations/science_rows.png",
+    "myth_rows_out": "visualizations/myth_rows.png",
+    "politics_onetime_out": "visualizations/politics_onetime.png",
+    "science_onetime_out": "visualizations/science_onetime.png",
+    "myth_onetime_out": "visualizations/myth_onetime.png",
+    "onetime_posters_out": "visualizations/onetime_posters.png",
+    "average_posts_out": "visualizations/average_num_posts.png"
+}

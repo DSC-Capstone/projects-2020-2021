@@ -1,0 +1,17 @@
+{
+    "input_paths": [
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/popular-apps.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/random-apps.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/malware.csv"
+    ],
+    "type_lst": ["popular", "random", "malware"],
+    "outdir": "data/report",
+    "eda_dict": {
+        "class_id":"#OfClass",
+        "api_call":"#OfUniqueAPI",
+        "package_id": "#ofUniquePackage",
+        "class_type_id": "#ofUniqueClassType",
+        "return_id": "#ofUniqueReturnType",
+        "method_id": "#ofUniqueMethodType"
+    }
+}

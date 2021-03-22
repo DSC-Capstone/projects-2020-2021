@@ -1,0 +1,6 @@
+{
+    "filename": "DBLP.5K",
+    "save_path": "./data/outputs/",
+    "direct_path": "./AutoPhrase/data/EN/",
+    "raw_path": "./data/raw/"
+}

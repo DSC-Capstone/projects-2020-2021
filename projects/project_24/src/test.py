@@ -1,0 +1,3 @@
+from webscraper import *
+getData()
+

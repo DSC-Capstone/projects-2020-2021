@@ -1,0 +1,152 @@
+<br><br>
+<h2 class="display-5">Workout Information</h2>
+
+<div class="row">
+  <div class="col">
+    {{ form.equipment.label(class='display-6') }}<br>
+    <div class='col'>
+      <p class="lead font-italic small">Please fill out the equipment you have available to use for your workouts.
+        Click "I have no equipment" if you do not have any equipment. Note: by default, your recommendations will
+        only include workouts that require the equipment you specify, as well as any workouts that are listed to not
+        require equipment.
+      <p>
+    </div>
+    <div id='equipment_div'>
+      {{ form.equipment(size=12, style='list-style: none;') }}
+      {% if form.equipment.errors %}
+      {% for e in form.equipment.errors %}
+      <span class='errors'>{{ e }} </span>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div>
+      {{ form.no_equipment.label(class='display-8') }}
+      {{ form.no_equipment(size=12, style='list-style: none;') }}
+      {% if form.no_equipment.errors %}
+      {% for e in form.no_equipment.errors %}
+      <br>
+      <span class='errors'>{{ e }} </span>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col">
+    {{ form.training_type.label(class='display-6') }}<br>
+    <div class='col'>
+      <p class="lead font-italic small">Please fill out your preferred training types. Your recommendations will only
+        include workouts with training types you specify, otherwise all workouts will be included if you specify
+        "I have no preferred training types"
+      <p>
+    </div>
+    <div id='training_type_div'>
+      {{ form.training_type(size=12, style='list-style: none;') }}
+      {% if form.training_type.errors %}
+      {% for e in form.training_type.errors %}
+      <span class='errors'>{{ e }} </span>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div>
+      {{ form.no_training_type.label(class='display-8') }}
+      {{ form.no_training_type(size=12, style='list-style: none;') }}
+      {% if form.no_training_type.errors %}
+      {% for e in form.no_equipment.errors %}
+      <br>
+      <span class='errors'>{{ e }} </span>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3 class="display-6">My Preferred Workout Duration Range (Minutes)</h3>
+<div>
+  <div class='col-6'>
+    <p class="lead font-italic small">Please specify the minimum and maximum length of your workouts.
+      Your recommendations will only include workouts that fall within this duration range.
+    <p>
+  </div>
+  {{ form.min_duration.label(class='display-7') }}
+  {{ form.min_duration(size=5, value=1, placeholder=1) }}
+
+  {{ form.max_duration.label(class='display-7') }}
+  {{ form.max_duration(size=5, value=120, placeholder=120) }}
+
+  {% if form.max_duration.errors %}
+  {% for e in form.max_duration.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+
+  {% if form.min_duration.errors %}
+  {% for e in form.min_duration.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+</div>
+
+<br>
+
+<h3 class="display-6">My Preferred Calorie Burn Range</h3>
+<div>
+  <div class='col-6'>
+    <p class="lead font-italic small">Please specify the minimum and maximum calorie of your workouts.
+      Your recommendations will only include workouts whose estimated calorie burn range overlaps with this
+      calorie burn range.
+    <p>
+  </div>
+  {{ form.min_calories.label(class='display-7') }}
+  {{ form.min_calories(size=5, value=1, placeholder=1) }}
+
+  {{ form.max_calories.label(class='display-7') }}
+  {{ form.max_calories(size=5, value=1300, placeholder=1300) }}
+
+  {% if form.min_calories.errors %}
+  {% for e in form.min_calories.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+
+  {% if form.max_calories.errors %}
+  {% for e in form.max_calories.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+</div>
+
+<br>
+
+<h3 class="display-6">My Preferred Difficulty Range (1-5)</h3>
+<div>
+  <div class='col-6'>
+    <p class="lead font-italic small">Please specify the minimum and maximum difficulty of your workouts.
+      Your recommendations will only include workouts that fall within this difficulty range.
+    <p>
+  </div>
+  {{ form.min_difficulty.label(class='display-7') }}
+  {{ form.min_difficulty(size=5, value=1, placeholder=1) }}
+
+  {{ form.max_difficulty.label(class='display-7') }}
+  {{ form.max_difficulty(size=5, value=5, placeholder=5) }}
+
+  {% if form.max_difficulty.errors %}
+  {% for e in form.max_difficulty.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+
+  {% if form.min_difficulty.errors %}
+  {% for e in form.min_difficulty.errors %}
+  <br>
+  <span class='errors'>{{ e }} </span>
+  {% endfor %}
+  {% endif %}
+</div>

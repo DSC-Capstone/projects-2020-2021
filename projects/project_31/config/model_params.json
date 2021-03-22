@@ -1,0 +1,12 @@
+{
+    "input_data":["data/tempt/global_recover.csv","data/tempt/mobility.csv","data/tempt/us_confirmed.csv","data/tempt/us_susceptible.csv"],
+    "output_data": ["data/tempt/us_infected.txt","data/tempt/us_population.txt","data/tempt/us_removed.txt","data/tempt/us_susceptible.txt"],
+    "learning_rate_beta":0.001,
+    "learning_rate_d":0.001,
+    "iterations":10000,
+    "curr_day":"3/1/21",
+    "prediction_day":"3/2/21",
+    "test_beta":0.2,
+    "test_d":14,
+    "output_csv_path":"test/test_prediction.csv"
+}

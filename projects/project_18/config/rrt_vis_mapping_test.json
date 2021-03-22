@@ -1,0 +1,6 @@
+{
+    "map_" : "testdata/test_images/maze.png",
+    "stepsize" : "10",
+    "step_dir": "testdata/step_out/",
+    "out_dir":"testdata/test_out/"
+}

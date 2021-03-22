@@ -1,0 +1,27 @@
+{% extends "workout_lists_base.html" %}
+{% block heading %} 
+  <h1 class="display-3"> Hello {{ g.user['name'] }}!</h1>
+  <p class="lead"> See your workout history here! You can find any of the workouts you've liked or disliked before.</p>
+{% endblock heading %}
+
+{% block dropdown %} 
+<select class="form-control form-control-lg " id="dropdown_option" name="type" onChange="enableSubmit()">
+  <option value="" disabled selected hidden id="hidden_selection">Choose an interaction</option>
+  <option value="liked">Liked</option>
+  <option value="disliked">Disliked</option>
+</select>
+{% endblock dropdown %}
+
+{% block loadingMessage %}
+  <h1 class="display-5" style="color:white;">Loading your history...</h1>
+{% endblock loadingMessage %}
+
+{% block innerScripts %}
+<script>
+ let form = document.getElementById("engine_select_form");
+ form.action = '/history'
+
+ let find_workouts_button = document.getElementById("find_workouts");
+ find_workouts_button.value = 'View History!'
+</script>
+{% endblock innerScripts %}

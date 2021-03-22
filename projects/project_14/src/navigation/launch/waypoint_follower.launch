@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="namespace" default="/navigation"/>
+  <arg name="ackermann_cmd_topic" default="/vehicle/ackermann_cmd" />
+  <arg name="odom_topic" default="/vehicle/odom" />
+  <arg name="cmd_vel_topic" default="/vehicle/cmd_vel" />
+  <arg name="new_wp_topic" default="/waypoints/goal" />
+
+  <arg name="global_path_csv"
+       default="$(find navigation)/paths/ucsd_west_waypoints.csv"/>
+
+  <group ns="$(arg namespace)">
+	  <!--  **************** Visualisation ****************  -->
+	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation)/rviz/navigation.rviz"/>
+
+	  <!--  **************** Nav Sat Transform ****************  -->
+    <include file="$(find navigation)/launch/navsat_transform.launch" />
+
+	  <!--  **************** Robot Localization/EKF ****************  -->
+    <node pkg="robot_localization"
+          type="ekf_localization_node"
+          name="ekf_localization_with_gps">
+      <rosparam command="load"
+                file="$(find navigation)/config/robot_localization.yaml" />
+    </node>
+
+	  <!--  **************** Map Server ****************  -->
+    <include file="$(find navigation)/launch/map_server.launch" />
+
+	  <!--  **************** Global Path Generator ****************  -->
+    <node pkg="navigation"
+          type="create_global_path.py"
+          name="create_global_path" >
+      <param name="global_path_csv" value="$(arg global_path_csv)"/>
+    </node>
+
+	  <!--  **************** Waypoint Follower ****************  -->
+    <node name="follow_waypoints"
+          pkg="navigation"
+          type="waypoint_follower.py" >
+      <param name="ackermann_cmd_topic" value="$(arg ackermann_cmd_topic)" />
+      <param name="odom_topic" value="$(arg odom_topic)" />
+      <param name="cmd_vel_topic" value="$(arg cmd_vel_topic)" />
+      <param name="new_wp_topic" value="$(arg new_wp_topic)" />
+    </node>
+  </group>
+</launch>

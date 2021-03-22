@@ -1,0 +1,8 @@
+{
+    "data_dir": "/data/raw/hw_metric_histo.csv000",
+    "guid": "Unique identifier of the client",
+    "histogram_max": "Maximum of histogram to count  bin_1 to bin_10 samples",
+    "histogram_min": "Minimum of histogram to count  bin_1 to bin_10 samples",
+    "load_ts" : "The timestamp when the data is loaded",
+    "name": "The hardware metric name. e.g. Base TDP, Config TDP, TJ Max, Hyper Threading"
+}

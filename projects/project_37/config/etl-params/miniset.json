@@ -1,0 +1,29 @@
+{
+    "outfolder": "data/out/miniset",
+    "parse_params": {
+        "nprocs": 16
+    },
+    "feature_params": {
+        "walk_args": {
+            "nprocs": 16,
+            "length": 60,
+            "n": 3,
+            "metapaths": [
+                ["app", "api", "app"],
+                ["app", "api", "method", "api", "app"],
+                ["app", "api", "package", "api", "app"],
+                ["app", "api", "package", "api", "method", "api", "app"],
+                ["app", "api", "method", "api", "package", "api", "app"]
+            ]
+        },
+        "w2v_args": {
+            "size": 128,
+            "window": 5,
+            "min_count": 0,
+            "negative": 5,
+            "sg": 1,
+            "workers": 16,
+            "iter": 5
+        }
+    }
+}

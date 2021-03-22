@@ -1,0 +1,7 @@
+pytorchcv
+torchvision
+nltk
+scikit-learn
+networkx
+pytest
+opencv-python==4.4.0.42

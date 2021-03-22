@@ -1,0 +1,10 @@
+Entity_index,Entity,matched ontology,jaccard similarity score,ontology type
+fake_text.txt_sentence_1_noun_0,fentanyl,fentanyl,1.0,uri_link1
+fake_text.txt_sentence_0_noun_0,fentanyl,fentanyl,1.0,uri_link1
+fake_text.txt_sentence_2_noun_1,headache,headache,1.0,uri_link4
+fake_text.txt_sentence_0_noun_1,hydromorphone,hydromorphone,1.0, uri_link2
+fake_text.txt_sentence_2_noun_0,percocet,percocet,1.0, uri_link3
+fake_text.txt_sentence_2_noun_1,headache,headache_1,0.4,uri_link4
+fake_text.txt_sentence_1_noun_0,fentanyl,fentanyl_1,0.2,uri_link1
+fake_text.txt_sentence_0_noun_0,fentanyl,fentanyl_1,0.2,uri_link1
+fake_text.txt_sentence_0_noun_1,hydromorphone,hydromorphone_1,0.2, uri_link2

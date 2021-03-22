@@ -1,0 +1,4 @@
+- lang: EN
+  param:
+    infile: data/test_results_in.json
+    language: English

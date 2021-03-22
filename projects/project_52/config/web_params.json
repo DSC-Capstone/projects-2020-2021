@@ -1,0 +1,11 @@
+{
+    "user_url": "https://www.mountainproject.com/user/105898385/chris-duca",
+    "location": [43.444918, -71.707888], 
+    "max_distance": 50,
+    "recommender": "top_pop",
+    "num_recs": 10,
+    "difficulty_range": {
+        "boulder": [0, 3],
+        "route": [11, 16]
+    }
+}

@@ -1,0 +1,3 @@
+mask = {"none": 0,
+        "average": 0.7,
+        "high": 0.95}

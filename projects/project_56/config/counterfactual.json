@@ -1,0 +1,14 @@
+{
+  "img_dir":"data/raw/raw_images",
+  "temp_dir":"data/temp/imgs",
+  "out_dir":"data/out",
+  "annotation_fp":"/datasets/COCO-2017/anno2017/instances_val2017.json",
+  "checkpoint_dir":"models/full_model_coco2017_v2",
+  "model_id":"11fD6YYG4kL1WT_a27LSOl5tOZOsg7TOM",
+  "caption_model_id":"1lRj4GgVUaowdaijNzrzFmdBdosZSZFV2",
+  "wordmap_id":"1QW4DTL9cktUipLynfKfqbi46Jod5ao87",
+  "model_fp":"models/BEST_checkpoint_coco_5_cap_per_img_5_min_word_freq.pth.tar",
+  "wordmap_fp":"models/WORDMAP_coco_5_cap_per_img_5_min_word_freq.json",
+  "beam_size":1,
+  "smooth": true
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style type="text/css">
+        /* general css */
+        body {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #ffffff;
+            font-family: 'Lato', sans-serif;
+        }
+        #title {
+            font-family: 'Rock Salt', cursive;
+            font-size: 40px;
+            color: black;
+        }
+        .margin-right {
+            margin-right: 20px;
+        }
+        }
+    </style>
+    <title>ONSIGHT: Developers</title>
+</head>
+
+<body>
+    <div class="text-center bg-white">
+        <!-- Nav bar and title -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0;">
+                <a class="navbar-brand" href="#" style="padding: 20px 20px;"><span id="title">OnSight</span></a>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav" style="padding: 20px 20px;">
+                        <a class="nav-item nav-link margin-right" href="/">Home</a>
+                        <a class="nav-item nav-link margin-right" href="/about/">About</a>
+                        <a class="nav-item nav-link margin-right" href="/algorithms/">Algorithms</a>
+                        <a class="nav-item nav-link margin-right" href="/developers/">Developers</a>
+                        <a class="nav-item nav-link margin-right" href="https://github.com/DSC180-RC/Rock-Climbing-Recommender" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="text-left" style="margin-bottom: 10px; margin-left: 30px">Outdoor Rock Climbing Recommendations</div>
+        </div>
+
+        <!-- Page title -->
+        <h3 style="margin-top: 0px;">About the Developers</h3>
+
+        <!-- Content -->
+        <div class="paragraphs">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/dWYRA1F.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                    </figure>
+                </div>
+                <div class="col-md-9 text-left">
+                    <p>Brian Cheng is a 4th-year undergraduate student at UC San Diego majoring in Data Science. In this project, Brian wrote the majority of the raw data obtaining code and the code for both recommenders. Brian can be contacted at <a href="mailto:brc042@ucsd.edu">brc042@ucsd.edu</a>.</p>
+                    <p><-- This is not a picture of Brian, but it is pretty close.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-9 text-left">
+                    <p>Eric Liu is a fourth year undergraduate student at the University of California, San Diego who is majoring in Data Science and Philosophy. He expects to graduate in the Spring of 2022. In this project, Eric wrote the enterity of the frontend, most of the data cleaning code, set up the Django server and Heroku app, and generally kept the project and team members focused and working. Currently, Eric is the manager of the <a href="https://recreation.ucsd.edu/adventures/climbing-center/" target="_blank" rel="noopener noreferrer">Outback Climbing Center</a>, a San Diego climbing gym, and does remote support for <a href="https://irokdds.com/" target="_blank" rel="noopener noreferrer">iROK Digital Dentistry Studio</a>.</p>
+                    <p>Outside of work, Eric enjoys climbing, running, and skiing. His favorite climbing areas are <a href="https://www.mountainproject.com/area/105720495/joshua-tree-national-park" target="_blank" rel="noopener noreferrer">Joshua Tree National Park</a> and <a href="https://www.mountainproject.com/area/105734111/indian-rock" target="_blank" rel="noopener noreferrer">Indian Rock Park</a>. In both of these places, he has spent way too much time falling off rock, and not enough time climbing on top of rock. He definetly prefers to go bouldering, if you couldn't tell by the picture selection on this website. To learn more about Eric, you can look at his <a href="https://www.linkedin.com/in/eric-liu-655ab413b/" target="_blank" rel="noopener noreferrer">LinkedIn page</a> (which he tries to keep up to date), his <a href="https://github.com/twigtheoracle" target="_blank" rel="noopener noreferrer">GitHub</a>, or you can email him at <a href="mailto:eyl052@ucsd.edu">eyl052@ucsd.edu</a>.</p>
+                </div>
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/rJowRkm.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                    </figure>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/T58C7RG.jpeg" class="figure-img img-fluid float-left" style="max-width: 100%">
+                    </figure>
+                </div>
+                <div class="col-md-9 text-left">
+                    <p>Brent is a 4th-year Data Science student at UC San Diego. He is graduating in Spring 2021. He worked mostly on data management with MongoDB, helped add features, and debugged the website. He also contributed rock climbing knowledge to convert climbing routes on Mountain Project to readable data. </p>
+                    <p>In his free time, Brent enjoys surfing at the beautiful beaches in San Diego, climbing the boulders in SoCal, and slapping the bass guitar. He is currently looking for a job after his graduation. If you’re impressed with this recommender system, you should contact him at <a href="mailto:bjmin@ucsd.edu">bjmin@ucsd.edu</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

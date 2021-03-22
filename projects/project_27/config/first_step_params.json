@@ -1,0 +1,5 @@
+{
+  "url_first":"http://wwm.phy.bme.hu/LD/ld_en_wiki.zip",
+  "rorw":"r",
+  "write_file":"test/output/enwiki.txt"
+}

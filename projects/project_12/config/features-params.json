@@ -1,0 +1,10 @@
+{
+    "source_dir": "data/preprocessed/",
+    "out_dir": "data/features/",
+    "out_file": "features.csv",
+    "chunk_size" : 90000, 
+    "rolling_window_1": 10000,
+    "rolling_window_2": 60000,
+    "resample_rate": "500ms",
+    "frequency": 2
+}

@@ -1,0 +1,10 @@
+{
+    "autophrase_result" : "model/20news/AutoPhrase.txt",
+    "ner_result" : "data/test/news_ner.csv",
+    "model": "SVM",
+    "feature":"all",
+    "combining": "True",
+    "vectorizing" : "tfidf",
+    "model_save":"model/"
+    
+}

@@ -1,0 +1,8 @@
+{
+    "eda_in_path": "notebook/eda_report.ipynb",
+    "eda_out_path": "data/eda/eda_report.html",
+    "out_df": "reference/dataframe",
+    "out_img": "reference/img",
+    "out_txt" : "reference/user_reviews",
+    "out_autophrase" : "reference/AutoPhrase_result"
+}

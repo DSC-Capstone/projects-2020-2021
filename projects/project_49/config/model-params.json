@@ -1,0 +1,6 @@
+{
+    "NUM_THREADS": 2,
+    "NUM_COMPONENTS": 20,
+    "NUM_EPOCHS": 5,
+    "ITEM_ALPHA": 1e-6
+}

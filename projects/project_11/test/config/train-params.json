@@ -1,0 +1,8 @@
+{
+    "indir":"./test/out/features.csv",
+    "outdir":"./test/out",
+    "testsize":0.2,
+    "randomstate":125,
+    "method":"Random_Forest",
+    "method_parameters":100
+}

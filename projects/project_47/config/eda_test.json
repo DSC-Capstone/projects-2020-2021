@@ -1,0 +1,17 @@
+{
+  "data_in": "data/out/data.pkl",
+  "data_out": "data/figures",
+  "example_movie": "The Shawshank Redemption",
+  "year_start": 0,
+  "year_end": 3000,
+  "decade_start": 0,
+  "decade_end": 3000,
+  "phrase_count_threshold": 2,
+  "stop_words": ["film", "life"],
+  "compact": false,
+  "n_bars": 7,
+  "movie_name_overflow": 35,
+  "dpi": 300,
+  "fps": 2,
+  "seconds_per_period": 1
+}

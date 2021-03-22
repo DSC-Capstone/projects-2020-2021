@@ -1,0 +1,11 @@
+{
+    "paths":[ 
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/popular-apps.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/random-apps.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/malware.csv"
+    ],
+    "sample_size": [324, 581, 905],
+    "type_lst": [0, 0, 1], 
+    "output_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/", 
+    "matlst": ["R","RB"]
+}

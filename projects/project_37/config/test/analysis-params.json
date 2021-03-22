@@ -1,0 +1,8 @@
+{
+    "data_path": "test/output",
+    "jobs": {
+        "plots": {
+            "no_labels": true
+        }
+    }
+}

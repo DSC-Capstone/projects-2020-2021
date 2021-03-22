@@ -1,0 +1,17 @@
+{
+    "skip_data_extraction": false,
+    "datapath": "out/data/shne/",
+    "model_path": "SHNE_code",
+    "embedding_dimention":100,
+    "learning_rate": 0.001,
+    "mini_batch_size":  10,
+    "batch_size": 100,
+    "max_training_itter": 100,
+    "max_len_semantic":100,
+    "itter_save_freq": 10,
+    "train":1,
+    "random_seed":"10",
+    "walk_l":"50",
+    "window_s":"5", 
+    "cuda":1
+}

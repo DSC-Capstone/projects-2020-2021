@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoLibrary</title>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'autolibrary/css/main.css' %}" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body style="background-color:rgb(175, 161, 130);" onload="initiate()">
+    <div id="outer-wrapper">
+      <div id="inner-wrapper">
+        <div id="content-wrapper">
+          <div id="content">
+            <ul id="nav">
+              <li><a href="http://127.0.0.1:8000/autolibrary">AutoLibrary</a></li>
+              <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+              <li><a href="http://127.0.0.1:8000/contact">Contact Us</a></li>
+            </ul>
+            <div id="content-inner">
+              <div id="selection" class="content-full">
+                  <form id="customization-form" class="pure-form pure-form-stacked">
+                    <fieldset>
+                      <legend>Customize Recommendations</legend>
+                      <div class="pure-u-3-4">
+                        <label>Subject</label>
+                        <select id="sel1" onchange="double_select(this.value)" class="pure-u-3-4">
+                          <option value="" disabled selected>Select</option>
+                        </select>
+                      </div>
+                      <div class="pure-u-3-4">
+                        <label>Topic</label>
+                        <select id="sel2" class="pure-u-3-4">
+                          <option value="" disabled selected>Select</option>
+                        </select>
+                      </div><br>
+                      <button type="submit" class="pure-button pure-button-primary" style="margin-top: 8px; background-color: rgb(219, 155, 35);" onclick="event.preventDefault(); display_result();">Find Keywords</button>
+                      <br><br>
+
+                      <details open="open">
+                        <summary>More Customization</summary>
+                        <div class="pure-g">
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 1</label>
+                            <label id='p1'><input id='b1' type="checkbox" checked/> phrase 1</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 2</label>
+                            <label id='p2'><input id='b2' type="checkbox" checked/> phrase 2</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 3</label>
+                            <label id='p3'><input id='b3' type="checkbox" checked/> phrase 3</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 4</label>
+                            <label id='p4'><input id='b4' type="checkbox"/> phrase 4</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 5</label>
+                            <label id='p5'><input id='b5' type="checkbox"/> phrase 5</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-3">
+                            <label>Enter your own keywords</label>
+                            <input id='input_phrases' type="text" class="pure-u-23-24" />
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-3">
+                            <label>Other High-Quality Phrases</label>
+                            <select id='others' class="pure-input-1-2" onchange="select_phrase(this.value)">
+                              <option value="" disabled selected>Select</option>
+                            </select>
+                          </div>
+                        </div>
+                        <button type="submit" class="pure-button pure-button-primary" style="margin-top: 10px; background-color: rgb(219, 155, 35);" onclick="event.preventDefault(); alter_result();">Generate Results</button>
+                      </details>
+                      <br>
+                      <div id="loading-text">
+                        <h3 id='text' hidden>The 1st run takes about 5 minutes!</h3>
+                      </div>
+                      <img id="loading" src="{% static 'autolibrary/images/loading.gif' %}" style="height: 100px;" class="giphy-embed" allowFullScreen hidden>
+                      <br>
+                      
+                    </fieldset>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+            <div id="logo"> <img src="{% static 'autolibrary/images/logo.png' %}" alt="Nautica X" width="180px" height="110px"/> </div>
+            <h4>Documents</h4>
+            <ul id="doc_list" class="side-nav"></ul>
+          </div>
+        </div>
+        <div id="footer">
+          <ul id="footer-nav">
+            <li><a href="#">AutoLibrary</a></li>
+            <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+            <li class="last"><a href="#">Contact Us</a></li>
+          </ul>
+          <p class="copyright">Copyright 2021 Yichun Ren & Jiayi Fan & Bingqi Zhou</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function initiate(){ 
+    // sidebar
+    var data = JSON.parse("{{data|escapejs}}"); 
+    if (data.length > 0) {
+      var ul = document.getElementById("doc_list");
+      var li = document.createElement("li");
+      for (var x in data) { 
+        if (data[x] != '.DS_Store') {
+          var btn = document.createElement("BUTTON");
+          btn.className = "btn-group";
+          btn.innerHTML = data[x];
+          li.appendChild(btn);
+        }
+      } 
+      ul.appendChild(li);
+      var buttons = document.getElementById('doc_list').getElementsByTagName('button');
+      var max = buttons.length;
+      for (var i = 0; i < max; i++) {
+        buttons[i].addEventListener('click', select_doc, true);
+      }
+    }
+    
+    // display pdf
+    var file_name = JSON.parse("{{selected_doc|escapejs}}"); 
+    var pdfname = JSON.parse("{{selected_pdf|escapejs}}"); 
+    var div = document.getElementById("selection");
+    
+    var h = document.createElement("h3");
+    h.innerHTML = file_name;
+    div.appendChild(h);
+
+    var embed = document.createElement('embed');
+    embed.src = "{% static 'autolibrary/documents/' %}" + pdfname;
+    embed.type = "application/pdf";
+    embed.width = "100%";
+    embed.height = "1000px";
+    div.appendChild(embed);
+
+    // display domains
+    var domains = JSON.parse("{{domains|escapejs}}");
+    var select1 = document.getElementById('sel1');
+    var select2 = document.getElementById('sel2');
+    for (var d in domains) {
+      var option = document.createElement('option');
+      option.value = d;
+      option.innerHTML = d;
+      select1.appendChild(option);
+    }
+
+    // display selected domain
+    var domain = JSON.parse("{{domain|escapejs}}"); 
+    var subdomain = JSON.parse("{{subdomain|escapejs}}"); 
+    select1.value = domain;
+    option.value = subdomain;
+    option.innerHTML = subdomain;
+    select2.appendChild(option);
+    select2.value = subdomain;
+
+    // display weighted phrases
+    var phrases = JSON.parse("{{phrases|escapejs}}"); 
+    console.log('phrases-->', phrases);
+    if (phrases.length > 0) {
+      for (var i = 1; i <= 5; i++) {
+        var label = document.getElementById('p' + i);
+        if (i <= 3) {
+          label.innerHTML = "<input id='b" + i + "' type='checkbox' checked='yes' onchange='check_box(event);'> " + phrases[i - 1];
+        } else {
+          label.innerHTML = "<input id='b" + i + "' type='checkbox' onchange='check_box(event);'> " + phrases[i - 1];
+        }
+      }
+      var select = document.getElementById('others');
+      for (var i = 5; i < phrases.length; i++) {
+        var option = document.createElement('option');
+        option.value = phrases[i];
+        option.innerHTML = phrases[i];
+        select.appendChild(option);
+      }
+    } else {
+      for (var i = 1; i <= 3; i++) {
+        var label = document.getElementById('p' + i);
+        label.innerHTML = "<input id='b" + i + "' type='checkbox' onchange='check_box(event);'> " + "pharse " + i;
+      }
+    }
+
+    // display selected phrases
+    var display = JSON.parse("{{customized|escapejs}}"); 
+    var keywords = JSON.parse("{{keywords|escapejs}}"); 
+    console.log('keywords-->', keywords);
+    if (display[0] == "true") {
+      if (keywords[0] != '') {
+        keywords = keywords[0].split(', ');
+        var idx = 0;
+        for (var i = 1; i <= 5; i++) {
+          var phrase = document.getElementById('p' + i);
+          var box = document.getElementById('b' + i);
+          var keyword = phrase.innerHTML.split('>')[1];
+          keyword = keyword.slice(1);
+          if (keyword == keywords[idx]) {
+            box.setAttribute("checked", "yes");
+            idx += 1;
+          } else {
+            if (box.hasAttribute("checked")) {
+              box.removeAttribute("checked");
+            }
+          }
+        }
+        var input_phrases = document.getElementById('input_phrases');
+        input_phrases.value = keywords[keywords.length - 1];
+      }
+    } else {
+      if (keywords[0] != '') {
+        keywords = keywords[0].split(', ');
+        var input_phrases = document.getElementById('input_phrases');
+        input_phrases.value = keywords[keywords.length - 1];
+      }
+    }
+  }  
+
+  function check_box(e) {
+    var box = document.getElementById(e.target.id);
+    if (box.hasAttribute("checked")) {
+      box.removeAttribute("checked");
+    } else {
+      box.setAttribute("checked", "yes");
+    }
+  }
+
+  function double_select(value) {
+    var domains = JSON.parse("{{domains|escapejs}}");
+    if (value.length == 0) document.getElementById("sel2").innerHTML = "<option></option>";
+    else {
+      var subdomain = "<option>" + value + "</option>";
+      for (domain in domains[value]) {
+        subdomain += "<option>" + domains[value][domain] + "</option>";
+      }
+      document.getElementById("sel2").innerHTML = subdomain;
+    }
+  }
+
+  function select_phrase(value) {
+    var text = document.getElementById("input_phrases");
+    if (text.value.length == 0) {
+      text.value = text.value + value;
+    } else {
+      text.value = text.value + ' ' + value;
+    }
+  }
+
+  $.getJSON("{% static 'autolibrary/web_scrap/scraped_AutoPhrase.json' %}", function(data){ 
+    $.each(data, function(idx, obj){ 
+      var items = [];
+      $.each(obj, function(key, value){
+          if (key=="link"){
+            var new_key = key.charAt(0).toUpperCase() + key.slice(1);
+            items.push( "<li id='" + key + "'>" + new_key + ": <a href='" + value + "'>" + value + "</a></li>" );
+          }
+          else if (key=="authors") {
+            var names = ""
+            for (author in value) {
+              names = names + value[author]['firstName'] + " " + value[author]['middleNames'] + " " + value[author]['lastName'] + ", "
+            }
+            var new_key = key.charAt(0).toUpperCase() + key.slice(1);
+            items.push( "<li id='" + key + "'>" + new_key + ': ' + names.slice(0, -2) + "</li>" );
+          }
+          else {
+            var new_key = key.charAt(0).toUpperCase() + key.slice(1);
+            items.push( "<li id='" + key + "'>" + new_key + ': ' + value + "</li>" );
+          }
+      });
+      items.push( "<br>" );
+      $( "<ul/>", {
+        "class": "my-new-list",
+        html: items.join( "" )
+      }).appendTo( "#customization-form" );
+    });
+  });
+
+  function alter_result() {
+    var image = document.getElementById('loading');
+    image.hidden = false;
+
+    var checked_keywords = '';
+    for (var i = 1; i <= 5; i++) {
+      var phrase = document.getElementById('p' + i);
+      var box = document.getElementById('b' + i);
+      if (box.hasAttribute("checked")) {
+        var keyword = phrase.innerHTML.split('>')[1];
+        checked_keywords += keyword.slice(1) + ', ';
+      }
+    }
+    var input_keywords = document.getElementById("input_phrases").value;
+    var all_keywords = checked_keywords + input_keywords;
+
+    var selected = {
+      // "domain": document.getElementById('sel1').value, 
+      // "subdomain": document.getElementById('sel2').value, 
+      "keywords": all_keywords
+    }
+    var URL = "{% url 'get_keywords' %}";
+    $.post(URL, selected, function(response){
+        if (response === 'get keywords'){ 
+          window.location = "http://127.0.0.1:8000/autolibrary/customization";
+        } else { 
+            alert('Error! :('); 
+        }
+    });
+  }
+
+  function display_result() {
+    var h = document.getElementById('text');
+    h.hidden = false;
+    var image = document.getElementById('loading');
+    image.hidden = false;
+
+    var selected = {
+      "domain": document.getElementById('sel1').value, 
+      "subdomain": document.getElementById('sel2').value
+    };
+    var URL = "{% url 'get_domain' %}";
+    $.post(URL, selected, function(response){
+      if (response === 'get domain'){ 
+        window.location = "http://127.0.0.1:8000/autolibrary/customization";
+      } else { 
+          alert('Error! :('); 
+      }
+    });
+  }
+
+  function select_doc(e) {
+    var selected = {"file_name": e.target.innerHTML};
+    var URL = "{% url 'get_file' %}";
+    $.post(URL, selected, function(response){
+      if (response === 'get file'){ 
+        window.location.href = "http://127.0.0.1:8000/autolibrary/result";
+      } else { 
+        alert('Error! :('); 
+      }
+    });
+  }
+</script>

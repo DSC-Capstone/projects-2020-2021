@@ -1,0 +1,15 @@
+{
+    "outdir" : "data/out",
+    "inputs" : "data/tmp",
+    "fastq" : {
+    	"enable" : 1,
+	    "tool" : "/opt/FastQC/fastqc",
+	    "extract" : 1 	
+    },
+    "bam" : {
+	    "enable" : 1,
+	    "tool" : "java",
+        "jar" : "/opt/picard-tools-1.88/CollectAlignmentSummaryMetrics.jar"
+    },
+    "verbose": 1 
+}

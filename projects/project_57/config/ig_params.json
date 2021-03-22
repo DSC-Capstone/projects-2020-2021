@@ -1,0 +1,4 @@
+{"image_load_path":"/datasets/MaskedFace-Net/validation/incorrect/29920_Mask_Nose_Mouth.jpg",
+ "image_save_path":"./29920_Mask_Nose_Mouth.jpg",
+ "model_path": "../DSC180B-Face-Mask-Detection/models/model_resnet_best_val_acc_0.955.pt"
+}

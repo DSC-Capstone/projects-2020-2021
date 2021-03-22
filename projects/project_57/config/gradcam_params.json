@@ -1,0 +1,11 @@
+{"load_image_path":{
+    "image_input_path_train_covered": "/datasets/MaskedFace-Net/validation/covered/11327_Mask.jpg"},
+"save_image_path": {
+    "gb_path": "./gb_11327_Mask.jpg",
+    "cam_gb_path":  "./cam_gb_11327_Mask.jpg",
+    "cam_path": "./cam_11327_Mask.jpg"
+    },
+"cuda": {
+     "use_cuda": true
+    },
+"model_path": "../DSC180B-Face-Mask-Detection/models/model_resnet_best_val_acc_0.955.pt"}

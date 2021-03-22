@@ -1,0 +1,11 @@
+Python
+Pandas
+Numpy
+matplotlib
+os
+json
+sys
+jupyter notebook
+sklearn
+functools
+seaborn

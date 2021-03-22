@@ -1,0 +1,4 @@
+{
+    "produce_logs": true,
+    "log_file": "data/logs/project_run.log"
+}

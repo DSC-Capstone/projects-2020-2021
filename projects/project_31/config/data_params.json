@@ -1,0 +1,10 @@
+{"us_confirmed_df": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv",
+"us_death_df":"https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv",
+"global_recover_df":"https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv",
+"mobility":"https://raw.githubusercontent.com/descarteslabs/DL-COVID-19/master/DL-us-m50.csv",
+ "start":366,
+ "days":40,
+ "admin_level":"county",
+ "admin_name":"06073",
+ "nearby_json":"https://raw.githubusercontent.com/wendyw1999/nearbyjson_file/main/nearby.json"
+}

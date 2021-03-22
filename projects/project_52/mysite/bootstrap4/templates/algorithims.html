@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style type="text/css">
+        /* general css */
+        body {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #ffffff;
+            font-family: 'Lato', sans-serif;
+        }
+        #title {
+            font-family: 'Rock Salt', cursive;
+            font-size: 40px;
+            color: black;
+        }
+        .margin-right {
+            margin-right: 20px;
+        }
+        }
+    </style>
+    <title>ONSIGHT: Algorithms</title>
+</head>
+
+<body>
+    <div class="text-center bg-white">
+        <!-- Nav bar and title -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0;">
+                <a class="navbar-brand" href="#" style="padding: 20px 20px;"><span id="title">OnSight</span></a>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav" style="padding: 20px 20px;">
+                        <a class="nav-item nav-link margin-right" href="/">Home</a>
+                        <a class="nav-item nav-link margin-right" href="/about/">About</a>
+                        <a class="nav-item nav-link margin-right" href="/algorithms/">Algorithms</a>
+                        <a class="nav-item nav-link margin-right" href="/developers/">Developers</a>
+                        <a class="nav-item nav-link margin-right" href="https://github.com/DSC180-RC/Rock-Climbing-Recommender" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="text-left" style="margin-bottom: 10px; margin-left: 30px">Outdoor Rock Climbing Recommendations</div>
+        </div>
+
+        <!-- Page title -->
+        <h3 style="margin-top: 0px;">Explanation of Algorithms</h3>
+
+        <!-- Content -->
+        <div class="paragraphs">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-5 text-left">
+                    <p>The recommenders we use tend towards the simple but effective side. This is primarily due to the limitations of the <a href="https://devcenter.heroku.com/articles/dyno-types" target="_blank" rel="noopener noreferrer">Heroku free tier</a>, which means that this project is limited to 512MB of memory for ALL people currently using the website. A sizable chunk of that 512MB is taken up by holding data in memory before/after filtering, which means that our algorithims must tend towards the simple. Additionally, the Heroku free tier also has a very limited CPU (exactly what CPU is used is <a href="https://stackoverflow.com/questions/38959503/what-exactly-is-a-heroku-compute-on-a-dyno" target="_blank" rel="noopener noreferrer">not known</a>) so the computations per user request must be strictly limited.</p>
+                    <p>Another restriction we imposed upon ourselves in our project proposal was that the recommendations must be understandable. In other words, each recommendation should have some addition text along the lines of "We recommend X because X is generally popular" or "We recommend X because a similar climber liked X". For the output of recommenders to be interpretable, they also need to be relatively simple.</p>
+                    <p>As a result, the two implemented recommenders are top popular and cosine similarity.</p>
+                </div>
+                <div class="col-md-7">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/BHRuOAo.jpg" class="figure-img img-fluid float-left" style="max-width: 100%">
+                        <figcaption><a href="https://www.mountainproject.com/route/106996981/black-magic" target="_blank" rel="noopener noreferrer">Black Magic (V3 R)</a> in the Bishop Happy Boulders. Image credit: <a href="https://www.mountainproject.com/user/107682818/abwise" target="_blank" rel="noopener noreferrer">ABWise</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-7">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/AJen0wL.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                        <figcaption><a href="https://www.mountainproject.com/route/105722593/white-rastafarian" target="_blank" rel="noopener noreferrer">White Rasatafarian (V2 R)</a> in Joshua Tree National Park. Image credit: <a href="https://www.ericarphotography.com/" target="_blank" rel="noopener noreferrer">Erica Robinson</a></figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-5 text-left">
+                    <p>The top popular recommender we use is extremely simple. Climbs are first filtered by location, by type of climb, and by difficulty. Then we take all remaining climbs that have an average rating over 3.5 out of 4 stars, then sort by the number of ratings.</p>
+                    <p>Note the reason the top popular recommender has a minimum rating is to prevent popular but not as high quality climbs from being recommended. Using a star rating filter ensures that the top popular recommendations are only the highest quality climbs.</p>
+                    <p>A proposed extension of the top popular recommender is a highest rated recommender, taking into account number of ratings with a binomial confidence interval, such as the Wilson score interval. Such a recommender would give the highest rated climbs, with an overall lower weight given to low quantity of ratings, and an overall higher weight given to high quantity of ratings.</p>
+                    <p>Currently, the top rated recommender is not implemented, but likely will be in the future.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-5 text-left">
+                    <p>The cosine similarity recommender we use starts similarily to the top popular, by filtering all climbs by location, type of climb, and by difficulty. The recommender then scrapes the user's Mountain Project account and gets their favorite climbs, as defined as all those climbs which the user rated highest. Now, the recommender has a list of favorite climbs, and a list of possible recommendations that match the user's filters.</p>
+                    <p>Then, cosine similarity scores are computed between all of the user's favorite climbs and all possible recommendations. The exact formula for cosine similarity comes from <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html" target="_blank" rel="noopener noreferrer">sklearn.metrics.pairwise.cosine_similarity</a>. Then, the list of possible recommendations is sorted by highest similarity, and the top N climbs are returned.</p>
+                </div>
+                <div class="col-md-7">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/rAhrSZh.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                        <figcaption>The <a href="https://www.mountainproject.com/area/105876414/peabody-boulders" target="_blank" rel="noopener noreferrer">Peabody Boulders</a> in the Bishop Buttermilks. Image credit: <a href="https://www.flickr.com/photos/hansbauck/" target="_blank" rel="noopener noreferrer">Hans Bauck</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

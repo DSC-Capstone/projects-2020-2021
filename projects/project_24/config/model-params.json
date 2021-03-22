@@ -1,0 +1,12 @@
+{
+"NUM_EPOCHS" : 100,
+"LEARNING_RATE" : 0.001,
+"NUM_HIDDEN" : 32,
+"num_days": 5,
+"nfeat" : 20,
+"nclass" : 1,
+"dataset" : "./data/dowJonescorrelation0.4graph.csv",
+"thresh" : 0.4,
+"filepath" : "./data/12modowJonesData/",
+"timeframe" : "12mo"
+}

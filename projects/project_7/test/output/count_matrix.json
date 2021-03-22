@@ -1,0 +1,8 @@
+,science,CoronavirusRecession,Health,bigfoot,aliens,The_Donald,DonaldTrump
+science,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+CoronavirusRecession,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+Health,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+bigfoot,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+aliens,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+The_Donald,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+DonaldTrump,0.0,0.0,0.0,0.0,0.0,0.0,1.0

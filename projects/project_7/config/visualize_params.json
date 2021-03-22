@@ -1,0 +1,8 @@
+{
+    "polarity_path": "data/polarity/user_polarity.csv",
+    "count_matrix_path": "data/matrices/count_matrix.csv",
+    "polarity_matrix_path": "data/matrices/polarity_matrix.csv",
+    "polarity_hist_path": "visualizations",
+    "count_chart_path": "visualizations/count_chart.png",
+    "polarity_chart_paths": ["visualizations/sci_polarity_chart.png", "visualizations/myth_polarity_chart.png", "visualizations/poli_polarity_chart.png", "visualizations/science-politics.png", "visualizations/science-myth.png"]
+}

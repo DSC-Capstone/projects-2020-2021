@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pymavlink = "*"
+dronekit-sitl = "*"
+mavproxy = "*"
+pandas = "*"
+bokeh = "*"
+numpy = "*"
+matplotlib = "*"
+utm = "*"
+empy = "*"
+catkin-pkg = "*"
+rospkg = "*"
+defusedxml = "*"
+
+[requires]
+python_version = "3.8"

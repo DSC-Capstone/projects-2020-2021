@@ -1,0 +1,13 @@
+{
+    "dataDir":"../teams/DSC180B_WI21_A00/a01capstonegroup06",
+    "trainDir":"train_snakes_r1",
+    "valDir":"valid_snakes_r1",
+    "hierarchyModelPath": "../teams/DSC180B_WI21_A00/a01capstonegroup06/model_states/26022021_04:42_15_densenet.pth",
+    "softModelPath": "../teams/DSC180B_WI21_A00/a01capstonegroup06/model_states/26022021_04:42_15_densenet.pth",
+    "hardModelPath": "../teams/DSC180B_WI21_A00/a01capstonegroup06/model_states/26022021_04:42_15_densenet.pth",
+    "hierarchyPath": "./data/hierarchies/snakes/",
+    "hierarchyJSON": "graph-induced-densenet121.json",
+    "hierarchyModel":"densenet121",
+    "wnidPath": "./data/wnids/snakes.txt",
+    "dataset":"snakes"
+}

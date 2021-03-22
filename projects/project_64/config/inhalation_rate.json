@@ -1,0 +1,5 @@
+inhalation_rate = {"resting": 0.49,
+                   "standing": 0.54,
+                   "light_exercise": 1.38,
+                   "moderate_exercise": 2.35,
+                   "heavy_exercise": 3.30}

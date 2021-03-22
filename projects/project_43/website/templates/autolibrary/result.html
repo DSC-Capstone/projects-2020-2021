@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoLibrary</title>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'autolibrary/css/main.css' %}" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body style="background-color:rgb(175, 161, 130);" onload="initiate()">
+    <div id="outer-wrapper">
+      <div id="inner-wrapper">
+        <div id="content-wrapper">
+          <div id="content">
+            <ul id="nav">
+              <li><a href="http://127.0.0.1:8000/autolibrary">AutoLibrary</a></li>
+              <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+              <li><a href="http://127.0.0.1:8000/contact">Contact Us</a></li>
+            </ul>
+            <div id="content-inner">
+              <div id="selection" class="content-full">
+                  <form class="pure-form pure-form-stacked">
+                    <fieldset>
+                      <legend>Customize Recommendations</legend>
+                      <div class="pure-u-3-4">
+                        <label>Subject</label>
+                        <select id="sel1" onchange="double_select(this.value)" class="pure-u-3-4">
+                          <option value="" disabled selected>Select</option>
+                        </select>
+                      </div>
+                      <div class="pure-u-3-4">
+                        <label>Topic</label>
+                        <select id="sel2" class="pure-u-3-4">
+                          <option value="" disabled selected>Select</option>
+                        </select>
+                      </div><br>
+                      <button class="pure-button pure-button-primary" style="margin-top: 8px; background-color: rgb(219, 155, 35);" onclick="event.preventDefault(); display_result();">Find Keywords</button>
+                      <br><br>
+
+                      <details>
+                        <summary>More Customization</summary>
+                        <div class="pure-g">
+                          <div class="pure-u-1 pure-u-md-1-5">
+                              <label>Keyword 1</label>
+                              <label id="hey"><input type="checkbox"/> phrase 1</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 2</label>
+                            <label><input type="checkbox"/> phrase 2</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 3</label>
+                            <label><input type="checkbox"/> phrase 3</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 4</label>
+                            <label><input type="checkbox"/> phrase 4</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-5">
+                            <label>Keyword 5</label>
+                            <label><input type="checkbox"/> phrase 5</label>
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-3">
+                            <label>Enter your own keywords</label>
+                            <input id='input_phrases' type="text" class="pure-u-23-24" />
+                          </div>
+                          <div class="pure-u-1 pure-u-md-1-3">
+                            <label>Other High-Quality Phrases</label>
+                            <select class="pure-input-1-2">
+                              <option value="" disabled selected>Select</option>
+                              <option>phrase 1</option>
+                              <option>Phrase 2</option>
+                              <option>Phrase 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <button type="submit" class="pure-button pure-button-primary" style="margin-top: 10px;background-color: rgb(219, 155, 35);" onclick="event.preventDefault(); alter_result();">Generate Results</button>
+                      </details>
+                      <br>
+                      <div id="loading-text">
+                        <h3 id='text' hidden>The 1st run takes about 5 minutes!</h3>
+                      </div>
+                      <img id="loading" src="{% static 'autolibrary/images/loading.gif' %}" style="height: 100px;" class="giphy-embed" allowFullScreen hidden>
+                      <br>
+                      
+                    </fieldset>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+            <div id="logo"> <img src="{% static 'autolibrary/images/logo.png' %}" alt="Nautica X" width="180px" height="110px"/> </div>
+            <h4>Documents</h4>
+            <ul id="doc_list" class="side-nav"></ul>
+          </div>
+        </div>
+        <div id="footer">
+          <ul id="footer-nav">
+            <li><a href="#">AutoLibrary</a></li>
+            <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+            <li class="last"><a href="#">Contact Us</a></li>
+          </ul>
+          <p class="copyright">Copyright 2021 Yichun Ren & Jiayi Fan & Bingqi Zhou</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function initiate(){ 
+    // sidebar
+    var data = JSON.parse("{{data|escapejs}}"); 
+    if (data.length > 0) {
+      var ul = document.getElementById("doc_list");
+      var li = document.createElement("li");
+      for (var x in data) { 
+        if (data[x] != '.DS_Store') {
+          var btn = document.createElement("BUTTON");
+          btn.className = "btn-group";
+          btn.innerHTML = data[x];
+          li.appendChild(btn);
+        }
+      } 
+      ul.appendChild(li);
+      var buttons = document.getElementById('doc_list').getElementsByTagName('button');
+      var max = buttons.length;
+      for(var i = 0; i < max; i++) {
+        buttons[i].addEventListener('click', select_doc, true);
+      }
+    }
+
+    // display pdf
+    var file_name = JSON.parse("{{selected_doc|escapejs}}"); 
+    var pdfname = JSON.parse("{{selected_pdf|escapejs}}"); 
+    var div = document.getElementById("selection");
+    
+    var h = document.createElement("h3");
+    h.innerHTML = file_name;
+    div.appendChild(h);
+
+    var embed = document.createElement('embed');
+    embed.src = "{% static 'autolibrary/documents/' %}" + pdfname;
+    embed.type = "application/pdf";
+    embed.width = "100%";
+    embed.height = "1000px";
+    div.appendChild(embed);
+
+    // select domain
+    var domains = JSON.parse("{{domains|escapejs}}");
+    var select1 = document.getElementById('sel1');
+    for (var domain in domains) {
+      var first = document.createElement('option');
+      first.value = domain;
+      first.innerHTML = domain;
+      select1.appendChild(first);
+    }    
+  }  
+
+  function double_select(value) {
+    var domains = JSON.parse("{{domains|escapejs}}");
+    if (value.length == 0) document.getElementById("sel2").innerHTML = "<option></option>";
+    else {
+      var subdomain = "<option>" + value + "</option>";
+      for (domain in domains[value]) {
+        subdomain += "<option>" + domains[value][domain] + "</option>";
+      }
+      document.getElementById("sel2").innerHTML = subdomain;
+    }
+  }
+
+  function alter_result() {
+    var image = document.getElementById('loading');
+    image.hidden = false;
+
+    var input_keywords = document.getElementById("input_phrases").value;
+    var selected = {
+      "keywords": input_keywords
+    }
+    var URL = "{% url 'get_keywords' %}";
+    $.post(URL, selected, function(response){
+        if (response === 'get keywords'){ 
+          window.location = "http://127.0.0.1:8000/autolibrary/customization";
+        } else { 
+            alert('Error! :('); 
+        }
+    });
+  }
+
+  function display_result() {
+    var h = document.getElementById('text');
+    h.hidden = false;
+    var image = document.getElementById('loading');
+    image.hidden = false;
+
+    var selected = {
+      "domain": document.getElementById('sel1').value, 
+      "subdomain": document.getElementById('sel2').value
+    };
+    var URL = "{% url 'get_domain' %}";
+    $.post(URL, selected, function(response){
+      if (response === 'get domain'){ 
+        window.location = "http://127.0.0.1:8000/autolibrary/customization";
+      } else { 
+          alert('Error! :('); 
+      }
+    });
+  }
+
+  function select_doc(e) {
+    var selected = {"file_name": e.target.innerHTML};
+    var URL = "{% url 'get_file' %}";
+    $.post(URL, selected, function(response){
+      if (response === 'get file'){ 
+        window.location.href = "http://127.0.0.1:8000/autolibrary/result";
+      } else { 
+        alert('Error! :('); 
+      }
+    });
+  }
+</script>

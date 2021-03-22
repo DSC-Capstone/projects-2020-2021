@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoLibrary</title>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'autolibrary/css/main.css' %}" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body style="background-color:rgb(175, 161, 130);" onload="initiate()">
+    <div id="outer-wrapper">
+      <div id="inner-wrapper">
+        <div id="content-wrapper">
+          <div id="content">
+            <ul id="nav">
+              <li><a href="http://127.0.0.1:8000/autolibrary">AutoLibrary</a></li>
+              <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+              <li><a href="http://127.0.0.1:8000/contact">Contact Us</a></li>
+            </ul>
+            <div id="content-inner">
+              <div class="content-full">
+                <legend style="font-size: large; margin-bottom: 5%; margin-top: 5%;">Send us messages if you have any issues or suggestions!</legend>
+                <br>
+                <table class="pure-table pure-table-horizontal" style="margin-bottom: 80%;">
+                  <thead>
+                      <tr>
+                          <th>Developer</th>
+                          <th>Email</th>
+                          <th>Fields</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style="height: 50px;">Yichun Ren</td>
+                          <td>yir016@ucsd.edu</td>
+                          <td>AutoPhrase Results, Website Runnning Issues</td>
+                      </tr>
+                      <tr>
+                          <td style="height: 50px;">Jiayi Fan</td>
+                          <td>jif087@ucsd.edu</td>
+                          <td>Customization Form, Website Display Issues</td>
+                      </tr>
+                      <tr>
+                          <td style="height: 50px;">Bingqi Zhou</td>
+                          <td>biz024@ucsd.edu</td>
+                          <td>Domian Selection, Recommendations Return Issues</td>
+                      </tr>
+                  </tbody>
+                </table>
+              
+              
+              </div>
+            </div>
+          </div>
+          <div id="sidebar">
+            <div id="logo"> <img src="{% static 'autolibrary/images/logo.png' %}" alt="Nautica X" width="180px" height="110px"/> </div>
+            <h4>Documents</h4>
+            <ul id="doc_list" class="side-nav"></ul>
+          </div>
+        </div>
+        <div id="footer">
+          <ul id="footer-nav">
+            <li><a href="#">AutoLibrary</a></li>
+            <li><a href="http://yichunren.pythonanywhere.com/blog">Blog</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/jfan1998/AutoLibrary">Code</a></li>
+            <li class="last"><a href="#">Contact Us</a></li>
+          </ul>
+          <p class="copyright">Copyright 2021 Yichun Ren & Jiayi Fan & Bingqi Zhou</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function initiate(){ 
+    var data = JSON.parse("{{data|escapejs}}"); 
+    if (data.length > 0) {
+      var ul = document.getElementById("doc_list");
+      var li = document.createElement("li");
+      for(var x in data){ 
+        if (data[x] != '.DS_Store') {
+          var btn = document.createElement("BUTTON");
+          btn.className = "btn-group";
+          btn.innerHTML = data[x];
+          li.appendChild(btn);
+        }
+      } 
+      ul.appendChild(li);
+      // var buttons = document.getElementById('doc_list').getElementsByTagName('button');
+      // var max = buttons.length;
+      // for(var i = 0; i < max; i++) {
+      //     buttons[i].addEventListener('click', selection, true);
+      // }
+    }
+  } 
+
+  // function selection(e) {
+  //   var selected = {"file_name": e.target.innerHTML};
+  //   var URL = "{% url 'get_file' %}";
+  //   $.post(URL, selected, function(response){
+  //       if (response === 'success'){ 
+  //           alert('Start searching!'); 
+  //       } else { 
+  //           alert('Error! :('); 
+  //       }
+  //   });
+  // }
+</script>

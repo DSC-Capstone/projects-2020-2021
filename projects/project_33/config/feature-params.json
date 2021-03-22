@@ -1,0 +1,12 @@
+{
+    "paths":[ 
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/popular_tfidf_10000.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/random_tfidf_10000.csv",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params/malware_tfidf_10000.csv"
+    ],
+    "sample_size": [324, 581, 905],
+    "type_lst": [0, 0, 1], 
+    "output_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/tf-idf", 
+    "matlst": ["A","B","P", "I"],
+    "tf_idf_size": 10000
+}

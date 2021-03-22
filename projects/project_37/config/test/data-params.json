@@ -1,0 +1,34 @@
+{
+    "outfolder": "test/output",
+    "parse_params": {
+        "data_source": "test",
+        "nprocs": 2,
+        "recompute": true
+    },
+    "feature_params": {
+        "redo": true,
+        "walk_args": {
+            "nprocs": 16,
+            "length": 60,
+            "n": 3,
+            "metapaths": [
+                ["app", "api", "app"],
+                ["app", "api", "method", "api", "app"],
+                ["app", "api", "package", "api", "app"],
+                ["app", "api", "package", "api", "method", "api", "app"],
+                ["app", "api", "method", "api", "package", "api", "app"]
+            ]
+        },
+        "w2v_args": {
+            "size": 128,
+            "window": 5,
+            "min_count": 0,
+            "sg": 1,
+            "workers": 2,
+            "iter": 5
+        }
+    },
+    "hindroid_params": {
+        "redo": true
+    }
+}

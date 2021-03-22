@@ -1,0 +1,12 @@
+{
+    "science_path": "data/raw/science.csv",
+    "myth_path": "data/raw/myth.csv",
+    "politics_path": "data/raw/politics.csv",
+    "polarity_path": "data/polarity/user_polarity.csv",
+    "matrix_path": "data/matrices",
+    "count_matrix_name": "count_matrix.csv",
+    "polarity_matrix_name": "polarity_matrix.csv",
+    "science_order": ["science", "EverythingScience", "climate", "COVID19", "PandemicPreps", "CoronavirusRecession", "askscience", "Health", "Ebola", "medicine", "publichealth"],
+    "myth_order": ["bigfoot", "Humanoidencounters", "BigfootEncounters", "conspiracy", "wanttobelieve", "SasquatchAttacks", "squatchersonly", "UrbanMyths", "ufo", "UFOs", "aliens"],
+    "politics_order": ["The_Donald", "DonaldTrump", "flatearthsociety", "tucker_carlson", "HillaryForPrison", "climateskeptics", "benshapiro", "China_Flu", "LockdownSkepticism", "WalkAway", "antifapassdenied"]
+}

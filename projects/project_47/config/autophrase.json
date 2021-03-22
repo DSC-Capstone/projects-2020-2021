@@ -1,0 +1,7 @@
+{
+    "MIN_SUP": 20,
+    "MODEL": "../model/autophrase",
+    "RAW_TRAIN": "../data/temp/summaries.txt",
+    "TEXT_TO_SEG": "../data/temp/summaries.txt",
+    "THREAD": 1
+}

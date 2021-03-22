@@ -1,0 +1,3 @@
+/opt/samtools-1.10/samtools sort -n -O BAM ./data/processed/duplicates_removed/SRR7949794.bam -o ./data/processed/sorted/SRR7949794.bam
+ 
+htseq-count -f bam -r name -s yes -m union -i gene_id -o ./data/processed/test_gene_counts.csv ./data/processed/sorted/SRR7949794.bam ./data/external/gencode.v24.annotation.gtf 

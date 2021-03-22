@@ -1,0 +1,9 @@
+{
+    "model_path": "test/model/metapath2vec_AA_vec2_tok2_sen50.model",
+    "train_path": "test/feature/A_train.npz",
+    "test_path": "test/feature/A_test.npz",
+    "label_path": "test/feature/label.json",
+    "clf_lst": ["svm", "rf", "gb"],
+    "plot_path": "test/report/metapath2vec_AA_vec2_tok2_sen50.png",
+    "vec_size": 2
+}

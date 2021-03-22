@@ -1,0 +1,34 @@
+{
+	"conv_cfg": { 
+				"indir": "data/testraw",
+				"outdir": "data/testclean"
+				},
+	
+	"plot_cfg": {
+		"outdir": "test_final_viz",
+	
+		"IMU": {
+			
+			"Mounting": ["data/testclean/razor_imu/imu_30.csv"],
+			
+			"Report": "data/testclean/razor_imu/imu_90.csv",
+			
+			"Half_Arc": [ 
+				         {"f": "data/testclean/razor_yaw/yaw_90_to_180_undershoot.csv", "r": null}
+				     	],
+
+			"S_Line": ["data/testclean/razor_yaw/yaw_80.csv"]
+				
+			},
+
+		"Odom": {
+
+			"Vesc": ["data/testclean/vesc_odom/straight_3412.csv"],
+			
+			"Servo": ["data/testclean/vesc_odom/vesc_servo_gain_m1_1v2.csv"]
+
+		    }
+
+	}
+
+}

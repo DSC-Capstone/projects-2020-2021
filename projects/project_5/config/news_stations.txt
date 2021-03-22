@@ -1,0 +1,9 @@
+FoxNews
+BBCWorld
+MSNBC
+CNN
+washingtonpost
+CBSNews
+nytimes
+RT_America
+BreitbartNews

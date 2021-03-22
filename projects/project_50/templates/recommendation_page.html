@@ -1,0 +1,48 @@
+{% extends "workout_lists_base.html" %}
+{% block heading %} 
+  <h1 class="display-3"> Hello {{ g.user['name'] }}!</h1>
+  <p class="lead"> Choose from one of our workout filtering options. You can either choose recommendations
+    personalized for you, the most popular workouts amongst all users, or workouts at random! </p>
+
+  <p class="lead font-italic">
+    All your recommended workouts are filtered to match your workout preferences and available equipment. You can update
+    your preferences anytime <a href="{{ url_for('update') }}">here</a>. Feel free to click "like" for workouts you enjoy,
+    as this will give better recommendations for the "Recommended For You" option. Any workouts you "dislike" will be not be shown again.
+  </p>
+{% endblock heading %}
+
+{% block dropdown %} 
+<select class="form-control form-control-lg " id="dropdown_option" name="engine" onChange="enableSubmit()">
+  <option value="" disabled selected hidden id="hidden_selection">Choose a Recommender</option>
+  <option value="random">Random</option>
+  <option value="toppop">Most Popular</option>
+  <option value="lightfm">Recommmended for You</option>
+</select>
+{% endblock dropdown %}
+
+{% block additionalHeader %} 
+  <!-- Survey Alert-->
+  <div class="alert alert-warning alert-dismissible fade show alert-small center-block" role="alert">
+    <div class="text-center">
+      <strong>We need your help!</strong> Please fill out <a target="_blank" href='https://forms.gle/1J3249J3RqJNKWKZ6'>our survey</a> and
+      let us know what you think of our site!
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endblock additionalHeader %}
+
+{% block loadingMessage %}
+  <h1 class="display-5" style="color:white;">Loading your Recommendations...</h1>
+{% endblock loadingMessage %}
+
+{% block innerScripts %}
+<script>
+ let form = document.getElementById("engine_select_form");
+ form.action = '/'
+
+ let find_workouts_button = document.getElementById("find_workouts");
+ find_workouts_button.value = 'Find Workouts!'
+</script>
+{% endblock innerScripts %}

@@ -1,0 +1,1 @@
+{"model_name": "resnet", "feature_extracting": true, "batch_size": 32, "learning_rate": 0.001, "num_epochs": 2}

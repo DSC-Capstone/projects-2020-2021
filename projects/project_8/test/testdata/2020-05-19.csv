@@ -1,0 +1,5 @@
+tweet_id,text,location,retweeted,hashtag,follower_count,created_at,language
+1285810000,RT @AB: Exclusive: #Covid will tackle coronavirus pandemic in season 17.,where,FALSE,['Covid'],223,Tue May 19 04:04:17 +0000 2020,en
+195176834534,"who was diagnosed sick with #COVID19 is currently on life support and his condition, sad","sth",False,['COVID19'],352,Tue May 19 21:14:40 +0000 2020,en
+50657932895872,RT @sudsfsa: Possibly beginning of end of many reputations of great epidemiologists across the world who bet the ranch on,,False,[],154,Tue May 19 01:47:41 +0000 2020,en
+0409251238,"RT @kjsf: France’s 14-day cumulative number of Covid-19 sick cases per 100,000 people reached 32.1 as of Thursday, compared with the UK","h",False,[],53,Tue May 19 09:27:55 +0000 2020,en

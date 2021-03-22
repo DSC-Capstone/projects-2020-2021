@@ -1,0 +1,13 @@
+{
+    "X_paths":[ 
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/R_train.npz",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/R_test.npz",
+        "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/B_train_R.npz"
+    ],
+    "type_list": ["R_train","R_test","B_train"],
+    "clf_lst":["svm", "rf","gb"],
+    "type_A":"original",
+    "y_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/feature/label.json",
+    "metapaths": ["RR","RBR"],
+    "output_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/model"
+}

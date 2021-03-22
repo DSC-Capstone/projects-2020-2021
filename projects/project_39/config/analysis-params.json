@@ -1,0 +1,10 @@
+{
+  "year": "2020",
+  "dynamic_cols": ["before_cpuutil_max", "before_harddpf_max", "before_diskutil_max", "before_networkutil_max"],
+  "target": "wait_msecs",
+  "wait_th": "10000",
+  "cpu_th": "100",
+
+  "nominal": ["chassistype", "os", "graphicscardclass", "cpucode", "persona", "processornumber", "age_category"],
+  "N": "1000"
+}

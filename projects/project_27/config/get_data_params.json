@@ -1,0 +1,4 @@
+{
+  "url":"https://dumps.wikimedia.org/enwiki/20210101/enwiki-20210101-pages-meta-history8.xml-p2535877p2535909.bz2",
+  "to_csvfilename":"test/output/raw_dump_b.csv"
+}

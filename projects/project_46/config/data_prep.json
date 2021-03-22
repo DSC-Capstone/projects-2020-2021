@@ -1,0 +1,6 @@
+{
+    "data_dir": "./data/",
+    "raw_dir": "raw/",
+    "processed_dir": "processed/",
+    "testing": false
+}

@@ -1,0 +1,4 @@
+{
+    "ground_truth": "data/ground_truth/ground_truth.csv",
+    "logged_wps": "data/ground_truth/logged_wps.csv"
+}

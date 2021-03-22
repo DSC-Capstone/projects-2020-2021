@@ -1,0 +1,6 @@
+{
+    "rxnorm_fp":"/teams/DSC180A_FA20_A00/a07opioidoverdoseprevalence/data/RXNORM.csv",
+    "mesh_fp":"/teams/DSC180A_FA20_A00/a07opioidoverdoseprevalence/data/MESH.csv",
+    "fp":"/teams/DSC180A_FA20_A00/a07opioidoverdoseprevalence/data/scraper_output_2.json",
+    "QUERY":"scraper"
+}

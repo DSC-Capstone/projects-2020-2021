@@ -1,0 +1,5 @@
+{
+    "links":["https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-020-0684-z/MediaObjects/41587_2020_684_MOESM2_ESM.xlsx",
+    "https://knightlab.s3.us-east-2.amazonaws.com/network.zip"],
+    "save_name":["data/covid_time_series.xls"]
+}

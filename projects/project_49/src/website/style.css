@@ -1,0 +1,100 @@
+body{
+    background-color:lightblue;   
+}
+
+.user_survey{
+    border-width: 2px;
+    border-style: solid;
+    font-size: 30px;
+    background-color:palevioletred;
+    text-align: center; 
+    height:1150px;
+    width: 70vw;
+    margin: auto;
+}
+
+#page_title{
+    text-align: center;
+    font-size: 70px;
+    color:#8E2C4F;
+}
+
+#question{
+    margin-left: 5%;
+    text-align: left;
+}
+
+.reccomendations{
+    border-width: 2px;
+    padding-bottom:420px;
+    border-style: solid;
+    background-color: mediumaquamarine;
+    border-color:#8E2C4F;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+    text-align: center;  
+    margin: auto;
+    height:10vh;
+    width:70vw;
+}
+
+.categories{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    text-align: center;  
+    margin: auto;
+    height:20vh;
+    width:90vw;
+}
+
+.b{
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: left;
+    width: 23%;
+    height: 400px;
+    background-color: mediumaquamarine;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    margin: auto;
+    height: 25px;
+    background:white;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.container{
+    text-align: center;
+}
+
+.submit_form {
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.submit_form:hover {
+    background-color: #008CBA;
+    color: white;
+}

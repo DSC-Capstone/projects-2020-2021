@@ -1,0 +1,15 @@
+{
+    "api_keys": "api_keys.json",
+    "science_path": "data/raw/science.csv",
+    "myth_path": "data/raw/myth.csv",
+    "politics_path": "data/raw/politics.csv",
+    "before_year": 2020,
+    "before_day": 30,
+    "before_month": 6,
+    "after_year": 2020,
+    "after_day": 1,
+    "after_month": 3,
+    "science": ["science", "EverythingScience", "climate", "COVID19", "PandemicPreps", "CoronavirusRecession", "askscience", "Health", "Ebola", "medicine", "publichealth"],
+    "myth": ["bigfoot", "Humanoidencounters", "BigfootEncounters", "conspiracy", "wanttobelieve", "SasquatchAttacks", "squatchersonly", "UrbanMyths", "ufo", "UFOs", "aliens"],
+    "politics": ["The_Donald", "DonaldTrump", "flatearthsociety", "tucker_carlson", "HillaryForPrison", "climateskeptics", "benshapiro", "China_Flu", "LockdownSkepticism", "WalkAway", "antifapassdenied"]
+}

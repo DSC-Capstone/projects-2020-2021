@@ -1,0 +1,44 @@
+0.9490073205	quantum theory
+0.9423811300	gravitational field
+0.9370913392	quantum mechanics
+0.9272032440	wave function
+0.9228103868	general relativity
+0.8936192252	quantum gravity
+0.8650321207	chapel hill
+0.7865765651	yang mills
+0.7462150766	field theory
+0.7430700189	gravitational waves
+0.7074239871	caltech lectures
+0.6790406538	chapel hill conference
+0.3357625874	role of
+0.2915140665	at chapel hill
+0.2731975830	in order to
+0.2582176379	on gravitation
+0.2561229798	the chapel hill conference
+0.2421246753	quantization of
+0.2279922411	due to
+0.2233685065	the hughes
+0.2171486264	lectures on
+0.2153940115	the gravitational field
+0.2086281718	of gravitational waves
+0.1890541459	in ref
+0.1857278860	theory of
+0.1838361833	as well
+0.1699899684	in particular
+0.1688008103	the chapel hill
+0.1182536436	part of
+0.1163637057	by feynman
+0.1069536436	the same
+0.1047567100	of gravitation
+0.0964983766	the usual
+0.0801119769	the first
+0.0736619769	given in
+0.0636088384	the classical
+0.0509934538	the universe
+0.0504194444	of feynman’s
+0.0491588384	of gravity
+0.0464522727	the metric
+0.0407755051	the gravitational
+0.0356075563	a gravitational
+0.0348075563	of gravitational
+0.0323588384	of quantum

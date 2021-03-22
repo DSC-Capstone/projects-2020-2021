@@ -1,0 +1,12 @@
+{
+    "scientific_path" : "src/data/scientific",
+    "misinformation_path" : "src/data/misinformation",
+    "scientific_sorted_path" : "src/data/scientific/sorted",
+    "misinformation_sorted_path" : "src/data/misinformation/sorted",
+    "output_path" : "src/out",
+    "test_scientific_path" : "test/data/scientific",
+    "test_misinformation_path" : "test/data/misinformation",
+    "test_output_path": "test/out",
+    "scientific_politicians" : ["AOC", "BernieSanders", "lisamurkowski", "maziehirono", "RepAdamSchiff", "RepKatiePorter", "RepUnderwood", "SenatorRomney", "SenWarren", "tedlieu"],
+    "misinformation_politicians" : ["HawleyMO", "Jim_Jordan", "LindseyGrahamSC", "mattgaetz", "RandPaul", "replouiegohmert", "SenJoniErnst", "TulsiGabbard", "tedcruz", "RepAndyBiggsAZ"]
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Amanda Shu, Najeem Kanishka, Peter Peng">
+
+  <title>Asnapp</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+  <!-- Custom styles for this template -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+  <!-- Slick Carousel Stylesheets-->
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='libraries/slick/slick.css') }}"/>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='libraries/slick/slick-theme.css') }}"/>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand display-6" href="{{ url_for('recommendation_page') }}">
+        <img src= "{{ url_for('static',filename='favicon.ico') }}" width="30" height="30" alt='Logo for Asnapp'>
+         Asnapp
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('recommendation_page') }}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li id='history' class="nav-item">
+            <a class="nav-link" href="{{ url_for('history_page') }}">Workout History</a>
+          </li>
+          <li id='update_preferences' class="nav-item">
+            <a class="nav-link" href="{{ url_for('update') }}">Update Preferences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about_page') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact_page') }}">Contact Us</a>
+          </li>
+          <li id='logout' class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  {% block content %}{% endblock %}
+ <br>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Amanda Shu, Najeem Kanishka, Peter Peng 2021</p>
+      <p class="m-0 text-center text-white">All workout routines and associated materials are Copyright &copy; FitnessBlender 2021</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- no update preferences or logout button until user is logged in -->
+  {% if g.user is none %}
+  <script>
+    document.getElementById('update_preferences').style.display = "none";
+    document.getElementById('logout').style.display = "none";
+    document.getElementById('history').style.display = "none";
+  </script>
+  {% endif %}
+  {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

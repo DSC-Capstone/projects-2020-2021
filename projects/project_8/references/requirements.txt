@@ -1,0 +1,14 @@
+python3
+numpy
+pandas
+curl
+twarc
+tweepy
+seaborn
+scipy
+python-louvain
+python-dotenv
+nltk
+torch
+transformers
+kaggle

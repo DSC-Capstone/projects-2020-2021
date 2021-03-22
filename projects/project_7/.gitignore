@@ -1,0 +1,11 @@
+/data/*
+*.zip
+*.pyc
+id.txt
+.twarc
+twarc.log
+.idea
+__pycache__
+api_keys.json
+
+.ipynb_checkpoints

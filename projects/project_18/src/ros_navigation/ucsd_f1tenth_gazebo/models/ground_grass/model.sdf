@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+    <model name='ground_grass'>
+      <static>1</static>
+      <link name='ground_grass'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50 </size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual_ground'>
+          <cast_shadows>0</cast_shadows>
+	  <pose>0 0 .005 0 0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50 </size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground_grass/materials/scripts</uri>
+              <uri>model://ground_grass/materials/textures</uri>
+              <name>Floor/Grass</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+</sdf>

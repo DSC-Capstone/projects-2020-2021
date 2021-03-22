@@ -1,0 +1,8 @@
+{
+    "report_name": "final report",
+    "data_dir": "./data/",
+    "notebook_dir": "./notebooks/",
+    "notebook_file": "final_report.ipynb",
+    "report_dir": "reports/",
+    "report_file": "final_report.html"
+}

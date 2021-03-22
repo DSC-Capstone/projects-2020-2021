@@ -1,0 +1,69 @@
+0.9474069264	motivational interviewing
+0.9440474026	mental health
+0.9350521645	substance abuse
+0.9163690476	machine learning
+0.9094902597	automatic speech recognition
+0.7625354978	skills using speech and language technologies
+0.7235854978	automated evaluation of psychotherapy
+0.7071188312	speech recognition
+0.6731807359	code prediction
+0.6719785714	real world
+0.6624854978	behavioral coding
+0.5973331169	a good therapist
+0.5950140693	using speech and language technologies
+0.5708690476	utterance level
+0.5668593074	test sets
+0.5362188312	annual conference of
+0.5206569264	flemotomos et al
+0.5055735931	spearman cor =
+0.4952759740	the international speech communication association
+0.4493069264	in proc
+0.4323500000	session level
+0.4240950216	ucc data
+0.4223688312	even though
+0.4169759740	et al
+0.3992404762	p value =
+0.3926116883	therapy session
+0.3800116883	automated evaluation of psychotherapy skills
+0.3800045455	therapy sessions
+0.3230902597	percentage of
+0.3188235931	number of
+0.3160140693	journal of
+0.3128854978	automated evaluation
+0.3105378788	in order to
+0.2671235931	speech and language
+0.2571950216	able to
+0.2474926407	in order
+0.2452690476	the session level
+0.2415235931	based on
+0.2402759740	& narayanan
+0.2062116883	the asr
+0.2008642857	the utterance level
+0.1832021645	more than
+0.1778783550	speech communication
+0.1758878788	in particular
+0.1745331169	language technologies
+0.1697212121	the entire
+0.1619926407	assigned to
+0.1279664502	automated evaluation of
+0.1096474026	because of
+0.1036474026	the same
+0.0989283550	in table
+0.0957807359	the system
+0.0904212121	the counselor
+0.0895545455	the therapist
+0.0805212121	evaluation of
+0.0780212121	the ucc
+0.0693974026	used for
+0.0686640693	used to
+0.0685307359	the two
+0.0633974026	the first
+0.0626402597	the session
+0.0623642857	speech and
+0.0623069264	the client
+0.0622902597	of psychotherapy
+0.0586402597	the diarization
+0.0539735931	the quality
+0.0527307359	conference of
+0.0378735931	the utterance
+0.0262902597	and language

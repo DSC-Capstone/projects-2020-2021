@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <h1 class="display-4">Welcome (Back)!</h1>
+    <p class="lead">Asnapp recommends workout videos for you! Learn more about Asnapp <a href="{{ url_for('about_page') }}">here</a>.</p>
+    <p class="lead">
+      If you have any questions or need to reset your email or password, please do not hesitate
+      to <a href="{{ url_for('contact_page') }}">contact us</a>.
+    </p>
+    <form method="POST" action="{{ url_for('login_page') }}">
+      {{ form.hidden_tag() }}
+      <fieldset>
+        <div>
+          {{ form.email.label(class='display-6') }}<br>
+          {{ form.email(size=20, placeholder='email@example.com') }}
+          {% if form.email.errors %}
+          {% for e in form.email.errors %}
+          <span>{{ e }} </span>
+          {% endfor %}
+          {% elif email_error %}
+          <span>Account with this email does not exist</span>
+          {% endif %}
+        </div>
+
+        <div>
+          {{ form.password.label(class='display-6') }}<br>
+          {{ form.password(size=20) }}
+          {% if form.password.errors %}
+          {% for e in form.password.errors %}
+          <span>{{ e }} </span>
+          {% endfor %}
+          {% elif password_error %}
+          <span>Incorrect password</span>
+          {% endif %}
+        </div>
+      </fieldset>
+      <br>
+      <input id='submit' name='submit' type='submit' value="Login" class="btn btn-primary btn-lg"></input>
+    </form>
+    <br>
+    <p class="display-6">Create An Account <a href="{{ url_for('registration_page') }}"> Here</a></p>
+  </header>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+1 GPU, 4 CPU, 32 GB RAM
+
+numpy=1.18.5
+pandas=1.1.4
+scipy=1.4.1
+tensorflow=2.3.1
+torch=1.2.0+cu92
+sklearn=0.22.2.post1
+scikit-surprise=1.1.1
+json=2.0.9
+kaggle=1.5.10

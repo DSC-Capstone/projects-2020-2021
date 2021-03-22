@@ -1,0 +1,12 @@
+- lang: EN
+  param:
+    infile: data/en_sentiment.json
+    language: English
+- lang: ES
+  param:
+    infile: data/es_sentiment.json
+    language: Spanish
+- lang: ZH
+  param:
+    infile: data/zh_sentiment.json
+    language: Chinese

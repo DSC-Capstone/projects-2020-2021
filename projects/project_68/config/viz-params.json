@@ -1,0 +1,5 @@
+{
+    "outdir": "data/report",
+    "report_in_path": "notebooks/Viz.ipynb",
+    "report_out_path": "notebooks/Viz.html"
+}

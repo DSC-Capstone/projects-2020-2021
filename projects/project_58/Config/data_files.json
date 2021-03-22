@@ -1,0 +1,12 @@
+
+{
+"tpc" : "/datasets/MaskedFace-Net/train/covered" ,
+"tpic" : "/datasets/MaskedFace-Net/train/incorrect", 
+"tpu" :"/datasets/MaskedFace-Net/train/uncovered", 
+"hopc"  :"/datasets/MaskedFace-Net/holdout/covered", 
+"hopic" : "/datasets/MaskedFace-Net/holdout/incorrect", 
+"hopu"  :"/datasets/MaskedFace-Net/holdout/uncovered", 
+"vpc" : "/datasets/MaskedFace-Net/validation/covered", 
+"vpic" :"/datasets/MaskedFace-Net/validation/incorrect", 
+"vpu" : "/datasets/MaskedFace-Net/validation/uncovered" 
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style type="text/css">
+        /* general css */
+        body {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #ffffff;
+            font-family: 'Lato', sans-serif;
+        }
+        #title {
+            font-family: 'Rock Salt', cursive;
+            font-size: 40px;
+            color: black;
+        }
+        .margin-right {
+            margin-right: 20px;
+        }
+        }
+    </style>
+    <title>ONSIGHT: About</title>
+</head>
+
+<body>
+    <div class="text-center bg-white">
+        <!-- Nav bar and title -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0;">
+                <a class="navbar-brand" href="#" style="padding: 20px 20px;"><span id="title">OnSight</span></a>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav" style="padding: 20px 20px;">
+                        <a class="nav-item nav-link margin-right" href="/">Home</a>
+                        <a class="nav-item nav-link margin-right" href="/about/">About</a>
+                        <a class="nav-item nav-link margin-right" href="/algorithms/">Algorithms</a>
+                        <a class="nav-item nav-link margin-right" href="/developers/">Developers</a>
+                        <a class="nav-item nav-link margin-right" href="https://github.com/DSC180-RC/Rock-Climbing-Recommender" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="text-left" style="margin-bottom: 10px; margin-left: 30px">Outdoor Rock Climbing Recommendations</div>
+        </div>
+
+        <!-- Page title -->
+        <h3 style="margin-top: 0px;">About the Project</h3>
+
+        <!-- Content -->
+        <div class="paragraphs">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-7">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/zwpTxC2.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                        <figcaption><a href="https://www.mountainproject.com/route/108881466/the-rhino" target="_blank" rel="noopener noreferrer">The Rhino (V8)</a> in the South Africa Rocklands. Image credit: <a href="https://www.joshclevin.com/" target="_blank" rel="noopener noreferrer">Josh Levin</a></figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-5 text-left">
+                    <p><span style="font-family: 'Rock Salt', cursive"><b>OnSight</b></span> is an outdoor rock climbing recommender developed by <a href="/developers/">three UCSD students</a> for their final year capstone project. Historical methods for outdoor rock climbing recommendation include word of mouth, guide books to specific areas, and websites such as <a href="https://www.mountainproject.com/">Mountain Project</a>. All three of these historical recommendation methods have significant drawbacks.</p>
+                    <p>The issue with word of mouth is that it requires one to know an extremely knowledgeable and experienced outdoor climber. And even the recommendations that come from expert climbers is limited, as no one can have expert knowledge of more than a few climbing areas.</p>
+                    <p>The issue with guide books is that for the most part, they only give star ratings based on the authors opinion. In addition, they are tightly focused on specific areas and thus cross area recommendations are impossible.</p>
+                    <p>And finally, the issue with Mountain Project is that Mountian Project only offers most popular recommendations, so users cannot get personalized recommendations.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-5 text-left">
+                    <p>Thus, the goal for our capstone project was to create an outdoor recommender system which mitigated the effects of the three historical recommendation methods.</p>
+                    <p>Data for the recommender is scraped from Mountain Project, from all routes and boulders in the non-contiguous United States. Cleaned data is stored on <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">MongoDB</a> using their free teir of 512MB of free storage.</p>
+                    <p>The input to the recommender consists of the user's desired recommendation location, the number of recommendations, and the desired difficulties of boulders/routes. For certain recommenders, the user must input their Mountain Project profile in order to get personalized recommendations.</p>
+                    <p>A more detailed description of the recommenders are in the <a href="/algorithms/">Algorithms</a> page.</p>
+                    <p>Finally, recommendations appear below the map in table format, along with any minor errors generated during the recommendation process.</p>
+                </div>
+                <div class="col-md-7">
+                    <figure class="figure">
+                        <img src="https://i.imgur.com/bALuxIS.png" class="figure-img img-fluid float-left" style="max-width: 100%">
+                        <figcaption>The legendary <a href="https://www.mountainproject.com/area/105833395/half-dome" target="_blank" rel="noopener noreferrer">Half Dome</a> of Yosemite National Park. Image credit: <a href="https://www.nationalgeographic.org/photo/dome-half/" target="_blank" rel="noopener noreferrer">Julie Austin for NationalGeographic</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

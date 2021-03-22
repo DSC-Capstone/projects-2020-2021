@@ -1,0 +1,8 @@
+{
+    "report_name": "EDA",
+    "data_dir": "./data/",
+    "notebook_dir": "./notebooks/",
+    "notebook_file": "eda.ipynb",
+    "report_dir": "reports/",
+    "report_file": "eda.html"
+}

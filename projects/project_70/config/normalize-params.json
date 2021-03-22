@@ -1,0 +1,13 @@
+{
+    "output_dir" : "data/out",
+    "DESeq2" : {
+    	"Rscript" : "/opt/conda/envs/r-bio/bin/Rscript",
+        "source" : "src/data/normalize.r",
+        "input_counts" : "data/out/gene_matrix.tsv",
+        "input_features" : "data/out/features.tsv",
+        "max_genes" : 8000
+    },
+    "cleanup" : 0,
+    "verbose": 1
+}
+

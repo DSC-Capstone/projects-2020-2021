@@ -1,0 +1,2459 @@
+,Building,Room,Area,Height,Occupancy,occupancyImputed_TF,VAVrecommended,VAVmax,VAVmin
+0,Fred N. Spiess Hall,100,449,10,11.225,True,193.07,-1,-1
+1,Fred N. Spiess Hall,100A,121,10,0.605,True,10.285,-1,-1
+2,Fred N. Spiess Hall,100B,122,10,0.61,True,10.37,-1,-1
+3,Fred N. Spiess Hall,104,447,10,11.175,True,192.21,-1,-1
+4,Fred N. Spiess Hall,104A,122,10,0.61,True,10.37,-1,-1
+5,Fred N. Spiess Hall,104B,124,10,0.62,True,10.54,-1,-1
+6,Fred N. Spiess Hall,106,458,10,11.45,True,196.94,-1,-1
+7,Fred N. Spiess Hall,110,462,10,11.55,True,198.66,-1,-1
+8,Fred N. Spiess Hall,115,314,10,7.85,True,135.01999999999998,-1,-1
+9,Fred N. Spiess Hall,120,600,10,15.0,True,258.0,-1,-1
+10,Fred N. Spiess Hall,206,118,10,0.59,True,10.03,-1,-1
+11,Fred N. Spiess Hall,208,118,10,0.59,True,10.03,-1,-1
+12,Fred N. Spiess Hall,210,119,10,0.595,True,10.114999999999998,-1,-1
+13,Fred N. Spiess Hall,212,119,10,0.595,True,10.114999999999998,-1,-1
+14,Fred N. Spiess Hall,220,169,10,0.8450000000000001,True,14.364999999999998,-1,-1
+15,Fred N. Spiess Hall,220A,203,10,1.015,True,17.255000000000006,-1,-1
+16,Fred N. Spiess Hall,220C,230,10,1.15,True,19.55,-1,-1
+17,Fred N. Spiess Hall,330,988,10,50.0,False,434.28,-1,-1
+18,Fred N. Spiess Hall,341,216,10,1.08,True,18.36,-1,-1
+19,Fred N. Spiess Hall,342,155,10,0.775,True,13.175,-1,-1
+20,Fred N. Spiess Hall,343,124,10,2.48,True,33.480000000000004,-1,-1
+21,Fred N. Spiess Hall,344,118,10,0.59,True,10.03,-1,-1
+22,Fred N. Spiess Hall,345,80,10,0.4,True,6.8,-1,-1
+23,Fred N. Spiess Hall,346,131,10,0.655,True,11.135,-1,-1
+24,Fred N. Spiess Hall,350,128,10,0.64,True,10.88,-1,-1
+25,Fred N. Spiess Hall,351,872,10,4.36,True,74.12,-1,-1
+26,Fred N. Spiess Hall,352,126,10,0.63,True,10.71,-1,-1
+27,Fred N. Spiess Hall,354,163,10,0.8150000000000001,True,13.855,-1,-1
+28,Fred N. Spiess Hall,440,257,10,10.0,False,90.42,-1,-1
+29,Fred N. Spiess Hall,443,88,10,1.7599999999999998,True,23.76,-1,-1
+30,Fred N. Spiess Hall,444,63,10,0.315,True,5.355,-1,-1
+31,Fred N. Spiess Hall,446,128,10,0.64,True,10.88,-1,-1
+32,Fred N. Spiess Hall,448,126,10,0.63,True,10.71,-1,-1
+33,Fred N. Spiess Hall,450,63,10,0.315,True,5.355,-1,-1
+34,Fred N. Spiess Hall,451,156,10,0.78,True,13.26,-1,-1
+35,Fred N. Spiess Hall,452,127,10,0.635,True,10.795,-1,-1
+36,Fred N. Spiess Hall,454,226,10,1.13,True,19.21,-1,-1
+37,Fred N. Spiess Hall,456,182,10,0.91,True,15.47,-1,-1
+38,Fred N. Spiess Hall,457,239,10,1.1949999999999998,True,20.315,-1,-1
+39,Fred N. Spiess Hall,457A,87,10,0.435,True,7.395,-1,-1
+40,Fred N. Spiess Hall,457B,95,10,0.475,True,8.075,-1,-1
+41,Fred N. Spiess Hall,458,180,10,0.8999999999999999,True,15.3,-1,-1
+42,Fred N. Spiess Hall,460,91,10,0.455,True,7.7349999999999985,-1,-1
+43,Fred N. Spiess Hall,462,180,10,0.8999999999999999,True,15.3,-1,-1
+44,Fred N. Spiess Hall,463A,92,10,0.46,True,7.8199999999999985,-1,-1
+45,Fred N. Spiess Hall,463B,90,10,0.45,True,7.649999999999999,-1,-1
+46,Galbraith Hall,012,72,10,8.0,False,64.32,-1,-1
+47,Galbraith Hall,015,3038,10,60.0,False,632.28,-1,-1
+48,Galbraith Hall,016,807,10,32.0,False,288.42,-1,-1
+49,Galbraith Hall,018,548,10,40.0,False,332.88,-1,-1
+50,Galbraith Hall,019,493,10,40.0,False,329.58,-1,-1
+51,Galbraith Hall,020,333,10,18.0,False,154.98,-1,-1
+52,Galbraith Hall,021,144,10,1.0,False,35.92,-1,-1
+53,Galbraith Hall,022,304,10,10.0,False,93.24,-1,-1
+54,Galbraith Hall,023,2690,10,60.0,False,611.4,-1,-1
+55,Galbraith Hall,102,967,10,18.0,False,193.02,-1,-1
+56,Galbraith Hall,102B,391,10,1.0,False,28.46,-1,-1
+57,Galbraith Hall,103,341,10,10.0,False,70.46000000000002,-1,-1
+58,Galbraith Hall,104,340,10,1.0,False,25.4,-1,-1
+59,Galbraith Hall,108,209,10,1.0,False,17.54,-1,-1
+60,Galbraith Hall,109,335,10,1.0,False,25.1,-1,-1
+61,Galbraith Hall,110,344,10,1.0,False,25.64,-1,-1
+62,Galbraith Hall,111,1267,10,18.0,False,211.02,-1,-1
+63,Galbraith Hall,114,335,10,1.0,False,25.1,-1,-1
+64,Galbraith Hall,115,335,10,1.0,False,25.1,-1,-1
+65,Galbraith Hall,116,384,10,1.0,False,28.04,-1,-1
+66,Galbraith Hall,117,353,10,1.0,False,26.18,-1,-1
+67,Galbraith Hall,118,331,10,1.0,False,24.86,-1,-1
+68,Galbraith Hall,121,122,10,1.0,False,12.32,-1,-1
+69,Galbraith Hall,122,119,10,1.0,False,12.14,-1,-1
+70,Galbraith Hall,123,111,10,1.0,False,11.66,-1,-1
+71,Galbraith Hall,124,113,10,0.5650000000000001,True,9.605,-1,-1
+72,Galbraith Hall,125,153,10,1.0,False,14.18,-1,-1
+73,Galbraith Hall,126,157,10,1.0,False,14.42,-1,-1
+74,Galbraith Hall,127,161,10,1.0,False,14.66,-1,-1
+75,Galbraith Hall,128,114,10,1.0,False,11.84,-1,-1
+76,Galbraith Hall,129,118,10,1.0,False,12.08,-1,-1
+77,Galbraith Hall,130,127,10,1.0,False,12.62,-1,-1
+78,Galbraith Hall,131,154,10,1.0,False,14.24,-1,-1
+79,Galbraith Hall,132,135,10,1.0,False,13.1,-1,-1
+80,Galbraith Hall,133A,68,10,1.0,False,11.58,-1,-1
+81,Galbraith Hall,133B,68,10,1.0,False,11.58,-1,-1
+82,Galbraith Hall,133C,98,10,1.0,False,13.38,-1,-1
+83,Galbraith Hall,134A,87,10,4.0,False,25.22,-1,-1
+84,Galbraith Hall,134B,91,10,6.0,False,35.46,-1,-1
+85,Galbraith Hall,135,212,10,10.0,False,87.72,-1,-1
+86,Galbraith Hall,136,321,10,16.0,False,139.26,-1,-1
+87,Galbraith Hall,136A,47,10,1.0,False,7.82,-1,-1
+88,Galbraith Hall,143,312,10,1.0,False,23.72,-1,-1
+89,Galbraith Hall,144,688,10,30.0,False,266.28,-1,-1
+90,Galbraith Hall,145,649,10,25.0,False,226.44,-1,-1
+91,Galbraith Hall,155,2121,10,100.0,False,877.26,-1,-1
+92,Galbraith Hall,157,2466,10,100.0,False,897.96,-1,-1
+93,Galbraith Hall,170,1479,10,60.0,False,538.74,-1,-1
+94,Galbraith Hall,172,170,10,3.0,False,25.2,-1,-1
+95,Galbraith Hall,173A,113,10,3.0,False,21.78,-1,-1
+96,Galbraith Hall,173B,158,10,3.0,False,24.48,-1,-1
+97,Galbraith Hall,173C,113,10,3.0,False,21.78,-1,-1
+98,Galbraith Hall,173D,124,10,2.0,False,17.439999999999998,-1,-1
+99,Galbraith Hall,173E,122,10,3.0,False,22.32,-1,-1
+100,Galbraith Hall,174,521,10,30.0,False,256.26,-1,-1
+101,Galbraith Hall,180,385,10,6.0,False,53.1,-1,-1
+102,Galbraith Hall,180A,119,10,1.0,False,12.14,-1,-1
+103,Galbraith Hall,181,159,10,10.0,False,59.54,-1,-1
+104,Galbraith Hall,182,177,10,2.0,False,20.62,-1,-1
+105,Galbraith Hall,183,109,10,1.0,False,11.54,-1,-1
+106,Galbraith Hall,184,115,10,1.0,False,11.9,-1,-1
+107,Galbraith Hall,185,108,10,0.54,True,9.18,-1,-1
+108,Galbraith Hall,186,117,10,1.0,False,12.02,-1,-1
+109,Galbraith Hall,188,117,10,1.0,False,12.02,-1,-1
+110,Galbraith Hall,190A,119,10,2.0,False,17.14,-1,-1
+111,Galbraith Hall,190D,109,10,3.0,False,21.54,-1,-1
+112,Galbraith Hall,190F,108,10,3.0,False,21.48,-1,-1
+113,Galbraith Hall,190G,108,10,3.0,False,21.48,-1,-1
+114,Galbraith Hall,191,179,10,3.0,False,25.74,-1,-1
+115,Galbraith Hall,192,114,10,2.0,False,16.84,-1,-1
+116,Galbraith Hall,193,115,10,3.0,False,21.9,-1,-1
+117,Galbraith Hall,194,117,10,3.0,False,22.02,-1,-1
+118,Galbraith Hall,195,117,10,3.0,False,22.02,-1,-1
+119,Galbraith Hall,196,116,10,3.0,False,21.96,-1,-1
+120,Galbraith Hall,197,115,10,3.0,False,21.9,-1,-1
+121,Galbraith Hall,198,116,10,3.0,False,21.96,-1,-1
+122,Galbraith Hall,202,750,10,3.75,True,63.75,-1,-1
+123,Galbraith Hall,202A,166,10,0.8300000000000001,True,14.11,-1,-1
+124,Galbraith Hall,203,235,10,10.0,False,89.1,-1,-1
+125,Galbraith Hall,204,178,10,0.8899999999999999,True,15.13,-1,-1
+126,Galbraith Hall,205,177,10,0.885,True,15.044999999999998,-1,-1
+127,Galbraith Hall,206,99,10,0.495,True,8.415,-1,-1
+128,Galbraith Hall,207,98,10,0.49,True,8.33,-1,-1
+129,Galbraith Hall,208,98,10,0.49,True,8.33,-1,-1
+130,Galbraith Hall,209,99,10,0.495,True,8.415,-1,-1
+131,Galbraith Hall,220,184,10,0.92,True,15.64,-1,-1
+132,Galbraith Hall,221,113,10,0.5650000000000001,True,9.605,-1,-1
+133,Galbraith Hall,222,116,10,0.5800000000000001,True,9.86,-1,-1
+134,Galbraith Hall,223,115,10,0.5750000000000001,True,9.775,-1,-1
+135,Galbraith Hall,224,116,10,0.5800000000000001,True,9.86,-1,-1
+136,Galbraith Hall,225,117,10,0.5850000000000001,True,9.945,-1,-1
+137,Galbraith Hall,226,117,10,0.5850000000000001,True,9.945,-1,-1
+138,Galbraith Hall,227,102,10,0.51,True,8.67,-1,-1
+139,Galbraith Hall,228,106,10,0.53,True,9.01,-1,-1
+140,Galbraith Hall,229,106,10,0.53,True,9.01,-1,-1
+141,Galbraith Hall,230,107,10,0.535,True,9.095,-1,-1
+142,Galbraith Hall,231,202,10,1.0,False,19.62,-1,-1
+143,Galbraith Hall,243,2223,10,76.0,False,513.38,-1,-1
+144,Galbraith Hall,244,1235,10,48.0,False,314.1,-1,-1
+145,Galbraith Hall,247,1574,10,60.0,False,544.44,-1,-1
+146,Galbraith Hall,253,243,10,15.795,True,133.04250000000002,-1,-1
+147,Galbraith Hall,254,577,10,21.0,False,192.12,-1,-1
+148,Galbraith Hall,255,162,10,6.0,False,39.72,-1,-1
+149,Galbraith Hall,256,123,10,0.615,True,10.455,-1,-1
+150,Galbraith Hall,257,130,10,0.65,True,11.05,-1,-1
+151,Galbraith Hall,258,130,10,0.65,True,11.05,-1,-1
+152,Galbraith Hall,259,170,10,0.8500000000000001,True,14.45,-1,-1
+153,Galbraith Hall,242[2],2948,10,417.0,False,3304.38,-1,-1
+154,Galbraith Hall,300,117,10,1.0,False,12.02,-1,-1
+155,Galbraith Hall,301,119,10,1.0,False,12.14,-1,-1
+156,Galbraith Hall,302,119,10,1.0,False,12.14,-1,-1
+157,Galbraith Hall,303,117,10,1.0,False,12.02,-1,-1
+158,Galbraith Hall,304,117,10,1.0,False,12.02,-1,-1
+159,Galbraith Hall,305,119,10,1.0,False,12.14,-1,-1
+160,Galbraith Hall,306,110,10,1.0,False,11.6,-1,-1
+161,Galbraith Hall,307,113,10,1.0,False,11.78,-1,-1
+162,Galbraith Hall,308,117,10,1.0,False,12.02,-1,-1
+163,Galbraith Hall,309,115,10,1.0,False,11.9,-1,-1
+164,Galbraith Hall,310,115,10,1.0,False,11.9,-1,-1
+165,Galbraith Hall,311,117,10,1.0,False,12.02,-1,-1
+166,Galbraith Hall,312,117,10,1.0,False,12.02,-1,-1
+167,Galbraith Hall,313,115,10,1.0,False,11.9,-1,-1
+168,Galbraith Hall,319,148,10,1.0,False,13.88,-1,-1
+169,Galbraith Hall,320,1759,10,60.0,False,555.54,-1,-1
+170,Galbraith Hall,321,1077,10,1.0,False,72.12,-1,-1
+171,Galbraith Hall,322,145,10,1.0,False,13.7,-1,-1
+172,Galbraith Hall,323,133,10,1.0,False,12.98,-1,-1
+173,Galbraith Hall,324,103,10,0.515,True,8.754999999999999,-1,-1
+174,Galbraith Hall,325,104,10,0.52,True,8.84,-1,-1
+175,Galbraith Hall,326,104,10,0.52,True,8.84,-1,-1
+176,Galbraith Hall,327,103,10,0.515,True,8.754999999999999,-1,-1
+177,Galbraith Hall,328,103,10,0.515,True,8.754999999999999,-1,-1
+178,Galbraith Hall,329,102,10,0.51,True,8.67,-1,-1
+179,Galbraith Hall,340,92,10,0.46,True,7.8199999999999985,-1,-1
+180,Galbraith Hall,341,101,10,0.505,True,8.584999999999999,-1,-1
+181,Galbraith Hall,342,100,10,0.5,True,8.5,-1,-1
+182,Galbraith Hall,343,209,10,1.045,True,17.765,-1,-1
+183,Galbraith Hall,345,122,10,0.61,True,10.37,-1,-1
+184,Galbraith Hall,346,122,10,0.61,True,10.37,-1,-1
+185,Galbraith Hall,347,131,10,8.515,True,71.7225,-1,-1
+186,Galbraith Hall,348,145,10,0.725,True,12.325,-1,-1
+187,Galbraith Hall,349,116,10,0.5800000000000001,True,9.86,-1,-1
+188,Galbraith Hall,350,720,10,3.6,True,61.2,-1,-1
+189,Galbraith Hall,351,128,10,0.64,True,10.88,-1,-1
+190,Galbraith Hall,352,118,10,0.59,True,10.03,-1,-1
+191,Galbraith Hall,353,129,10,0.645,True,10.965,-1,-1
+192,Galbraith Hall,354,129,10,0.645,True,10.965,-1,-1
+193,Galbraith Hall,355,129,10,0.645,True,10.965,-1,-1
+194,Galbraith Hall,356,129,10,0.645,True,10.965,-1,-1
+195,Galbraith Hall,357,129,10,0.645,True,10.965,-1,-1
+196,Galbraith Hall,358,129,10,0.645,True,10.965,-1,-1
+197,Galbraith Hall,359,128,10,0.64,True,10.88,-1,-1
+198,Galbraith Hall,361,933,10,4.665,True,79.30499999999998,-1,-1
+199,Galbraith Hall,362,109,10,0.545,True,9.265,-1,-1
+200,Galbraith Hall,363,111,10,0.555,True,9.435,-1,-1
+201,Galbraith Hall,364,112,10,4.0,False,36.72,-1,-1
+202,Galbraith Hall,365,131,10,0.655,True,11.135,-1,-1
+203,Galbraith Hall,366,135,10,0.675,True,11.475,-1,-1
+204,Galbraith Hall,367,134,10,0.67,True,11.39,-1,-1
+205,Galbraith Hall,368,132,10,0.66,True,11.22,-1,-1
+206,Galbraith Hall,242[3],1093,10,417.0,False,3193.08,-1,-1
+207,Conrad Prebys Music Center,100,4782,10,360.0,False,2986.92,-1,-1
+208,Conrad Prebys Music Center,122,2845,10,71.125,True,1223.35,-1,-1
+209,Conrad Prebys Music Center,126,178,10,0.8899999999999999,True,15.13,-1,-1
+210,Conrad Prebys Music Center,127,2122,10,53.05,True,912.46,-1,-1
+211,Conrad Prebys Music Center,136,2928,10,100.0,False,925.68,-1,-1
+212,Conrad Prebys Music Center,145,675,10,30.0,False,265.5,-1,-1
+213,Conrad Prebys Music Center,151,1417,10,60.0,False,535.02,-1,-1
+214,Conrad Prebys Music Center,153,253,10,10.0,False,90.18,-1,-1
+215,Conrad Prebys Music Center,154,290,10,10.0,False,92.4,-1,-1
+216,Conrad Prebys Music Center,155,257,10,1.285,True,21.845,-1,-1
+217,Conrad Prebys Music Center,156,542,10,20.0,False,182.52,-1,-1
+218,Conrad Prebys Music Center,166,1073,10,40.0,False,364.38,-1,-1
+219,Conrad Prebys Music Center,171,168,10,2.0,False,20.08,-1,-1
+220,Conrad Prebys Music Center,173,116,10,0.5800000000000001,True,9.86,-1,-1
+221,Conrad Prebys Music Center,175,116,10,0.5800000000000001,True,9.86,-1,-1
+222,Conrad Prebys Music Center,177,118,10,0.59,True,10.03,-1,-1
+223,Conrad Prebys Music Center,179,156,10,0.78,True,13.26,-1,-1
+224,Conrad Prebys Music Center,181,131,10,0.655,True,11.135,-1,-1
+225,Conrad Prebys Music Center,183,136,10,0.68,True,11.56,-1,-1
+226,Conrad Prebys Music Center,185,135,10,0.675,True,11.475,-1,-1
+227,Conrad Prebys Music Center,186,321,10,14.0,False,124.26,-1,-1
+228,Conrad Prebys Music Center,187,135,10,0.675,True,11.475,-1,-1
+229,Conrad Prebys Music Center,188,156,10,0.78,True,13.26,-1,-1
+230,Conrad Prebys Music Center,189,136,10,0.68,True,11.56,-1,-1
+231,Conrad Prebys Music Center,190,250,10,1.25,True,21.25,-1,-1
+232,Conrad Prebys Music Center,191,135,10,0.675,True,11.475,-1,-1
+233,Conrad Prebys Music Center,192,354,10,1.77,True,30.09,-1,-1
+234,Conrad Prebys Music Center,193,135,10,0.675,True,11.475,-1,-1
+235,Conrad Prebys Music Center,195,136,10,0.68,True,11.56,-1,-1
+236,Conrad Prebys Music Center,197,152,10,0.76,True,12.919999999999998,-1,-1
+237,Conrad Prebys Music Center,201,206,10,5.15,True,88.57999999999998,-1,-1
+238,Conrad Prebys Music Center,203,983,10,24.575,True,422.69,-1,-1
+239,Conrad Prebys Music Center,204,778,10,30.0,False,271.68,-1,-1
+240,Conrad Prebys Music Center,205,205,10,5.125,True,88.15,-1,-1
+241,Conrad Prebys Music Center,206,204,10,5.1,True,87.72,-1,-1
+242,Conrad Prebys Music Center,207,207,10,5.175,True,89.00999999999998,-1,-1
+243,Conrad Prebys Music Center,209,237,10,5.925,True,101.91,-1,-1
+244,Conrad Prebys Music Center,222,131,10,0.655,True,11.135,-1,-1
+245,Conrad Prebys Music Center,231,693,10,31.0,False,274.08,-1,-1
+246,Conrad Prebys Music Center,232,276,10,1.38,True,23.46,-1,-1
+247,Conrad Prebys Music Center,233,210,10,1.05,True,17.85,-1,-1
+248,Conrad Prebys Music Center,234,198,10,0.99,True,16.83,-1,-1
+249,Conrad Prebys Music Center,241,142,10,0.71,True,12.07,-1,-1
+250,Conrad Prebys Music Center,242,154,10,0.77,True,13.09,-1,-1
+251,Conrad Prebys Music Center,243,143,10,0.715,True,12.155,-1,-1
+252,Conrad Prebys Music Center,244,157,10,0.785,True,13.345,-1,-1
+253,Conrad Prebys Music Center,245,139,10,0.6950000000000001,True,11.815,-1,-1
+254,Conrad Prebys Music Center,246,152,10,0.76,True,12.919999999999998,-1,-1
+255,Conrad Prebys Music Center,247,159,10,0.795,True,13.515,-1,-1
+256,Conrad Prebys Music Center,248,157,10,0.785,True,13.345,-1,-1
+257,Conrad Prebys Music Center,249,157,10,0.785,True,13.345,-1,-1
+258,Conrad Prebys Music Center,250,150,10,0.75,True,12.75,-1,-1
+259,Conrad Prebys Music Center,251,157,10,0.785,True,13.345,-1,-1
+260,Conrad Prebys Music Center,252,157,10,0.785,True,13.345,-1,-1
+261,Conrad Prebys Music Center,254,157,10,0.785,True,13.345,-1,-1
+262,Conrad Prebys Music Center,264,1361,10,50.0,False,456.66,-1,-1
+263,Conrad Prebys Music Center,265,646,10,25.0,False,226.26,-1,-1
+264,Conrad Prebys Music Center,268,497,10,12.425,True,213.71,-1,-1
+265,Conrad Prebys Music Center,269,497,10,12.425,True,213.71,-1,-1
+266,Conrad Prebys Music Center,301,134,10,3.0,False,30.54,-1,-1
+267,Conrad Prebys Music Center,302,129,10,3.0,False,30.24,-1,-1
+268,Conrad Prebys Music Center,304,390,10,6.0,False,68.4,-1,-1
+269,Conrad Prebys Music Center,305,128,10,3.0,False,30.18,-1,-1
+270,Conrad Prebys Music Center,306,285,10,5.0,False,54.6,-1,-1
+271,Conrad Prebys Music Center,307,129,10,3.0,False,30.24,-1,-1
+272,Conrad Prebys Music Center,308,129,10,3.0,False,30.24,-1,-1
+273,Conrad Prebys Music Center,309,133,10,3.0,False,30.48,-1,-1
+274,Conrad Prebys Music Center,310,133,10,3.0,False,30.48,-1,-1
+275,Conrad Prebys Music Center,311,133,10,3.0,False,30.48,-1,-1
+276,Conrad Prebys Music Center,312,133,10,3.0,False,30.48,-1,-1
+277,Conrad Prebys Music Center,313,123,10,3.0,False,29.88,-1,-1
+278,Conrad Prebys Music Center,314,123,10,3.0,False,29.88,-1,-1
+279,Conrad Prebys Music Center,315,69,10,2.0,False,19.14,-1,-1
+280,Conrad Prebys Music Center,316,69,10,2.0,False,19.14,-1,-1
+281,Conrad Prebys Music Center,317,69,10,2.0,False,19.14,-1,-1
+282,Conrad Prebys Music Center,318,74,10,2.0,False,19.44,-1,-1
+283,Conrad Prebys Music Center,319,62,10,2.0,False,18.72,-1,-1
+284,Conrad Prebys Music Center,320,64,10,2.0,False,18.84,-1,-1
+285,Conrad Prebys Music Center,323,64,10,2.0,False,18.84,-1,-1
+286,Conrad Prebys Music Center,324,62,10,2.0,False,18.72,-1,-1
+287,Conrad Prebys Music Center,325,60,10,2.0,False,18.6,-1,-1
+288,Conrad Prebys Music Center,331,266,10,1.33,True,22.61,-1,-1
+289,Conrad Prebys Music Center,332,264,10,1.32,True,22.44,-1,-1
+290,Conrad Prebys Music Center,333,210,10,1.05,True,17.85,-1,-1
+291,Conrad Prebys Music Center,334,206,10,1.03,True,17.509999999999998,-1,-1
+292,Conrad Prebys Music Center,335,210,10,1.05,True,17.85,-1,-1
+293,Conrad Prebys Music Center,336,201,10,1.005,True,17.085,-1,-1
+294,Conrad Prebys Music Center,341,144,10,0.72,True,12.24,-1,-1
+295,Conrad Prebys Music Center,342,154,10,0.77,True,13.09,-1,-1
+296,Conrad Prebys Music Center,343,145,10,0.725,True,12.325,-1,-1
+297,Conrad Prebys Music Center,344,157,10,0.785,True,13.345,-1,-1
+298,Conrad Prebys Music Center,345,141,10,0.705,True,11.985,-1,-1
+299,Conrad Prebys Music Center,346,152,10,0.76,True,12.919999999999998,-1,-1
+300,Conrad Prebys Music Center,348,157,10,0.785,True,13.345,-1,-1
+301,Conrad Prebys Music Center,349,154,10,0.77,True,13.09,-1,-1
+302,Conrad Prebys Music Center,350,150,10,0.75,True,12.75,-1,-1
+303,Conrad Prebys Music Center,351,157,10,0.785,True,13.345,-1,-1
+304,Conrad Prebys Music Center,352,157,10,0.785,True,13.345,-1,-1
+305,Conrad Prebys Music Center,353,157,10,0.785,True,13.345,-1,-1
+306,Conrad Prebys Music Center,354,158,10,0.79,True,13.43,-1,-1
+307,Conrad Prebys Music Center,365,483,10,12.075,True,207.69,-1,-1
+308,Conrad Prebys Music Center,367,762,10,19.05,True,327.66,-1,-1
+309,Conrad Prebys Music Center,368,417,10,10.425,True,179.31,-1,-1
+310,Che Cafe,106,141,10,12.0,False,98.46,-1,-1
+311,Che Cafe,108,670,10,3.35,True,56.95,-1,-1
+312,Che Cafe,109,112,10,0.56,True,9.52,-1,-1
+313,Ritter Hall,100,285,10,7.124999999999999,True,122.54999999999998,-1,-1
+314,Ritter Hall,101,193,10,0.965,True,16.405,-1,-1
+315,Ritter Hall,103,193,10,0.965,True,16.405,-1,-1
+316,Ritter Hall,105,189,10,0.945,True,16.065,-1,-1
+317,Ritter Hall,106,484,10,12.1,True,208.12,-1,-1
+318,Ritter Hall,107,187,10,0.935,True,15.895,-1,-1
+319,Ritter Hall,110,539,10,13.475,True,231.77,-1,-1
+320,Ritter Hall,113,179,10,0.895,True,15.215,-1,-1
+321,Ritter Hall,114,507,10,12.675,True,218.01,-1,-1
+322,Ritter Hall,115,173,10,0.865,True,14.704999999999998,-1,-1
+323,Ritter Hall,117,182,10,0.91,True,15.47,-1,-1
+324,Ritter Hall,123,380,10,9.5,True,163.39999999999995,-1,-1
+325,Ritter Hall,124,205,10,1.025,True,17.424999999999994,-1,-1
+326,Ritter Hall,126,171,10,0.8550000000000001,True,14.535,-1,-1
+327,Ritter Hall,127,262,10,6.5500000000000025,True,112.66,-1,-1
+328,Ritter Hall,128,159,10,0.795,True,13.515,-1,-1
+329,Ritter Hall,129,174,10,0.8699999999999999,True,14.79,-1,-1
+330,Ritter Hall,132,366,10,9.15,True,157.38,-1,-1
+331,Ritter Hall,133,590,10,14.75,True,253.7,-1,-1
+332,Ritter Hall,136,311,10,7.775,True,133.73,-1,-1
+333,Ritter Hall,152,244,10,6.1,True,104.92,-1,-1
+334,Ritter Hall,154,333,10,8.325000000000001,True,143.19,-1,-1
+335,Ritter Hall,154A,132,10,3.3000000000000003,True,56.76,-1,-1
+336,Ritter Hall,166,282,10,5.64,True,107.16,-1,-1
+337,Ritter Hall,170A,271,10,12.0,False,106.26,-1,-1
+338,Ritter Hall,172,660,10,13.2,True,250.8,-1,-1
+339,Ritter Hall,200A,189,10,0.945,True,16.065,-1,-1
+340,Ritter Hall,200B,187,10,0.935,True,15.895,-1,-1
+341,Ritter Hall,200C,189,10,0.945,True,16.065,-1,-1
+342,Ritter Hall,200D,156,10,10.0,False,84.36,-1,-1
+343,Ritter Hall,200E,188,10,0.94,True,15.98,-1,-1
+344,Ritter Hall,200F,188,10,0.94,True,15.98,-1,-1
+345,Ritter Hall,200G,185,10,0.925,True,15.725,-1,-1
+346,Ritter Hall,208,190,10,0.95,True,16.15,-1,-1
+347,Ritter Hall,210,178,10,0.8899999999999999,True,15.13,-1,-1
+348,Ritter Hall,211,351,10,1.755,True,29.835,-1,-1
+349,Ritter Hall,214,229,10,1.145,True,19.465,-1,-1
+350,Ritter Hall,215,366,10,9.15,True,157.38,-1,-1
+351,Ritter Hall,216,133,10,0.665,True,11.305,-1,-1
+352,Ritter Hall,217,186,10,0.93,True,15.81,-1,-1
+353,Ritter Hall,221,181,10,4.525,True,77.82999999999998,-1,-1
+354,Ritter Hall,223,164,10,0.8200000000000001,True,13.94,-1,-1
+355,Ritter Hall,224,215,10,5.375,True,92.45,-1,-1
+356,Ritter Hall,225,180,10,0.8999999999999999,True,15.3,-1,-1
+357,Ritter Hall,226,200,10,5.0,True,86.0,-1,-1
+358,Ritter Hall,227,220,10,1.1,True,18.7,-1,-1
+359,Ritter Hall,228,196,10,0.98,True,16.66,-1,-1
+360,Ritter Hall,229,502,10,16.0,False,250.36,-1,-1
+361,Ritter Hall,230,204,10,1.02,True,17.34,-1,-1
+362,Ritter Hall,232,159,10,0.795,True,13.515,-1,-1
+363,Ritter Hall,236,87,10,0.435,True,7.395,-1,-1
+364,Ritter Hall,236A,243,10,1.215,True,20.655,-1,-1
+365,Ritter Hall,237,192,10,0.96,True,16.32,-1,-1
+366,Ritter Hall,300,475,10,9.5,True,128.25,-1,-1
+367,Ritter Hall,300A,133,10,0.665,True,11.305,-1,-1
+368,Ritter Hall,300B,186,10,0.93,True,15.81,-1,-1
+369,Ritter Hall,300C,190,10,0.95,True,16.15,-1,-1
+370,Ritter Hall,300D,156,10,0.78,True,13.26,-1,-1
+371,Ritter Hall,300E,189,10,0.945,True,16.065,-1,-1
+372,Ritter Hall,300F,187,10,0.935,True,15.895,-1,-1
+373,Ritter Hall,300G,186,10,0.93,True,15.81,-1,-1
+374,Ritter Hall,310,532,10,13.3,True,228.76,-1,-1
+375,Ritter Hall,311,347,10,1.735,True,29.495,-1,-1
+376,Ritter Hall,312,228,10,1.14,True,19.380000000000006,-1,-1
+377,Ritter Hall,315,356,10,1.7799999999999998,True,30.26,-1,-1
+378,Ritter Hall,317,186,10,0.93,True,15.81,-1,-1
+379,Ritter Hall,321,121,10,0.605,True,10.285,-1,-1
+380,Ritter Hall,324,205,10,6.0,False,57.3,-1,-1
+381,Ritter Hall,325,364,10,9.1,True,156.51999999999995,-1,-1
+382,Ritter Hall,326,181,10,0.905,True,15.385,-1,-1
+383,Ritter Hall,327,201,10,5.025,True,86.43,-1,-1
+384,Ritter Hall,328,167,10,0.8350000000000001,True,14.195,-1,-1
+385,Ritter Hall,330,111,10,0.555,True,9.435,-1,-1
+386,Ritter Hall,331,320,10,8.0,True,137.6,-1,-1
+387,Ritter Hall,332,193,10,0.965,True,16.405,-1,-1
+388,Ritter Hall,333,165,10,4.125,True,70.95,-1,-1
+389,Ritter Hall,334,170,10,0.8500000000000001,True,14.45,-1,-1
+390,Ritter Hall,335,168,10,0.8400000000000001,True,14.28,-1,-1
+391,Ritter Hall,336,226,10,4.5200000000000005,True,61.02,-1,-1
+392,Ritter Hall,337,169,10,0.8450000000000001,True,14.364999999999998,-1,-1
+393,Ritter Hall,421,181,10,0.905,True,15.385,-1,-1
+394,Ritter Hall,424,209,10,1.045,True,17.765,-1,-1
+395,Ritter Hall,425,402,10,2.01,True,34.17,-1,-1
+396,Ritter Hall,427,156,10,0.78,True,13.26,-1,-1
+397,Ritter Hall,428,181,10,0.905,True,15.385,-1,-1
+398,Ritter Hall,429,155,10,0.775,True,13.175,-1,-1
+399,Ritter Hall,430,180,10,0.8999999999999999,True,15.3,-1,-1
+400,Ritter Hall,431,296,10,1.48,True,25.16,-1,-1
+401,Ritter Hall,432,180,10,0.8999999999999999,True,15.3,-1,-1
+402,Ritter Hall,434,180,10,0.8999999999999999,True,15.3,-1,-1
+403,Ritter Hall,435,203,10,1.015,True,17.255000000000006,-1,-1
+404,Ritter Hall,436,186,10,3.72,True,50.22,-1,-1
+405,Geisel Library,1000,7424,10,37.12000000000001,True,631.04,-1,-1
+406,Geisel Library,1000A,333,10,1.665,True,28.305,-1,-1
+407,Geisel Library,1001,3732,10,37.32,True,634.4399999999998,-1,-1
+408,Geisel Library,1002,4154,10,41.54,True,706.18,-1,-1
+409,Geisel Library,1004,165,10,4.125,True,61.05,-1,-1
+410,Geisel Library,1005,269,10,1.3450000000000002,True,22.865,-1,-1
+411,Geisel Library,1006,552,10,2.76,True,46.92,-1,-1
+412,Geisel Library,1007,259,10,6.4750000000000005,True,95.83,-1,-1
+413,Geisel Library,1009,146,10,0.73,True,12.41,-1,-1
+414,Geisel Library,1010,226,10,10.0,False,88.56,-1,-1
+415,Geisel Library,1036,15553,10,155.53,True,2644.01,-1,-1
+416,Geisel Library,1039,415,10,16.0,False,144.9,-1,-1
+417,Geisel Library,1040,181,10,0.905,True,15.385,-1,-1
+418,Geisel Library,1041,180,10,0.8999999999999999,True,15.3,-1,-1
+419,Geisel Library,1042,179,10,0.895,True,15.215,-1,-1
+420,Geisel Library,1044,205,10,1.025,True,17.424999999999994,-1,-1
+421,Geisel Library,1045,188,10,0.94,True,15.98,-1,-1
+422,Geisel Library,1046,200,10,1.0,True,17.0,-1,-1
+423,Geisel Library,1047,208,10,1.04,True,17.68,-1,-1
+424,Geisel Library,1048,211,10,1.055,True,17.935,-1,-1
+425,Geisel Library,1050-01,245,10,1.225,True,20.825,-1,-1
+426,Geisel Library,1050-02,119,10,0.595,True,10.114999999999998,-1,-1
+427,Geisel Library,1050-03,121,10,0.605,True,10.285,-1,-1
+428,Geisel Library,1050-04,120,10,0.6,True,10.2,-1,-1
+429,Geisel Library,1050-05,81,10,0.405,True,6.885,-1,-1
+430,Geisel Library,1050-06,95,10,0.475,True,8.075,-1,-1
+431,Geisel Library,1050-07,246,10,1.23,True,20.91,-1,-1
+432,Geisel Library,1050-08,118,10,0.59,True,10.03,-1,-1
+433,Geisel Library,1050-09,117,10,0.5850000000000001,True,9.945,-1,-1
+434,Geisel Library,1050-10,117,10,0.5850000000000001,True,9.945,-1,-1
+435,Geisel Library,1050-11,120,10,0.6,True,10.2,-1,-1
+436,Geisel Library,1050-12,118,10,0.59,True,10.03,-1,-1
+437,Geisel Library,1050-13,118,10,0.59,True,10.03,-1,-1
+438,Geisel Library,1050-14,115,10,0.5750000000000001,True,9.775,-1,-1
+439,Geisel Library,1050-15,120,10,0.6,True,10.2,-1,-1
+440,Geisel Library,1050-16,120,10,0.6,True,10.2,-1,-1
+441,Geisel Library,1050-17,121,10,0.605,True,10.285,-1,-1
+442,Geisel Library,1050-18,117,10,0.5850000000000001,True,9.945,-1,-1
+443,Geisel Library,1050A,596,10,2.98,True,50.66,-1,-1
+444,Geisel Library,1050B,1987,10,9.935,True,168.895,-1,-1
+445,Geisel Library,1064,246,10,8.0,False,74.76,-1,-1
+446,Geisel Library,1086,25161,10,251.61,True,4277.37,-1,-1
+447,Geisel Library,120,5574,10,27.87,True,473.79,-1,-1
+448,Geisel Library,121,124,10,0.62,True,10.54,-1,-1
+449,Geisel Library,123,171,10,0.8550000000000001,True,14.535,-1,-1
+450,Geisel Library,124,232,10,8.0,False,73.92,-1,-1
+451,Geisel Library,126,539,10,2.6950000000000003,True,45.815,-1,-1
+452,Geisel Library,130,1269,10,3.0,False,91.14,-1,-1
+453,Geisel Library,132,332,10,1.66,True,28.22,-1,-1
+454,Geisel Library,135,473,10,26.0,False,223.38,-1,-1
+455,Geisel Library,136,400,10,12.0,False,114.0,-1,-1
+456,Geisel Library,137,143,10,3.0,False,31.08,-1,-1
+457,Geisel Library,1501,4526,10,678.9,True,5363.31,-1,-1
+458,Geisel Library,1502,346,10,3.0,False,43.26,-1,-1
+459,Geisel Library,1503,466,10,30.29000000000001,True,255.135,-1,-1
+460,Geisel Library,1504,407,10,26.455,True,222.8325,-1,-1
+461,Geisel Library,1505,645,10,96.75,True,764.325,-1,-1
+462,Geisel Library,1506,127,10,8.255,True,69.53250000000001,-1,-1
+463,Geisel Library,1507,130,10,8.450000000000001,True,71.17500000000003,-1,-1
+464,Geisel Library,1508,127,10,8.255,True,69.53250000000001,-1,-1
+465,Geisel Library,1509,129,10,8.385,True,70.6275,-1,-1
+466,Geisel Library,1510,2691,10,13.454999999999998,True,228.735,-1,-1
+467,Geisel Library,2005,16770,10,167.7,True,2850.9,-1,-1
+468,Geisel Library,2005A,512,10,14.0,False,135.72,-1,-1
+469,Geisel Library,2005B,369,10,16.0,False,142.14,-1,-1
+470,Geisel Library,2020,223,10,1.115,True,18.955,-1,-1
+471,Geisel Library,2021,180,10,0.8999999999999999,True,15.3,-1,-1
+472,Geisel Library,2022,8273,10,82.72999999999998,True,1406.41,-1,-1
+473,Geisel Library,2022A,1792,10,8.96,True,152.32,-1,-1
+474,Geisel Library,2022B,350,10,12.0,False,81.0,-1,-1
+475,Geisel Library,2025,3509,10,17.544999999999998,True,298.265,-1,-1
+476,Geisel Library,2029,230,10,1.15,True,19.55,-1,-1
+477,Geisel Library,2030,153,10,0.765,True,13.005,-1,-1
+478,Geisel Library,2032,2955,10,14.775,True,251.175,-1,-1
+479,Geisel Library,2036,151,10,0.755,True,12.835,-1,-1
+480,Geisel Library,2037,212,10,1.06,True,18.02,-1,-1
+481,Geisel Library,2038,958,10,4.79,True,81.42999999999998,-1,-1
+482,Geisel Library,2039,430,10,12.0,False,115.8,-1,-1
+483,Geisel Library,2041,9092,10,45.46,True,772.8199999999997,-1,-1
+484,Geisel Library,2042,1033,10,5.164999999999999,True,87.80499999999998,-1,-1
+485,Geisel Library,2043,1511,10,30.0,False,315.66,-1,-1
+486,Geisel Library,2044,1961,10,9.805,True,166.685,-1,-1
+487,Geisel Library,2069,118,10,7.67,True,64.605,-1,-1
+488,Geisel Library,2070,118,10,0.59,True,10.03,-1,-1
+489,Geisel Library,2071,138,10,0.6900000000000001,True,11.73,-1,-1
+490,Geisel Library,2072,194,10,8.0,False,51.64,-1,-1
+491,Geisel Library,2073,3341,10,33.410000000000004,True,567.97,-1,-1
+492,Geisel Library,2073-01,107,10,1.07,True,18.19,-1,-1
+493,Geisel Library,2073-02,107,10,1.07,True,18.19,-1,-1
+494,Geisel Library,2073-03,107,10,1.07,True,18.19,-1,-1
+495,Geisel Library,2073-04,107,10,1.07,True,18.19,-1,-1
+496,Geisel Library,2073-05,107,10,1.07,True,18.19,-1,-1
+497,Geisel Library,2073-06,107,10,1.07,True,18.19,-1,-1
+498,Geisel Library,208,193,10,1.0,False,16.58,-1,-1
+499,Geisel Library,2093,648,10,18.0,False,173.88,-1,-1
+500,Geisel Library,2095,802,10,8.0,False,108.12,-1,-1
+501,Geisel Library,2096A,220,10,1.1,True,18.7,-1,-1
+502,Geisel Library,2096B,187,10,0.935,True,15.895,-1,-1
+503,Geisel Library,2098,17080,10,170.79999999999995,True,2903.6,-1,-1
+504,Geisel Library,2115,334,10,6.6800000000000015,True,90.18,-1,-1
+505,Geisel Library,212,1399,10,6.995,True,118.915,-1,-1
+506,Geisel Library,2121,169,10,0.8450000000000001,True,14.364999999999998,-1,-1
+507,Geisel Library,217,149,10,0.745,True,12.665,-1,-1
+508,Geisel Library,218,469,10,2.345,True,39.865,-1,-1
+509,Geisel Library,220,369,10,1.845,True,31.365,-1,-1
+510,Geisel Library,221,142,10,1.0,False,13.52,-1,-1
+511,Geisel Library,222,140,10,1.0,False,13.4,-1,-1
+512,Geisel Library,223,142,10,0.71,True,12.07,-1,-1
+513,Geisel Library,224,141,10,0.705,True,11.985,-1,-1
+514,Geisel Library,225,139,10,0.6950000000000001,True,11.815,-1,-1
+515,Geisel Library,226,140,10,0.7000000000000001,True,11.9,-1,-1
+516,Geisel Library,229,271,10,10.0,False,91.26,-1,-1
+517,Geisel Library,230,924,10,4.62,True,78.53999999999998,-1,-1
+518,Geisel Library,236,373,10,5.0,False,59.88,-1,-1
+519,Geisel Library,241,3672,10,18.36,True,312.12,-1,-1
+520,Geisel Library,241-01,86,10,0.43,True,7.31,-1,-1
+521,Geisel Library,241-02,98,10,0.49,True,8.33,-1,-1
+522,Geisel Library,241-03,92,10,0.46,True,7.8199999999999985,-1,-1
+523,Geisel Library,241-04,74,10,0.37,True,6.289999999999999,-1,-1
+524,Geisel Library,241-05,79,10,0.395,True,6.715,-1,-1
+525,Geisel Library,241-06,83,10,0.415,True,7.055,-1,-1
+526,Geisel Library,241-07,96,10,0.48,True,8.16,-1,-1
+527,Geisel Library,241-08,73,10,0.365,True,6.205,-1,-1
+528,Geisel Library,241-09,83,10,0.415,True,7.055,-1,-1
+529,Geisel Library,241-10,92,10,0.46,True,7.8199999999999985,-1,-1
+530,Geisel Library,241-11,101,10,0.505,True,8.584999999999999,-1,-1
+531,Geisel Library,241-12,85,10,0.425,True,7.225,-1,-1
+532,Geisel Library,241-13,73,10,0.365,True,6.205,-1,-1
+533,Geisel Library,241-14,78,10,0.39,True,6.63,-1,-1
+534,Geisel Library,241-15,79,10,0.395,True,6.715,-1,-1
+535,Geisel Library,241-16,98,10,0.49,True,8.33,-1,-1
+536,Geisel Library,241-17,76,10,0.38,True,6.459999999999999,-1,-1
+537,Geisel Library,241-18,72,10,0.36,True,6.12,-1,-1
+538,Geisel Library,241-19,85,10,0.425,True,7.225,-1,-1
+539,Geisel Library,241-20,104,10,0.52,True,8.84,-1,-1
+540,Geisel Library,241-21,185,10,0.925,True,15.725,-1,-1
+541,Geisel Library,241-22,168,10,0.8400000000000001,True,14.28,-1,-1
+542,Geisel Library,241-23,80,10,0.4,True,6.8,-1,-1
+543,Geisel Library,241-24,64,10,0.32,True,5.44,-1,-1
+544,Geisel Library,241-25,48,10,0.24,True,4.08,-1,-1
+545,Geisel Library,241-26,30,10,0.15,True,2.55,-1,-1
+546,Geisel Library,241-27,71,10,0.355,True,6.035,-1,-1
+547,Geisel Library,241-28,79,10,0.395,True,6.715,-1,-1
+548,Geisel Library,241-29,73,10,0.365,True,6.205,-1,-1
+549,Geisel Library,241-30,71,10,0.355,True,6.035,-1,-1
+550,Geisel Library,241-31,71,10,0.355,True,6.035,-1,-1
+551,Geisel Library,241-32,71,10,0.355,True,6.035,-1,-1
+552,Geisel Library,241-33,71,10,0.355,True,6.035,-1,-1
+553,Geisel Library,241-34,71,10,0.355,True,6.035,-1,-1
+554,Geisel Library,241-35,71,10,0.355,True,6.035,-1,-1
+555,Geisel Library,241-36,81,10,0.405,True,6.885,-1,-1
+556,Geisel Library,241-37,71,10,0.355,True,6.035,-1,-1
+557,Geisel Library,241-38,207,10,1.035,True,17.595,-1,-1
+558,Geisel Library,241-39,66,10,0.33,True,5.61,-1,-1
+559,Geisel Library,241-40,71,10,0.355,True,6.035,-1,-1
+560,Geisel Library,241-41,71,10,0.355,True,6.035,-1,-1
+561,Geisel Library,241-42,76,10,0.38,True,6.459999999999999,-1,-1
+562,Geisel Library,241-43,71,10,0.355,True,6.035,-1,-1
+563,Geisel Library,241-44,38,10,0.19,True,3.2299999999999995,-1,-1
+564,Geisel Library,241-45,89,10,0.445,True,7.564999999999999,-1,-1
+565,Geisel Library,241-46,90,10,0.45,True,7.649999999999999,-1,-1
+566,Geisel Library,241-47,89,10,0.445,True,7.564999999999999,-1,-1
+567,Geisel Library,241-48,91,10,0.455,True,7.7349999999999985,-1,-1
+568,Geisel Library,241-49,71,10,0.355,True,6.035,-1,-1
+569,Geisel Library,241-50,109,10,0.545,True,9.265,-1,-1
+570,Geisel Library,241-51,25,10,0.125,True,2.125,-1,-1
+571,Geisel Library,242,173,10,0.865,True,14.704999999999998,-1,-1
+572,Geisel Library,243,170,10,8.0,False,70.2,-1,-1
+573,Geisel Library,244,3051,10,1.0,False,188.06,-1,-1
+574,Geisel Library,244-01,79,10,0.395,True,6.715,-1,-1
+575,Geisel Library,244-02,82,10,0.41,True,6.9700000000000015,-1,-1
+576,Geisel Library,244-03,85,10,0.425,True,7.225,-1,-1
+577,Geisel Library,244-04,77,10,0.385,True,6.545,-1,-1
+578,Geisel Library,244-05,173,10,0.865,True,14.704999999999998,-1,-1
+579,Geisel Library,244-06,67,10,0.335,True,5.6949999999999985,-1,-1
+580,Geisel Library,244-07,120,10,0.6,True,10.2,-1,-1
+581,Geisel Library,244-08,96,10,0.48,True,8.16,-1,-1
+582,Geisel Library,244-09,106,10,0.53,True,9.01,-1,-1
+583,Geisel Library,244-10,222,10,1.11,True,18.87,-1,-1
+584,Geisel Library,244-11,104,10,0.52,True,8.84,-1,-1
+585,Geisel Library,244-12,103,10,0.515,True,8.754999999999999,-1,-1
+586,Geisel Library,244-13,110,10,0.55,True,9.35,-1,-1
+587,Geisel Library,244-14,71,10,0.355,True,6.035,-1,-1
+588,Geisel Library,244-15,71,10,0.355,True,6.035,-1,-1
+589,Geisel Library,244-16,71,10,0.355,True,6.035,-1,-1
+590,Geisel Library,244-17,72,10,0.36,True,6.12,-1,-1
+591,Geisel Library,244-18,139,10,0.6950000000000001,True,11.815,-1,-1
+592,Geisel Library,244-19,72,10,0.36,True,6.12,-1,-1
+593,Geisel Library,244-20,71,10,0.355,True,6.035,-1,-1
+594,Geisel Library,244-21,71,10,0.355,True,6.035,-1,-1
+595,Geisel Library,244-22,71,10,0.355,True,6.035,-1,-1
+596,Geisel Library,244-23,72,10,0.36,True,6.12,-1,-1
+597,Geisel Library,244-24,72,10,0.36,True,6.12,-1,-1
+598,Geisel Library,244-25,72,10,0.36,True,6.12,-1,-1
+599,Geisel Library,244-26,72,10,0.36,True,6.12,-1,-1
+600,Geisel Library,244-27,101,10,0.505,True,8.584999999999999,-1,-1
+601,Geisel Library,244-28,170,10,0.8500000000000001,True,14.45,-1,-1
+602,Geisel Library,244-29,71,10,0.355,True,6.035,-1,-1
+603,Geisel Library,244-30,85,10,0.425,True,7.225,-1,-1
+604,Geisel Library,244-31,80,10,0.4,True,6.8,-1,-1
+605,Geisel Library,244-32,77,10,0.385,True,6.545,-1,-1
+606,Geisel Library,244-33,86,10,0.43,True,7.31,-1,-1
+607,Geisel Library,246,4031,10,20.155,True,342.635,-1,-1
+608,Geisel Library,246-01,83,10,0.415,True,7.055,-1,-1
+609,Geisel Library,246-02,82,10,0.41,True,6.9700000000000015,-1,-1
+610,Geisel Library,246-03,74,10,0.37,True,6.289999999999999,-1,-1
+611,Geisel Library,246-04,66,10,0.33,True,5.61,-1,-1
+612,Geisel Library,246-05,66,10,0.33,True,5.61,-1,-1
+613,Geisel Library,246-06,67,10,0.335,True,5.6949999999999985,-1,-1
+614,Geisel Library,246-07,75,10,0.375,True,6.375,-1,-1
+615,Geisel Library,246-08,78,10,0.39,True,6.63,-1,-1
+616,Geisel Library,246-09,67,10,0.335,True,5.6949999999999985,-1,-1
+617,Geisel Library,246-10,66,10,0.33,True,5.61,-1,-1
+618,Geisel Library,246-11,86,10,0.43,True,7.31,-1,-1
+619,Geisel Library,246-12,60,10,0.3,True,5.1,-1,-1
+620,Geisel Library,246-13,65,10,0.325,True,5.525,-1,-1
+621,Geisel Library,246-14,65,10,0.325,True,5.525,-1,-1
+622,Geisel Library,246-15,65,10,0.325,True,5.525,-1,-1
+623,Geisel Library,246-16,65,10,0.325,True,5.525,-1,-1
+624,Geisel Library,246-17,81,10,0.405,True,6.885,-1,-1
+625,Geisel Library,246-18,64,10,0.32,True,5.44,-1,-1
+626,Geisel Library,246-19,65,10,0.325,True,5.525,-1,-1
+627,Geisel Library,246-20,57,10,0.28500000000000003,True,4.8450000000000015,-1,-1
+628,Geisel Library,246-21,59,10,0.295,True,5.015,-1,-1
+629,Geisel Library,246-22,64,10,0.32,True,5.44,-1,-1
+630,Geisel Library,246-23,65,10,0.325,True,5.525,-1,-1
+631,Geisel Library,246-24,35,10,0.17500000000000002,True,2.975,-1,-1
+632,Geisel Library,246-25,56,10,0.28,True,4.76,-1,-1
+633,Geisel Library,247,223,10,10.0,False,88.38,-1,-1
+634,Geisel Library,248,168,10,6.0,False,55.08,-1,-1
+635,Geisel Library,249,170,10,3.0,False,25.2,-1,-1
+636,Geisel Library,250,430,10,2.15,True,36.55,-1,-1
+637,Geisel Library,250A,109,10,0.545,True,9.265,-1,-1
+638,Geisel Library,251,114,10,0.5700000000000001,True,9.69,-1,-1
+639,Geisel Library,253,111,10,1.0,False,11.66,-1,-1
+640,Geisel Library,255,173,10,1.0,False,15.38,-1,-1
+641,Geisel Library,256,157,10,1.0,False,14.42,-1,-1
+642,Geisel Library,258,823,10,4.115,True,69.955,-1,-1
+643,Geisel Library,259,179,10,0.895,True,15.215,-1,-1
+644,Geisel Library,260,656,10,3.28,True,55.76000000000001,-1,-1
+645,Geisel Library,262,318,10,1.59,True,27.03,-1,-1
+646,Geisel Library,263,238,10,1.19,True,20.23,-1,-1
+647,Geisel Library,274,835,10,125.25,True,989.475,-1,-1
+648,Geisel Library,276,812,10,121.8,True,962.22,-1,-1
+649,Geisel Library,435A,2210,10,22.1,True,375.7,-1,-1
+650,Geisel Library,435B,2210,10,22.1,True,375.7,-1,-1
+651,Geisel Library,435C,2210,10,22.1,True,375.7,-1,-1
+652,Geisel Library,435D,2210,10,22.1,True,375.7,-1,-1
+653,Geisel Library,518,92,10,1.0,False,10.52,-1,-1
+654,Geisel Library,519,84,10,1.0,False,10.04,-1,-1
+655,Geisel Library,521,84,10,1.0,False,10.04,-1,-1
+656,Geisel Library,522,92,10,1.0,False,10.52,-1,-1
+657,Geisel Library,535A,3888,10,38.88,True,660.96,-1,-1
+658,Geisel Library,535B,4278,10,42.78,True,727.26,-1,-1
+659,Geisel Library,535C,4278,10,42.78,True,727.26,-1,-1
+660,Geisel Library,535D,4278,10,42.78,True,727.26,-1,-1
+661,Geisel Library,618,92,10,1.0,False,10.52,-1,-1
+662,Geisel Library,619,83,10,1.0,False,9.98,-1,-1
+663,Geisel Library,620,82,10,1.0,False,9.92,-1,-1
+664,Geisel Library,622,82,10,1.0,False,9.92,-1,-1
+665,Geisel Library,623,83,10,1.0,False,9.98,-1,-1
+666,Geisel Library,624,92,10,1.0,False,10.52,-1,-1
+667,Geisel Library,625,92,10,1.0,False,10.52,-1,-1
+668,Geisel Library,626,83,10,1.0,False,9.98,-1,-1
+669,Geisel Library,627,82,10,1.0,False,9.92,-1,-1
+670,Geisel Library,629,82,10,1.0,False,9.92,-1,-1
+671,Geisel Library,630,83,10,1.0,False,9.98,-1,-1
+672,Geisel Library,631,92,10,1.0,False,10.52,-1,-1
+673,Geisel Library,635A,6044,10,60.44,True,1027.48,-1,-1
+674,Geisel Library,635B,6936,10,69.36,True,1179.12,-1,-1
+675,Geisel Library,635C,6044,10,60.44,True,1027.48,-1,-1
+676,Geisel Library,635D,6936,10,69.36,True,1179.12,-1,-1
+677,Geisel Library,718,92,10,1.0,False,10.52,-1,-1
+678,Geisel Library,719,82,10,1.0,False,9.92,-1,-1
+679,Geisel Library,720,81,10,1.0,False,9.86,-1,-1
+680,Geisel Library,721,282,10,1.41,True,23.97,-1,-1
+681,Geisel Library,722,81,10,1.0,False,9.86,-1,-1
+682,Geisel Library,723,82,10,1.0,False,9.92,-1,-1
+683,Geisel Library,724,92,10,1.0,False,10.52,-1,-1
+684,Geisel Library,735A,3412,10,34.12,True,580.04,-1,-1
+685,Geisel Library,735B,4278,10,42.78,True,727.26,-1,-1
+686,Geisel Library,735C,4278,10,42.78,True,727.26,-1,-1
+687,Geisel Library,735D,4278,10,42.78,True,727.26,-1,-1
+688,Geisel Library,835A,2210,10,22.1,True,375.7,-1,-1
+689,Geisel Library,835B,2209,10,22.09,True,375.53,-1,-1
+690,Geisel Library,835C,2210,10,22.1,True,375.7,-1,-1
+691,Geisel Library,835D,2210,10,22.1,True,375.7,-1,-1
+692,York Hall,1246,1270,10,24.0,False,468.6,-1,-1
+693,York Hall,1310,1914,10,30.0,False,644.52,-1,-1
+694,York Hall,1344,1592,10,42.0,False,706.56,-1,-1
+695,York Hall,1510,945,10,1.0,False,180.1,-1,-1
+696,York Hall,1604,392,10,7.84,True,148.96,-1,-1
+697,York Hall,1608,392,10,7.84,True,148.96,-1,-1
+698,York Hall,1610,631,10,15.775,True,271.33,-1,-1
+699,York Hall,1700,1280,10,24.0,False,470.4,-1,-1
+700,York Hall,2108,1065,10,24.0,False,431.7,-1,-1
+701,York Hall,2124,1063,10,24.0,False,431.34,-1,-1
+702,York Hall,2142,1127,10,24.0,False,442.86,-1,-1
+703,York Hall,2208,1065,10,24.0,False,431.7,-1,-1
+704,York Hall,2224,1063,10,24.0,False,431.34,-1,-1
+705,York Hall,2310,1153,10,24.0,False,447.54,-1,-1
+706,York Hall,2332,1153,10,24.0,False,447.54,-1,-1
+707,York Hall,2410,1153,10,28.0,False,487.54,-1,-1
+708,York Hall,2432,1153,10,28.0,False,487.54,-1,-1
+709,York Hall,2622,1773,10,192.0,False,1546.38,-1,-1
+710,York Hall,2722,3018,10,362.0,False,2896.08,-1,-1
+711,York Hall,3000A,490,10,34.0,False,284.4,-1,-1
+712,York Hall,3000B,135,10,1.0,False,13.1,-1,-1
+713,York Hall,3020,323,10,10.0,False,94.38,-1,-1
+714,York Hall,3030,816,10,24.0,False,386.88,-1,-1
+715,York Hall,3050A,365,10,23.0,False,194.4,-1,-1
+716,York Hall,3050B,443,10,23.0,False,199.08,-1,-1
+717,York Hall,3060,646,10,24.0,False,218.76,-1,-1
+718,York Hall,3070,862,10,129.3,True,1021.47,-1,-1
+719,York Hall,3080A,110,10,0.55,True,9.35,-1,-1
+720,York Hall,3080B,115,10,0.5750000000000001,True,9.775,-1,-1
+721,York Hall,3080C,101,10,0.505,True,8.584999999999999,-1,-1
+722,York Hall,3080D,112,10,0.56,True,9.52,-1,-1
+723,York Hall,3080E,123,10,0.615,True,10.455,-1,-1
+724,York Hall,3108,1105,10,24.0,False,438.9,-1,-1
+725,York Hall,3150,335,10,2.0,False,30.1,-1,-1
+726,York Hall,3151,136,10,1.0,False,13.16,-1,-1
+727,York Hall,3208,1109,10,24.0,False,439.62,-1,-1
+728,York Hall,3224,1107,10,24.0,False,439.26,-1,-1
+729,York Hall,3242,180,10,0.8999999999999999,True,15.3,-1,-1
+730,York Hall,3306,1766,10,34.0,False,657.88,-1,-1
+731,York Hall,3348B,45,10,1.125,True,19.35,-1,-1
+732,York Hall,3348C,45,10,1.125,True,19.35,-1,-1
+733,York Hall,3406,1720,10,34.0,False,649.5999999999998,-1,-1
+734,York Hall,3448A,81,10,0.405,True,6.885,-1,-1
+735,York Hall,3448B,82,10,0.41,True,6.9700000000000015,-1,-1
+736,York Hall,4000A,101,10,1.0,False,11.06,-1,-1
+737,York Hall,4000B,108,10,5.0,False,31.48,-1,-1
+738,York Hall,4000C,251,10,4.0,False,35.06,-1,-1
+739,York Hall,4000E,121,10,2.0,False,17.259999999999998,-1,-1
+740,York Hall,4010,185,10,1.0,False,16.1,-1,-1
+741,York Hall,4010A,109,10,0.545,True,9.265,-1,-1
+742,York Hall,4010B,109,10,2.0,False,16.54,-1,-1
+743,York Hall,4010C,98,10,2.0,False,15.88,-1,-1
+744,York Hall,4010D,98,10,1.0,False,10.88,-1,-1
+745,York Hall,4020A,308,10,3.0,False,33.480000000000004,-1,-1
+746,York Hall,4020B,289,10,15.0,False,92.34,-1,-1
+747,York Hall,4030A1,95,10,0.475,True,8.075,-1,-1
+748,York Hall,4030A2,74,10,0.37,True,6.289999999999999,-1,-1
+749,York Hall,4030A3,87,10,0.435,True,7.395,-1,-1
+750,York Hall,4030A4,74,10,0.37,True,6.289999999999999,-1,-1
+751,York Hall,4030A5,89,10,0.445,True,7.564999999999999,-1,-1
+752,York Hall,4030B,251,10,10.0,False,65.06,-1,-1
+753,York Hall,4050A,563,10,25.0,False,221.28,-1,-1
+754,York Hall,4050B,256,10,20.0,False,165.36,-1,-1
+755,York Hall,4060A,303,10,15.0,False,130.68,-1,-1
+756,York Hall,4060B,294,10,15.0,False,130.14,-1,-1
+757,York Hall,4070A,94,10,1.0,False,10.64,-1,-1
+758,York Hall,4070B,95,10,1.0,False,10.7,-1,-1
+759,York Hall,4070C,112,10,1.0,False,11.72,-1,-1
+760,York Hall,4070D,99,10,1.0,False,10.94,-1,-1
+761,York Hall,4070E,120,10,1.0,False,12.2,-1,-1
+762,York Hall,4080A,706,10,50.0,False,417.36,-1,-1
+763,York Hall,4080B,192,10,2.0,False,21.52,-1,-1
+764,York Hall,4124A,1271,10,32.0,False,548.78,-1,-1
+765,York Hall,4208,1109,10,13.0,False,329.62,-1,-1
+766,York Hall,4224,1107,10,24.0,False,439.26,-1,-1
+767,York Hall,4248,971,10,18.0,False,354.78,-1,-1
+768,York Hall,4306A,131,10,0.655,True,11.135,-1,-1
+769,York Hall,4318,1226,10,24.0,False,460.68,-1,-1
+770,York Hall,4332,1153,10,24.0,False,447.54,-1,-1
+771,York Hall,4406,1691,10,32.0,False,624.38,-1,-1
+772,York Hall,4432,917,10,18.0,False,345.06,-1,-1
+773,Urey Hall,B0001,4254,10,85.07999999999998,True,1616.52,-1,-1
+774,Urey Hall,B0001C,494,10,9.88,True,187.72,-1,-1
+775,Urey Hall,B0003,1310,10,26.20000000000001,True,497.8,-1,-1
+776,Urey Hall,B0003A,98,10,1.96,True,37.24,-1,-1
+777,Urey Hall,B0005,423,10,8.459999999999999,True,160.74,-1,-1
+778,Urey Hall,B0007,278,10,5.5600000000000005,True,105.64,-1,-1
+779,Urey Hall,B0009,633,10,12.66,True,240.54,-1,-1
+780,Urey Hall,B0009A,107,10,0.535,True,9.095,-1,-1
+781,Urey Hall,B0203,83,10,1.66,True,31.54,-1,-1
+782,Urey Hall,B0205,75,10,1.875,True,32.25,-1,-1
+783,Urey Hall,B0205B,122,10,3.05,True,52.46,-1,-1
+784,Urey Hall,B0205C,487,10,12.175,True,209.41,-1,-1
+785,Urey Hall,B0205D,787,10,19.675,True,338.41,-1,-1
+786,Urey Hall,B0207,380,10,9.5,True,163.39999999999995,-1,-1
+787,Urey Hall,B0207A,446,10,11.15,True,191.78,-1,-1
+788,Urey Hall,B0207B,233,10,5.825,True,100.19,-1,-1
+789,Urey Hall,B0207C,128,10,3.2,True,55.04,-1,-1
+790,Urey Hall,B0208,77,10,1.54,True,29.26,-1,-1
+791,Urey Hall,B0209,123,10,2.46,True,46.74,-1,-1
+792,Urey Hall,B0220,1449,10,36.225,True,623.0699999999998,-1,-1
+793,Urey Hall,B0222,1047,10,26.175,True,450.21,-1,-1
+794,Urey Hall,B0240C,1351,10,1.0,False,253.18,-1,-1
+795,Urey Hall,B0246,313,10,2.0,False,28.78,-1,-1
+796,Urey Hall,B0246A,144,10,0.72,True,12.24,-1,-1
+797,Urey Hall,B0246C,1787,10,44.675,True,768.41,-1,-1
+798,Urey Hall,0015,337,10,6.74,True,128.06,-1,-1
+799,Urey Hall,0016,344,10,6.879999999999999,True,130.71999999999997,-1,-1
+800,Urey Hall,0017,342,10,6.8400000000000025,True,129.96,-1,-1
+801,Urey Hall,0018,271,10,5.42,True,102.98,-1,-1
+802,Urey Hall,0020,273,10,5.460000000000001,True,103.74,-1,-1
+803,Urey Hall,0021,537,10,10.74,True,204.06,-1,-1
+804,Urey Hall,0022,227,10,4.54,True,86.25999999999998,-1,-1
+805,Urey Hall,0023,136,10,2.72,True,51.68000000000001,-1,-1
+806,Urey Hall,0024,133,10,2.66,True,50.54,-1,-1
+807,Urey Hall,1201,111,10,0.555,True,9.435,-1,-1
+808,Urey Hall,1201A,144,10,0.72,True,12.24,-1,-1
+809,Urey Hall,1202,262,10,9.0,False,60.72,-1,-1
+810,Urey Hall,1204,144,10,0.72,True,12.24,-1,-1
+811,Urey Hall,1205,121,10,0.605,True,10.285,-1,-1
+812,Urey Hall,1206,109,10,0.545,True,9.265,-1,-1
+813,Urey Hall,1207,150,10,0.75,True,12.75,-1,-1
+814,Urey Hall,1208,111,10,0.555,True,9.435,-1,-1
+815,Urey Hall,1220,1172,10,3.0,False,240.96,-1,-1
+816,Urey Hall,1500,83,10,1.0,False,9.98,-1,-1
+817,Urey Hall,1510A,116,10,1.0,False,11.96,-1,-1
+818,Urey Hall,1510B,109,10,1.0,False,11.54,-1,-1
+819,Urey Hall,1520,242,10,2.0,False,24.52,-1,-1
+820,Urey Hall,1530,115,10,1.0,False,11.9,-1,-1
+821,Urey Hall,1540,115,10,1.0,False,11.9,-1,-1
+822,Urey Hall,1545,112,10,1.0,False,11.72,-1,-1
+823,Urey Hall,1550,115,10,1.0,False,11.9,-1,-1
+824,Urey Hall,1560,107,10,1.0,False,11.42,-1,-1
+825,Urey Hall,1565,69,10,1.0,False,9.14,-1,-1
+826,Urey Hall,1570,121,10,1.0,False,12.26,-1,-1
+827,Urey Hall,1580,117,10,1.0,False,12.02,-1,-1
+828,Urey Hall,1600,90,10,1.0,False,10.4,-1,-1
+829,Urey Hall,1605,92,10,0.46,True,7.8199999999999985,-1,-1
+830,Urey Hall,1610,121,10,1.0,False,12.26,-1,-1
+831,Urey Hall,1615,171,10,1.0,False,15.26,-1,-1
+832,Urey Hall,1620,123,10,1.0,False,12.38,-1,-1
+833,Urey Hall,1625,266,10,1.0,False,20.96,-1,-1
+834,Urey Hall,1650,280,10,8.0,False,76.8,-1,-1
+835,Urey Hall,1705,90,10,1.0,False,10.4,-1,-1
+836,Urey Hall,1710,122,10,0.61,True,10.37,-1,-1
+837,Urey Hall,1715,112,10,1.0,False,11.72,-1,-1
+838,Urey Hall,1720,119,10,1.0,False,12.14,-1,-1
+839,Urey Hall,1730,128,10,1.0,False,12.68,-1,-1
+840,Urey Hall,1810,224,10,2.0,False,23.44,-1,-1
+841,Urey Hall,1815,91,10,0.455,True,7.7349999999999985,-1,-1
+842,Urey Hall,1820,115,10,1.0,False,11.9,-1,-1
+843,Urey Hall,1825,91,10,1.0,False,10.46,-1,-1
+844,Urey Hall,1830,115,10,1.0,False,11.9,-1,-1
+845,Urey Hall,1910,109,10,1.0,False,11.54,-1,-1
+846,Urey Hall,1920,109,10,2.0,False,16.54,-1,-1
+847,Urey Hall,1930,109,10,1.0,False,11.54,-1,-1
+848,Urey Hall,1940,109,10,1.0,False,11.54,-1,-1
+849,Urey Hall,1950,252,10,2.0,False,25.12,-1,-1
+850,Urey Hall,2102,778,10,35.0,False,309.18,-1,-1
+851,Urey Hall,2108,172,10,9.0,False,55.32,-1,-1
+852,Urey Hall,2108A,48,10,0.24,True,4.08,-1,-1
+853,Urey Hall,2108B,53,10,0.265,True,4.505,-1,-1
+854,Urey Hall,2108C,51,10,0.255,True,4.335,-1,-1
+855,Urey Hall,2108D,55,10,0.275,True,4.675,-1,-1
+856,Urey Hall,2108E,80,10,0.4,True,6.8,-1,-1
+857,Urey Hall,2108F,54,10,0.27,True,4.59,-1,-1
+858,Urey Hall,2108G,51,10,0.255,True,4.335,-1,-1
+859,Urey Hall,2116,1029,10,25.725,True,442.47,-1,-1
+860,Urey Hall,2120,651,10,16.275000000000002,True,279.93,-1,-1
+861,Urey Hall,2124,839,10,20.975,True,360.77,-1,-1
+862,Urey Hall,2126,95,10,1.0,False,10.7,-1,-1
+863,Urey Hall,2130,238,10,1.19,True,20.23,-1,-1
+864,Urey Hall,2132,125,10,0.625,True,10.625,-1,-1
+865,Urey Hall,2202,231,10,2.0,False,23.86,-1,-1
+866,Urey Hall,2205,882,10,22.05,True,379.26,-1,-1
+867,Urey Hall,2210,161,10,0.805,True,13.685,-1,-1
+868,Urey Hall,2226,236,10,1.18,True,20.06,-1,-1
+869,Urey Hall,2238,130,10,1.0,False,12.8,-1,-1
+870,Urey Hall,2241,639,10,15.975,True,274.77,-1,-1
+871,Urey Hall,2242,94,10,0.47,True,7.989999999999997,-1,-1
+872,Urey Hall,2246,93,10,0.465,True,7.9049999999999985,-1,-1
+873,Urey Hall,2250,99,10,0.495,True,8.415,-1,-1
+874,Urey Hall,2254,148,10,0.74,True,12.579999999999998,-1,-1
+875,Urey Hall,2257,231,10,5.775,True,99.33,-1,-1
+876,Urey Hall,2258,142,10,0.71,True,12.07,-1,-1
+877,Urey Hall,2261,169,10,4.2250000000000005,True,72.67,-1,-1
+878,Urey Hall,2262,135,10,0.675,True,11.475,-1,-1
+879,Urey Hall,2265,265,10,3.0,False,38.4,-1,-1
+880,Urey Hall,2266,142,10,0.71,True,12.07,-1,-1
+881,Urey Hall,3102,270,10,6.75,True,116.1,-1,-1
+882,Urey Hall,3104A,211,10,1.0,False,47.98,-1,-1
+883,Urey Hall,3106,158,10,3.0,False,24.48,-1,-1
+884,Urey Hall,3108,1020,10,3.0,False,213.6,-1,-1
+885,Urey Hall,3118,350,10,5.0,False,46.0,-1,-1
+886,Urey Hall,3120,1326,10,4.0,False,278.67999999999995,-1,-1
+887,Urey Hall,3124,448,10,3.0,False,110.64,-1,-1
+888,Urey Hall,3130,1023,10,1.0,False,194.14,-1,-1
+889,Urey Hall,3130A,105,10,3.0,False,48.9,-1,-1
+890,Urey Hall,3130B,105,10,1.0,False,28.9,-1,-1
+891,Urey Hall,3201,617,10,1.0,False,121.06,-1,-1
+892,Urey Hall,3202,292,10,1.0,False,22.52,-1,-1
+893,Urey Hall,3210,142,10,1.0,False,13.52,-1,-1
+894,Urey Hall,3213,608,10,3.0,False,51.48,-1,-1
+895,Urey Hall,3213A,47,10,1.0,False,7.82,-1,-1
+896,Urey Hall,3214,142,10,0.71,True,12.07,-1,-1
+897,Urey Hall,3218,142,10,0.71,True,12.07,-1,-1
+898,Urey Hall,3222,142,10,0.71,True,12.07,-1,-1
+899,Urey Hall,3226,289,10,1.0,False,22.34,-1,-1
+900,Urey Hall,3229,899,10,4.0,False,201.82,-1,-1
+901,Urey Hall,3234,142,10,0.71,True,12.07,-1,-1
+902,Urey Hall,3238,142,10,0.71,True,12.07,-1,-1
+903,Urey Hall,3241,220,10,5.0,False,38.2,-1,-1
+904,Urey Hall,3242,142,10,1.0,False,13.52,-1,-1
+905,Urey Hall,3245,217,10,4.0,False,43.02,-1,-1
+906,Urey Hall,3246,142,10,2.0,False,18.52,-1,-1
+907,Urey Hall,3249,217,10,5.0,False,38.02,-1,-1
+908,Urey Hall,3250,142,10,1.0,False,13.52,-1,-1
+909,Urey Hall,3253,223,10,5.575,True,95.89,-1,-1
+910,Urey Hall,3254,142,10,1.0,False,13.52,-1,-1
+911,Urey Hall,3257,438,10,5.0,False,51.28,-1,-1
+912,Urey Hall,3258,142,10,0.71,True,12.07,-1,-1
+913,Urey Hall,3262,145,10,1.0,False,13.7,-1,-1
+914,Urey Hall,4102,121,10,1.0,False,12.26,-1,-1
+915,Urey Hall,4104,1021,10,1.0,False,193.78,-1,-1
+916,Urey Hall,4110,632,10,1.0,False,123.76,-1,-1
+917,Urey Hall,4116,222,10,5.55,True,95.46,-1,-1
+918,Urey Hall,4120,1049,10,2.0,False,208.82,-1,-1
+919,Urey Hall,4120A,138,10,2.0,False,18.28,-1,-1
+920,Urey Hall,4120D,136,10,1.0,False,13.16,-1,-1
+921,Urey Hall,4130,1254,10,1.0,False,235.72,-1,-1
+922,Urey Hall,4130C,111,10,1.0,False,11.66,-1,-1
+923,Urey Hall,4202,145,10,1.0,False,13.7,-1,-1
+924,Urey Hall,4205,215,10,1.075,True,18.275,-1,-1
+925,Urey Hall,4206,142,10,1.0,False,13.52,-1,-1
+926,Urey Hall,4209,210,10,1.0,False,17.6,-1,-1
+927,Urey Hall,4210,142,10,12.0,False,98.52,-1,-1
+928,Urey Hall,4213,108,10,0.54,True,9.18,-1,-1
+929,Urey Hall,4214,142,10,8.0,False,68.52,-1,-1
+930,Urey Hall,4217,215,10,1.0,False,48.7,-1,-1
+931,Urey Hall,4218,142,10,0.71,True,12.07,-1,-1
+932,Urey Hall,4221,215,10,1.0,False,48.7,-1,-1
+933,Urey Hall,4222,142,10,0.71,True,12.07,-1,-1
+934,Urey Hall,4225,289,10,11.0,False,72.34,-1,-1
+935,Urey Hall,4226,142,10,1.0,False,13.52,-1,-1
+936,Urey Hall,4230,142,10,0.71,True,12.07,-1,-1
+937,Urey Hall,4233,299,10,1.0,False,63.82,-1,-1
+938,Urey Hall,4234,142,10,0.71,True,12.07,-1,-1
+939,Urey Hall,4241,219,10,1.0,False,49.42,-1,-1
+940,Urey Hall,4242,289,10,2.0,False,27.34,-1,-1
+941,Urey Hall,4245,350,10,1.0,False,73.0,-1,-1
+942,Urey Hall,4246,289,10,1.4449999999999998,True,24.565,-1,-1
+943,Urey Hall,4249,286,10,1.0,False,61.48,-1,-1
+944,Urey Hall,4253,220,10,1.0,False,49.6,-1,-1
+945,Urey Hall,4254,142,10,5.0,False,33.52,-1,-1
+946,Urey Hall,4258,292,10,8.0,False,57.52,-1,-1
+947,Urey Hall,4261,215,10,1.0,False,48.7,-1,-1
+948,Urey Hall,5102,124,10,10.0,False,57.44,-1,-1
+949,Urey Hall,5104,552,10,1.0,False,109.36,-1,-1
+950,Urey Hall,5106,123,10,1.0,False,12.38,-1,-1
+951,Urey Hall,5108,545,10,2.0,False,118.1,-1,-1
+952,Urey Hall,5110,121,10,1.0,False,12.26,-1,-1
+953,Urey Hall,5112,545,10,2.0,False,118.1,-1,-1
+954,Urey Hall,5116,544,10,4.0,False,137.92000000000002,-1,-1
+955,Urey Hall,5118,123,10,0.615,True,10.455,-1,-1
+956,Urey Hall,5120,677,10,4.0,False,161.86,-1,-1
+957,Urey Hall,5124,544,10,2.0,False,117.92,-1,-1
+958,Urey Hall,5126,123,10,1.0,False,32.14,-1,-1
+959,Urey Hall,5130,105,10,1.0,False,28.9,-1,-1
+960,Urey Hall,5132,558,10,2.0,False,120.44,-1,-1
+961,Urey Hall,5202,145,10,1.0,False,13.7,-1,-1
+962,Urey Hall,5206,142,10,1.0,False,13.52,-1,-1
+963,Urey Hall,5207,221,10,5.525,True,95.03,-1,-1
+964,Urey Hall,5214,73,10,4.0,False,24.38,-1,-1
+965,Urey Hall,5218,142,10,0.71,True,12.07,-1,-1
+966,Urey Hall,5221,215,10,1.0,False,48.7,-1,-1
+967,Urey Hall,5222,142,10,0.71,True,12.07,-1,-1
+968,Urey Hall,5225,226,10,5.65,True,97.18,-1,-1
+969,Urey Hall,5226,142,10,0.71,True,12.07,-1,-1
+970,Urey Hall,5229,220,10,5.5,True,94.6,-1,-1
+971,Urey Hall,5230,142,10,0.71,True,12.07,-1,-1
+972,Urey Hall,5233,221,10,5.525,True,95.03,-1,-1
+973,Urey Hall,5234,142,10,0.71,True,12.07,-1,-1
+974,Urey Hall,5237,218,10,1.0,False,49.24,-1,-1
+975,Urey Hall,5238,142,10,0.71,True,12.07,-1,-1
+976,Urey Hall,5241,223,10,5.575,True,95.89,-1,-1
+977,Urey Hall,5245,218,10,1.0,False,49.24,-1,-1
+978,Urey Hall,5249,110,10,1.0,False,29.8,-1,-1
+979,Urey Hall,5250,141,10,3.0,False,23.46,-1,-1
+980,Urey Hall,5253,223,10,5.575,True,95.89,-1,-1
+981,Urey Hall,5254,143,10,0.715,True,12.155,-1,-1
+982,Urey Hall,5257,220,10,6.0,False,99.6,-1,-1
+983,Urey Hall,5258,142,10,2.0,False,45.56,-1,-1
+984,Urey Hall,5261,174,10,1.0,False,41.32,-1,-1
+985,Urey Hall,5262,145,10,1.0,False,13.7,-1,-1
+986,Urey Hall,6102,145,10,1.0,False,13.7,-1,-1
+987,Urey Hall,6108,2011,10,50.27500000000001,True,864.73,-1,-1
+988,Urey Hall,6110,104,10,0.52,True,8.84,-1,-1
+989,Urey Hall,6124,1350,10,22.0,False,463.0,-1,-1
+990,Urey Hall,6124A,262,10,6.5500000000000025,True,112.66,-1,-1
+991,Urey Hall,6130,166,10,2.0,False,49.88,-1,-1
+992,Urey Hall,6130A,253,10,6.325,True,108.79,-1,-1
+993,Urey Hall,6130B,89,10,2.225,True,38.27,-1,-1
+994,Urey Hall,6132,164,10,4.1000000000000005,True,70.52000000000002,-1,-1
+995,Urey Hall,6202,143,10,0.715,True,12.155,-1,-1
+996,Urey Hall,6206,148,10,0.74,True,12.579999999999998,-1,-1
+997,Urey Hall,6210,143,10,1.0,False,13.58,-1,-1
+998,Urey Hall,6213,211,10,1.0,False,47.98,-1,-1
+999,Urey Hall,6214,143,10,1.0,False,13.58,-1,-1
+1000,Urey Hall,6217,447,10,11.175,True,192.21,-1,-1
+1001,Urey Hall,6218,143,10,1.0,False,13.58,-1,-1
+1002,Urey Hall,6222,142,10,1.0,False,13.52,-1,-1
+1003,Urey Hall,6226,142,10,1.0,False,13.52,-1,-1
+1004,Urey Hall,6230,142,10,1.0,False,13.52,-1,-1
+1005,Urey Hall,6233,301,10,10.0,False,154.18,-1,-1
+1006,Urey Hall,6234,142,10,1.0,False,13.52,-1,-1
+1007,Urey Hall,6237,132,10,3.3000000000000003,True,56.76,-1,-1
+1008,Urey Hall,6238,142,10,1.0,False,13.52,-1,-1
+1009,Urey Hall,6242,142,10,2.0,False,18.52,-1,-1
+1010,Urey Hall,6246,144,10,1.0,False,13.64,-1,-1
+1011,Urey Hall,6249,456,10,11.4,True,196.08,-1,-1
+1012,Urey Hall,6249A,50,10,0.25,True,4.25,-1,-1
+1013,Urey Hall,6249B,62,10,0.31,True,5.27,-1,-1
+1014,Urey Hall,6249C,63,10,0.315,True,5.355,-1,-1
+1015,Urey Hall,6250,142,10,1.0,False,13.52,-1,-1
+1016,Urey Hall,6253,208,10,5.2,True,89.44,-1,-1
+1017,Urey Hall,6254,142,10,1.0,False,13.52,-1,-1
+1018,Urey Hall,6258,140,10,0.7000000000000001,True,11.9,-1,-1
+1019,Urey Hall,6261,445,10,11.125,True,191.35,-1,-1
+1020,Urey Hall,6262,145,10,1.0,False,13.7,-1,-1
+1021,Urey Hall,7104,178,10,50.0,False,532.04,-1,-1
+1022,Urey Hall,7108,442,10,1.0,False,89.56,-1,-1
+1023,Urey Hall,7108A,160,10,4.0,True,68.8,-1,-1
+1024,Urey Hall,7108B,182,10,4.55,True,78.25999999999998,-1,-1
+1025,Urey Hall,7108C,157,10,3.925,True,67.50999999999999,-1,-1
+1026,Urey Hall,7108D,184,10,4.6,True,79.12,-1,-1
+1027,Urey Hall,7112,461,10,11.525,True,198.23,-1,-1
+1028,Urey Hall,7112A,132,10,3.3000000000000003,True,56.76,-1,-1
+1029,Urey Hall,7112B,155,10,3.875,True,66.65,-1,-1
+1030,Urey Hall,7112C,268,10,6.7,True,115.24,-1,-1
+1031,Urey Hall,7112D,334,10,8.35,True,143.62,-1,-1
+1032,Urey Hall,7118,218,10,7.0,False,109.24,-1,-1
+1033,Urey Hall,7118A,106,10,2.65,True,45.58,-1,-1
+1034,Urey Hall,7120,62,10,1.0,False,8.719999999999999,-1,-1
+1035,Urey Hall,7120A,130,10,2.0,False,43.4,-1,-1
+1036,Urey Hall,7120B,130,10,3.25,True,55.9,-1,-1
+1037,Urey Hall,7124,677,10,3.385,True,57.545,-1,-1
+1038,Urey Hall,7126,375,10,1.875,True,31.875,-1,-1
+1039,Urey Hall,7126A,197,10,4.925,True,84.71000000000002,-1,-1
+1040,Urey Hall,7130A,514,10,30.0,False,255.84,-1,-1
+1041,Urey Hall,7202,140,10,3.0,False,23.4,-1,-1
+1042,Urey Hall,7205,453,10,1.0,False,34.68,-1,-1
+1043,Urey Hall,7206,136,10,1.0,False,13.16,-1,-1
+1044,Urey Hall,7210,135,10,1.0,False,13.1,-1,-1
+1045,Urey Hall,7213,127,10,3.175,True,54.61,-1,-1
+1046,Urey Hall,7213A,64,10,1.0,False,21.52,-1,-1
+1047,Urey Hall,7213B,63,10,1.0,False,8.78,-1,-1
+1048,Urey Hall,7213C,69,10,1.0,False,9.14,-1,-1
+1049,Urey Hall,7213D,52,10,1.0,False,8.120000000000001,-1,-1
+1050,Urey Hall,7213E,62,10,1.0,False,8.719999999999999,-1,-1
+1051,Urey Hall,7214,135,10,1.0,False,13.1,-1,-1
+1052,Urey Hall,7218,136,10,2.0,False,18.16,-1,-1
+1053,Urey Hall,7222,136,10,2.0,False,18.16,-1,-1
+1054,Urey Hall,7225,423,10,10.575,True,181.89,-1,-1
+1055,Urey Hall,7226,136,10,1.0,False,13.16,-1,-1
+1056,Urey Hall,7229,217,10,5.425,True,93.31,-1,-1
+1057,Urey Hall,7230,136,10,1.0,False,13.16,-1,-1
+1058,Urey Hall,7233,106,10,2.0,False,39.08,-1,-1
+1059,Urey Hall,7233A,106,10,2.65,True,45.58,-1,-1
+1060,Urey Hall,7233B,213,10,5.325,True,91.59,-1,-1
+1061,Urey Hall,7234,136,10,2.0,False,18.16,-1,-1
+1062,Urey Hall,7238,136,10,1.0,False,13.16,-1,-1
+1063,Urey Hall,7241,218,10,1.0,False,49.24,-1,-1
+1064,Urey Hall,7242,136,10,1.0,False,13.16,-1,-1
+1065,Urey Hall,7246,136,10,1.0,False,13.16,-1,-1
+1066,Urey Hall,7250,136,10,1.0,False,13.16,-1,-1
+1067,Urey Hall,7254,136,10,1.0,False,13.16,-1,-1
+1068,Urey Hall,7257A,57,10,1.0,False,8.42,-1,-1
+1069,Urey Hall,7257B,44,10,1.0,False,7.64,-1,-1
+1070,Urey Hall,7257C,49,10,1.0,False,7.939999999999999,-1,-1
+1071,Urey Hall,7257D,38,10,1.0,False,7.2799999999999985,-1,-1
+1072,Urey Hall,7257E,69,10,1.0,False,9.14,-1,-1
+1073,Urey Hall,7257F,47,10,1.0,False,7.82,-1,-1
+1074,Urey Hall,7257G,47,10,1.0,False,7.82,-1,-1
+1075,Urey Hall,7257H,46,10,1.0,False,7.76,-1,-1
+1076,Urey Hall,7257I,41,10,1.0,False,7.46,-1,-1
+1077,Urey Hall,7257J,47,10,1.0,False,7.82,-1,-1
+1078,Urey Hall,7257K,41,10,1.0,False,7.46,-1,-1
+1079,Urey Hall,7257L,51,10,1.0,False,8.06,-1,-1
+1080,Urey Hall,7258,136,10,0.68,True,11.56,-1,-1
+1081,Urey Hall,7262,140,10,1.0,False,13.4,-1,-1
+1082,Molli and Arthur Wagner Dance Building,101,3207,10,35.0,False,454.92,-1,-1
+1083,Molli and Arthur Wagner Dance Building,104,2404,10,30.0,False,369.24,-1,-1
+1084,Molli and Arthur Wagner Dance Building,105,203,10,1.015,True,17.255000000000006,-1,-1
+1085,Molli and Arthur Wagner Dance Building,108,2591,10,30.0,False,380.46,-1,-1
+1086,RIMAC,101,43035,10,3546.0,False,78666.3,-1,-1
+1087,RIMAC,109,91,10,1.0,False,10.46,-1,-1
+1088,RIMAC,110,131,10,1.0,False,12.86,-1,-1
+1089,RIMAC,112,105,10,1.0,False,11.3,-1,-1
+1090,RIMAC,121,198,10,2.0,False,21.88,-1,-1
+1091,RIMAC,151,87,10,1.0,False,10.22,-1,-1
+1092,RIMAC,154A,62,10,0.31,True,5.27,-1,-1
+1093,RIMAC,155A,73,10,0.365,True,6.205,-1,-1
+1094,RIMAC,155B,90,10,0.45,True,7.649999999999999,-1,-1
+1095,RIMAC,156,159,10,1.0,False,14.54,-1,-1
+1096,RIMAC,157,154,10,20.0,False,159.24,-1,-1
+1097,RIMAC,158,1927,10,50.0,False,490.62,-1,-1
+1098,RIMAC,207,801,10,12.015,True,384.48,-1,-1
+1099,RIMAC,208,801,10,12.015,True,384.48,-1,-1
+1100,RIMAC,209,801,10,12.015,True,384.48,-1,-1
+1101,RIMAC,210,896,10,13.44,True,430.08,-1,-1
+1102,RIMAC,211,844,10,12.66,True,405.12,-1,-1
+1103,RIMAC,213,800,10,12.0,True,384.0,-1,-1
+1104,RIMAC,214,800,10,12.0,True,384.0,-1,-1
+1105,RIMAC,215,801,10,12.015,True,384.48,-1,-1
+1106,RIMAC,216,672,10,10.08,True,322.56,-1,-1
+1107,RIMAC,217,672,10,10.08,True,322.56,-1,-1
+1108,RIMAC,221A,614,10,9.21,True,294.72,-1,-1
+1109,RIMAC,221B,465,10,6.9750000000000005,True,223.2,-1,-1
+1110,RIMAC,222A,503,10,7.545,True,241.44,-1,-1
+1111,RIMAC,222B,380,10,5.7,True,182.4,-1,-1
+1112,RIMAC,224,108,10,2.0,False,16.48,-1,-1
+1113,RIMAC,238,61,10,0.305,True,5.185,-1,-1
+1114,RIMAC,264,271,10,4.065,True,130.08,-1,-1
+1115,RIMAC,267,269,10,4.035,True,129.12,-1,-1
+1116,RIMAC,310A,118,10,0.59,True,10.03,-1,-1
+1117,RIMAC,310B,84,10,0.42,True,7.1400000000000015,-1,-1
+1118,RIMAC,311,303,10,3.0,False,33.18,-1,-1
+1119,RIMAC,312,114,10,0.5700000000000001,True,9.69,-1,-1
+1120,RIMAC,313,84,10,1.0,False,10.04,-1,-1
+1121,RIMAC,317,2226,10,33.39,True,1068.48,-1,-1
+1122,RIMAC,319,2857,10,42.855,True,1371.36,-1,-1
+1123,RIMAC,323,1964,10,29.46,True,942.72,-1,-1
+1124,RIMAC,326,12395,10,185.925,True,5949.5999999999985,-1,-1
+1125,RIMAC,332,11713,10,175.695,True,5622.24,-1,-1
+1126,RIMAC,333,120,10,1.0,False,12.2,-1,-1
+1127,RIMAC,336,120,10,1.0,False,12.2,-1,-1
+1128,RIMAC,405,138,10,1.0,False,13.28,-1,-1
+1129,RIMAC,407,135,10,1.0,False,13.1,-1,-1
+1130,RIMAC,407A,80,10,0.4,True,6.8,-1,-1
+1131,RIMAC,408,114,10,1.0,False,11.84,-1,-1
+1132,RIMAC,409,189,10,1.0,False,16.34,-1,-1
+1133,RIMAC,411,103,10,0.515,True,8.754999999999999,-1,-1
+1134,RIMAC,419,848,10,25.0,False,238.38,-1,-1
+1135,RIMAC,421,162,10,0.81,True,13.77,-1,-1
+1136,RIMAC,422,75,10,1.0,False,9.5,-1,-1
+1137,RIMAC,423,75,10,1.0,False,9.5,-1,-1
+1138,RIMAC,424,50,10,0.25,True,4.25,-1,-1
+1139,RIMAC,426,436,10,20.0,False,176.16,-1,-1
+1140,RIMAC,427,215,10,1.0,False,17.9,-1,-1
+1141,RIMAC,428,123,10,1.0,False,12.38,-1,-1
+1142,RIMAC,429,153,10,1.0,False,14.18,-1,-1
+1143,RIMAC,430,138,10,4.0,False,28.28,-1,-1
+1144,RIMAC,431,162,10,1.0,False,14.72,-1,-1
+1145,RIMAC,432,150,10,5.0,False,34.0,-1,-1
+1146,RIMAC,433,121,10,1.0,False,12.26,-1,-1
+1147,RIMAC,434,100,10,2.0,False,16.0,-1,-1
+1148,RIMAC,435,121,10,3.0,False,22.26,-1,-1
+1149,RIMAC,436,157,10,5.0,False,34.42,-1,-1
+1150,RIMAC,438,102,10,1.0,False,11.12,-1,-1
+1151,RIMAC,439,100,10,1.0,False,11.0,-1,-1
+1152,RIMAC,440,100,10,2.0,False,16.0,-1,-1
+1153,RIMAC,441,105,10,3.0,False,21.3,-1,-1
+1154,RIMAC,443,100,10,3.0,False,21.0,-1,-1
+1155,RIMAC,444,101,10,3.0,False,21.06,-1,-1
+1156,RIMAC,445,106,10,2.0,False,16.36,-1,-1
+1157,RIMAC,446,100,10,3.0,False,21.0,-1,-1
+1158,RIMAC,448,106,10,3.0,False,21.36,-1,-1
+1159,RIMAC,449,84,10,1.0,False,10.04,-1,-1
+1160,RIMAC,450,86,10,2.0,False,15.16,-1,-1
+1161,RIMAC,452,80,10,1.0,False,9.8,-1,-1
+1162,RIMAC,454,97,10,1.0,False,10.82,-1,-1
+1163,RIMAC,455,100,10,1.0,False,11.0,-1,-1
+1164,RIMAC,458,111,10,1.0,False,11.66,-1,-1
+1165,RIMAC,459,107,10,1.0,False,11.42,-1,-1
+1166,RIMAC,460,110,10,1.0,False,11.6,-1,-1
+1167,RIMAC,461,110,10,1.0,False,11.6,-1,-1
+1168,RIMAC,464,87,10,1.0,False,10.22,-1,-1
+1169,RIMAC,464A,117,10,0.5850000000000001,True,9.945,-1,-1
+1170,RIMAC,465,104,10,1.0,False,11.24,-1,-1
+1171,RIMAC,466,105,10,0.525,True,8.925,-1,-1
+1172,RIMAC,467,109,10,1.0,False,11.54,-1,-1
+1173,RIMAC,467A,109,10,0.545,True,9.265,-1,-1
+1174,RIMAC,469,213,10,1.0,False,17.78,-1,-1
+1175,RIMAC,470,151,10,1.0,False,14.06,-1,-1
+1176,RIMAC,471,105,10,1.0,False,11.3,-1,-1
+1177,RIMAC,472,180,10,1.0,False,15.8,-1,-1
+1178,RIMAC,473,100,10,1.0,False,11.0,-1,-1
+1179,RIMAC,474,98,10,1.0,False,10.88,-1,-1
+1180,RIMAC,475,466,10,25.0,False,215.46,-1,-1
+1181,Biology Building,B160,185,10,1.0,False,16.1,-1,-1
+1182,Biology Building,B260A,466,10,9.32,True,177.07999999999996,-1,-1
+1183,Biology Building,B260B,159,10,3.18,True,60.42,-1,-1
+1184,Biology Building,1102,364,10,1.82,True,30.94,-1,-1
+1185,Biology Building,1103,99,10,49.0,False,250.94,-1,-1
+1186,Biology Building,1104,95,10,0.475,True,8.075,-1,-1
+1187,Biology Building,1105,95,10,0.475,True,8.075,-1,-1
+1188,Biology Building,1111,117,10,0.5850000000000001,True,9.945,-1,-1
+1189,Biology Building,1112,93,10,0.465,True,7.9049999999999985,-1,-1
+1190,Biology Building,1113,92,10,0.46,True,7.8199999999999985,-1,-1
+1191,Biology Building,1114,94,10,0.47,True,7.9899999999999975,-1,-1
+1192,Biology Building,1115,157,10,4.0,False,29.42,-1,-1
+1193,Biology Building,1116,124,10,0.62,True,10.54,-1,-1
+1194,Biology Building,1117,181,10,3.62,True,68.78,-1,-1
+1195,Biology Building,1118,105,10,2.625,True,45.15,-1,-1
+1196,Biology Building,1119,107,10,2.675,True,46.01,-1,-1
+1197,Biology Building,1120,107,10,1.0,False,29.26,-1,-1
+1198,Biology Building,1121,426,10,10.65,True,183.18,-1,-1
+1199,Biology Building,1121A,97,10,2.4250000000000003,True,41.71000000000001,-1,-1
+1200,Biology Building,1121B,91,10,2.275,True,39.13,-1,-1
+1201,Biology Building,1121C,95,10,2.375,True,40.85,-1,-1
+1202,Biology Building,1121D,78,10,1.95,True,33.54,-1,-1
+1203,Biology Building,1121E,78,10,1.95,True,33.54,-1,-1
+1204,Biology Building,1121F,78,10,1.95,True,33.54,-1,-1
+1205,Biology Building,1121G,78,10,1.95,True,33.54,-1,-1
+1206,Biology Building,1121H,83,10,2.075,True,35.69,-1,-1
+1207,Biology Building,1122,112,10,0.56,True,9.52,-1,-1
+1208,Biology Building,1123,134,10,0.67,True,11.39,-1,-1
+1209,Biology Building,1124,213,10,5.325,True,91.59,-1,-1
+1210,Biology Building,1126,108,10,2.7,True,46.44,-1,-1
+1211,Biology Building,1127,109,10,1.0,False,29.62,-1,-1
+1212,Biology Building,1128,681,10,17.025000000000002,True,292.8300000000001,-1,-1
+1213,Biology Building,1128A,79,10,1.975,True,33.97,-1,-1
+1214,Biology Building,1128B,79,10,1.975,True,33.97,-1,-1
+1215,Biology Building,1128C,79,10,1.975,True,33.97,-1,-1
+1216,Biology Building,1128D,79,10,1.975,True,33.97,-1,-1
+1217,Biology Building,1129,184,10,20.0,False,233.12,-1,-1
+1218,Biology Building,1130,213,10,5.325,True,91.59,-1,-1
+1219,Biology Building,1131,149,10,3.725,True,64.07,-1,-1
+1220,Biology Building,1132,152,10,3.8,True,65.36,-1,-1
+1221,Biology Building,1133,143,10,0.715,True,12.155,-1,-1
+1222,Biology Building,1134,364,10,9.1,True,156.51999999999995,-1,-1
+1223,Biology Building,1134A,100,10,2.5,True,43.0,-1,-1
+1224,Biology Building,1134B,79,10,1.975,True,33.97,-1,-1
+1225,Biology Building,1134C,79,10,1.975,True,33.97,-1,-1
+1226,Biology Building,1134D,83,10,2.075,True,35.69,-1,-1
+1227,Biology Building,1134E,65,10,1.625,True,27.95,-1,-1
+1228,Biology Building,1134F,82,10,2.0500000000000003,True,35.26000000000001,-1,-1
+1229,Biology Building,1135,177,10,0.885,True,15.044999999999998,-1,-1
+1230,Biology Building,1136,148,10,3.7,True,63.64,-1,-1
+1231,Biology Building,1137,152,10,3.8,True,65.36,-1,-1
+1232,Biology Building,1138,715,10,20.0,False,192.9,-1,-1
+1233,Biology Building,2200,122,10,0.61,True,10.37,-1,-1
+1234,Biology Building,2201,120,10,0.6,True,10.2,-1,-1
+1235,Biology Building,2202,115,10,1.0,False,11.9,-1,-1
+1236,Biology Building,2203,97,10,0.485,True,8.245,-1,-1
+1237,Biology Building,2204,95,10,0.475,True,8.075,-1,-1
+1238,Biology Building,2205,95,10,0.475,True,8.075,-1,-1
+1239,Biology Building,2211,98,10,0.49,True,8.33,-1,-1
+1240,Biology Building,2212,95,10,3.0,False,20.7,-1,-1
+1241,Biology Building,2213,97,10,0.485,True,8.245,-1,-1
+1242,Biology Building,2214,118,10,0.59,True,10.03,-1,-1
+1243,Biology Building,2215,118,10,0.59,True,10.03,-1,-1
+1244,Biology Building,2216,106,10,2.65,True,45.58,-1,-1
+1245,Biology Building,2217,121,10,3.025,True,52.03,-1,-1
+1246,Biology Building,2218,120,10,1.0,False,31.6,-1,-1
+1247,Biology Building,2219,390,10,9.75,True,167.7,-1,-1
+1248,Biology Building,2219A,123,10,3.075,True,52.89,-1,-1
+1249,Biology Building,2219B,107,10,2.675,True,46.01,-1,-1
+1250,Biology Building,2219C,106,10,2.65,True,45.58,-1,-1
+1251,Biology Building,2219D,95,10,2.375,True,40.85,-1,-1
+1252,Biology Building,2219E,96,10,2.4,True,41.28,-1,-1
+1253,Biology Building,2219F,92,10,2.3,True,39.56,-1,-1
+1254,Biology Building,2219G,81,10,2.025,True,34.83,-1,-1
+1255,Biology Building,2219H,82,10,2.0500000000000003,True,35.26000000000001,-1,-1
+1256,Biology Building,2220,48,10,1.2,True,20.64,-1,-1
+1257,Biology Building,2221,139,10,3.4750000000000005,True,59.77000000000001,-1,-1
+1258,Biology Building,2222,218,10,5.45,True,93.74,-1,-1
+1259,Biology Building,2223,109,10,2.725,True,46.87000000000001,-1,-1
+1260,Biology Building,2224,106,10,2.65,True,45.58,-1,-1
+1261,Biology Building,2225,315,10,7.875,True,135.45,-1,-1
+1262,Biology Building,2225A,119,10,2.975,True,51.17,-1,-1
+1263,Biology Building,2225B,95,10,2.375,True,40.85,-1,-1
+1264,Biology Building,2225C,95,10,2.375,True,40.85,-1,-1
+1265,Biology Building,2225D,95,10,2.375,True,40.85,-1,-1
+1266,Biology Building,2225E,95,10,2.375,True,40.85,-1,-1
+1267,Biology Building,2225F,95,10,2.375,True,40.85,-1,-1
+1268,Biology Building,2225G,97,10,2.4250000000000003,True,41.71000000000001,-1,-1
+1269,Biology Building,2225H,95,10,2.375,True,40.85,-1,-1
+1270,Biology Building,2225I,102,10,2.55,True,43.86,-1,-1
+1271,Biology Building,2225J,109,10,2.725,True,46.87000000000001,-1,-1
+1272,Biology Building,2225K,109,10,2.725,True,46.87000000000001,-1,-1
+1273,Biology Building,2225L,109,10,2.725,True,46.87000000000001,-1,-1
+1274,Biology Building,2225M,106,10,2.65,True,45.58,-1,-1
+1275,Biology Building,2225N,96,10,2.4,True,41.28,-1,-1
+1276,Biology Building,2225O,96,10,2.4,True,41.28,-1,-1
+1277,Biology Building,2225P,93,10,2.325,True,39.99,-1,-1
+1278,Biology Building,2225Q,90,10,2.25,True,38.7,-1,-1
+1279,Biology Building,2225R,83,10,2.075,True,35.69,-1,-1
+1280,Biology Building,2225S,79,10,1.975,True,33.97,-1,-1
+1281,Biology Building,2225T,95,10,2.375,True,40.85,-1,-1
+1282,Biology Building,2225U,105,10,2.625,True,45.15,-1,-1
+1283,Biology Building,2225V,129,10,3.225,True,55.47,-1,-1
+1284,Biology Building,2226,94,10,0.47,True,7.9899999999999975,-1,-1
+1285,Biology Building,2227,141,10,3.5249999999999995,True,60.63,-1,-1
+1286,Biology Building,2229,100,10,2.5,True,43.0,-1,-1
+1287,Biology Building,2230,66,10,0.33,True,5.61,-1,-1
+1288,Biology Building,2231,99,10,2.475,True,42.57,-1,-1
+1289,Biology Building,2232,99,10,2.475,True,42.57,-1,-1
+1290,Biology Building,2233,99,10,2.475,True,42.57,-1,-1
+1291,Biology Building,3104A,93,10,2.325,True,39.99,-1,-1
+1292,Biology Building,3104B,90,10,2.25,True,38.7,-1,-1
+1293,Biology Building,3124,39,10,0.975,True,16.77,-1,-1
+1294,Biology Building,3135A,557,10,13.925,True,239.51,-1,-1
+1295,Biology Building,3135B,713,10,17.825,True,306.5900000000001,-1,-1
+1296,Biology Building,3135C,508,10,12.7,True,218.44,-1,-1
+1297,Biology Building,3135D,697,10,17.424999999999994,True,299.71,-1,-1
+1298,Biology Building,3135E,589,10,14.725,True,253.27,-1,-1
+1299,Biology Building,3135F,187,10,4.675,True,80.41,-1,-1
+1300,Biology Building,3135G,646,10,16.150000000000002,True,277.78000000000003,-1,-1
+1301,Biology Building,3135H,28,10,0.7000000000000001,True,12.04,-1,-1
+1302,Biology Building,3135J,65,10,1.625,True,27.95,-1,-1
+1303,Biology Building,3135K,72,10,1.7999999999999998,True,30.96,-1,-1
+1304,Biology Building,3135L,61,10,1.525,True,26.23,-1,-1
+1305,Biology Building,3135M,227,10,5.675,True,97.61,-1,-1
+1306,Biology Building,3146,35,10,0.8750000000000001,True,15.05,-1,-1
+1307,Biology Building,3164,17,10,0.425,True,7.31,-1,-1
+1308,Biology Building,3202,117,10,0.5850000000000001,True,9.945,-1,-1
+1309,Biology Building,3204,123,10,0.615,True,10.455,-1,-1
+1310,Biology Building,3206,123,10,0.615,True,10.455,-1,-1
+1311,Biology Building,3212,98,10,0.49,True,8.33,-1,-1
+1312,Biology Building,3214,98,10,0.49,True,8.33,-1,-1
+1313,Biology Building,3218,98,10,0.49,True,8.33,-1,-1
+1314,Biology Building,3254,98,10,0.49,True,8.33,-1,-1
+1315,Biology Building,3256,98,10,0.49,True,8.33,-1,-1
+1316,Biology Building,3258,98,10,0.49,True,8.33,-1,-1
+1317,Biology Building,3266,75,10,0.375,True,6.375,-1,-1
+1318,Biology Building,3268,149,10,0.745,True,12.665,-1,-1
+1319,Biology Building,4105B,595,10,14.875,True,255.85,-1,-1
+1320,Biology Building,4115,1237,10,8.0,False,302.66,-1,-1
+1321,Biology Building,4125,947,10,2.0,False,190.46,-1,-1
+1322,Biology Building,4135,855,10,2.0,False,173.9,-1,-1
+1323,Biology Building,4145,667,10,16.675,True,286.81,-1,-1
+1324,Biology Building,4145B,187,10,2.0,False,53.66,-1,-1
+1325,Biology Building,4155,511,10,2.0,False,111.98,-1,-1
+1326,Biology Building,4155A,83,10,4.0,False,54.94,-1,-1
+1327,Biology Building,4155B,93,10,1.0,False,10.58,-1,-1
+1328,Biology Building,4155C,93,10,1.0,False,10.58,-1,-1
+1329,Biology Building,4155D,164,10,1.0,False,39.52,-1,-1
+1330,Biology Building,4165,948,10,2.0,False,190.64,-1,-1
+1331,Biology Building,4202,122,10,1.0,False,12.32,-1,-1
+1332,Biology Building,4204,124,10,2.0,False,17.439999999999998,-1,-1
+1333,Biology Building,4206,124,10,4.0,False,27.44,-1,-1
+1334,Biology Building,4212,94,10,1.0,False,10.64,-1,-1
+1335,Biology Building,4216,95,10,1.0,False,10.7,-1,-1
+1336,Biology Building,4218,94,10,1.0,False,10.64,-1,-1
+1337,Biology Building,4254,95,10,1.0,False,10.7,-1,-1
+1338,Biology Building,4256,96,10,1.0,False,10.76,-1,-1
+1339,Biology Building,4258,95,10,3.0,False,20.7,-1,-1
+1340,Biology Building,4266,150,10,4.0,False,29.0,-1,-1
+1341,Biology Building,4268,148,10,1.0,False,13.88,-1,-1
+1342,Biology Building,5105,904,10,1.0,False,172.72,-1,-1
+1343,Biology Building,5105A,97,10,1.0,False,27.46,-1,-1
+1344,Biology Building,5115,843,10,1.0,False,161.73999999999995,-1,-1
+1345,Biology Building,5125-1,528,10,13.2,True,227.04,-1,-1
+1346,Biology Building,5125A,63,10,1.0,False,8.78,-1,-1
+1347,Biology Building,5125B,136,10,1.0,False,13.16,-1,-1
+1348,Biology Building,5135,1047,10,2.0,False,208.46,-1,-1
+1349,Biology Building,5135C,125,10,0.625,True,10.625,-1,-1
+1350,Biology Building,5155C,274,10,6.8500000000000005,True,117.82,-1,-1
+1351,Biology Building,5165,924,10,10.0,False,266.32,-1,-1
+1352,Biology Building,5202,126,10,1.0,False,12.56,-1,-1
+1353,Biology Building,5206,127,10,0.635,True,10.795,-1,-1
+1354,Biology Building,5210,127,10,1.0,False,12.62,-1,-1
+1355,Biology Building,5212,97,10,1.0,False,10.82,-1,-1
+1356,Biology Building,5214,97,10,1.0,False,10.82,-1,-1
+1357,Biology Building,5218,97,10,1.0,False,10.82,-1,-1
+1358,Biology Building,5254,95,10,1.0,False,10.7,-1,-1
+1359,Biology Building,5256,96,10,1.0,False,10.76,-1,-1
+1360,Biology Building,5258,95,10,1.0,False,10.7,-1,-1
+1361,Biology Building,5266,125,10,1.0,False,12.5,-1,-1
+1362,Biology Building,5268,123,10,1.0,False,12.38,-1,-1
+1363,Peterson Hall,102,956,10,70.0,False,582.36,-1,-1
+1364,Peterson Hall,103,956,10,70.0,False,582.36,-1,-1
+1365,Peterson Hall,104,1018,10,75.0,False,623.58,-1,-1
+1366,Peterson Hall,108,3405,10,410.0,False,3279.3,-1,-1
+1367,Peterson Hall,110,2933,10,328.0,False,2635.98,-1,-1
+1368,Peterson Hall,111,164,10,4.1000000000000005,True,60.68000000000001,-1,-1
+1369,Mandeville Center,B202,3070,10,15.35,True,260.95,-1,-1
+1370,Mandeville Center,B206,1959,10,40.0,False,417.54,-1,-1
+1371,Mandeville Center,B210,3091,10,158.0,False,1370.46,-1,-1
+1372,Mandeville Center,B104,864,10,42.0,False,366.84,-1,-1
+1373,Mandeville Center,B108,864,10,6.0,False,96.84,-1,-1
+1374,Mandeville Center,B111A,161,10,8.0,False,49.66,-1,-1
+1375,Mandeville Center,B111B,139,10,8.0,False,48.34,-1,-1
+1376,Mandeville Center,B111C,223,10,1.115,True,18.955,-1,-1
+1377,Mandeville Center,B111E,930,10,22.0,False,165.8,-1,-1
+1378,Mandeville Center,B112,265,10,1.0,False,20.9,-1,-1
+1379,Mandeville Center,B113,719,10,25.0,False,379.42,-1,-1
+1380,Mandeville Center,B115A,953,10,25.0,False,421.54,-1,-1
+1381,Mandeville Center,B115B,953,10,25.0,False,421.54,-1,-1
+1382,Mandeville Center,B118,1157,10,10.0,False,119.42,-1,-1
+1383,Mandeville Center,B120,224,10,1.0,False,18.44,-1,-1
+1384,Mandeville Center,B122,231,10,1.0,False,18.86,-1,-1
+1385,Mandeville Center,B126,122,10,1.0,False,12.32,-1,-1
+1386,Mandeville Center,B127,144,10,1.0,False,13.64,-1,-1
+1387,Mandeville Center,B128,112,10,1.0,False,11.72,-1,-1
+1388,Mandeville Center,B129,112,10,1.0,False,11.72,-1,-1
+1389,Mandeville Center,B130,112,10,1.0,False,11.72,-1,-1
+1390,Mandeville Center,B131,112,10,0.56,True,9.52,-1,-1
+1391,Mandeville Center,B132,112,10,1.0,False,11.72,-1,-1
+1392,Mandeville Center,B133,88,10,1.0,False,10.28,-1,-1
+1393,Mandeville Center,B134,88,10,1.0,False,10.28,-1,-1
+1394,Mandeville Center,B136,88,10,1.0,False,10.28,-1,-1
+1395,Mandeville Center,B137,88,10,1.0,False,10.28,-1,-1
+1396,Mandeville Center,B138,112,10,1.0,False,11.72,-1,-1
+1397,Mandeville Center,B139,112,10,1.0,False,11.72,-1,-1
+1398,Mandeville Center,B140,112,10,1.0,False,11.72,-1,-1
+1399,Mandeville Center,B141,112,10,1.0,False,11.72,-1,-1
+1400,Mandeville Center,B142,88,10,1.0,False,10.28,-1,-1
+1401,Mandeville Center,B143,288,10,5.0,False,42.28,-1,-1
+1402,Mandeville Center,B144,55,10,1.0,False,8.3,-1,-1
+1403,Mandeville Center,B146,483,10,20.0,False,178.98,-1,-1
+1404,Mandeville Center,B150,1630,10,68.0,False,607.8,-1,-1
+1405,Mandeville Center,B152,601,10,20.0,False,186.06,-1,-1
+1406,Mandeville Center,B153,601,10,20.0,False,186.06,-1,-1
+1407,Mandeville Center,B172A,121,10,0.605,True,10.285,-1,-1
+1408,Mandeville Center,B172B,121,10,0.605,True,10.285,-1,-1
+1409,Mandeville Center,101,2480,10,248.0,True,2008.8,-1,-1
+1410,Mandeville Center,101A,324,10,32.4,True,262.44,-1,-1
+1411,Mandeville Center,103,748,10,42.0,False,554.64,-1,-1
+1412,Mandeville Center,106,845,10,25.0,False,402.1,-1,-1
+1413,Mandeville Center,109,121,10,1.0,False,12.26,-1,-1
+1414,Mandeville Center,110,144,10,1.0,False,13.64,-1,-1
+1415,Mandeville Center,111,273,10,2.0,False,26.38,-1,-1
+1416,Mandeville Center,113,240,10,12.0,False,104.4,-1,-1
+1417,Mandeville Center,114,186,10,1.0,False,16.16,-1,-1
+1418,Mandeville Center,115,98,10,1.0,False,10.88,-1,-1
+1419,Mandeville Center,116,104,10,1.0,False,11.24,-1,-1
+1420,Mandeville Center,118,104,10,1.0,False,11.24,-1,-1
+1421,Mandeville Center,119,107,10,1.0,False,11.42,-1,-1
+1422,Mandeville Center,120,137,10,1.0,False,13.22,-1,-1
+1423,Mandeville Center,121,196,10,0.98,True,16.66,-1,-1
+1424,Mandeville Center,122,175,10,1.0,False,15.5,-1,-1
+1425,Mandeville Center,123,141,10,1.0,False,13.46,-1,-1
+1426,Mandeville Center,125,422,10,20.0,False,175.32,-1,-1
+1427,Mandeville Center,127,581,10,30.0,False,184.86,-1,-1
+1428,Mandeville Center,129,155,10,0.775,True,13.175,-1,-1
+1429,Mandeville Center,135,7770,10,500.0,False,4216.2,-1,-1
+1430,Mandeville Center,201A,1754,10,25.0,False,565.72,-1,-1
+1431,Mandeville Center,201B,1137,10,22.0,False,424.66,-1,-1
+1432,Mandeville Center,203,1200,10,24.0,False,252.0,-1,-1
+1433,Mandeville Center,206,223,10,1.0,False,18.38,-1,-1
+1434,Mandeville Center,209,147,10,1.0,False,13.82,-1,-1
+1435,Mandeville Center,211,195,10,1.0,False,16.7,-1,-1
+1436,Mandeville Center,213,368,10,16.0,False,142.07999999999996,-1,-1
+1437,Mandeville Center,214,132,10,1.0,False,12.92,-1,-1
+1438,Mandeville Center,216,340,10,1.0,False,25.4,-1,-1
+1439,Mandeville Center,217,104,10,1.0,False,11.24,-1,-1
+1440,Mandeville Center,219,1200,10,15.0,False,366.0,-1,-1
+1441,Mandeville Center,220A,1372,10,25.0,False,496.96,-1,-1
+1442,Mandeville Center,220B,1637,10,25.0,False,544.66,-1,-1
+1443,Mandeville Center,221,117,10,1.0,False,12.02,-1,-1
+1444,Mandeville Center,222,118,10,1.0,False,12.08,-1,-1
+1445,Mandeville Center,224,118,10,1.0,False,12.08,-1,-1
+1446,Mandeville Center,225,118,10,1.0,False,12.08,-1,-1
+1447,Mandeville Center,226,118,10,1.0,False,12.08,-1,-1
+1448,Mandeville Center,227,118,10,1.0,False,12.08,-1,-1
+1449,Mandeville Center,228,118,10,1.0,False,12.08,-1,-1
+1450,Mandeville Center,229,118,10,1.0,False,12.08,-1,-1
+1451,Solis Hall,104,1533,10,149.0,False,1209.48,-1,-1
+1452,Solis Hall,105,620,10,21.0,False,194.7,-1,-1
+1453,Solis Hall,107,3173,10,300.0,False,2440.38,-1,-1
+1454,Solis Hall,109,555,10,44.0,False,363.3,-1,-1
+1455,Solis Hall,110,548,10,46.0,False,377.88,-1,-1
+1456,Solis Hall,111,549,10,44.0,False,362.94,-1,-1
+1457,Literature Building,110,1189,10,3.0,False,86.34,-1,-1
+1458,Literature Building,110A,58,10,0.29000000000000004,True,4.93,-1,-1
+1459,Literature Building,110B,60,10,0.3,True,5.1,-1,-1
+1460,Literature Building,110C,120,10,0.6,True,10.2,-1,-1
+1461,Literature Building,111,100,10,1.0,False,11.0,-1,-1
+1462,Literature Building,112,89,10,1.0,False,10.34,-1,-1
+1463,Literature Building,113,145,10,1.0,False,13.7,-1,-1
+1464,Literature Building,114,198,10,1.0,False,16.88,-1,-1
+1465,Literature Building,115,156,10,1.0,False,14.36,-1,-1
+1466,Literature Building,116,156,10,1.0,False,14.36,-1,-1
+1467,Literature Building,117,159,10,1.0,False,14.54,-1,-1
+1468,Literature Building,118,155,10,1.0,False,14.3,-1,-1
+1469,Literature Building,123,149,10,1.0,False,13.94,-1,-1
+1470,Literature Building,124,152,10,1.0,False,14.12,-1,-1
+1471,Literature Building,125,315,10,1.0,False,23.9,-1,-1
+1472,Literature Building,127,147,10,1.0,False,36.46,-1,-1
+1473,Literature Building,128,150,10,1.0,False,14.0,-1,-1
+1474,Literature Building,129,153,10,1.0,False,14.18,-1,-1
+1475,Literature Building,130,155,10,1.0,False,14.3,-1,-1
+1476,Literature Building,131,155,10,2.0,False,19.3,-1,-1
+1477,Literature Building,132,153,10,1.0,False,14.18,-1,-1
+1478,Literature Building,133,153,10,1.0,False,14.18,-1,-1
+1479,Literature Building,134,149,10,1.0,False,13.94,-1,-1
+1480,Literature Building,137,397,10,5.0,False,48.82,-1,-1
+1481,Literature Building,138,397,10,12.0,False,83.82,-1,-1
+1482,Literature Building,139,151,10,1.0,False,14.06,-1,-1
+1483,Literature Building,141,151,10,1.0,False,14.06,-1,-1
+1484,Literature Building,142,151,10,1.0,False,14.06,-1,-1
+1485,Literature Building,143,149,10,4.0,False,28.94,-1,-1
+1486,Literature Building,144,149,10,4.0,False,28.94,-1,-1
+1487,Literature Building,146,153,10,4.0,False,29.18,-1,-1
+1488,Literature Building,147,152,10,1.0,False,14.12,-1,-1
+1489,Literature Building,148,151,10,1.0,False,14.06,-1,-1
+1490,Literature Building,150,450,10,25.0,False,214.5,-1,-1
+1491,Literature Building,155,800,10,60.0,False,498.0,-1,-1
+1492,Literature Building,210,854,10,1.0,False,56.24,-1,-1
+1493,Literature Building,210A,300,10,1.0,False,23.0,-1,-1
+1494,Literature Building,210D,84,10,1.0,False,10.04,-1,-1
+1495,Literature Building,211,108,10,1.0,False,11.48,-1,-1
+1496,Literature Building,212,113,10,1.0,False,11.78,-1,-1
+1497,Literature Building,213,115,10,1.0,False,11.9,-1,-1
+1498,Literature Building,214,200,10,1.0,False,17.0,-1,-1
+1499,Literature Building,215,154,10,1.0,False,14.24,-1,-1
+1500,Literature Building,216,154,10,1.0,False,14.24,-1,-1
+1501,Literature Building,217,322,10,8.0,False,79.32,-1,-1
+1502,Literature Building,224,152,10,2.0,False,19.12,-1,-1
+1503,Literature Building,225,154,10,1.0,False,14.24,-1,-1
+1504,Literature Building,226,41,10,1.0,False,7.46,-1,-1
+1505,Literature Building,227,38,10,1.0,False,7.2799999999999985,-1,-1
+1506,Literature Building,228,151,10,1.0,False,14.06,-1,-1
+1507,Literature Building,229,153,10,1.0,False,14.18,-1,-1
+1508,Literature Building,230,157,10,4.0,False,29.42,-1,-1
+1509,Literature Building,231,41,10,1.0,False,7.46,-1,-1
+1510,Literature Building,232,51,10,1.0,False,8.06,-1,-1
+1511,Literature Building,234,149,10,4.0,False,28.94,-1,-1
+1512,Literature Building,237,322,10,14.0,False,124.32,-1,-1
+1513,Literature Building,238,171,10,1.0,False,15.26,-1,-1
+1514,Literature Building,239,151,10,4.0,False,29.06,-1,-1
+1515,Literature Building,240,151,10,2.0,False,19.06,-1,-1
+1516,Literature Building,241,151,10,0.755,True,12.835,-1,-1
+1517,Literature Building,242,52,10,1.0,False,8.120000000000001,-1,-1
+1518,Literature Building,243,149,10,1.0,False,13.94,-1,-1
+1519,Literature Building,244,149,10,1.0,False,13.94,-1,-1
+1520,Literature Building,245,159,10,10.0,False,59.54,-1,-1
+1521,Literature Building,246,153,10,10.0,False,59.18,-1,-1
+1522,Literature Building,247,151,10,1.0,False,14.06,-1,-1
+1523,Literature Building,248,151,10,1.0,False,14.06,-1,-1
+1524,Literature Building,249,151,10,1.0,False,14.06,-1,-1
+1525,Literature Building,250,151,10,1.0,False,14.06,-1,-1
+1526,Literature Building,251,151,10,1.0,False,14.06,-1,-1
+1527,Literature Building,252,151,10,1.0,False,14.06,-1,-1
+1528,Literature Building,253,151,10,1.0,False,14.06,-1,-1
+1529,Literature Building,255,664,10,2.0,False,54.84,-1,-1
+1530,Literature Building,305,297,10,15.0,False,130.32,-1,-1
+1531,Literature Building,306,242,10,1.0,False,19.52,-1,-1
+1532,Literature Building,307,198,10,1.0,False,16.88,-1,-1
+1533,Literature Building,308,177,10,1.0,False,15.62,-1,-1
+1534,Literature Building,309,138,10,1.0,False,13.28,-1,-1
+1535,Literature Building,310,139,10,1.0,False,13.34,-1,-1
+1536,Literature Building,310B,85,10,1.0,False,10.1,-1,-1
+1537,Literature Building,310C,37,10,1.0,False,7.22,-1,-1
+1538,Literature Building,310D,85,10,1.0,False,10.1,-1,-1
+1539,Literature Building,310F,70,10,1.0,False,9.2,-1,-1
+1540,Literature Building,310G,73,10,1.0,False,9.38,-1,-1
+1541,Literature Building,311,138,10,1.0,False,13.28,-1,-1
+1542,Literature Building,323,251,10,1.0,False,20.06,-1,-1
+1543,Literature Building,324,152,10,1.0,False,14.12,-1,-1
+1544,Literature Building,325,154,10,1.0,False,14.24,-1,-1
+1545,Literature Building,326,155,10,1.0,False,14.3,-1,-1
+1546,Literature Building,327,152,10,1.0,False,14.12,-1,-1
+1547,Literature Building,328,151,10,1.0,False,14.06,-1,-1
+1548,Literature Building,329,153,10,1.0,False,14.18,-1,-1
+1549,Literature Building,330,157,10,1.0,False,14.42,-1,-1
+1550,Literature Building,331,155,10,1.0,False,14.3,-1,-1
+1551,Literature Building,332,153,10,1.0,False,14.18,-1,-1
+1552,Literature Building,333,153,10,1.0,False,14.18,-1,-1
+1553,Literature Building,334,149,10,1.0,False,13.94,-1,-1
+1554,Literature Building,336,162,10,1.0,False,14.72,-1,-1
+1555,Literature Building,337,155,10,2.0,False,19.3,-1,-1
+1556,Literature Building,338,169,10,1.0,False,15.14,-1,-1
+1557,Literature Building,339,151,10,1.0,False,14.06,-1,-1
+1558,Literature Building,340,151,10,1.0,False,14.06,-1,-1
+1559,Literature Building,341,152,10,1.0,False,14.12,-1,-1
+1560,Literature Building,342,151,10,1.0,False,14.06,-1,-1
+1561,Literature Building,343,144,10,1.0,False,13.64,-1,-1
+1562,Literature Building,344,149,10,1.0,False,13.94,-1,-1
+1563,Literature Building,345,151,10,1.0,False,14.06,-1,-1
+1564,Literature Building,346,153,10,1.0,False,14.18,-1,-1
+1565,Literature Building,347,151,10,4.0,False,29.06,-1,-1
+1566,Literature Building,348,151,10,4.0,False,29.06,-1,-1
+1567,Literature Building,349,151,10,1.0,False,14.06,-1,-1
+1568,Literature Building,350,151,10,1.0,False,14.06,-1,-1
+1569,Literature Building,351,151,10,1.0,False,14.06,-1,-1
+1570,Literature Building,352,151,10,1.0,False,14.06,-1,-1
+1571,Literature Building,353,151,10,1.0,False,14.06,-1,-1
+1572,Literature Building,354,237,10,1.0,False,19.22,-1,-1
+1573,Literature Building,355,420,10,25.0,False,212.7,-1,-1
+1574,Literature Building,403,64,10,1.0,False,8.84,-1,-1
+1575,Literature Building,404,373,10,15.0,False,134.88,-1,-1
+1576,Literature Building,405,239,10,1.0,False,19.34,-1,-1
+1577,Literature Building,406,84,10,1.0,False,10.04,-1,-1
+1578,Literature Building,407,117,10,1.0,False,12.02,-1,-1
+1579,Literature Building,408,204,10,1.0,False,17.240000000000002,-1,-1
+1580,Literature Building,409,191,10,1.0,False,16.46,-1,-1
+1581,Literature Building,410,78,10,1.0,False,9.68,-1,-1
+1582,Literature Building,410B,44,10,1.0,False,7.64,-1,-1
+1583,Literature Building,410C,69,10,1.0,False,9.14,-1,-1
+1584,Literature Building,410D,67,10,1.0,False,9.02,-1,-1
+1585,Literature Building,423,301,10,9.0,False,63.06,-1,-1
+1586,Literature Building,424,152,10,1.0,False,14.12,-1,-1
+1587,Literature Building,425,154,10,1.0,False,14.24,-1,-1
+1588,Literature Building,426,155,10,1.0,False,14.3,-1,-1
+1589,Literature Building,427,152,10,1.0,False,14.12,-1,-1
+1590,Literature Building,428,151,10,1.0,False,14.06,-1,-1
+1591,Literature Building,429,153,10,1.0,False,14.18,-1,-1
+1592,Literature Building,430,157,10,1.0,False,14.42,-1,-1
+1593,Literature Building,431,155,10,1.0,False,14.3,-1,-1
+1594,Literature Building,432,153,10,1.0,False,14.18,-1,-1
+1595,Literature Building,433,153,10,1.0,False,14.18,-1,-1
+1596,Literature Building,434,149,10,1.0,False,13.94,-1,-1
+1597,Literature Building,437,322,10,70.0,False,544.32,-1,-1
+1598,Literature Building,438,169,10,1.0,False,15.14,-1,-1
+1599,Literature Building,439,151,10,1.0,False,14.06,-1,-1
+1600,Literature Building,440,151,10,1.0,False,14.06,-1,-1
+1601,Literature Building,441,152,10,1.0,False,14.12,-1,-1
+1602,Literature Building,442,151,10,1.0,False,14.06,-1,-1
+1603,Literature Building,443,144,10,1.0,False,13.64,-1,-1
+1604,Literature Building,444,149,10,1.0,False,13.94,-1,-1
+1605,Literature Building,445,151,10,1.0,False,14.06,-1,-1
+1606,Literature Building,446,153,10,1.0,False,14.18,-1,-1
+1607,Literature Building,447,151,10,1.0,False,14.06,-1,-1
+1608,Literature Building,448,151,10,1.0,False,14.06,-1,-1
+1609,Literature Building,449,151,10,1.0,False,14.06,-1,-1
+1610,Literature Building,450,151,10,1.0,False,14.06,-1,-1
+1611,Literature Building,451,151,10,1.0,False,14.06,-1,-1
+1612,Literature Building,452,151,10,1.0,False,14.06,-1,-1
+1613,Literature Building,453,151,10,1.0,False,14.06,-1,-1
+1614,Literature Building,454,237,10,1.0,False,19.22,-1,-1
+1615,Literature Building,455,420,10,25.0,False,212.7,-1,-1
+1616,Warren Lecture Hall,2015,991,10,20.0,False,209.46,-1,-1
+1617,Warren Lecture Hall,2001,3639,10,395.0,False,3180.84,-1,-1
+1618,Warren Lecture Hall,2005,2205,10,200.0,False,1632.3,-1,-1
+1619,Warren Lecture Hall,2110,492,10,28.0,False,239.52,-1,-1
+1620,Warren Lecture Hall,2111,943,10,70.0,False,581.58,-1,-1
+1621,Warren Lecture Hall,2112,563,10,40.0,False,333.78,-1,-1
+1622,Warren Lecture Hall,2113,683,10,49.0,False,408.48,-1,-1
+1623,Warren Lecture Hall,2114,567,10,40.0,False,334.02,-1,-1
+1624,Warren Lecture Hall,2115,638,10,40.0,False,338.28,-1,-1
+1625,Warren Lecture Hall,2120,1249,10,16.0,False,384.82,-1,-1
+1626,Warren Lecture Hall,2121,744,10,3.72,True,63.24,-1,-1
+1627,Warren Lecture Hall,2122,742,10,3.71,True,63.06999999999999,-1,-1
+1628,Warren Lecture Hall,2123,242,10,6.05,True,104.06,-1,-1
+1629,Warren Lecture Hall,2124,1357,10,8.0,False,324.26,-1,-1
+1630,Warren Lecture Hall,2124A,243,10,6.075,True,104.49,-1,-1
+1631,Warren Lecture Hall,2124C,202,10,5.050000000000002,True,86.86000000000001,-1,-1
+1632,Warren Lecture Hall,2125,242,10,2.0,False,63.56,-1,-1
+1633,Warren Lecture Hall,2126,518,10,12.0,False,91.08,-1,-1
+1634,Warren Lecture Hall,212OA,240,10,6.0,True,103.2,-1,-1
+1635,Warren Lecture Hall,2130,1247,10,31.175000000000004,True,536.21,-1,-1
+1636,Warren Lecture Hall,2136,754,10,8.0,False,85.24,-1,-1
+1637,Warren Lecture Hall,2137,98,10,1.0,False,13.38,-1,-1
+1638,Warren Lecture Hall,2138,102,10,1.0,False,13.62,-1,-1
+1639,Warren Lecture Hall,2140,277,10,1.0,False,21.62,-1,-1
+1640,Warren Lecture Hall,2141,230,10,1.0,False,18.8,-1,-1
+1641,Warren Lecture Hall,2142,216,10,1.0,False,17.96,-1,-1
+1642,Warren Lecture Hall,2143,236,10,1.0,False,19.16,-1,-1
+1643,Warren Lecture Hall,2144,219,10,1.0,False,18.14,-1,-1
+1644,Warren Lecture Hall,2146,235,10,2.0,False,24.1,-1,-1
+1645,Warren Lecture Hall,2147,214,10,1.0,False,17.84,-1,-1
+1646,Warren Lecture Hall,2148,220,10,1.0,False,18.2,-1,-1
+1647,Warren Lecture Hall,2154,1720,10,20.0,False,509.6,-1,-1
+1648,Warren Lecture Hall,2155,509,10,2.0,False,40.54,-1,-1
+1649,Warren Lecture Hall,2156,199,10,1.0,False,16.939999999999998,-1,-1
+1650,Warren Lecture Hall,2165,2276,10,20.0,False,609.6800000000002,-1,-1
+1651,Warren Lecture Hall,2166,534,10,15.0,False,246.12,-1,-1
+1652,Warren Lecture Hall,2204,868,10,75.0,False,614.58,-1,-1
+1653,Warren Lecture Hall,2205,953,10,70.0,False,582.18,-1,-1
+1654,Warren Lecture Hall,2206,565,10,40.0,False,333.9,-1,-1
+1655,Warren Lecture Hall,2207,739,10,50.0,False,419.34,-1,-1
+1656,Warren Lecture Hall,2208,560,10,40.0,False,333.6,-1,-1
+1657,Warren Lecture Hall,2209,640,10,40.0,False,338.4,-1,-1
+1658,Warren Lecture Hall,2211,1241,10,34.0,False,563.38,-1,-1
+1659,Warren Lecture Hall,2212,580,10,20.0,False,184.8,-1,-1
+1660,Warren Lecture Hall,2213A,909,10,30.0,False,279.54,-1,-1
+1661,Warren Lecture Hall,2213B,615,10,20.0,False,186.9,-1,-1
+1662,Warren Lecture Hall,2214,588,10,12.0,False,125.28,-1,-1
+1663,Warren Lecture Hall,2215,1247,10,30.0,False,524.46,-1,-1
+1664,Warren Lecture Hall,2216,675,10,12.0,False,130.5,-1,-1
+1665,Warren Lecture Hall,2217A,568,10,10.0,False,109.08,-1,-1
+1666,Warren Lecture Hall,2217C,576,10,10.0,False,109.56,-1,-1
+1667,Computer Science and Engineering Building,B210,1402,10,38.0,False,369.12,-1,-1
+1668,Computer Science and Engineering Building,B215,137,10,8.0,False,48.22,-1,-1
+1669,Computer Science and Engineering Building,B220,1170,10,38.0,False,355.2,-1,-1
+1670,Computer Science and Engineering Building,B225,450,10,25.0,False,152.0,-1,-1
+1671,Computer Science and Engineering Building,B230,1595,10,42.0,False,410.7,-1,-1
+1672,Computer Science and Engineering Building,B240,1621,10,48.0,False,457.26,-1,-1
+1673,Computer Science and Engineering Building,B240A,135,10,8.0,False,48.1,-1,-1
+1674,Computer Science and Engineering Building,B250,1646,10,48.0,False,458.76,-1,-1
+1675,Computer Science and Engineering Building,B250A,133,10,8.0,False,47.98,-1,-1
+1676,Computer Science and Engineering Building,B260,1600,10,48.0,False,456.0,-1,-1
+1677,Computer Science and Engineering Building,B260A,132,10,8.0,False,47.92,-1,-1
+1678,Computer Science and Engineering Building,B270,1677,10,48.0,False,460.62,-1,-1
+1679,Computer Science and Engineering Building,B275,155,10,8.0,False,49.3,-1,-1
+1680,Computer Science and Engineering Building,1102,213,10,1.0,False,17.78,-1,-1
+1681,Computer Science and Engineering Building,1104,247,10,1.0,False,19.82,-1,-1
+1682,Computer Science and Engineering Building,1106,143,10,1.0,False,13.58,-1,-1
+1683,Computer Science and Engineering Building,1107,126,10,0.63,True,10.71,-1,-1
+1684,Computer Science and Engineering Building,1108,120,10,1.0,False,12.2,-1,-1
+1685,Computer Science and Engineering Building,1109,125,10,2.0,False,17.5,-1,-1
+1686,Computer Science and Engineering Building,1110,150,10,1.0,False,14.0,-1,-1
+1687,Computer Science and Engineering Building,1111,127,10,2.0,False,17.62,-1,-1
+1688,Computer Science and Engineering Building,1112,126,10,1.0,False,12.56,-1,-1
+1689,Computer Science and Engineering Building,1113,351,10,12.0,False,111.06,-1,-1
+1690,Computer Science and Engineering Building,1114,121,10,1.0,False,12.26,-1,-1
+1691,Computer Science and Engineering Building,1115,297,10,12.0,False,107.82,-1,-1
+1692,Computer Science and Engineering Building,1116,109,10,1.0,False,11.54,-1,-1
+1693,Computer Science and Engineering Building,1117,500,10,16.0,False,150.0,-1,-1
+1694,Computer Science and Engineering Building,1118,109,10,1.0,False,11.54,-1,-1
+1695,Computer Science and Engineering Building,1120,103,10,6.0,False,51.18,-1,-1
+1696,Computer Science and Engineering Building,1124,934,10,16.0,False,136.04,-1,-1
+1697,Computer Science and Engineering Building,1124A,37,10,0.185,True,3.145,-1,-1
+1698,Computer Science and Engineering Building,1125,199,10,8.0,False,71.94,-1,-1
+1699,Computer Science and Engineering Building,1130,867,10,4.335,True,73.695,-1,-1
+1700,Computer Science and Engineering Building,1132,146,10,1.0,False,13.76,-1,-1
+1701,Computer Science and Engineering Building,1133,122,10,1.0,False,12.32,-1,-1
+1702,Computer Science and Engineering Building,1134,128,10,1.0,False,12.68,-1,-1
+1703,Computer Science and Engineering Building,1135,123,10,1.0,False,12.38,-1,-1
+1704,Computer Science and Engineering Building,1136,126,10,1.0,False,12.56,-1,-1
+1705,Computer Science and Engineering Building,1137,247,10,1.0,False,19.82,-1,-1
+1706,Computer Science and Engineering Building,1137B,166,10,3.0,False,24.96,-1,-1
+1707,Computer Science and Engineering Building,1138,128,10,1.0,False,12.68,-1,-1
+1708,Computer Science and Engineering Building,1139,125,10,3.0,False,22.5,-1,-1
+1709,Computer Science and Engineering Building,1140,126,10,1.0,False,12.56,-1,-1
+1710,Computer Science and Engineering Building,1142,128,10,1.0,False,12.68,-1,-1
+1711,Computer Science and Engineering Building,1144,126,10,1.0,False,12.56,-1,-1
+1712,Computer Science and Engineering Building,1145,127,10,1.0,False,12.62,-1,-1
+1713,Computer Science and Engineering Building,1146,125,10,1.0,False,12.5,-1,-1
+1714,Computer Science and Engineering Building,1148,125,10,1.0,False,12.5,-1,-1
+1715,Computer Science and Engineering Building,1149,196,10,2.0,False,21.76,-1,-1
+1716,Computer Science and Engineering Building,1150,124,10,1.0,False,12.44,-1,-1
+1717,Computer Science and Engineering Building,1151,127,10,1.0,False,12.62,-1,-1
+1718,Computer Science and Engineering Building,1152,151,10,1.0,False,14.06,-1,-1
+1719,Computer Science and Engineering Building,1154,125,10,1.0,False,12.5,-1,-1
+1720,Computer Science and Engineering Building,1156,125,10,1.0,False,12.5,-1,-1
+1721,Computer Science and Engineering Building,1158,125,10,1.0,False,12.5,-1,-1
+1722,Computer Science and Engineering Building,1202,1776,10,100.0,False,856.56,-1,-1
+1723,Computer Science and Engineering Building,1210,134,10,1.0,False,13.04,-1,-1
+1724,Computer Science and Engineering Building,1212,134,10,1.0,False,13.04,-1,-1
+1725,Computer Science and Engineering Building,1214,133,10,2.0,False,17.98,-1,-1
+1726,Computer Science and Engineering Building,1216,134,10,1.0,False,13.04,-1,-1
+1727,Computer Science and Engineering Building,1218,134,10,1.0,False,13.04,-1,-1
+1728,Computer Science and Engineering Building,1220,133,10,1.0,False,12.98,-1,-1
+1729,Computer Science and Engineering Building,1222,134,10,1.0,False,13.04,-1,-1
+1730,Computer Science and Engineering Building,1223,223,10,10.0,False,88.38,-1,-1
+1731,Computer Science and Engineering Building,1224,134,10,1.0,False,13.04,-1,-1
+1732,Computer Science and Engineering Building,1225,140,10,2.0,False,18.4,-1,-1
+1733,Computer Science and Engineering Building,1226,133,10,1.0,False,12.98,-1,-1
+1734,Computer Science and Engineering Building,1228,134,10,1.0,False,13.04,-1,-1
+1735,Computer Science and Engineering Building,1229,165,10,1.0,False,14.9,-1,-1
+1736,Computer Science and Engineering Building,1230,134,10,1.0,False,13.04,-1,-1
+1737,Computer Science and Engineering Building,1232,133,10,1.0,False,12.98,-1,-1
+1738,Computer Science and Engineering Building,1234,134,10,1.0,False,13.04,-1,-1
+1739,Computer Science and Engineering Building,1236,134,10,1.0,False,13.04,-1,-1
+1740,Computer Science and Engineering Building,1238,131,10,1.0,False,12.86,-1,-1
+1741,Computer Science and Engineering Building,1231,176,10,6.0,False,40.56,-1,-1
+1742,Computer Science and Engineering Building,2108,136,10,1.0,False,13.16,-1,-1
+1743,Computer Science and Engineering Building,2109,345,10,14.0,False,125.7,-1,-1
+1744,Computer Science and Engineering Building,2110,136,10,1.0,False,13.16,-1,-1
+1745,Computer Science and Engineering Building,2112,136,10,1.0,False,13.16,-1,-1
+1746,Computer Science and Engineering Building,2114,136,10,1.0,False,13.16,-1,-1
+1747,Computer Science and Engineering Building,2115,183,10,8.0,False,112.94,-1,-1
+1748,Computer Science and Engineering Building,2116,136,10,1.0,False,13.16,-1,-1
+1749,Computer Science and Engineering Building,2118,136,10,1.0,False,13.16,-1,-1
+1750,Computer Science and Engineering Building,2119,567,10,13.0,False,99.02,-1,-1
+1751,Computer Science and Engineering Building,2120,136,10,1.0,False,13.16,-1,-1
+1752,Computer Science and Engineering Building,2123,408,10,6.0,False,133.44,-1,-1
+1753,Computer Science and Engineering Building,2126,138,10,1.0,False,13.28,-1,-1
+1754,Computer Science and Engineering Building,2127,752,10,6.0,False,195.36,-1,-1
+1755,Computer Science and Engineering Building,2130,149,10,1.0,False,13.94,-1,-1
+1756,Computer Science and Engineering Building,2134,143,10,1.0,False,13.58,-1,-1
+1757,Computer Science and Engineering Building,2138,135,10,1.0,False,13.1,-1,-1
+1758,Computer Science and Engineering Building,2154,827,10,31.0,False,204.62,-1,-1
+1759,Computer Science and Engineering Building,2202,143,10,1.0,False,13.58,-1,-1
+1760,Computer Science and Engineering Building,2208,136,10,1.0,False,13.16,-1,-1
+1761,Computer Science and Engineering Building,2209,580,10,6.0,False,164.39999999999995,-1,-1
+1762,Computer Science and Engineering Building,2213,646,10,44.0,False,258.76,-1,-1
+1763,Computer Science and Engineering Building,2214,136,10,1.0,False,13.16,-1,-1
+1764,Computer Science and Engineering Building,2216,136,10,1.0,False,13.16,-1,-1
+1765,Computer Science and Engineering Building,2217,353,10,14.0,False,126.18,-1,-1
+1766,Computer Science and Engineering Building,2218,136,10,1.0,False,13.16,-1,-1
+1767,Computer Science and Engineering Building,2219,241,10,6.0,False,103.38,-1,-1
+1768,Computer Science and Engineering Building,2220,136,10,1.0,False,13.16,-1,-1
+1769,Computer Science and Engineering Building,2221,134,10,2.0,False,44.12,-1,-1
+1770,Computer Science and Engineering Building,2222,136,10,1.0,False,13.16,-1,-1
+1771,Computer Science and Engineering Building,2224,136,10,6.0,False,38.16,-1,-1
+1772,Computer Science and Engineering Building,2225,254,10,2.0,False,25.24,-1,-1
+1773,Computer Science and Engineering Building,2226,136,10,6.0,False,38.16,-1,-1
+1774,Computer Science and Engineering Building,2228,130,10,8.0,False,47.8,-1,-1
+1775,Computer Science and Engineering Building,2231,376,10,14.0,False,127.56,-1,-1
+1776,Computer Science and Engineering Building,2237,174,10,0.8699999999999999,True,14.79,-1,-1
+1777,Computer Science and Engineering Building,2244,132,10,1.0,False,12.92,-1,-1
+1778,Computer Science and Engineering Building,2246,131,10,1.0,False,12.86,-1,-1
+1779,Computer Science and Engineering Building,2248,131,10,1.0,False,12.86,-1,-1
+1780,Computer Science and Engineering Building,2250,132,10,1.0,False,12.92,-1,-1
+1781,Computer Science and Engineering Building,2252,131,10,1.0,False,12.86,-1,-1
+1782,Computer Science and Engineering Building,2254,131,10,1.0,False,12.86,-1,-1
+1783,Computer Science and Engineering Building,2256,132,10,1.0,False,12.92,-1,-1
+1784,Computer Science and Engineering Building,2258,139,10,1.0,False,13.34,-1,-1
+1785,Computer Science and Engineering Building,2260,169,10,1.0,False,15.14,-1,-1
+1786,Computer Science and Engineering Building,2262,169,10,1.0,False,15.14,-1,-1
+1787,Computer Science and Engineering Building,2264,130,10,1.0,False,12.8,-1,-1
+1788,Computer Science and Engineering Building,2268,135,10,1.0,False,13.1,-1,-1
+1789,Computer Science and Engineering Building,2270,142,10,1.0,False,13.52,-1,-1
+1790,Computer Science and Engineering Building,2272,142,10,1.0,False,13.52,-1,-1
+1791,Computer Science and Engineering Building,2274,129,10,1.0,False,12.739999999999998,-1,-1
+1792,Computer Science and Engineering Building,2266,287,10,1.0,False,22.22,-1,-1
+1793,Computer Science and Engineering Building,2102,139,10,1.0,False,13.34,-1,-1
+1794,Computer Science and Engineering Building,2204,134,10,1.0,False,13.04,-1,-1
+1795,Computer Science and Engineering Building,2140,872,10,12.0,False,112.32,-1,-1
+1796,Computer Science and Engineering Building,2142,488,10,6.0,False,59.28,-1,-1
+1797,Computer Science and Engineering Building,2144,459,10,7.0,False,62.54,-1,-1
+1798,Computer Science and Engineering Building,2146,459,10,7.0,False,62.54,-1,-1
+1799,Computer Science and Engineering Building,2148,459,10,8.0,False,67.53999999999999,-1,-1
+1800,Computer Science and Engineering Building,2150,559,10,7.0,False,68.53999999999999,-1,-1
+1801,Computer Science and Engineering Building,2232,389,10,6.0,False,53.34,-1,-1
+1802,Computer Science and Engineering Building,2234,411,10,6.0,False,54.66,-1,-1
+1803,Computer Science and Engineering Building,2236,389,10,10.0,False,73.34,-1,-1
+1804,Computer Science and Engineering Building,2238,273,10,7.0,False,51.38,-1,-1
+1805,Computer Science and Engineering Building,2128,133,10,2.0,False,17.98,-1,-1
+1806,Computer Science and Engineering Building,2132,135,10,2.0,False,18.1,-1,-1
+1807,Computer Science and Engineering Building,2211,134,10,1.0,False,13.04,-1,-1
+1808,Computer Science and Engineering Building,2240,114,10,2.0,False,16.84,-1,-1
+1809,Computer Science and Engineering Building,2104,136,10,1.0,False,13.16,-1,-1
+1810,Computer Science and Engineering Building,2106,136,10,1.0,False,13.16,-1,-1
+1811,Computer Science and Engineering Building,2122,134,10,1.0,False,13.04,-1,-1
+1812,Computer Science and Engineering Building,2124,134,10,1.0,False,13.04,-1,-1
+1813,Computer Science and Engineering Building,2206,136,10,2.0,False,18.16,-1,-1
+1814,Computer Science and Engineering Building,2210,136,10,2.0,False,18.16,-1,-1
+1815,Computer Science and Engineering Building,2212,136,10,2.0,False,18.16,-1,-1
+1816,Computer Science and Engineering Building,2136,133,10,2.0,False,17.98,-1,-1
+1817,Computer Science and Engineering Building,3102,139,10,1.0,False,13.34,-1,-1
+1818,Computer Science and Engineering Building,3104,136,10,1.0,False,13.16,-1,-1
+1819,Computer Science and Engineering Building,3106,136,10,1.0,False,13.16,-1,-1
+1820,Computer Science and Engineering Building,3108,136,10,1.0,False,13.16,-1,-1
+1821,Computer Science and Engineering Building,3109,345,10,14.0,False,125.7,-1,-1
+1822,Computer Science and Engineering Building,3110,136,10,1.0,False,13.16,-1,-1
+1823,Computer Science and Engineering Building,3111,133,10,4.0,False,63.94,-1,-1
+1824,Computer Science and Engineering Building,3112,136,10,1.0,False,13.16,-1,-1
+1825,Computer Science and Engineering Building,3114,136,10,1.0,False,13.16,-1,-1
+1826,Computer Science and Engineering Building,3115,224,10,4.0,False,80.32,-1,-1
+1827,Computer Science and Engineering Building,3116,136,10,1.0,False,13.16,-1,-1
+1828,Computer Science and Engineering Building,3118,136,10,1.0,False,13.16,-1,-1
+1829,Computer Science and Engineering Building,3119,675,10,12.0,False,100.5,-1,-1
+1830,Computer Science and Engineering Building,3120,136,10,1.0,False,13.16,-1,-1
+1831,Computer Science and Engineering Building,3123,131,10,1.0,False,33.58,-1,-1
+1832,Computer Science and Engineering Building,3126,138,10,1.0,False,13.28,-1,-1
+1833,Computer Science and Engineering Building,3127,192,10,4.0,False,74.56,-1,-1
+1834,Computer Science and Engineering Building,3134,142,10,1.0,False,13.52,-1,-1
+1835,Computer Science and Engineering Building,3205,154,10,1.0,False,37.72,-1,-1
+1836,Computer Science and Engineering Building,3206,136,10,1.0,False,13.16,-1,-1
+1837,Computer Science and Engineering Building,3210,136,10,1.0,False,13.16,-1,-1
+1838,Computer Science and Engineering Building,3212,136,10,1.0,False,13.16,-1,-1
+1839,Computer Science and Engineering Building,3213,552,10,10.0,False,83.12,-1,-1
+1840,Computer Science and Engineering Building,3214,136,10,1.0,False,13.16,-1,-1
+1841,Computer Science and Engineering Building,3216,136,10,1.0,False,13.16,-1,-1
+1842,Computer Science and Engineering Building,3217,353,10,14.0,False,126.18,-1,-1
+1843,Computer Science and Engineering Building,3218,136,10,1.0,False,13.16,-1,-1
+1844,Computer Science and Engineering Building,3219,569,10,7.0,False,172.42000000000004,-1,-1
+1845,Computer Science and Engineering Building,3222,136,10,1.0,False,13.16,-1,-1
+1846,Computer Science and Engineering Building,3224,136,10,0.68,True,11.56,-1,-1
+1847,Computer Science and Engineering Building,3228,132,10,1.0,False,12.92,-1,-1
+1848,Computer Science and Engineering Building,3238,135,10,1.0,False,13.1,-1,-1
+1849,Computer Science and Engineering Building,3248,135,10,1.0,False,13.1,-1,-1
+1850,Computer Science and Engineering Building,3140,872,10,12.0,False,112.32,-1,-1
+1851,Computer Science and Engineering Building,3142,488,10,7.0,False,64.28,-1,-1
+1852,Computer Science and Engineering Building,3144,459,10,7.0,False,62.54,-1,-1
+1853,Computer Science and Engineering Building,3146,459,10,7.0,False,62.54,-1,-1
+1854,Computer Science and Engineering Building,3148,459,10,7.0,False,62.54,-1,-1
+1855,Computer Science and Engineering Building,3150,459,10,7.0,False,62.54,-1,-1
+1856,Computer Science and Engineering Building,3152,372,10,6.0,False,52.32,-1,-1
+1857,Computer Science and Engineering Building,3230,388,10,6.0,False,53.28,-1,-1
+1858,Computer Science and Engineering Building,3232,388,10,7.0,False,58.28,-1,-1
+1859,Computer Science and Engineering Building,3240,388,10,6.0,False,53.28,-1,-1
+1860,Computer Science and Engineering Building,3242,388,10,7.0,False,58.28,-1,-1
+1861,Computer Science and Engineering Building,3250,388,10,6.0,False,53.28,-1,-1
+1862,Computer Science and Engineering Building,3252,383,10,5.0,False,47.98,-1,-1
+1863,Computer Science and Engineering Building,3254,431,10,6.0,False,55.86,-1,-1
+1864,Computer Science and Engineering Building,3256,431,10,6.0,False,55.86,-1,-1
+1865,Computer Science and Engineering Building,3258,450,10,6.0,False,57.0,-1,-1
+1866,Computer Science and Engineering Building,3260,437,10,6.0,False,56.22,-1,-1
+1867,Computer Science and Engineering Building,3262,439,10,6.0,False,56.34,-1,-1
+1868,Computer Science and Engineering Building,3122,134,10,1.0,False,13.04,-1,-1
+1869,Computer Science and Engineering Building,3124,134,10,1.0,False,13.04,-1,-1
+1870,Computer Science and Engineering Building,3138,135,10,1.0,False,13.1,-1,-1
+1871,Computer Science and Engineering Building,3244,135,10,1.0,False,13.1,-1,-1
+1872,Computer Science and Engineering Building,3132,135,10,2.0,False,18.1,-1,-1
+1873,Computer Science and Engineering Building,3202,143,10,2.0,False,18.58,-1,-1
+1874,Computer Science and Engineering Building,3128,133,10,2.0,False,17.98,-1,-1
+1875,Computer Science and Engineering Building,3130,149,10,1.0,False,13.94,-1,-1
+1876,Computer Science and Engineering Building,3204,133,10,1.0,False,12.98,-1,-1
+1877,Computer Science and Engineering Building,3208,136,10,2.0,False,18.16,-1,-1
+1878,Computer Science and Engineering Building,3234,135,10,2.0,False,18.1,-1,-1
+1879,Computer Science and Engineering Building,3236,129,10,2.0,False,17.74,-1,-1
+1880,Computer Science and Engineering Building,3220,136,10,2.0,False,18.16,-1,-1
+1881,Computer Science and Engineering Building,3226,136,10,2.0,False,18.16,-1,-1
+1882,Computer Science and Engineering Building,3246,129,10,2.0,False,17.74,-1,-1
+1883,Computer Science and Engineering Building,4102,139,10,1.0,False,13.34,-1,-1
+1884,Computer Science and Engineering Building,4104,136,10,1.0,False,13.16,-1,-1
+1885,Computer Science and Engineering Building,4106,136,10,1.0,False,13.16,-1,-1
+1886,Computer Science and Engineering Building,4108,136,10,1.0,False,13.16,-1,-1
+1887,Computer Science and Engineering Building,4109,345,10,14.0,False,125.7,-1,-1
+1888,Computer Science and Engineering Building,4110,136,10,1.0,False,13.16,-1,-1
+1889,Computer Science and Engineering Building,4111,133,10,2.0,False,43.94,-1,-1
+1890,Computer Science and Engineering Building,4112,136,10,1.0,False,13.16,-1,-1
+1891,Computer Science and Engineering Building,4113,134,10,2.0,False,44.12,-1,-1
+1892,Computer Science and Engineering Building,4114,136,10,1.0,False,13.16,-1,-1
+1893,Computer Science and Engineering Building,4118,136,10,1.0,False,13.16,-1,-1
+1894,Computer Science and Engineering Building,4120,136,10,1.0,False,13.16,-1,-1
+1895,Computer Science and Engineering Building,4122,134,10,1.0,False,13.04,-1,-1
+1896,Computer Science and Engineering Building,4123,131,10,1.0,False,33.58,-1,-1
+1897,Computer Science and Engineering Building,4126,138,10,1.0,False,13.28,-1,-1
+1898,Computer Science and Engineering Building,4127,767,10,8.0,False,218.06,-1,-1
+1899,Computer Science and Engineering Building,4130,149,10,1.0,False,13.94,-1,-1
+1900,Computer Science and Engineering Building,4138,136,10,1.0,False,13.16,-1,-1
+1901,Computer Science and Engineering Building,4140,872,10,50.0,False,427.32,-1,-1
+1902,Computer Science and Engineering Building,4206,136,10,1.0,False,13.16,-1,-1
+1903,Computer Science and Engineering Building,4209,134,10,1.0,False,34.12,-1,-1
+1904,Computer Science and Engineering Building,4210,136,10,1.0,False,13.16,-1,-1
+1905,Computer Science and Engineering Building,4212,136,10,1.0,False,13.16,-1,-1
+1906,Computer Science and Engineering Building,4214,136,10,1.0,False,13.16,-1,-1
+1907,Computer Science and Engineering Building,4216,136,10,1.0,False,13.16,-1,-1
+1908,Computer Science and Engineering Building,4217,353,10,14.0,False,126.18,-1,-1
+1909,Computer Science and Engineering Building,4218,136,10,1.0,False,13.16,-1,-1
+1910,Computer Science and Engineering Building,4219,241,10,2.0,False,63.38,-1,-1
+1911,Computer Science and Engineering Building,4220,136,10,1.0,False,13.16,-1,-1
+1912,Computer Science and Engineering Building,4221,134,10,4.0,False,64.12,-1,-1
+1913,Computer Science and Engineering Building,4223,533,10,2.0,False,115.94,-1,-1
+1914,Computer Science and Engineering Building,4228,131,10,1.0,False,12.86,-1,-1
+1915,Computer Science and Engineering Building,4234,135,10,1.0,False,13.1,-1,-1
+1916,Computer Science and Engineering Building,4236,129,10,1.0,False,12.739999999999998,-1,-1
+1917,Computer Science and Engineering Building,4238,135,10,1.0,False,13.1,-1,-1
+1918,Computer Science and Engineering Building,4244,135,10,1.0,False,13.1,-1,-1
+1919,Computer Science and Engineering Building,4246,129,10,1.0,False,12.739999999999998,-1,-1
+1920,Computer Science and Engineering Building,4248,135,10,1.0,False,13.1,-1,-1
+1921,Computer Science and Engineering Building,4258,384,10,28.0,False,233.04,-1,-1
+1922,Computer Science and Engineering Building,4262,393,10,14.0,False,128.57999999999998,-1,-1
+1923,Computer Science and Engineering Building,4226,136,10,2.0,False,18.16,-1,-1
+1924,Computer Science and Engineering Building,4142,488,10,7.0,False,64.28,-1,-1
+1925,Computer Science and Engineering Building,4144,459,10,7.0,False,62.54,-1,-1
+1926,Computer Science and Engineering Building,4146,459,10,7.0,False,62.54,-1,-1
+1927,Computer Science and Engineering Building,4148,459,10,7.0,False,62.54,-1,-1
+1928,Computer Science and Engineering Building,4150,459,10,7.0,False,62.54,-1,-1
+1929,Computer Science and Engineering Building,4152,228,10,3.0,False,28.68,-1,-1
+1930,Computer Science and Engineering Building,4154,687,10,9.0,False,86.22,-1,-1
+1931,Computer Science and Engineering Building,4230,388,10,6.0,False,53.28,-1,-1
+1932,Computer Science and Engineering Building,4232,388,10,6.0,False,53.28,-1,-1
+1933,Computer Science and Engineering Building,4240,388,10,6.0,False,53.28,-1,-1
+1934,Computer Science and Engineering Building,4242,388,10,6.0,False,53.28,-1,-1
+1935,Computer Science and Engineering Building,4250,388,10,6.0,False,53.28,-1,-1
+1936,Computer Science and Engineering Building,4252,383,10,6.0,False,52.98,-1,-1
+1937,Computer Science and Engineering Building,4254,431,10,6.0,False,55.86,-1,-1
+1938,Computer Science and Engineering Building,4256,431,10,6.0,False,55.86,-1,-1
+1939,Computer Science and Engineering Building,4116,136,10,1.0,False,13.16,-1,-1
+1940,Computer Science and Engineering Building,4134,142,10,1.0,False,13.52,-1,-1
+1941,Computer Science and Engineering Building,4115,227,10,5.675,True,97.61,-1,-1
+1942,Computer Science and Engineering Building,4119,630,10,22.0,False,147.8,-1,-1
+1943,Computer Science and Engineering Building,4224,136,10,2.0,False,18.16,-1,-1
+1944,Computer Science and Engineering Building,4202,143,10,2.0,False,18.58,-1,-1
+1945,Computer Science and Engineering Building,4213,552,10,11.0,False,88.12,-1,-1
+1946,Computer Science and Engineering Building,4208,136,10,1.0,False,13.16,-1,-1
+1947,Computer Science and Engineering Building,4204,134,10,1.0,False,13.04,-1,-1
+1948,Computer Science and Engineering Building,4124,134,10,2.0,False,18.04,-1,-1
+1949,Computer Science and Engineering Building,4128,133,10,2.0,False,17.98,-1,-1
+1950,Computer Science and Engineering Building,4132,135,10,2.0,False,18.1,-1,-1
+1951,Computer Science and Engineering Building,4136,133,10,2.0,False,17.98,-1,-1
+1952,Center Hall,101,3428,10,295.0,False,2418.18,-1,-1
+1953,Center Hall,105,1622,10,146.0,False,1192.32,-1,-1
+1954,Center Hall,109,1644,10,147.0,False,1201.14,-1,-1
+1955,Center Hall,113,1619,10,146.0,False,1192.14,-1,-1
+1956,Center Hall,115,2143,10,196.0,False,1598.58,-1,-1
+1957,Center Hall,119,2144,10,196.0,False,1598.64,-1,-1
+1958,Center Hall,201,454,10,30.0,False,252.24,-1,-1
+1959,Center Hall,202,255,10,15.0,False,127.8,-1,-1
+1960,Center Hall,203,409,10,32.0,False,264.54,-1,-1
+1961,Center Hall,204,316,10,16.0,False,138.96,-1,-1
+1962,Center Hall,205,500,10,30.0,False,255.0,-1,-1
+1963,Center Hall,206,316,10,16.0,False,138.96,-1,-1
+1964,Center Hall,207,415,10,32.0,False,264.9,-1,-1
+1965,Center Hall,208,257,10,15.0,False,127.92,-1,-1
+1966,Center Hall,212,1774,10,146.0,False,1201.44,-1,-1
+1967,Center Hall,214,1773,10,146.0,False,1201.38,-1,-1
+1968,Center Hall,216,1776,10,146.0,False,1201.56,-1,-1
+1969,Center Hall,217A,482,10,35.0,False,291.42,-1,-1
+1970,Center Hall,217B,424,10,35.0,False,287.94,-1,-1
+1971,Center Hall,218,463,10,32.0,False,267.78,-1,-1
+1972,Center Hall,220,408,10,32.0,False,264.48,-1,-1
+1973,Center Hall,222,813,10,65.0,False,536.28,-1,-1
+1974,Center Hall,223,323,10,15.0,False,131.88,-1,-1
+1975,Center Hall,224A,278,10,15.0,False,129.18,-1,-1
+1976,Center Hall,224B,364,10,15.0,False,134.34,-1,-1
+1977,Center Hall,224C,294,10,15.0,False,130.14,-1,-1
+1978,Center Hall,301,161,10,1.0,False,14.66,-1,-1
+1979,Center Hall,302,140,10,4.0,False,38.4,-1,-1
+1980,Center Hall,303,106,10,1.0,False,11.36,-1,-1
+1981,Center Hall,304,121,10,1.0,False,12.26,-1,-1
+1982,Center Hall,305,188,10,1.0,False,16.28,-1,-1
+1983,Center Hall,306,324,10,18.0,False,154.44,-1,-1
+1984,Center Hall,309A,66,10,1.0,False,8.96,-1,-1
+1985,Center Hall,310,188,10,1.0,False,16.28,-1,-1
+1986,Center Hall,311,121,10,1.0,False,12.26,-1,-1
+1987,Center Hall,312,106,10,1.0,False,11.36,-1,-1
+1988,Center Hall,315,1146,10,26.0,False,263.76,-1,-1
+1989,Center Hall,316,540,10,25.0,False,219.9,-1,-1
+1990,Center Hall,317,121,10,1.0,False,12.26,-1,-1
+1991,Center Hall,318,65,10,2.0,False,18.9,-1,-1
+1992,Center Hall,319,99,10,1.0,False,10.94,-1,-1
+1993,Center Hall,320,72,10,1.0,False,11.82,-1,-1
+1994,Center Hall,321,77,10,3.0,False,27.12,-1,-1
+1995,Center Hall,322,77,10,3.0,False,27.12,-1,-1
+1996,Center Hall,323,72,10,1.0,False,11.82,-1,-1
+1997,Center Hall,324,92,10,1.0,False,10.52,-1,-1
+1998,Center Hall,325,72,10,1.0,False,9.32,-1,-1
+1999,Center Hall,326,77,10,1.0,False,9.62,-1,-1
+2000,Center Hall,327,77,10,1.0,False,9.62,-1,-1
+2001,Center Hall,328,155,10,1.0,False,14.3,-1,-1
+2002,Center Hall,329,120,10,0.6,True,10.2,-1,-1
+2003,Center Hall,330,185,10,12.0,False,101.1,-1,-1
+2004,Center Hall,331,59,10,0.295,True,5.015,-1,-1
+2005,Center Hall,333,489,10,45.0,False,366.84,-1,-1
+2006,Center Hall,334,122,10,6.0,False,52.32,-1,-1
+2007,Center Hall,335,99,10,6.0,False,50.94,-1,-1
+2008,Center Hall,339,367,10,35.0,False,284.52,-1,-1
+2009,Center Hall,344,95,10,1.0,False,10.7,-1,-1
+2010,Center Hall,346,101,10,1.0,False,11.06,-1,-1
+2011,Center Hall,348,175,10,1.0,False,15.5,-1,-1
+2012,Center Hall,349,101,10,1.0,False,11.06,-1,-1
+2013,Center Hall,350,95,10,1.0,False,10.7,-1,-1
+2014,Center Hall,351,187,10,0.935,True,15.895,-1,-1
+2015,Center Hall,354,134,10,1.0,False,13.04,-1,-1
+2016,Center Hall,356,360,10,25.0,False,209.1,-1,-1
+2017,Center Hall,357,108,10,1.0,False,11.48,-1,-1
+2018,Center Hall,359,75,10,1.0,False,9.5,-1,-1
+2019,Center Hall,360,195,10,15.0,False,124.2,-1,-1
+2020,Center Hall,361,380,10,25.0,False,210.3,-1,-1
+2021,Center Hall,362,65,10,3.0,False,26.4,-1,-1
+2022,Center Hall,364,73,10,3.0,False,26.88,-1,-1
+2023,Center Hall,365,70,10,3.0,False,26.7,-1,-1
+2024,Center Hall,366,65,10,3.0,False,26.4,-1,-1
+2025,Center Hall,367,74,10,3.0,False,26.94,-1,-1
+2026,Center Hall,368,356,10,25.0,False,208.86,-1,-1
+2027,Center Hall,369,76,10,1.0,False,9.56,-1,-1
+2028,Center Hall,370,108,10,1.0,False,11.48,-1,-1
+2029,Center Hall,371,131,10,1.0,False,12.86,-1,-1
+2030,Center Hall,373,91,10,2.0,False,15.46,-1,-1
+2031,Center Hall,374,81,10,4.0,False,34.86,-1,-1
+2032,Center Hall,375,72,10,4.0,False,34.32,-1,-1
+2033,Center Hall,376,103,10,2.0,False,16.18,-1,-1
+2034,Center Hall,377,108,10,1.0,False,13.98,-1,-1
+2035,Center Hall,378,195,10,15.0,False,124.2,-1,-1
+2036,Center Hall,382A,82,10,0.41,True,6.9700000000000015,-1,-1
+0,Applied Physics and Mathematics,B301,172,10,1.0,False,30.64,-1,-1
+1,Applied Physics and Mathematics,B301A,335,10,8.375,True,123.94999999999999,-1,-1
+2,Applied Physics and Mathematics,B301B,194,10,4.8500000000000005,True,71.78,-1,-1
+3,Applied Physics and Mathematics,B302,335,10,1.0,False,50.199999999999996,-1,-1
+4,Applied Physics and Mathematics,B302A,44,10,1.0999999999999999,True,16.279999999999998,-1,-1
+5,Applied Physics and Mathematics,B325,640,10,22.0,False,203.4,-1,-1
+6,Applied Physics and Mathematics,B349,1012,10,28.0,False,270.72,-1,-1
+7,Applied Physics and Mathematics,B402,1015,10,60.0,False,510.9,-1,-1
+8,Applied Physics and Mathematics,B412,817,10,45.0,False,386.52,-1,-1
+9,Applied Physics and Mathematics,B432,1075,10,40.0,False,364.5,-1,-1
+10,Applied Physics and Mathematics,B801,829,10,16.58,True,315.02,-1,-1
+11,Applied Physics and Mathematics,1101,140,10,0.7000000000000001,True,11.9,-1,-1
+12,Applied Physics and Mathematics,1111,133,10,0.665,True,11.305,-1,-1
+13,Applied Physics and Mathematics,1121,135,10,0.675,True,11.475,-1,-1
+14,Applied Physics and Mathematics,1131,135,10,0.675,True,11.475,-1,-1
+15,Applied Physics and Mathematics,1141,135,10,0.675,True,11.475,-1,-1
+16,Applied Physics and Mathematics,1151,135,10,0.675,True,11.475,-1,-1
+17,Applied Physics and Mathematics,1161A,61,10,0.305,True,5.185,-1,-1
+18,Applied Physics and Mathematics,1161B,82,10,0.41000000000000003,True,6.970000000000001,-1,-1
+19,Applied Physics and Mathematics,1161C,156,10,0.78,True,13.26,-1,-1
+20,Applied Physics and Mathematics,1202,140,10,0.7000000000000001,True,11.9,-1,-1
+21,Applied Physics and Mathematics,1210,135,10,0.675,True,11.475,-1,-1
+22,Applied Physics and Mathematics,1218,267,10,12.0,False,106.02,-1,-1
+23,Applied Physics and Mathematics,1220,135,10,0.675,True,11.475,-1,-1
+24,Applied Physics and Mathematics,1230,135,10,0.675,True,11.475,-1,-1
+25,Applied Physics and Mathematics,1240,135,10,0.675,True,11.475,-1,-1
+26,Applied Physics and Mathematics,1250,135,10,0.675,True,11.475,-1,-1
+27,Applied Physics and Mathematics,1256,109,10,0.545,True,9.265,-1,-1
+28,Applied Physics and Mathematics,1260,187,10,0.935,True,15.895,-1,-1
+29,Applied Physics and Mathematics,1303,150,10,4.0,False,29.0,-1,-1
+30,Applied Physics and Mathematics,1305,120,10,1.0,False,12.2,-1,-1
+31,Applied Physics and Mathematics,1306,64,10,1.0,False,8.84,-1,-1
+32,Applied Physics and Mathematics,1307,57,10,1.0,False,8.42,-1,-1
+33,Applied Physics and Mathematics,1308,51,10,1.0,False,8.06,-1,-1
+34,Applied Physics and Mathematics,1323,162,10,1.0,False,14.719999999999999,-1,-1
+35,Applied Physics and Mathematics,1323A,113,10,0.5650000000000001,True,9.605,-1,-1
+36,Applied Physics and Mathematics,1323B,38,10,0.19,True,3.2299999999999995,-1,-1
+37,Applied Physics and Mathematics,1325,312,10,5.0,False,43.72,-1,-1
+38,Applied Physics and Mathematics,1402,198,10,5.0,False,85.64,-1,-1
+39,Applied Physics and Mathematics,1408,298,10,3.0,False,83.64,-1,-1
+40,Applied Physics and Mathematics,1412,283,10,3.0,False,80.94,-1,-1
+41,Applied Physics and Mathematics,1416,102,10,1.0,False,11.120000000000001,-1,-1
+42,Applied Physics and Mathematics,1418,316,10,3.0,False,33.96,-1,-1
+43,Applied Physics and Mathematics,1426,3825,10,19.125,True,325.125,-1,-1
+44,Applied Physics and Mathematics,1702,46,10,1.15,True,19.78,-1,-1
+45,Applied Physics and Mathematics,1703,173,10,4.324999999999999,True,74.38999999999999,-1,-1
+46,Applied Physics and Mathematics,1705,88,10,2.1999999999999997,True,37.839999999999996,-1,-1
+47,Applied Physics and Mathematics,1706,61,10,1.525,True,26.23,-1,-1
+48,Applied Physics and Mathematics,1709,72,10,1.7999999999999998,True,30.96,-1,-1
+49,Applied Physics and Mathematics,1710,118,10,2.9499999999999997,True,50.739999999999995,-1,-1
+50,Applied Physics and Mathematics,1711,84,10,2.1,True,36.12,-1,-1
+51,Applied Physics and Mathematics,1714,65,10,1.625,True,27.95,-1,-1
+52,Applied Physics and Mathematics,1715,65,10,1.625,True,27.95,-1,-1
+53,Applied Physics and Mathematics,1717,53,10,1.325,True,22.79,-1,-1
+54,Applied Physics and Mathematics,1718,75,10,1.875,True,32.25,-1,-1
+55,Applied Physics and Mathematics,1719,43,10,1.075,True,18.49,-1,-1
+56,Applied Physics and Mathematics,1720,41,10,1.0250000000000001,True,17.630000000000003,-1,-1
+57,Applied Physics and Mathematics,1721,45,10,1.125,True,19.35,-1,-1
+58,Applied Physics and Mathematics,1782,193,10,0.9650000000000001,True,16.405,-1,-1
+59,Applied Physics and Mathematics,1808,135,10,0.675,True,11.475,-1,-1
+60,Applied Physics and Mathematics,1816,135,10,0.675,True,11.475,-1,-1
+61,Applied Physics and Mathematics,1824,135,10,0.675,True,11.475,-1,-1
+62,Applied Physics and Mathematics,1832,135,10,3.375,True,58.05,-1,-1
+63,Applied Physics and Mathematics,1839,706,10,17.65,True,303.58,-1,-1
+64,Applied Physics and Mathematics,1840,135,10,0.675,True,11.475,-1,-1
+65,Applied Physics and Mathematics,1841,106,10,2.65,True,45.58,-1,-1
+66,Applied Physics and Mathematics,1842,93,10,2.325,True,39.989999999999995,-1,-1
+67,Applied Physics and Mathematics,1843,160,10,0.8,True,13.6,-1,-1
+68,Applied Physics and Mathematics,1844,100,10,0.5,True,8.5,-1,-1
+69,Applied Physics and Mathematics,1845,58,10,1.4500000000000002,True,24.94,-1,-1
+70,Applied Physics and Mathematics,1848,135,10,0.675,True,11.475,-1,-1
+71,Applied Physics and Mathematics,1856,135,10,0.675,True,11.475,-1,-1
+72,Applied Physics and Mathematics,1859A,24,10,0.6,True,10.32,-1,-1
+73,Applied Physics and Mathematics,1859H,24,10,0.6,True,10.32,-1,-1
+74,Applied Physics and Mathematics,1859J,24,10,0.6,True,10.32,-1,-1
+75,Applied Physics and Mathematics,1864,135,10,3.375,True,58.05,-1,-1
+76,Applied Physics and Mathematics,1872,140,10,0.7000000000000001,True,11.9,-1,-1
+77,Applied Physics and Mathematics,1882,362,10,25.0,False,209.22,-1,-1
+78,Applied Physics and Mathematics,2000A,101,10,3.0,False,21.06,-1,-1
+79,Applied Physics and Mathematics,2000B,108,10,3.0,False,21.48,-1,-1
+80,Applied Physics and Mathematics,2101,54,10,0.27,True,4.59,-1,-1
+81,Applied Physics and Mathematics,2101A,63,10,1.0,False,8.78,-1,-1
+82,Applied Physics and Mathematics,2101B,61,10,1.0,False,8.66,-1,-1
+83,Applied Physics and Mathematics,2101C,61,10,1.0,False,8.66,-1,-1
+84,Applied Physics and Mathematics,2101D,62,10,1.0,False,8.719999999999999,-1,-1
+85,Applied Physics and Mathematics,2113,889,10,8.0,False,113.34,-1,-1
+86,Applied Physics and Mathematics,2113A,97,10,1.0,False,10.82,-1,-1
+87,Applied Physics and Mathematics,2113B,96,10,1.0,False,10.76,-1,-1
+88,Applied Physics and Mathematics,2113C,96,10,1.0,False,10.76,-1,-1
+89,Applied Physics and Mathematics,2113D,95,10,1.0,False,10.7,-1,-1
+90,Applied Physics and Mathematics,2113E,161,10,1.0,False,14.66,-1,-1
+91,Applied Physics and Mathematics,2113F,96,10,1.0,False,10.76,-1,-1
+92,Applied Physics and Mathematics,2113G,96,10,1.0,False,10.76,-1,-1
+93,Applied Physics and Mathematics,2202,140,10,4.0,False,28.4,-1,-1
+94,Applied Physics and Mathematics,2210,109,10,0.545,True,9.265,-1,-1
+95,Applied Physics and Mathematics,2220,110,10,0.55,True,9.35,-1,-1
+96,Applied Physics and Mathematics,2230,118,10,0.59,True,10.03,-1,-1
+97,Applied Physics and Mathematics,2240,198,10,6.0,False,56.879999999999995,-1,-1
+98,Applied Physics and Mathematics,2250,126,10,3.0,False,22.56,-1,-1
+99,Applied Physics and Mathematics,2250A,122,10,1.0,False,12.32,-1,-1
+100,Applied Physics and Mathematics,2250B,64,10,1.0,False,8.84,-1,-1
+101,Applied Physics and Mathematics,2250C,83,10,1.0,False,9.98,-1,-1
+102,Applied Physics and Mathematics,2250D,75,10,1.0,False,9.5,-1,-1
+103,Applied Physics and Mathematics,2250E,118,10,0.59,True,10.03,-1,-1
+104,Applied Physics and Mathematics,2301,564,10,39.0,False,326.34,-1,-1
+105,Applied Physics and Mathematics,2313,295,10,16.0,False,97.7,-1,-1
+106,Applied Physics and Mathematics,2325,425,10,12.0,False,85.5,-1,-1
+107,Applied Physics and Mathematics,2331,204,10,9.0,False,126.72,-1,-1
+108,Applied Physics and Mathematics,2333,208,10,1.0,False,17.48,-1,-1
+109,Applied Physics and Mathematics,2351,463,10,8.0,False,163.34,-1,-1
+110,Applied Physics and Mathematics,2351A,95,10,2.0,False,37.099999999999994,-1,-1
+111,Applied Physics and Mathematics,2351B,119,10,1.0,False,31.419999999999998,-1,-1
+112,Applied Physics and Mathematics,2402,1000,10,44.0,False,390.0,-1,-1
+113,Applied Physics and Mathematics,2402A,461,10,12.0,False,117.66,-1,-1
+114,Applied Physics and Mathematics,2432,528,10,12.0,False,215.04,-1,-1
+115,Applied Physics and Mathematics,2432A,176,10,2.0,False,51.68,-1,-1
+116,Applied Physics and Mathematics,2432B,98,10,1.0,False,27.64,-1,-1
+117,Applied Physics and Mathematics,2442,488,10,8.0,False,167.84,-1,-1
+118,Applied Physics and Mathematics,2442A,153,10,3.0,False,57.54,-1,-1
+119,Applied Physics and Mathematics,2442B,96,10,1.0,False,27.28,-1,-1
+120,Applied Physics and Mathematics,2452,471,10,8.0,False,164.78,-1,-1
+121,Applied Physics and Mathematics,2801,951,10,23.775,True,408.93,-1,-1
+122,Applied Physics and Mathematics,2801A,273,10,6.825,True,117.39,-1,-1
+123,Applied Physics and Mathematics,2801B,266,10,6.65,True,114.38,-1,-1
+124,Applied Physics and Mathematics,2802,140,10,1.0,False,13.4,-1,-1
+125,Applied Physics and Mathematics,2808,135,10,0.675,True,11.475,-1,-1
+126,Applied Physics and Mathematics,2808-1,67,10,1.0,False,9.02,-1,-1
+127,Applied Physics and Mathematics,2808-2,68,10,1.0,False,9.08,-1,-1
+128,Applied Physics and Mathematics,2816,135,10,1.0,False,13.1,-1,-1
+129,Applied Physics and Mathematics,2819,402,10,10.05,True,172.86,-1,-1
+130,Applied Physics and Mathematics,2824,135,10,0.675,True,11.475,-1,-1
+131,Applied Physics and Mathematics,2832,146,10,1.0,False,13.76,-1,-1
+132,Applied Physics and Mathematics,2839,442,10,1.0,False,89.56,-1,-1
+133,Applied Physics and Mathematics,2839A,140,10,1.0,False,13.4,-1,-1
+134,Applied Physics and Mathematics,2839B,134,10,1.0,False,13.04,-1,-1
+135,Applied Physics and Mathematics,2839C,216,10,1.0,False,48.879999999999995,-1,-1
+136,Applied Physics and Mathematics,2839D,62,10,1.55,True,26.66,-1,-1
+137,Applied Physics and Mathematics,2839E,119,10,2.9749999999999996,True,51.169999999999995,-1,-1
+138,Applied Physics and Mathematics,2840,277,10,2.0,False,31.62,-1,-1
+139,Applied Physics and Mathematics,2856,135,10,1.0,False,13.1,-1,-1
+140,Applied Physics and Mathematics,2864,135,10,0.675,True,11.475,-1,-1
+141,Applied Physics and Mathematics,2872,140,10,0.7000000000000001,True,11.9,-1,-1
+142,Applied Physics and Mathematics,2876,144,10,0.72,True,12.24,-1,-1
+143,Applied Physics and Mathematics,2876A,262,10,1.31,True,22.27,-1,-1
+144,Applied Physics and Mathematics,2878,169,10,0.8450000000000001,True,14.364999999999998,-1,-1
+145,Applied Physics and Mathematics,2880A,71,10,1.775,True,30.53,-1,-1
+146,Applied Physics and Mathematics,2880B,144,10,3.5999999999999996,True,61.92,-1,-1
+147,Applied Physics and Mathematics,2880D,155,10,0.775,True,13.174999999999999,-1,-1
+148,Applied Physics and Mathematics,3016,181,10,2.0,False,20.86,-1,-1
+149,Applied Physics and Mathematics,3101,137,10,1.0,False,13.219999999999999,-1,-1
+150,Applied Physics and Mathematics,3111,133,10,2.0,False,17.98,-1,-1
+151,Applied Physics and Mathematics,3121,133,10,1.0,False,12.98,-1,-1
+152,Applied Physics and Mathematics,3131,133,10,1.0,False,12.98,-1,-1
+153,Applied Physics and Mathematics,3141,133,10,1.0,False,12.98,-1,-1
+154,Applied Physics and Mathematics,3151,133,10,1.0,False,12.98,-1,-1
+155,Applied Physics and Mathematics,3157,135,10,2.0,False,18.1,-1,-1
+156,Applied Physics and Mathematics,3161,214,10,2.0,False,22.84,-1,-1
+157,Applied Physics and Mathematics,3202,227,10,1.0,False,18.619999999999997,-1,-1
+158,Applied Physics and Mathematics,3216,195,10,2.0,False,21.7,-1,-1
+159,Applied Physics and Mathematics,3218,267,10,14.0,False,121.02,-1,-1
+160,Applied Physics and Mathematics,3230,137,10,2.0,False,18.22,-1,-1
+161,Applied Physics and Mathematics,3240,137,10,2.0,False,18.22,-1,-1
+162,Applied Physics and Mathematics,3250,137,10,2.0,False,18.22,-1,-1
+163,Applied Physics and Mathematics,3256,135,10,2.0,False,18.1,-1,-1
+164,Applied Physics and Mathematics,3260,220,10,2.0,False,23.2,-1,-1
+165,Applied Physics and Mathematics,3301,429,10,12.0,False,85.74,-1,-1
+166,Applied Physics and Mathematics,3302A,251,10,11.0,False,97.56,-1,-1
+167,Applied Physics and Mathematics,3302C,121,10,7.0,False,59.76,-1,-1
+168,Applied Physics and Mathematics,3302D,127,10,6.0,False,52.62,-1,-1
+169,Applied Physics and Mathematics,3302E,125,10,4.0,False,37.5,-1,-1
+170,Applied Physics and Mathematics,3302F,391,10,21.0,False,180.96,-1,-1
+171,Applied Physics and Mathematics,3302I,128,10,1.0,False,12.68,-1,-1
+172,Applied Physics and Mathematics,3302K,115,10,6.0,False,51.9,-1,-1
+173,Applied Physics and Mathematics,3311,174,10,1.0,False,15.44,-1,-1
+174,Applied Physics and Mathematics,3311A,186,10,1.0,False,16.16,-1,-1
+175,Applied Physics and Mathematics,3311C,184,10,1.0,False,16.04,-1,-1
+176,Applied Physics and Mathematics,3321,459,10,12.0,False,202.62,-1,-1
+177,Applied Physics and Mathematics,3331A,62,10,1.0,False,8.719999999999999,-1,-1
+178,Applied Physics and Mathematics,3331B,67,10,1.0,False,9.02,-1,-1
+179,Applied Physics and Mathematics,3331C,163,10,5.0,False,34.78,-1,-1
+180,Applied Physics and Mathematics,3331D,53,10,1.0,False,8.18,-1,-1
+181,Applied Physics and Mathematics,3331E,49,10,1.0,False,7.9399999999999995,-1,-1
+182,Applied Physics and Mathematics,3351A,49,10,1.0,False,7.9399999999999995,-1,-1
+183,Applied Physics and Mathematics,3351B,53,10,1.0,False,8.18,-1,-1
+184,Applied Physics and Mathematics,3351C,149,10,11.0,False,63.94,-1,-1
+185,Applied Physics and Mathematics,3351D,60,10,1.0,False,8.6,-1,-1
+186,Applied Physics and Mathematics,3351E,56,10,1.0,False,8.36,-1,-1
+187,Applied Physics and Mathematics,3402,833,10,28.0,False,259.98,-1,-1
+188,Applied Physics and Mathematics,3452,589,10,4.0,False,55.339999999999996,-1,-1
+189,Applied Physics and Mathematics,3711,814,10,6.0,False,206.51999999999998,-1,-1
+190,Applied Physics and Mathematics,3711A,124,10,2.0,False,42.32,-1,-1
+191,Applied Physics and Mathematics,3721,488,10,5.0,False,137.84,-1,-1
+192,Applied Physics and Mathematics,3721A,63,10,1.0,False,21.34,-1,-1
+193,Applied Physics and Mathematics,3731,170,10,4.25,True,73.1,-1,-1
+194,Applied Physics and Mathematics,3731A,70,10,2.0,False,32.6,-1,-1
+195,Applied Physics and Mathematics,3731B,151,10,3.0,False,57.18,-1,-1
+196,Applied Physics and Mathematics,3731C,101,10,2.0,False,38.18,-1,-1
+197,Applied Physics and Mathematics,3741,814,10,6.0,False,206.51999999999998,-1,-1
+198,Applied Physics and Mathematics,3741A,124,10,3.1,True,53.32,-1,-1
+199,Applied Physics and Mathematics,3782,195,10,1.0,False,45.1,-1,-1
+200,Applied Physics and Mathematics,3802,143,10,1.0,False,13.58,-1,-1
+201,Applied Physics and Mathematics,3816,136,10,1.0,False,13.16,-1,-1
+202,Applied Physics and Mathematics,3824,132,10,1.0,False,12.92,-1,-1
+203,Applied Physics and Mathematics,3832,135,10,1.0,False,13.1,-1,-1
+204,Applied Physics and Mathematics,3840,135,10,1.0,False,13.1,-1,-1
+205,Applied Physics and Mathematics,3848,134,10,1.0,False,13.04,-1,-1
+206,Applied Physics and Mathematics,3856,136,10,1.0,False,13.16,-1,-1
+207,Applied Physics and Mathematics,3864,136,10,1.0,False,13.16,-1,-1
+208,Applied Physics and Mathematics,3872,140,10,1.0,False,13.4,-1,-1
+209,Applied Physics and Mathematics,3880,394,10,14.0,False,128.64,-1,-1
+210,Applied Physics and Mathematics,4016,121,10,1.0,False,12.26,-1,-1
+211,Applied Physics and Mathematics,4018,142,10,2.0,False,18.52,-1,-1
+212,Applied Physics and Mathematics,4101,137,10,1.0,False,13.219999999999999,-1,-1
+213,Applied Physics and Mathematics,4111,133,10,1.0,False,12.98,-1,-1
+214,Applied Physics and Mathematics,4121,133,10,1.0,False,12.98,-1,-1
+215,Applied Physics and Mathematics,4131,133,10,1.0,False,12.98,-1,-1
+216,Applied Physics and Mathematics,4141,133,10,1.0,False,12.98,-1,-1
+217,Applied Physics and Mathematics,4151,133,10,1.0,False,12.98,-1,-1
+218,Applied Physics and Mathematics,4157,135,10,1.0,False,13.1,-1,-1
+219,Applied Physics and Mathematics,4161,214,10,1.0,False,17.84,-1,-1
+220,Applied Physics and Mathematics,4202,142,10,1.0,False,13.52,-1,-1
+221,Applied Physics and Mathematics,4210,137,10,1.0,False,13.219999999999999,-1,-1
+222,Applied Physics and Mathematics,4218,267,10,16.0,False,136.02,-1,-1
+223,Applied Physics and Mathematics,4220,137,10,1.0,False,13.219999999999999,-1,-1
+224,Applied Physics and Mathematics,4230,137,10,1.0,False,13.219999999999999,-1,-1
+225,Applied Physics and Mathematics,4240,137,10,1.0,False,13.219999999999999,-1,-1
+226,Applied Physics and Mathematics,4250,137,10,1.0,False,13.219999999999999,-1,-1
+227,Applied Physics and Mathematics,4256,135,10,1.0,False,13.1,-1,-1
+228,Applied Physics and Mathematics,4260,220,10,1.0,False,18.2,-1,-1
+229,Applied Physics and Mathematics,4301,1021,10,70.0,False,586.26,-1,-1
+230,Applied Physics and Mathematics,4331,462,10,12.0,False,87.72,-1,-1
+231,Applied Physics and Mathematics,4402,520,10,12.0,False,213.6,-1,-1
+232,Applied Physics and Mathematics,4402A,262,10,2.0,False,67.16,-1,-1
+233,Applied Physics and Mathematics,4402B,141,10,4.0,False,65.38,-1,-1
+234,Applied Physics and Mathematics,4432,473,10,6.0,False,145.14,-1,-1
+235,Applied Physics and Mathematics,4432A,185,10,2.0,False,53.3,-1,-1
+236,Applied Physics and Mathematics,4432B,158,10,8.0,False,108.44,-1,-1
+237,Applied Physics and Mathematics,4432C,95,10,1.0,False,10.7,-1,-1
+238,Applied Physics and Mathematics,4432E,98,10,1.0,False,27.64,-1,-1
+239,Applied Physics and Mathematics,4441,358,10,2.0,False,84.44,-1,-1
+240,Applied Physics and Mathematics,4441A,156,10,2.0,False,48.08,-1,-1
+241,Applied Physics and Mathematics,4441B,152,10,1.0,False,37.36,-1,-1
+242,Applied Physics and Mathematics,4441C,166,10,1.0,False,39.879999999999995,-1,-1
+243,Applied Physics and Mathematics,4441E,165,10,1.0,False,39.7,-1,-1
+244,Applied Physics and Mathematics,4452,551,10,1.0,False,109.17999999999999,-1,-1
+245,Applied Physics and Mathematics,4711,814,10,6.0,False,206.51999999999998,-1,-1
+246,Applied Physics and Mathematics,4721,789,10,6.0,False,202.01999999999998,-1,-1
+247,Applied Physics and Mathematics,4731,815,10,6.0,False,206.7,-1,-1
+248,Applied Physics and Mathematics,4741,814,10,6.0,False,206.51999999999998,-1,-1
+249,Applied Physics and Mathematics,4802,189,10,0.9450000000000001,True,16.065,-1,-1
+250,Applied Physics and Mathematics,4808,223,10,7.0,False,48.379999999999995,-1,-1
+251,Applied Physics and Mathematics,4811A,124,10,2.0,False,42.32,-1,-1
+252,Applied Physics and Mathematics,4821A,125,10,2.0,False,42.5,-1,-1
+253,Applied Physics and Mathematics,4824,136,10,1.0,False,13.16,-1,-1
+254,Applied Physics and Mathematics,4831D,100,10,2.0,False,38.0,-1,-1
+255,Applied Physics and Mathematics,4832,136,10,1.0,False,13.16,-1,-1
+256,Applied Physics and Mathematics,4840,136,10,1.0,False,13.16,-1,-1
+257,Applied Physics and Mathematics,4841A,124,10,2.0,False,42.32,-1,-1
+258,Applied Physics and Mathematics,4848,136,10,1.0,False,13.16,-1,-1
+259,Applied Physics and Mathematics,4856,136,10,1.0,False,13.16,-1,-1
+260,Applied Physics and Mathematics,4864,136,10,1.0,False,13.16,-1,-1
+261,Applied Physics and Mathematics,4872,140,10,1.0,False,13.4,-1,-1
+262,Applied Physics and Mathematics,4882,392,10,14.0,False,93.52,-1,-1
+263,Applied Physics and Mathematics,4884,196,10,1.0,False,16.759999999999998,-1,-1
+264,Applied Physics and Mathematics,5016,121,10,1.0,False,12.26,-1,-1
+265,Applied Physics and Mathematics,5018,142,10,1.0,False,13.52,-1,-1
+266,Applied Physics and Mathematics,5101,137,10,1.0,False,13.219999999999999,-1,-1
+267,Applied Physics and Mathematics,5111,133,10,1.0,False,12.98,-1,-1
+268,Applied Physics and Mathematics,5121,133,10,1.0,False,12.98,-1,-1
+269,Applied Physics and Mathematics,5131,133,10,1.0,False,12.98,-1,-1
+270,Applied Physics and Mathematics,5141,133,10,1.0,False,12.98,-1,-1
+271,Applied Physics and Mathematics,5151,127,10,1.0,False,12.620000000000001,-1,-1
+272,Applied Physics and Mathematics,5157,135,10,1.0,False,13.1,-1,-1
+273,Applied Physics and Mathematics,5161,220,10,1.0,False,18.2,-1,-1
+274,Applied Physics and Mathematics,5202,142,10,1.0,False,13.52,-1,-1
+275,Applied Physics and Mathematics,5210,137,10,1.0,False,13.219999999999999,-1,-1
+276,Applied Physics and Mathematics,5218,267,10,12.0,False,106.02,-1,-1
+277,Applied Physics and Mathematics,5220,137,10,1.0,False,13.219999999999999,-1,-1
+278,Applied Physics and Mathematics,5230,137,10,1.0,False,13.219999999999999,-1,-1
+279,Applied Physics and Mathematics,5240,137,10,1.0,False,13.219999999999999,-1,-1
+280,Applied Physics and Mathematics,5250,137,10,1.0,False,13.219999999999999,-1,-1
+281,Applied Physics and Mathematics,5256,135,10,1.0,False,13.1,-1,-1
+282,Applied Physics and Mathematics,5260,220,10,1.0,False,18.2,-1,-1
+283,Applied Physics and Mathematics,5320,214,10,1.07,True,18.19,-1,-1
+284,Applied Physics and Mathematics,5321,87,10,0.43499999999999994,True,7.395,-1,-1
+285,Applied Physics and Mathematics,5322,115,10,0.5750000000000001,True,9.775,-1,-1
+286,Applied Physics and Mathematics,5323,115,10,0.5750000000000001,True,9.775,-1,-1
+287,Applied Physics and Mathematics,5324,115,10,0.5750000000000001,True,9.775,-1,-1
+288,Applied Physics and Mathematics,5331,139,10,0.6950000000000001,True,11.815000000000001,-1,-1
+289,Applied Physics and Mathematics,5332,139,10,0.6950000000000001,True,11.815000000000001,-1,-1
+290,Applied Physics and Mathematics,5342,88,10,0.43999999999999995,True,7.479999999999999,-1,-1
+291,Applied Physics and Mathematics,5343,134,10,0.67,True,11.389999999999999,-1,-1
+292,Applied Physics and Mathematics,5344,70,10,0.35000000000000003,True,5.95,-1,-1
+293,Applied Physics and Mathematics,5350,302,10,11.0,False,100.62,-1,-1
+294,Applied Physics and Mathematics,5402,508,10,39.0,False,322.98,-1,-1
+295,Applied Physics and Mathematics,5412,893,10,22.0,False,163.57999999999998,-1,-1
+296,Applied Physics and Mathematics,5420,374,10,20.0,False,172.44,-1,-1
+297,Applied Physics and Mathematics,5431,108,10,0.54,True,9.18,-1,-1
+298,Applied Physics and Mathematics,5432,111,10,0.555,True,9.435,-1,-1
+299,Applied Physics and Mathematics,5433,214,10,1.07,True,18.19,-1,-1
+300,Applied Physics and Mathematics,5441,213,10,1.065,True,18.104999999999997,-1,-1
+301,Applied Physics and Mathematics,5443,113,10,0.5650000000000001,True,9.605,-1,-1
+302,Applied Physics and Mathematics,5444,104,10,0.52,True,8.84,-1,-1
+303,Applied Physics and Mathematics,5445,97,10,0.485,True,8.245,-1,-1
+304,Applied Physics and Mathematics,5451,47,10,1.175,True,20.21,-1,-1
+305,Applied Physics and Mathematics,5452,43,10,1.075,True,18.49,-1,-1
+306,Applied Physics and Mathematics,5454,93,10,2.325,True,39.989999999999995,-1,-1
+307,Applied Physics and Mathematics,5701,136,10,1.0,False,13.16,-1,-1
+308,Applied Physics and Mathematics,5707,133,10,1.0,False,12.98,-1,-1
+309,Applied Physics and Mathematics,5712,111,10,4.0,False,26.66,-1,-1
+310,Applied Physics and Mathematics,5715,136,10,1.0,False,13.16,-1,-1
+311,Applied Physics and Mathematics,5720,134,10,4.0,False,28.04,-1,-1
+312,Applied Physics and Mathematics,5723,136,10,1.0,False,13.16,-1,-1
+313,Applied Physics and Mathematics,5731,136,10,3.0,False,23.16,-1,-1
+314,Applied Physics and Mathematics,5739,136,10,1.0,False,13.16,-1,-1
+315,Applied Physics and Mathematics,5747,136,10,1.0,False,13.16,-1,-1
+316,Applied Physics and Mathematics,5748,134,10,4.0,False,28.04,-1,-1
+317,Applied Physics and Mathematics,5755,136,10,1.0,False,13.16,-1,-1
+318,Applied Physics and Mathematics,5760,114,10,4.0,False,26.84,-1,-1
+319,Applied Physics and Mathematics,5763,136,10,1.0,False,13.16,-1,-1
+320,Applied Physics and Mathematics,5768,114,10,4.0,False,26.84,-1,-1
+321,Applied Physics and Mathematics,5771,140,10,1.0,False,13.4,-1,-1
+322,Applied Physics and Mathematics,5801,136,10,4.0,False,28.16,-1,-1
+323,Applied Physics and Mathematics,5802,136,10,1.0,False,13.16,-1,-1
+324,Applied Physics and Mathematics,5808,133,10,2.0,False,17.98,-1,-1
+325,Applied Physics and Mathematics,5816,136,10,3.0,False,23.16,-1,-1
+326,Applied Physics and Mathematics,5824,136,10,1.0,False,13.16,-1,-1
+327,Applied Physics and Mathematics,5829,287,10,17.0,False,144.72,-1,-1
+328,Applied Physics and Mathematics,5832,136,10,1.0,False,13.16,-1,-1
+329,Applied Physics and Mathematics,5839,275,10,8.0,False,129.5,-1,-1
+330,Applied Physics and Mathematics,5840,136,10,1.0,False,13.16,-1,-1
+331,Applied Physics and Mathematics,5848,136,10,3.0,False,23.16,-1,-1
+332,Applied Physics and Mathematics,5856,136,10,1.0,False,13.16,-1,-1
+333,Applied Physics and Mathematics,5864,136,10,1.0,False,13.16,-1,-1
+334,Applied Physics and Mathematics,5872,140,10,1.0,False,13.4,-1,-1
+335,Applied Physics and Mathematics,5880A,98,10,1.0,False,10.879999999999999,-1,-1
+336,Applied Physics and Mathematics,5880B,94,10,1.0,False,10.64,-1,-1
+337,Applied Physics and Mathematics,5880C,85,10,1.0,False,10.1,-1,-1
+338,Applied Physics and Mathematics,5880D,113,10,1.0,False,11.78,-1,-1
+339,Applied Physics and Mathematics,5880E,103,10,1.0,False,11.18,-1,-1
+340,Applied Physics and Mathematics,6018,142,10,1.0,False,13.52,-1,-1
+341,Applied Physics and Mathematics,6101,137,10,1.0,False,13.219999999999999,-1,-1
+342,Applied Physics and Mathematics,6111,133,10,1.0,False,12.98,-1,-1
+343,Applied Physics and Mathematics,6121,133,10,1.0,False,12.98,-1,-1
+344,Applied Physics and Mathematics,6131,133,10,1.0,False,12.98,-1,-1
+345,Applied Physics and Mathematics,6132,171,10,4.0,False,30.259999999999998,-1,-1
+346,Applied Physics and Mathematics,6141,133,10,3.0,False,22.98,-1,-1
+347,Applied Physics and Mathematics,6151,133,10,1.0,False,12.98,-1,-1
+348,Applied Physics and Mathematics,6157,135,10,1.0,False,13.1,-1,-1
+349,Applied Physics and Mathematics,6161,214,10,1.0,False,17.84,-1,-1
+350,Applied Physics and Mathematics,6202,142,10,1.0,False,13.52,-1,-1
+351,Applied Physics and Mathematics,6210,137,10,1.0,False,13.219999999999999,-1,-1
+352,Applied Physics and Mathematics,6218,267,10,13.0,False,113.52,-1,-1
+353,Applied Physics and Mathematics,6220,137,10,1.0,False,13.219999999999999,-1,-1
+354,Applied Physics and Mathematics,6230,137,10,1.0,False,13.219999999999999,-1,-1
+355,Applied Physics and Mathematics,6240,137,10,1.0,False,13.219999999999999,-1,-1
+356,Applied Physics and Mathematics,6250,137,10,1.0,False,13.219999999999999,-1,-1
+357,Applied Physics and Mathematics,6256,135,10,1.0,False,13.1,-1,-1
+358,Applied Physics and Mathematics,6260,220,10,1.0,False,18.2,-1,-1
+359,Applied Physics and Mathematics,6303,173,10,10.0,False,60.379999999999995,-1,-1
+360,Applied Physics and Mathematics,6305,132,10,2.0,False,17.92,-1,-1
+361,Applied Physics and Mathematics,6311,138,10,2.0,False,18.28,-1,-1
+362,Applied Physics and Mathematics,6321,138,10,2.0,False,18.28,-1,-1
+363,Applied Physics and Mathematics,6331,138,10,2.0,False,18.28,-1,-1
+364,Applied Physics and Mathematics,6333,138,10,2.0,False,18.28,-1,-1
+365,Applied Physics and Mathematics,6341,138,10,2.0,False,18.28,-1,-1
+366,Applied Physics and Mathematics,6343,138,10,2.0,False,18.28,-1,-1
+367,Applied Physics and Mathematics,6351,133,10,2.0,False,17.98,-1,-1
+368,Applied Physics and Mathematics,6353,124,10,2.0,False,17.439999999999998,-1,-1
+369,Applied Physics and Mathematics,6402,912,10,50.0,False,429.72,-1,-1
+370,Applied Physics and Mathematics,6414,636,10,15.0,False,113.16,-1,-1
+371,Applied Physics and Mathematics,6422,138,10,2.0,False,18.28,-1,-1
+372,Applied Physics and Mathematics,6432,138,10,2.0,False,18.28,-1,-1
+373,Applied Physics and Mathematics,6434,138,10,2.0,False,18.28,-1,-1
+374,Applied Physics and Mathematics,6436,492,10,12.0,False,89.52,-1,-1
+375,Applied Physics and Mathematics,6442,138,10,2.0,False,18.28,-1,-1
+376,Applied Physics and Mathematics,6444,138,10,2.0,False,18.28,-1,-1
+377,Applied Physics and Mathematics,6446,665,10,16.0,False,119.9,-1,-1
+378,Applied Physics and Mathematics,6452,133,10,2.0,False,17.98,-1,-1
+379,Applied Physics and Mathematics,6454,124,10,1.0,False,12.44,-1,-1
+380,Applied Physics and Mathematics,7016,80,10,1.0,False,9.8,-1,-1
+381,Applied Physics and Mathematics,7101,219,10,1.0,False,18.14,-1,-1
+382,Applied Physics and Mathematics,7121,188,10,8.0,False,51.28,-1,-1
+383,Applied Physics and Mathematics,7131,133,10,1.0,False,12.98,-1,-1
+384,Applied Physics and Mathematics,7141,133,10,1.0,False,12.98,-1,-1
+385,Applied Physics and Mathematics,7151,133,10,1.0,False,12.98,-1,-1
+386,Applied Physics and Mathematics,7157,135,10,1.0,False,13.1,-1,-1
+387,Applied Physics and Mathematics,7161,214,10,1.0,False,17.84,-1,-1
+388,Applied Physics and Mathematics,7202,142,10,1.0,False,13.52,-1,-1
+389,Applied Physics and Mathematics,7210,137,10,1.0,False,13.219999999999999,-1,-1
+390,Applied Physics and Mathematics,7218,267,10,14.0,False,121.02,-1,-1
+391,Applied Physics and Mathematics,7220,137,10,1.0,False,13.219999999999999,-1,-1
+392,Applied Physics and Mathematics,7230,137,10,1.0,False,13.219999999999999,-1,-1
+393,Applied Physics and Mathematics,7240,137,10,1.0,False,13.219999999999999,-1,-1
+394,Applied Physics and Mathematics,7250,137,10,1.0,False,13.219999999999999,-1,-1
+395,Applied Physics and Mathematics,7256,135,10,1.0,False,13.1,-1,-1
+396,Applied Physics and Mathematics,7260,220,10,1.0,False,18.2,-1,-1
+397,Applied Physics and Mathematics,7301,287,10,1.0,False,22.22,-1,-1
+398,Applied Physics and Mathematics,7313,137,10,1.0,False,13.219999999999999,-1,-1
+399,Applied Physics and Mathematics,7319,136,10,1.0,False,13.16,-1,-1
+400,Applied Physics and Mathematics,7321,540,10,33.0,False,279.9,-1,-1
+401,Applied Physics and Mathematics,7325,136,10,1.0,False,13.16,-1,-1
+402,Applied Physics and Mathematics,7331,136,10,1.0,False,13.16,-1,-1
+403,Applied Physics and Mathematics,7337,136,10,1.0,False,13.16,-1,-1
+404,Applied Physics and Mathematics,7343,136,10,1.0,False,13.16,-1,-1
+405,Applied Physics and Mathematics,7349,143,10,1.0,False,13.58,-1,-1
+406,Applied Physics and Mathematics,7355,146,10,1.0,False,13.76,-1,-1
+407,Applied Physics and Mathematics,7356,452,10,10.0,False,77.12,-1,-1
+408,Applied Physics and Mathematics,7402,148,10,1.0,False,13.879999999999999,-1,-1
+409,Applied Physics and Mathematics,7408,141,10,1.0,False,13.459999999999999,-1,-1
+410,Applied Physics and Mathematics,7409,456,10,4.0,False,47.36,-1,-1
+411,Applied Physics and Mathematics,7414,140,10,1.0,False,13.4,-1,-1
+412,Applied Physics and Mathematics,7420,138,10,1.0,False,13.28,-1,-1
+413,Applied Physics and Mathematics,7426,138,10,1.0,False,13.28,-1,-1
+414,Applied Physics and Mathematics,7431,108,10,1.0,False,11.48,-1,-1
+415,Applied Physics and Mathematics,7432,138,10,1.0,False,13.28,-1,-1
+416,Applied Physics and Mathematics,7437,183,10,10.0,False,85.98,-1,-1
+417,Applied Physics and Mathematics,7438,138,10,1.0,False,13.28,-1,-1
+418,Applied Physics and Mathematics,7444,138,10,3.0,False,23.28,-1,-1
+419,Applied Physics and Mathematics,7450,146,10,3.0,False,23.759999999999998,-1,-1
+420,Applied Physics and Mathematics,7456,150,10,1.0,False,14.0,-1,-1

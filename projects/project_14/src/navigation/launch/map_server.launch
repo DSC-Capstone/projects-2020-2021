@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="map_file"
+         default="$(find navigation)/maps/ucsd_west_map.yaml"/>
+    <node name="map_server"
+          pkg="map_server"
+          type="map_server"
+          args="$(arg map_file)" />
+</launch>

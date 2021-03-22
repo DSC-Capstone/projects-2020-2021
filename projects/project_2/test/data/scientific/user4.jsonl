@@ -1,0 +1,3 @@
+{ "created_at": "Mon Jan 01 01:01:01 +0000 2020", "id": 10, "user": { "id": 4, "name": "User4", "screen_name": "screenname4" }, "retweet_count": 50, "favorite_count": 50, "full_text": "" }
+{ "created_at": "Mon Jan 01 02:01:01 +0000 2020", "id": 11, "user": { "id": 4, "name": "User4", "screen_name": "screenname4" }, "retweet_count": 60, "favorite_count": 60, "full_text": "" }
+{ "created_at": "Mon Jan 01 03:01:01 +0000 2020", "id": 12, "user": { "id": 4, "name": "User4", "screen_name": "screenname4" }, "retweet_count": 70, "favorite_count": 70, "full_text": "" }

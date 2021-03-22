@@ -1,0 +1,17 @@
+{
+    "fp": "test/testdata/table_999_v1.csv",
+    
+    "point_label_col": "jci_name",
+    
+    "delimiter": { 
+        "pattern": ".", 
+        "regex": false 
+    },
+    
+    "point_label_format": [null, "UpstreamAHU", "ZoneName", "VAVName", "BrickClass"],
+    
+    "additional_brick_class_info_columns": ["description", "unit"],
+
+    "drop_null_rows": true
+}
+

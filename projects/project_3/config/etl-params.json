@@ -1,0 +1,16 @@
+{
+    "dates_path": "data/dates.txt",
+    "start_date_2016": "2016-07-13",
+    "end_date_2016": "2016-11-10",
+    "start_date_2020": "2020-07-13",  
+    "end_date_2020": "2020-11-03", 
+    "raw_data_dir": "data/raw",
+    "tweet_dir": "data/temp",
+    "sample_prop": 30,
+    "filenames_2016": [
+        "election-filter1.txt", "election-filter2.txt", "election-filter3.txt", "election-filter4.txt", "election-filter5.txt",
+        "election-filter6.txt", "democratic-candidate-timelines.txt", "democratic-convention-filter.txt", "democratic-party-timelines.txt",
+        "election-day.txt", "first-debate.txt", "republican-convention-filter.txt", "republican-candidate-timelines.txt", "republican-party-timelines.txt",
+        "second-debate.txt", "third-debate.txt", "vp-debate.txt"
+    ]
+ }

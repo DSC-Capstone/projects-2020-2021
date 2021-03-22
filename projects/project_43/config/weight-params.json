@@ -1,0 +1,7 @@
+{
+    "paper_ap_path": "data/out/AutoPhrase.txt",
+    "selected_domain": "cs",
+    "domain_ap_path": "AutoPhrase/datasets/domains/",
+    "out_path": "data/out/weighted_AutoPhrase.csv",
+    "keyword_path": "data/out/selected_keywords.json"
+}

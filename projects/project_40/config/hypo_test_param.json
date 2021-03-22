@@ -1,0 +1,4 @@
+{
+  "datapath" :"cleaned_data/system_sysinfo_unique_normalized.csv000",
+  "feature" : "ram"
+}

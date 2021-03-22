@@ -1,0 +1,5 @@
+{
+    "input_path":"data/raw/DBLP.txt",
+    "file": "DBLP",
+    "out_dir": "data/eda/"
+}
