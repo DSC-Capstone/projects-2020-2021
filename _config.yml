@@ -4,3 +4,4 @@ source: .
 destination: _site
 url: "https://dsc-capstone.github.io/projects-current"
 permalink: /:name/
+exclude: [projects, reports]
