@@ -1,67 +1,54 @@
-# AutoPhrase for Financial Documents Interpretation 
+# DSC180b-Capstone
 
-Our main targets are data preparation, feature encoding, eda (optional), train, report (optional), and test. Users can configure parameters for these targets in the ./config files.
+Project repository for Recommender Systems group 3
 
+This project is focused on creating music recommendations for users and their parents.
 
-## Data Prep
+# HOW TO RUN
 
-The data preparation target scrapes, cleans, and consolidates companies' 8-K documents. Furthermore, it curates features such as EPS as well as price movements for the given companies.
-<br />
-* `data_dir` is the file path to download files: 8-K's, EPS, etc.
-* `raw_dir` is the directory to the raw data
-* `raw_8k_fp` is the file path with newly downloaded 8-K's (should be the same as to_dir)
-* `raw_eps_fp` is the file path with newly downloaded EPS information (should be the same as to_dir)
-* `processed_dir` is the directory to the processed data
-* `testing` is the status of whether we are doing testing (by default is false)
+Our project's current targets are: load-data, task0, task1, task2, all, test
 
+Our project's current config files are: test.json and run.json
 
-## Feature Encoding
+### Targets
 
-The feature encoding target creates encoded text vectors for each 8-K: both unigrams and quality phrases outputed by the AutoPhrase method.
-<br />
-* `data_file` is the file path with all data files from data prep target: processed, raw, models, etc.
-* `phrase_file` is the file path to the quality phrases outputted by AutoPhrase
-* `n_unigrams` sets the top n unigrams to be encoded based on PMI (may not be exacly `n_unigrams` total due to overlap of top unigrams within each class)
-* `threshhold` takes quality phrases with a quality score above it to be encoded
+load-data: Pulls our training data from a S3 bucket where we store it and creates a new 'data'
+repository to store it.
 
+task0: Generates a list of sample parent recommendations and saves them to data/recommendations as a csv file.
 
-## Train
+task1: Generates a list of parent-user recommendations and saves them to data/recommendations as a csv file.
 
-Trains Random Forest models using 3 feature sets on encoded data: baseline, baseline + unigrams, and baseline + phrases. The selected classifier and set model parameters were decided through comparing validation accuracy.  
+task2: Generates a list of user-parent recommendations base on a user's listening history. Saves
+these recommendations to data/recommendations as a csv file.
 
-* `data_dir` is the file path with all data files from data prep targed: processed, raw, models, etc.
-* `input_file` is the file path (from `data_dir`) to outputed files by the feature encoding target
-* `output_file` is the desired file path to download trained, outputed models
-* `testing` is the status of whether we are doing testing (by default is false)
+all: runs load-data, task0, task1, and task2 in succession
 
+test: Runs through the same load-data, task0, task1, task2 pipeline but uses a pre-stored user access code.
+This allows us to 'test' our recommendation models without having to authenticate ourselves every
+single time. The test data in this case is a user account that we have permission to read from.
 
-## EDA and Report (optional)
+### Configs
 
-Exports Jupyter notebooks to HTML with EDA and result analysis from the models.
-<br />
-* `report_name` is the desired name of report
-* `data_dir` is the file path with all data files from data prep target: processed, raw, models, etc.
-* `notebook_dir` is the file path containing the repo's notebooks
-* `notebook_file` is the desired file path (from `notebook_dir`) of outputed notebook
-* `report_dir` is the desired directory our outputed HTML report
-* `report_file` is the desired file name of outputed report in `report_dir`
+Our configuration files are relatively simple given our project's reliance on listening histories and
+otherwise limited user information. The values in each file are the same, but we have created two files
+so that logic can be quickly tested without having to constantly change the configuration parameters during
+development.
+
+username: The username of the Spotify account that we are creating recommendations for
+parent_age: The age of the user's parent
+genre: The parent's preferred genre of music
+artist: The parent's preferred artist
+
+This information would normally be provided by users through a form on our website, but for this situation
+we just reference configuration files.
 
 
-## Test
+### IN THE FUTURE
 
-Test target will run the whole project with only test data
+We plan on adding a clean-data target that isolates some of the small preprocessing that our code does: dropping na values
+small transformations, etc.
 
+Instead of caching an auth_token for a specific user, we want to just directly load listening history. This would be a more
+straightforward procedure, the problem is that we inevitably have to authenticate regardless of if we have our user data predownloaded or not. Spotify has another authentication flow that would better suit itself to this situation, and we will be looking into that in the future.
 
-## Correct order of excution
-
-* data_prep: `python run.py data_prep`
-* feature_encoding: `python run.py feature_encoding`
-* (optional) eda: `python run.py eda`
-* train: `python run.py train`
-* (optional) report: `python run.py report`
-
-
-## Project Links
-
-* [Project Website](https://shy218.github.io/dsc180-project/)
-* [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase)

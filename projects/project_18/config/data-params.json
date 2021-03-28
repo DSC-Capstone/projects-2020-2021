@@ -1,0 +1,6 @@
+{
+  "feature_address" : "data/raw/cora.content",
+  "edges_address" : "data/raw/cora.cites",
+  "encoding" : [{"column" : 1434, "encoding_types" : "one_hot"}],  
+  "directed" : true
+}

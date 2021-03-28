@@ -1,85 +1,60 @@
-#!/usr/bin/env python
+from PIL import Image
 
-from os import listdir, path, makedirs
 import sys
+import os
 import json
-from src.data import etl, api_etl
-from src.models import model, new_user, create_model
-from src.baselines import create_baseline
+import numpy as np
+import cv2
+import torch
 
+
+from src import input_paths as data
+from src import etl as e
+
+data_path = '/datasets/MaskedFace-Net/holdout'
+categories = os.listdir(data_path)
+labels = [i for i in range(len(categories))]
+label_dict = dict(zip(categories,labels))
+
+test_params = 'test/testdata/test-params.json'
+
+
+print(label_dict)
+print(categories)
+
+#Function to deal with image output path
+def load_params(fp):
+    with open(fp) as fh:
+        param = json.load(fh)
+
+    return param
+
+sys.path.insert(0, 'src') # add library code to path
 
 def main(targets):
-    """ Runs data pipeline to parse the data archived data and api data into the LightFM models and return analysis against
-    baselines. Can run on normal or test data."""
+    if 'test' in targets:
+        model_path = 'Config/inceptionResnetV1.pth'
+        model = torch.load('Config/inceptionResnetV1.pth',map_location=torch.device('cpu'))
+        #Looks at etl file for information
+        e.stats()
+        p = load_params(test_params)
+        #perform etl
+        e.gcam(model)
+        print("Done")
+        
+    if 'run_grad' in targets:
+        #Function to deal with input image paths
+        path = data.covered_path
+        model_path = 'Config/inceptionResnetV1.pth'
+        model = torch.load('Config/inceptionResnetV1.pth',map_location=torch.device('cpu'))
+        e.stats()
+        p = load_params(test_params)
+        #perform etl
+        e.gcam_train(model)
+        print("Done")
 
-    if targets == 'test':
-        filepath = 'config/test_params.json'
-        with open(filepath) as file:
-            configs = json.load(file)
         
-        etl.main(configs)
-        print('')
-        api_etl.main(filepath)
-        print('')
-        
-        print('########### Created Model and Model Inputs ###########')
-        create_model.main(configs)
-        print(' ')
-        print('########### Generate Recommendations ###########')
-        model.main(configs)
-        print('')
-        print('########### Add User to Model ###########')
-        new_user.main(configs)
-        
-        print('####################')
-        print('########### Baseline ###########')
-        create_baseline.main(configs)
-        model.main(configs, True)
-        print('####################')
-
-    if targets == 'data' or targets == 'all':
-        filepath = 'config/etl_params.json'
-        with open(filepath) as file:
-            configs = json.load(file)
-        
-        etl.main(configs)
-        print('')
-        
-    if targets == 'api' or targets == 'all':               
-        filepath = 'config/api_params.json'
-        
-        api_etl.main(filepath)
-        print('')
-        
-    if targets == 'models' or targets == 'all':
-        filepath = 'config/models_params.json'
-        with open(filepath) as file:
-            configs = json.load(file)
-            
-        print('########### Created Model and Model Inputs ###########')
-        create_model.main(configs)
-        print(' ')
-        print('########### Generate Recommendations ###########')
-        model.main(configs)
-        print('')
-        print('########### Add User to Model ###########')
-        new_user.main(configs)
-        
-        
-    if targets == 'baselines' or targets == 'all':
-        filepath = 'config/models_params.json'
-        with open(filepath) as file:
-            configs = json.load(file)        
-        
-        print('####################')
-        print('########### Baseline ###########')
-        create_baseline.main(configs)
-        models.main(configs, True)
-        print('####################')
-
-    return None
-
-
+#first call to start data pipeline
 if __name__ == '__main__':
-    targets = sys.argv[1]
+    targets = sys.argv[1:]
     main(targets)

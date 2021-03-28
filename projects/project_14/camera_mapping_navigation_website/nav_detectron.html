@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Object Detection using ROS and Detectron2</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <ul id="project_list" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <ul id="project_list2" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list2" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list2" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">DSC 180B Project</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-trigger" href="" data-target="project_list">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="dropdown-trigger" href="" data-target="project_list2">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list2">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list2">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text text-lighten-2">Object Detection</h1>
+        <div class="row center">
+          <h5 class="header col s12 light"><b>Uses ROS and Detectron2 to detect objects for obstacle avoidance</b></h5>
+        </div>
+        <div class="row center">
+          <center>
+              <a href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Navigation Github</a>
+          </center>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="imgs/cool_cv_nav.jpg" alt="Cool AV control"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+            <h5 class="center">Overview</h5>
+            <p class="light">In this section we aim to be able to navigate autonomously. For that we use the images taken by the camera to find objects that need avoidance. We also use the lanes displayed by the image to stay within boundaries at all times. The detection of these features are learned through the use of the Detectron2 network, specifically their MaskRCNN model. These features are then passed into our car which uses this information to navigate autonomously with the help of ROS</p>
+        </div>
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/obstacle_nav_logos.jpg" alt="Obstacle Navigation Logos">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/nav_img_demo.jpg" alt="Sample Image">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Experiment Design</h5>
+            <p class="light">We run our car manually (using a controller) across a track and keep recording images. The images can be seen on the left. We make sure to record the images at a limited frame per second so that we capture mostly distinct images to train our model. In our case the main features we want our model to detect are the cones and the lanes. The image collection and input is done with the help of ROS</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="nav_hidden_content1_p" class="light"></p>
+          <a id="nav_hidden_content1" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Dataset</h5>
+            <p class="light">We take the images collected earlier and start labelling them manually. You can see a labelling format in the image to the right. This is the COCO JSON format. We mainly use the segmentation information so that the model can accurately detect the lanes and cones down to it's shape</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/coco_anns.jpg" alt="COCO Annotations">
+          </center>
+        </div>
+        <div class="col s12 m12">
+          <p id="nav_hidden_content2_p" class="light"></p>
+          <a id="nav_hidden_content2" class="btn-floating btn-large waves-effect waves-light red left" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/training_process.png" alt="Training Process">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Training</h5>
+            <p class="light">These images are now passed into a Detectron 2 MaskRCNN model for training. The MaskRCNN has already been trained on a more generalizable training data to detect objects. We are just fine tuning it to our specific use case. We try several parameters of learning rates, epochs and other useful parameters. The models are evaluated on an unknown validation data to see the generalizable performance of our models</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="nav_hidden_content3_p" class="light"></p>
+          <a id="nav_hidden_content3" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Inference</h5>
+            <p class="light">Once we know which parameters work best we use that configuration's trained model for inference. You can see how the image which we took before is now labelled with confidence levels on the cones and the lanes. We can extract these boundary boxes and masks drawn over the lane and cone and use it for navigation</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br><br><br>
+          <center>
+            <img class="responsive-img" src="imgs/preds_demo.jpg" alt="Prediction mask">
+          </center>
+        </div>
+        <div class="col s12 m12">
+          <p id="nav_hidden_content4_p" class="light"></p>
+          <a id="nav_hidden_content4" class="btn-floating btn-large waves-effect waves-light red left" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <br><br><br>
+          <center>
+            <img class="responsive-img" src="imgs/mask_demo.jpg" alt="Binarized mask">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Usage</h5>
+            <p class="light">We extracted the masks and boundary boxes like mentioned in the step above. With a black and white image like this we search for the optimal point to move towards in the image (bounded by the lanes). Some images have 1 of the lanes missing. In that case we just assume that our car is far away from the missing lane and use the edges to form the white polygon  you see in the left. Once we find the point to move towards we calculate a speed and steering angle which is passed into our speed controller with the help of ROS</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="nav_hidden_content5_p" class="light"></p>
+          <a id="nav_hidden_content5" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center">Demo Videos</h5>
+        </div>
+        <br><br><br>
+        <div class="col s12 m6">
+          <video class="responsive-video" controls>
+            <source src="vids/predictions.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col s12 m6">
+          <video class="responsive-video" controls>
+            <source src="vids/navigation.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"><b>Driving autonomously and safely</b></h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="imgs/nav_end.jpg" alt="Mountains"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">Project Developed and Executed as part of UCSD's DSC 180B class.</p>
+          <p class="grey-text text-lighten-4">Team members: Siddharth Saha, Jay Chong and Youngseo Do.</p> 
+          <p class="grey-text text-lighten-4">Mentors: Dr. Jack Silberman and Aaron Fraenkel</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Github Repositories</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping using RTABMAP</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Object Segmentation using Detectron2</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera Tuning in bright conditions</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Full Reports</h5>
+          <ul>
+            <li><a class="white-text" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li><br>
+            <li><a class="white-text" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+          </ul>
+          <h5 class="white-text"><a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Contact Us</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Website Made by <a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Siddharth Saha</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

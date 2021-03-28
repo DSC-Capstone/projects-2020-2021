@@ -1,17 +1,11 @@
 {
-    "fp": "test/testdata/table_999_v1.csv",
-    
-    "point_label_col": "jci_name",
-    
-    "delimiter": { 
-        "pattern": ".", 
-        "regex": false 
-    },
-    
-    "point_label_format": [null, "UpstreamAHU", "ZoneName", "VAVName", "BrickClass"],
-    
-    "additional_brick_class_info_columns": ["description", "unit"],
-
-    "drop_null_rows": true
+  "test":"golub1",
+  "train":"golub2",
+  "datadir1":"data/cleaned/golub1",
+  "datadir2":"data/cleaned/golub2",
+  "datadir1csv":"data/cleaned/golub1.csv",
+  "datadir2csv":"data/cleaned/golub2.csv",
+  "raw1":"data/raw/data_set_ALL_AML_independent.csv",
+  "raw2":"data/raw/data_set_ALL_AML_train.csv",
+  "raw_actual":"data/raw/actual.csv"
 }
-

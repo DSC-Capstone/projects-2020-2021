@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta author="Siddharth Saha">
+  <title>Achieving Navigation and Mapping through Camera</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <ul id="project_list" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <ul id="project_list2" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list2" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list2" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">DSC 180B Project</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-trigger" href="" data-target="project_list">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="dropdown-trigger" href="" data-target="project_list2">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list2">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list2">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Camera Based Mapping + Navigation</h1>
+        <div class="row center">
+          <h5 class="header col s12 light"><b>Our approach to using camera for mapping and navigation in self driving cars</b></h5>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m4">
+              <center>
+                <a href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Mapping Github</a>
+              </center>
+            </div>
+            <div class="col s12 m4">
+              <center>
+                <a href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Navigation Github</a>
+              </center>
+            </div>
+            <div class="col s12 m4">
+              <center>
+                <a href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Camera Github</a>
+              </center>
+            </div>
+          </div>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="imgs/env.jpg" alt="Environment"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Project Overview</h4>
+          <p class="left-align light">One of the main tools used in autonomous mapping and navigation is a 3D Lidar. A 3D Lidar provides various advantages. It is not sensitive to light conditions, it can detect color through reflective
+          channels, it has a complete 360 degree view of the environment and does not require any ”learning” to detect obstacles. One can use the reflective channel to detect the color of lanes as well as a regular 2D axis view to avoid obstacles. The pointcloud information from the Lidar can also easily enable mapping and localization as the vehicle will know where it is at all points. It is easy to see why so many large scale autonomous vehicle units invest in expensive and bulky Lidars. However, this is not accessible to all due to it’s price. A camera (even depth) is much more affordable. However, it comes with it’s own slew of disadvantages. It can see color but programming for the color is hard due to varying light conditions. Unless you use multiple cameras you often can’t see all around you. You must therefore work with lesser information. These factors together are a hindrance to autonomous mapping and navigation. We thus aim to resolve it through this project</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="responsive-img activator" src="imgs/mapping_desc.jpg">
+            </div>
+            <div class="card-content center">
+              <span class="card-title activator grey-text text-darken-4">Mapping and Localization<i class="material-icons right">more_vert</i></span>
+              <br>
+              <p>Click on the image to learn more</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4 center">Mapping and Localization through RTABMAP<i class="material-icons right">close</i></span>
+              <p class="p-light">In this section of the project, we are trying to create a map of an unknown environment so that the robot is able to know where it is at any point in time in this unknown environment</p>
+              <center>
+                <a href="mapping.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 center">Learn More</a>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="responsive-img activator" src="imgs/preds_demo_old.jpg">
+            </div>
+            <div class="card-content center">
+              <span class="card-title activator grey-text text-darken-4">Object Detection<i class="material-icons right">more_vert</i></span>
+              <br>
+              <p>Click on the image to learn more</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4 center">Object Detection using ROS and Detectron 2<i class="material-icons right">close</i></span>
+              <p class="p-light">In this section we aim to be able to navigate autonomously. For that we use the images taken by the camera to find objects that need avoidance. We also use the lanes displayed by the image to stay within boundaries at all times</p>
+              <center>
+                <a href="nav_detectron.html" class="btn-large waves-effect waves-light teal lighten-1 center">Learn More</a>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="responsive-img activator" src="imgs/tuning_description_img.png">
+            </div>
+            <div class="card-content center">
+              <span class="card-title activator grey-text text-darken-4">Tuning Light Sensitivity<i class="material-icons right">more_vert</i></span>
+              <br>
+              <p>Click on the image to learn more</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4 center">Tuning Light Sensitivity of Intel Camera<i class="material-icons right">close</i></span>
+              <p class="p-light">In this section, we aim to tune our camera to address its light sensitivity problems. Our tuning work involves both finding configurations that offset light intensity and use the best-tuned configuration to validate realtime performance</p>
+              <center>
+                <a href="tuning.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 center">Learn More</a>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="imgs/car.png" alt="Car Picture"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">Project Developed and Executed as part of UCSD's DSC 180B class.</p>
+          <p class="grey-text text-lighten-4">Team members: Siddharth Saha, Jay Chong and Youngseo Do.</p> 
+          <p class="grey-text text-lighten-4">Mentors: Dr. Jack Silberman and Aaron Fraenkel</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Github Repositories</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping using RTABMAP</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Object Segmentation using Detectron2</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera Tuning in bright conditions</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Full Reports</h5>
+          <ul>
+            <li><a class="white-text" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li><br>
+            <li><a class="white-text" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+          </ul>
+          <h5 class="white-text"><a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Contact Us</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Website Made by <a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Siddharth Saha</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

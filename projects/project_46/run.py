@@ -1,143 +1,350 @@
 import sys
 import json
+import os
 import pandas as pd
-from tqdm import tqdm
-from os import listdir
+import requests
+import spotipy
+from collections import defaultdict
 
-import nltk
-nltk.download('wordnet')
+# From Sarat
+#import scipy.sparse as sparse
+#import numpy as np
+#import random
+#import implicit
+#from sklearn.preprocessing import MinMaxScaler
+#import ipywidgets
+#from ipywidgets import FloatProgress
 
-sys.path.insert(1, './src/')
-from data_preprocessing import *
-from data_downloads import *
-from feature_encoding import *
-from reports import *
-from train import *
 
-os.system('mkdir -p data')
+# Custom Library Imports
+from src.models.task0 import billboard
+from src.models.task1 import parentUser
+from src.models.task2 import userParent
+from src.models.task2_utils import *
+from src.analysis.analysis_task2 import *
+from src.build_lib.cleaning_utils import *
 
-data_prep_config = json.load(open('config/data_prep.json', 'r'))
-feature_encoding_config = json.load(open('config/feature_encoding.json', 'r'))
-# test_config = json.load(open('config/test.json', 'r'))
-eda_config = json.load(open('config/eda.json', 'r'))
-train_config = json.load(open('config/train.json', 'r'))
-final_report_config = json.load(open('config/final_report.json', 'r'))
 
-# By default, not testing
-testing = False
 
-# By default, notebook should not be in testing mode
-notebook_config = {'testing': False}
-with open('./config/notebook.json', 'w') as outfile:
-    json.dump(notebook_config, outfile)
+# Paths for storing data
+DATA_DIR = 'data'
+# Data subdirectories
+DATA_DIR_RAW = os.path.join(DATA_DIR, 'raw')
+DATA_DIR_CLEAN = os.path.join(DATA_DIR, 'clean')
+DATA_DIR_RECOMMENDATIONS = os.path.join(DATA_DIR, 'recommendations')
 
-def data_prep(data_prep_config):
-    # "raw_8k_fp": "8K-gz/",
-    # "raw_eps_fp": "EPS/",
+# last.fm files 
+USER_PROFILE_PATH_RAW = os.path.join(DATA_DIR_RAW, 'user_profile.csv')
+USER_ARTIST_PATH_RAW = os.path.join(DATA_DIR_RAW, 'user_artist.csv')
 
-    global testing
-    if testing:
-        data_prep_config['testing'] = True
-        data_prep_config['data_dir'] = './test/'
+# billboard files
+BILLBOARD_SONGS_PATH_RAW = os.path.join(DATA_DIR_RAW, 'billboard_songs.csv')
+BILLBOARD_FEATURES_PATH_RAW = os.path.join(DATA_DIR_RAW, 'billboard_features.csv')
 
-    data_dir = data_prep_config['data_dir']
-    raw_dir = data_dir + data_prep_config['raw_dir']
+# last.fm files
+USER_PROFILE_PATH_CLEAN = os.path.join(DATA_DIR_CLEAN, 'user_profile.csv')
+USER_ARTIST_PATH_CLEAN = os.path.join(DATA_DIR_CLEAN, 'user_artist.csv')
 
-    # Download RAW data if needed (and if not in testing mode)
-    if not data_prep_config['testing']:
-        if 'raw' not in listdir(data_dir):
-            os.system('mkdir ' + raw_dir)
-        if '8K-gz' not in listdir(raw_dir):
-            download_8k(raw_dir)
-        if 'EPS' not in listdir(raw_dir):
-            download_eps(raw_dir)
-        if 'price_history' not in listdir(raw_dir):
-            download_price_history(raw_dir)
-        if 'sp500.csv' not in listdir(raw_dir):
-            os.system('cp ./test/raw/sp500.csv ' + raw_dir)
-        print(' => All raw data ready!')
+# billboard files
+BILLBOARD_SONGS_PATH_CLEAN = os.path.join(DATA_DIR_CLEAN, 'billboard_songs.csv')
+BILLBOARD_FEATURES_PATH_CLEAN = os.path.join(DATA_DIR_CLEAN, 'billboard_features.csv')
 
-    # Process 8K, EPS and Price History as needed
-    processed_dir = data_dir + data_prep_config['processed_dir']
-    os.system('mkdir -p ' + processed_dir)
 
-    # handler_clean_8k(data_prep_config['data_dir'])
 
-    if not testing: # only process eps when it's not testing
-        handler_process_eps(data_dir)
-    # Run part 3, 4
-    updated_merged_df = handle_merge_eps8k_pricehist(data_dir)
-    updated_merged_df.to_csv(processed_dir + 'merged_all_data.csv', index = False)
-    print()
-    print(' => Done Data Prep!')
-    print()
 
-def feature_encoding(feature_encoding_config):
-    global testing
-    if testing:
-        feature_encoding_config['data_dir'] = './test/'
+def main(targets):
 
-    data_dir = feature_encoding_config['data_dir']
-    data_file = data_dir + feature_encoding_config['data_file']
-    phrase_file = data_dir + feature_encoding_config['phrase_file']
-    out_dir = data_dir + feature_encoding_config['out_dir']
-    n_unigrams = feature_encoding_config['n_unigrams']
-    threshhold = feature_encoding_config['threshhold']
+    USERNAME = None
+    PARENT_AGE = None
+    GENRES = None
+    ARTIST = None
 
-    merged_data, unigram_features = text_encode(data_file, phrase_file, n_unigrams, threshhold, out_dir = out_dir)
-    print(' => Exporting...')
-    merged_data.to_pickle(out_dir + 'feature_encoded_merged_data.pkl')
-    unigram_features.to_csv(out_dir + 'model_unigrams.csv', index = False)
-
-def handle_train(train_config):
-    global testing
-    if testing == True:
-        train_config['data_dir'] = './test/'
-        train_config['testing'] = True
-    train(train_config)
-
-# def handle_final_report(report_config):
-#     # global testing
-#     # if testing == True:
-#     #     report_config['data_dir'] = './test/'
-#     generate_report_from_notebook(report_config)
-#
-# def handle_eda(eda_config):
-#     # global testing
-#     # if testing == True:
-#     #     eda_config['data_dir'] = './test/'
-#     generate_report_from_notebook(eda_config)
-
-def main():
-    if len(sys.argv) == 1:
-        target = 'all'
+    if 'test' in targets:
+        # Parse Config File
+        with open('config/test.json') as fh:
+            run_cfg = json.load(fh)
+            USERNAME = run_cfg['username']
+            PARENT_AGE = run_cfg['parent_age']
+            GENRES = run_cfg['genres']
+            ARTIST = run_cfg['artists']
+            CACHE_PATH = os.path.join('test', '.cache-' + USERNAME)
     else:
-        target = sys.argv[1]
+        # Parse Config File
+        with open('config/run.json') as fh:
+            run_cfg = json.load(fh)
+            USERNAME = run_cfg['username']
+            PARENT_AGE = run_cfg['parent_age']
+            GENRES = run_cfg['genres']
+            ARTIST = run_cfg['artists']
 
-    # testing = False
-    if target == 'data_prep':
-        data_prep(data_prep_config)
-    elif target == 'feature_encoding':
-        feature_encoding(feature_encoding_config)
-    elif target == 'eda':
-        generate_report_from_notebook(eda_config)
-    elif target == 'train':
-        handle_train(train_config)
-    elif target == 'report':
-        generate_report_from_notebook(final_report_config)
-    elif target == 'test':
-        global testing
-        testing = True
-        notebook_config['testing'] = True
-        eda_config['data_dir'] = './test/'
-        final_report_config['data_dir'] = './test/'
-        with open('./config/notebook.json', 'w') as outfile:
-            json.dump(notebook_config, outfile)
 
-        data_prep(data_prep_config)
-        feature_encoding(feature_encoding_config)
-        generate_report_from_notebook(eda_config)
-        handle_train(train_config)
-        generate_report_from_notebook(final_report_config)
+# ------------------------------------------------------ LOAD DATA ------------------------------------------------------
 
-main()
+
+    if 'all' in targets or 'load-data' in targets or 'test' in targets:
+
+        # Make data directory and subfolders for billboard and last.fm
+        print("---------------------------------------- DOWNLOADING RAW TRAINING DATA ----------------------------------------")
+
+        # Make necessary directories if they do not already exist
+        print("CREATING DATA DIRECTORIES")
+        if os.path.isdir(DATA_DIR):
+            print("Data directory already exists. Skipping creation.")
+        else:
+            os.mkdir(DATA_DIR)
+            os.mkdir(DATA_DIR_RAW)
+            os.mkdir(DATA_DIR_CLEAN)
+            os.mkdir(DATA_DIR_RECOMMENDATIONS)
+            print('Data directories created')
+
+
+        # Load data if necessary
+        print("DOWNLOADING TRAINING DATA")
+        if os.path.isfile(USER_PROFILE_PATH_RAW) and os.path.isfile(USER_ARTIST_PATH_RAW):
+            print("Data files already exist. Skipping download")
+
+        else:
+            # LAST.FM files
+            r = requests.get('https://capstone-raw-data.s3-us-west-2.amazonaws.com/user_profile.csv')
+            open(USER_PROFILE_PATH_RAW, 'wb').write(r.content)
+
+            r = requests.get('https://capstone-raw-data.s3-us-west-2.amazonaws.com/user_artist.csv')
+            open(USER_ARTIST_PATH_RAW, 'wb').write(r.content)
+            print('Last.fm data downloaded')
+            
+            # Billboard files
+            r = requests.get('https://capstone-raw-data.s3-us-west-2.amazonaws.com/billboard_songs.csv')
+            open(BILLBOARD_SONGS_PATH_RAW, 'wb').write(r.content)
+
+            r = requests.get('https://capstone-raw-data.s3-us-west-2.amazonaws.com/billboard_features.csv')
+            open(BILLBOARD_FEATURES_PATH_RAW, 'wb').write(r.content)
+            print('Billboard data downloaded')
+
+
+# ------------------------------------------------------ CLEAN DATA ------------------------------------------------------
+
+
+    # WILL BE IMPLEMENTED IN FUTURE
+    # SIMPLE CLEANING OCCURS IN TASK1 AND TASK 2
+    if 'all' in targets or 'clean-data' in targets or 'test' in targets:
+
+        print("---------------------------------------- CLEANING TRAINING DATA ----------------------------------------")
+
+        # Cleaning billboard data
+        print('CLEANING BILLBOARD DATA')
+        billboard_songs = pd.read_csv(BILLBOARD_SONGS_PATH_RAW)
+        billboard_features = pd.read_csv(BILLBOARD_FEATURES_PATH_RAW)
+        billboard_songs, billboard_features = clean_billboard(billboard_songs, billboard_features)     
+        print('Billboard data cleaned')   
+
+        # Cleaning last.fm data
+        print('CLEANING LAST.FM DATA')
+        user_profile_df = pd.read_csv(USER_PROFILE_PATH_RAW)
+        user_artist_df = pd.read_csv(USER_ARTIST_PATH_RAW)
+        user_profile_df, user_artist_df = clean_lastfm(user_profile_df, user_artist_df)
+        print('Last.fm data cleaned')        
+
+        # Save cleaned files to clean directory
+        billboard_songs.to_csv(BILLBOARD_SONGS_PATH_CLEAN, index = False)
+        billboard_features.to_csv(BILLBOARD_FEATURES_PATH_CLEAN, index = False)
+        user_profile_df.to_csv(USER_PROFILE_PATH_CLEAN, index = False)
+        user_artist_df.to_csv(USER_ARTIST_PATH_CLEAN, index = False)
+        print('Saving cleaned data to data/clean')
+
+
+# ------------------------------------------------------ TASK 0 RECOMMENDATION ------------------------------------------------------
+
+
+    if 'all' in targets or 'task0' in targets  or 'test' in targets:
+
+        print("---------------------------------------- GENERATING T0 RECOMMENDATIONS BASED ON CONFIG ----------------------------------------")
+
+        print("LOADING FILES")
+        print("Loading Billboard")
+        billboard_songs = pd.read_csv(BILLBOARD_SONGS_PATH_CLEAN)
+        billboard_features = pd.read_csv(BILLBOARD_FEATURES_PATH_CLEAN)
+        
+        print("Initializing model parameters")
+        # Establish parameters for parent-user model
+        
+        age_range = 2
+        N = 30
+
+        # Create billboard client
+        print('Creating list of recommended songs')
+        billboard_recommender = billboard(billboard_songs, billboard_features)
+        song_recommendations = billboard_recommender.getList(N, PARENT_AGE, GENRES, ARTIST)
+
+        print('Saving list of recommended songs')
+        # Save to csv
+        print(len(song_recommendations))
+
+        pd.DataFrame({'song_recommendations': song_recommendations}).to_csv(os.path.join(DATA_DIR_RECOMMENDATIONS, 'song_recs_t0.csv'))
+        
+        
+# ------------------------------------------------------ TASK 1 RECOMMENDATION ------------------------------------------------------
+
+
+    if 'all' in targets or 'task1' in targets  or 'test' in targets:
+
+        print("---------------------------------------- GENERATING T1 RECOMMENDATIONS BASED ON CONFIG ----------------------------------------")
+
+        print("LOADING FILES")
+        print("Loading Last.fm")
+        
+        # Read user-profile data (user_id, gender, age, country, registered)
+        user_profile_df = pd.read_csv(USER_PROFILE_PATH_CLEAN)[['user_id', 'age']]
+        # Read user-artist data (user_id, artist_id, artist name, number of plays)
+        user_artist_df = pd.read_csv(USER_ARTIST_PATH_CLEAN)
+
+        print("Initializing model parameters")
+        # Establish parameters for parent-user model
+        
+        age_range = 2
+        N = 30
+        
+        # Initializing Spotipy Object
+        print("CREATING SPOTIPY OBJECT")
+        # Application information
+        client_id = 'f78a4f4cfe9c40ea8fe346b0576e98ea'
+        client_secret = 'c26db2d4c1fb42d79dc99945b2360ab4'
+
+        # Temporary placeholder until we actually get a website going
+        redirect_uri = 'https://google.com/'
+
+        # The permissions that our application will ask for
+        scope = " ".join(['playlist-modify-public',"user-top-read","user-read-recently-played","playlist-read-private"])
+
+        
+        sp_oauth = None
+        # Oauth object    
+        if 'test' in targets:
+            sp_oauth = spotipy.oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, 
+                                                    scope=scope, cache_path = CACHE_PATH, username=USERNAME)
+        else:
+            sp_oauth = spotipy.oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, 
+                                                    scope=scope, username=USERNAME)
+        print("Created Oauth object")
+
+        try:
+            sp = spotipy.Spotify(auth_manager=sp_oauth)
+        except:
+            os.remove(f'.cache-{USERNAME}')
+            sp = spotipy.Spotify(auth_manager=sp_oauth)
+        print("Created spotipy object")
+        
+        
+        print("Loading your Spotify top tracks")
+        top_tracks = sp.current_user_top_tracks(limit=50, time_range='medium_term')['items']
+        
+        print("Initializing model object")
+        # Initializing the Model
+        parent_user_recommender = parentUser(
+            'new_user',
+            top_tracks,
+            user_profile_df, 
+            user_artist_df,
+            PARENT_AGE,
+            age_range,
+        )
+        print("Fitting data")
+        parent_user_recommender.fit_data()
+        print("Fitting model")
+        parent_user_recommender.fit_model()
+
+        print("Getting preferred artists...")
+        top_artists = parent_user_recommender.predict_artists()
+
+        top_artists_id = []
+        for artist_name in top_artists:
+            try:
+                top_artists_id.append(sp.search(artist_name, type='artist')['artists']['items'][0]['id'])
+            except IndexError:
+                pass  # do nothing!
+
+        print("Getting preferred songs...")
+        song_recommendations = parent_user_recommender.predict_songs(top_artists_id, N, sp)
+        
+        print('Saving list of recommended songs')
+        # Save to csv
+        print(len(song_recommendations))
+
+        pd.DataFrame({'song_recommendations': song_recommendations}).to_csv(os.path.join(DATA_DIR_RECOMMENDATIONS, 'song_recs_t1.csv'))
+
+
+# ------------------------------------------------------ TASK 2 RECOMMENDATION ------------------------------------------------------
+
+
+    if 'all' in targets or 'task2' in targets or 'test' in targets:
+
+        print("---------------------------------------- GENERATING T2 RECOMMENDATIONS BASED ON CONFIG ----------------------------------------")
+
+        print("LOADING FILES")
+        print("Loading Last.fm")
+        
+        # Read user-profile data (user_id, gender, age, country, registered)
+        user_profile_df = pd.read_csv(USER_PROFILE_PATH_CLEAN)
+        # Read user-artist data (user_id, artist_id, artist name, number of plays)
+        user_artist_df = pd.read_csv(USER_ARTIST_PATH_CLEAN)
+        
+        age_range = 5
+        N = 30
+        
+        # Initializing the Model
+        user_parent_recommender = userParent(user_profile_df, user_artist_df, PARENT_AGE, age_range, GENRES)
+        
+        # Initializing Spotipy Object
+        print("CREATING SPOTIPY OBJECT")
+        # Application information
+        client_id = 'f78a4f4cfe9c40ea8fe346b0576e98ea'
+        client_secret = 'c26db2d4c1fb42d79dc99945b2360ab4'
+
+        # Temporary placeholder until we actually get a website going
+        redirect_uri = 'https://google.com/'
+
+        # The permissions that our application will ask for
+        scope = " ".join(['playlist-modify-public',"user-top-read","user-read-recently-played","playlist-read-private"])
+
+        
+        sp_oauth = None
+        # Oauth object    
+        if 'test' in targets:
+            sp_oauth = spotipy.oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, 
+                                                    scope=scope, cache_path = CACHE_PATH, username=USERNAME)
+        else:
+            sp_oauth = spotipy.oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, 
+                                                    scope=scope, username=USERNAME)
+        print("Created Oauth object")
+
+        try:
+            sp = spotipy.Spotify(auth_manager=sp_oauth)
+        except:
+            os.remove(f'.cache-{USERNAME}')
+            sp = spotipy.Spotify(auth_manager=sp_oauth)
+        print("Created spotipy object")
+        
+        # Fitting the Model
+        
+        user_parent_recommender.fit(sp)
+        
+        # Recommending Songs
+        print('Creating list of recommended songs')
+        recommended_songs = user_parent_recommender.predict(N)
+        
+        # Running Analysis-Get AUC Score
+        auc_df = run_auc(user_parent_recommender.item_user_interactions, user_parent_recommender.user_vecs, user_parent_recommender.artist_vecs)
+        
+        if not os.path.exists('metrics/'):
+            os.makedirs('metrics/')
+        auc_df.to_csv(os.path.join('metrics', 'metrics_task2.csv'))
+        
+        # Saving recommendations to CSV
+        print('Saving list of recommended songs')
+        recommended_songs.to_csv(os.path.join(DATA_DIR_RECOMMENDATIONS, 'song_recs_t2.csv'))
+        
+        print(len(recommended_songs))       
+        
+
+if __name__ == '__main__':
+    targets = sys.argv[1:]
+    main(targets)

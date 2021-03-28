@@ -1,11 +1,24 @@
 {
-    "input_path": [
-        "/teams/DSC180A_FA20_A00/a04malware/malware/",
-        "/teams/DSC180A_FA20_A00/a04malware/random-apps/",
-        "/teams/DSC180A_FA20_A00/a04malware/popular-apps/"
-        
-    ],
-    "app_type": ["malware", "random-apps", "popular-apps"],
-    "output_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params",
-    "sampling_lst": [1000, 581, 324]
+  "DEVICE_INFP1": "./src/data/devuse_4known_device.csv000.gz", 
+  "DEVICE_OUTFP1": "./src/data/minimini_device_use1.csv",
+
+  "DEVICE_INFP2": "./src/data/devuse_4known_device.csv001.gz", 
+  "DEVICE_OUTFP2": "./src/data/minimini_device_use2.csv",
+
+  "BATTERY_EVENT_INFP": "./src/data/batt_acdc_events.csv000.gz",
+  "BATTERY_EVENT_OUTFP": "./src/data/minimini_battery_event2.csv",
+
+  "BATTERY_INFO_INFP": "./src/data/batt_info.csv000.gz",
+  "BATTERY_INFO_OUTFP": "./src/data/minimini_battery_info2.csv",
+
+
+  "PROCESS_INFP1": "./src/data/plist_process_resource_util_13wks.csv000.gz",
+  "PROCESS_OUTFP1": "./src/data/minimini_process1.csv",
+
+  "HW_INFP1": "./src/data/hw_metric_histo.csv000.gz",
+  "HW_OUTFP1": "./src/data/minimini_hw1.csv",
+
+  "HW_INFP2": "./src/data/hw_metric_histo.csv001.gz",
+  "HW_OUTFP2": "./src/data/minimini_hw2.csv"
+
 }

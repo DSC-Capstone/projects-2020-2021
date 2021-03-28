@@ -1,123 +1,90 @@
-# ResRecovery
+# Live_vs_Vod_Project
+## Group Name: Live
 
-Website: https://stephdoan.github.io/ResRecovery/
+Due to the variety, affordability and convenience of online video streaming, there are more subscribers than ever to video streaming platforms. Moreover, the decreased operation of non-essential businesses and increase in the number of people working from home in this past year has further compounded this effect. More people are streaming live lectures, sports, news, and video calls via the internet at home today than we have ever seen before. Internet Service Providers, such as Viasat, are tasked with optimizing  internet connections and tailoring their allocation of resources to fit each unique customer’s needs. With this increase in internet activity, it would be especially beneficial for Viasat to understand what issues arise when customers stream various forms of video. In general, different internet activities require different resources to optimize the connection. For example, if a customer watches a lot of live video they may prefer a connection with lower latency and higher bandwidth. Although we are able to identify the genre of an activity when a user is not using a VPN, the challenge arises when a user chooses to surf the web through a VPN. When it comes to VPN use cases we can’t identify a user’s unique activity when they experience issues, thus making us unable to successfully troubleshoot  those problems. This is where a tool that could identify various internet activities, specifically live or uploaded video streaming, within a VPN tunnel would be extremely useful for an Internet Service Provider. 
 
-# Table of Contents
+## Project Report: 
+Found within the **references** folder. The file name is Final_Report.
 
-1. [Abstract](#Abstract)
-2. [Config Files](#config)
-   - [`train-params.json`](#train)
-   - [`model-params.json`](#model)
-   - [`user-data.json`](#user)
-   - [`generate-data.json`](#generate)
-3. [Running the Project](#running)
+## Guide for Launching this Project:
+Note: These instructions assume that the user has access to the DSMLP server to be able to run this project. Open terminal, run these commands in the associated order:
 
-## Abstract
+1.) **ssh user@dsmlp-login.ucsd.edu** (user refers to your school username). Enter credentials.
 
-Virtual private networks, or VPNs, have seen a growth in popularity as more of the general population has come to realize the importance of maintaining data privacy and security while browsing the Internet. In previous works, our domain developed robust classifiers that could identify when a user was streaming video. As an extension, our group has developed a Random Forest model that determines the resolution at the time of video streaming. Our final model has an overall accuracy of **87%**.
+2.) **launch-180-gid.sh -G 100011655 -P Always -i apristin99/live_vs_vod_project**
 
-<a name="config"></a>
+3.) **git clone https://github.com/pristinsky1/live_vs_video_on_demand_VPN_detection.git**
 
-## Configuration Files
+4.) **cd live_vs_video_on_demand_VPN_detection**
 
-<a name="train"></a>
+Now you are within the right directory with the environment already set up! Start running the files!
 
-### `train-params.json`
+5.) For files needed to be predict, you have to put them in the "data/in" directory. Acceptable files are files generated network-stats tool provided by Viasat.
 
-Allows users to adjust some parameters of the training data creation process. The main point of focus is the `{interval}` argument. This allows users to adjust how big of a chunk size they would like their model to be trained on. The default is 300 seconds as it allows replication of our project.
+6.) If you wish to train a new classifier based on new data or new type of model and parameters, you have to change the location of training data and other settings in the "config/train-parmas.json". Otherwise, you can directly run **python run.py predict** using the trained model contained in the project.
 
-| Parameter     | Description                                                                                                     |
-| ------------- | --------------------------------------------------------------------------------------------------------------- |
-| folder_path   | path to where all of the raw data is stored; please refer to the folder structure below to achieve best results |
-| interval      | chunk size                                                                                                      |
-| threshold     | minimum megabit value; used in peak feature creation                                                            |
-| prominence_fs | sampling rate to find the max peak prominence                                                                   |
-| binned_fs     | deprecated parameter                                                                                            |
 
-##### Data Folder Structure
+## Guide for Pipeline Testing:
+Run **python run.py test** and the results will be in **test/out**. Within that folder, it contains the output dataframes, model, and reports of accuracies for the test data.
 
-All of the training data should be stored in an accessible `data` folder. CSV files should be categorized into folders according to their resolution below.
+
+## Contents:
+There are three parts of contents:
+1. src folder - Contains all library code.
+2. config folder - Contains directory of each target.
+3. run.py - Main Program for this project.
+4. notebooks folder - stores notebooks for this project.
+5. data/out folder - stores results of this project.
+
+The two files to look at for results under data/out:
+
+training_report.json: Json file contains the report of model's basic information and its performance on validation set.
+predictions.csv: DataFrame contains basic information of one record generated by network-stats and its prediction result.
+
+
+
+## How to run it?
+Warning: The feature, train and predict has to be run in fixed order. If you want to run everything at once, you can use the all script.
+
+Use console to run **python run.py eda** as a script. This will run the eda notebook and store the html version for easy accessibility under "/notebooks". 
+
+Use console to run **python run.py feature** as a script. This will create the features. The output dataframe will be stored in "data/out" directory in csv format.
+
+Use console to run **python run.py train** as a script. This will train the model. The output model and report will be stored in "data/out" directory in csv format.
+
+Use console to run **python run.py predict** as a script. This will classify the input dataset as live or streaming. The output dataframe will be stored in "data/out" directory in csv format.
+
+Use console to run **python run.py all** as a script. This will run everything listed above. The output dataframes and model and report will be stored in "data/out" directory in csv format.
+
+
+## Description of Each Params Files
+"feature-params.json" -- "indir: the input directory of training set, outdir: the output directory of generated dataframe, output: 1 means output dataframe containing features information, 0 means only return it as a dataframe(Must be 1 in feature-params.json)"
+
+"train-params.json" -- 
+    :param: indir: file directory where extracted features stored.
+    :param: outdir: file directory where output of this funcition stored.
+    :param: testsize: the portion of train dataset used for validation.
+    :param: randomstate: the randomstate number to random split train and valid set.
+    :param: method: the classifier name used for training.
+    :param: method_parameters: the parameter used for training.
+
+"predict-params.json" -- "indir: the input directory of stored model, indir2: the input directory of testset, outdir: the output directory of test result."
+
+
 
 ```
-+-- data
- |
- +-- 144p
- +-- 240p
- +-- 360p
- +-- 480p
- +-- 720p
- +-- 1080p
+### Responsibilities
+
+* Da Gong developed the structure of this project.
+* Zishun Jin worked on the prediction model and the model features of this project.
+* Tianran Qiu worked on the prediction model and the model features of this project.
+* Andrey developed the environment and the model feature creation for this project.
+* Mariam worked on the final report and model feature creation for this project. 
 ```
 
-<a name="model"></a>
 
-### `model-params.json`
 
-Allows users to adjust hyperparameters of the random forest classifier. The default values are the values we utilized in our original project.
 
-| Parameter         | Description                                                              |
-| ----------------- | ------------------------------------------------------------------------ |
-| training_data     | path to where training data is stored; data must be stored as a CSV file |
-| n_estimators      | number of trees in the forest model                                      |
-| max_depth         | max depth of the tree                                                    |
-| min_samples_split | minimum number of samples required to split an internal node             |
+### Website
 
-<a name="user"></a>
-
-### `user-data.json`
-
-Allows users to input their own data to be classified by the model.
-
-| Parameter     | Description                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| path          | path to where all of the raw user data is stored; must be an output of [network-stats](https://github.com/viasat/network-stats) |
-| interval      | chunk size                                                                                                                      |
-| threshold     | minimum megabit value; used in peak feature creation                                                                            |
-| prominence_fs | sampling rate to find the max peak prominence                                                                                   |
-| binned_fs     | deprecated parameter                                                                                                            |
-
-<a name="generate"></a>
-
-### `generate-data.json`
-
-Parameters used by the `generate_data.py` script. Please refer to [Selenium](https://www.selenium.dev/documentation/en/) documentation to install the appropriate `webdriver.exe`. For best use, please configure the `PATH` variable in the `generate-data.py` file to the correct file path of the webdriver. This script was developed using Google Chrome.
-
-| Parameter          | Description                                                                                                     |
-| ------------------ | --------------------------------------------------------------------------------------------------------------- |
-| network_stats_path | location of network-stats.py                                                                                    |
-| interface          | user interface to collect from; refer to [network-stats](https://github.com/viasat/network-stats) documentation |
-| playlist           | link to YouTube playlist                                                                                        |
-| outdir             | to be implemented                                                                                               |
-| resolutions        | list of resolutions to be collected                                                                             |
-
-<a name="running"></a>
-
-## Running the Project
-
-The project is current set to the assumption that users will collect their own training data. There is a repository of available training hosted on the DSMLP server located at `/teams/DSC180A_FA20_A00/b05vpnxray/personal_stdoan/data`. If not accessible, please refer to the [`generate_data.json`](#generate) configurations to automate collection of a training set.
-
-#### Running on the DSMLP Server
-
-The project was mean to be run on the UCSD DSMLP server. Below are instructions if user has access to DSMLP resources.
-
-1. Open up a terminal and run the command below to log onto the server. Users will need to provide appropriate identification when asked.
-
-> `ssh [username]@dsmlp-login.ucsd.edu`
-
-2. Launch a docker container to ensure package dependencies are fulfilled by running the command:
-
-> `launch-180-gid.sh -G 100011652 -P Always stdoan/viasat-q1`
-
-3. Clone this repository.
-
-4. Adjust config files as necessary and then run the targets!
-
-#### Targets
-
-- `python run.py test` will test the various targets to ensure that all methods are running properly.
-
-- `python run.py clean` will delete files created from running various targets. The folder and files are deleted from the local machine.
-
-- `python run.py features` will create features from data specified in `train-params.json`.
-
-- `python run.py predict` will either create training data to create a model or utilize a Pickle'd model that we have included. Output is an array of resolution label for each chunk in the data.
+Link to the webpage: https://pristinsky1.github.io/live_vs_video_on_demand_VPN_detection/

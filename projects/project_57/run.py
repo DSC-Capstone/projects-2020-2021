@@ -1,115 +1,93 @@
-#!/usr/bin/env python
-
-import argparse
-import os
 import sys
+import os
 import json
-import shutil
 
-#from src.gradcam import *
+sys.path.insert(0, 'src')
 
-data_ingest_params = './config/data-params.json'
-fp_params = './config/file_path.json'
-gradcam_params = './config/gradcam_params.json'
-ig_params = './config/ig_params.json'
-train_params = './config/train_params.json'
-test_params = './config/test_params.json'
-
-def load_params(fp):
-    with open(fp) as fh:
-        param = json.load(fh)
-    return param
-
+from build_features import create_struct
+from eda import run_model
+from feature_extraction import matrix_a
+from feature_extraction import matrix_b
+from feature_extraction import matrix_p
+from model import AAT
+from model import ABAT
+from model import APAT
+from model import APBPAT
+from model import build_svm
+from node_2_vector import node2vec
+from word_2_vector import word2vec
 def main(targets):
+    '''
+    Runs the main project pipeline logic, given the targets.
+    targets must contain: 'data', 'analysis', 'model'. 
     
-    if 'clean' in targets:
-        shutil.rmtree('results/gradcam/', ignore_errors=True)
-        shutil.rmtree('results/model_prediction/', ignore_errors=True)
-        shutil.rmtree('results/integrated_gradient/', ignore_errors=True)
-        os.mkdir('results/gradcam')
-        os.mkdir('results/model_prediction')
-        os.mkdir('results/integrated_gradient')
-    
-    if "gradcam" in targets:      
-        # Check if directory "results" is created
-        if not os.path.isdir('results/gradcam'):
-            os.makedirs('results/gradcam')
+    `main` runs the targets in order of data=>analysis=>model.
+    '''
+    if 'test' in targets:
+        print('\n')
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh) 
+        print('creating data structure...')
+        data_dict = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[0]
+        malware_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[1]
+        benign_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[2]
+        print('creating matrices...')
+        a = matrix_a(data_dict)
+        b = matrix_b(data_dict)
+        p = matrix_p(data_dict)
+        print('CREATING NODE 2 VECTOR EMBEDDINGS')
+        node2vec()
+        print('CREATING WORD 2 VECTOR EMBEDDINGS')
+        word2vec()
+        print('CREATING METAPATH 2 VECTOR EMBEDDINGS')
+        #metapath2vec()
+        #print('creating kernels...')
+        #aat = AAT(a)
+        #abat = ABAT(a, b)
+        #apat = APAT(a, p)
+        #apbptat = APBPAT(a,p,b)
+        #print('running hindroid model...')
+        #print('\n')
+        #print('AAT accuracy - ' + str(build_svm(aat, 'aat', malware_seen, benign_seen)[0]))
+        #print('AAT f1_score - ' + str(build_svm(aat, 'aat', malware_seen, benign_seen)[1]))
+        #print('ABAT accuracy - ' + str(build_svm(abat,'abat', malware_seen, benign_seen)[0]))
+        #print('ABAT f1_score - ' + str(build_svm(abat, 'abat', malware_seen, benign_seen)[1]))
+        #print('APAT accuracy - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[0]))
+        #print('APAT f1_score - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[1]))
+        #print('APBPTAT accuracy - ' + str(build_svm(apbptat,'apbpat', malware_seen, benign_seen)[0]))
+        #print('APBPTAT f1_score - ' + str(build_svm(apbptat,'apbpat', malware_seen, benign_seen)[1]))
+        #print('\n')
+
+    if 'all' in targets:
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh) 
+        print('creating data structure...')
+        data_dict = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[0]
+        malware_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[1]
+        benign_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[2]
+        print('creating matrices...')
+        a = matrix_a(data_dict)
+        b = matrix_b(data_dict)
+        p = matrix_p(data_dict)
+        print('RUNNING NODE2VEC')
         
-        gradcam_fp = load_params(fp_params)['gradcam_path']
-        input_gradcam_params = load_params(gradcam_params)
-        input_images = input_gradcam_params["load_image_path"]["image_input_path_train_covered"]
-        save_images = input_gradcam_params['save_image_path']
-        model_path = input_gradcam_params['model_path']
+        #print('creating kernels...')
+        #aat = AAT(a)
+        #abat = ABAT(a, b)
+        #apat = APAT(a, p)
+        #print('\n')
+        #print('running hindroid model...')
+        #print('AAT accuracy - ' + str(build_svm(aat, malware_seen, benign_seen)[0]))
+        #print('AAT f1_score - ' + str(build_svm(aat, malware_seen, benign_seen)[1]))
+        #print('ABAT accuracy - ' + str(build_svm(abat,'abat', malware_seen, benign_seen)[0]))
+        #print('ABAT f1_score - ' + str(build_svm(abat, 'abat', malware_seen, benign_seen)[1]))
+        #print('APAT accuracy - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[0]))
+        #print('APAT f1_score - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[1]))
         
-        if "custom_image_path" in input_gradcam_params:
-            custom_image_path = input_gradcam_params['custom_image_path']
-            os.system("python " + gradcam_fp + " --image-path " + input_images + " --custom-image-path " + custom_image_path + " --save-path-gb " + save_images['gb_path'] + " --save-path-cam-gb " + save_images['cam_gb_path'] + " --save-path-cam " + save_images['cam_path'] + " --model-path " + model_path + " --use-cuda")
-        else:
-            os.system("python " + gradcam_fp + " --image-path " + input_images + " --save-path-gb " + save_images['gb_path'] + " --save-path-cam-gb " + save_images['cam_gb_path'] + " --save-path-cam " + save_images['cam_path'] + " --model-path " + model_path + " --use-cuda")
-       
-    if "training" in targets:
-        if not os.path.isdir('models'):
-            os.makedirs('models')  
-        train_fp = load_params(fp_params)['train_path']
-        input_train_params = load_params(train_params)
-        model_name = input_train_params['model_name']
-        feature_extract = input_train_params['feature_extracting']
-        batch_size = input_train_params['batch_size']
-        learning_rate = input_train_params['learning_rate']
-        num_epochs = input_train_params['num_epochs']
-        if feature_extract:
-            os.system("python " + train_fp + " --model-name " + model_name + " --batch-size " + str(batch_size) + " --learning-rate " + str(learning_rate) + " --num-epochs " + str(num_epochs) + " --use-cuda --feature-extracting")
-        else:
-            os.system("python " + train_fp + " --model-name " + model_name + " --batch-size " + str(batch_size) + " --learning-rate " + str(learning_rate) + " --num-epochs " + str(num_epochs) + " --use-cuda")
-  
-    if "testing" in targets:
-        if not os.path.isdir('models'):
-            print("No models available. Train a model first")
-            sys.exit(0)
-        
-        if not os.path.isdir('results/model_prediction'):
-            os.mkdir('results/model_prediction')
-            
-        test_fp = load_params(fp_params)['test_path']
-        input_test_params = load_params(test_params)
-        model_name = input_test_params['model_name']
-        model_path = input_test_params['model_path']
-        batch_size = input_test_params['batch_size']
-        test_size = input_test_params['test_size']
-        
-        if model_name not in model_path:
-            print("Model name and model path mismatch, please check your parameters again!")
-            sys.exit(0)
-        
-        if "custom_image_path" in input_test_params:
-            custom_image_path = input_test_params['custom_image_path']
-            os.system("python " + test_fp + " --model-name " + model_name + " --model-path " + model_path + " --custom-image-path " + custom_image_path + " --batch-size " + str(batch_size) + " --use-cuda")
-        else:
-            os.system("python " + test_fp + " --model-name " + model_name + " --model-path " + model_path + " --batch-size " + str(batch_size) + " --test-size " + str(test_size) + " --use-cuda")
-        
-    if "ig" in targets:
-        if not os.path.isdir('models'):
-            print("No models available. Train a model first")
-            sys.exit(0)
-            
-        if not os.path.isdir('results/integrated_gradient'):
-            os.mkdir('results/integrated_gradient')
-            
-        ig_fp = load_params(fp_params)['ig_path']
-        input_ig_params = load_params(ig_params)
-        img_load_path = input_ig_params['image_load_path']
-        img_save_path = input_ig_params['image_save_path']
-        model_path = input_ig_params['model_path']
-        
-        if "custom_image_path" in input_ig_params:
-            custom_image_path = input_ig_params['custom_image_path']
-            os.system("python " + ig_fp + " --custom-image-path " + custom_image_path + " --img-load-path " + img_load_path + " --img-save-path " + img_save_path + " --model-path " + model_path + " --use-cuda")
-        else:
-            os.system("python " + ig_fp + " --img-load-path " + img_load_path + " --img-save-path " + img_save_path + " --model-path " + model_path + " --use-cuda")
-        
+
 if __name__ == '__main__':
-    if not os.path.isdir('results'):
-        os.makedirs('results')
+    # run via:
+    # python main.py data features model
     targets = sys.argv[1:]
     main(targets)
 

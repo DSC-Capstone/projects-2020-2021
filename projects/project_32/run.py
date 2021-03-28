@@ -1,93 +1,86 @@
 import sys
-import os
 import json
+import shutil
+
+import numpy as np
+import pandas as pd
+import math
+from scipy import stats
+import matplotlib.pyplot as plt
 
 sys.path.insert(0, 'src')
 
-from build_features import create_struct
-from eda import run_model
-from feature_extraction import matrix_a
-from feature_extraction import matrix_b
-from feature_extraction import matrix_p
-from model import AAT
-from model import ABAT
-from model import APAT
-from model import APBPAT
-from model import build_svm
-from node_2_vector import node2vec
-from word_2_vector import word2vec
+from etl import get_data
+from scale_model import init_positions, droplet_infect, return_aerosol_transmission_rate, get_distance, get_dist_multiplier, one_room, scatter_collect
+
+# Targets:
+DATA_PARAMS = 'config/default_config.json'
+SCALE_MODEL_PARAMS = 'config/scale_room.json'
+VIZ_PARAMS = 'config/viz.json' ## make this file
+
+def load_parameters(filepath):
+    '''
+    Loads input and output directories
+    '''
+    with open(filepath) as fp:
+        parameter = json.load(fp)
+
+    return parameter
+
+
 def main(targets):
     '''
     Runs the main project pipeline logic, given the targets.
-    targets must contain: 'data', 'analysis', 'model'. 
-    
-    `main` runs the targets in order of data=>analysis=>model.
     '''
-    if 'test' in targets:
-        print('\n')
-        with open('config/data-params.json') as fh:
-            data_cfg = json.load(fh) 
-        print('creating data structure...')
-        data_dict = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[0]
-        malware_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[1]
-        benign_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[2]
-        print('creating matrices...')
-        a = matrix_a(data_dict)
-        b = matrix_b(data_dict)
-        p = matrix_p(data_dict)
-        print('CREATING NODE 2 VECTOR EMBEDDINGS')
-        node2vec()
-        print('CREATING WORD 2 VECTOR EMBEDDINGS')
-        word2vec()
-        print('CREATING METAPATH 2 VECTOR EMBEDDINGS')
-        #metapath2vec()
-        #print('creating kernels...')
-        #aat = AAT(a)
-        #abat = ABAT(a, b)
-        #apat = APAT(a, p)
-        #apbptat = APBPAT(a,p,b)
-        #print('running hindroid model...')
-        #print('\n')
-        #print('AAT accuracy - ' + str(build_svm(aat, 'aat', malware_seen, benign_seen)[0]))
-        #print('AAT f1_score - ' + str(build_svm(aat, 'aat', malware_seen, benign_seen)[1]))
-        #print('ABAT accuracy - ' + str(build_svm(abat,'abat', malware_seen, benign_seen)[0]))
-        #print('ABAT f1_score - ' + str(build_svm(abat, 'abat', malware_seen, benign_seen)[1]))
-        #print('APAT accuracy - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[0]))
-        #print('APAT f1_score - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[1]))
-        #print('APBPTAT accuracy - ' + str(build_svm(apbptat,'apbpat', malware_seen, benign_seen)[0]))
-        #print('APBPTAT f1_score - ' + str(build_svm(apbptat,'apbpat', malware_seen, benign_seen)[1]))
-        #print('\n')
 
-    if 'all' in targets:
-        with open('config/data-params.json') as fh:
-            data_cfg = json.load(fh) 
-        print('creating data structure...')
-        data_dict = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[0]
-        malware_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[1]
-        benign_seen = create_struct(data_cfg['MALWARE_PATH'], data_cfg['BENIGN_PATH'])[2]
-        print('creating matrices...')
-        a = matrix_a(data_dict)
-        b = matrix_b(data_dict)
-        p = matrix_p(data_dict)
-        print('RUNNING NODE2VEC')
-        
-        #print('creating kernels...')
-        #aat = AAT(a)
-        #abat = ABAT(a, b)
-        #apat = APAT(a, p)
-        #print('\n')
-        #print('running hindroid model...')
-        #print('AAT accuracy - ' + str(build_svm(aat, malware_seen, benign_seen)[0]))
-        #print('AAT f1_score - ' + str(build_svm(aat, malware_seen, benign_seen)[1]))
-        #print('ABAT accuracy - ' + str(build_svm(abat,'abat', malware_seen, benign_seen)[0]))
-        #print('ABAT f1_score - ' + str(build_svm(abat, 'abat', malware_seen, benign_seen)[1]))
-        #print('APAT accuracy - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[0]))
-        #print('APAT f1_score - ' + str(build_svm(apat, 'apat', malware_seen, benign_seen)[1]))
-        
+    if 'test' in targets: # Visualize the time until infectiveness of a newly infected individual
+        # plot temporal distributions and chu effect given baseline of .2, .1, .05
+        temp = load_parameters(SCALE_MODEL_PARAMS)
+
+
+        # one_room(temp['input_dir'], temp['output_dir'], False) #implement additional input variable in one_room()
+        return
+
+    if 'bus_flow' in targets:
+        # output quiver plot and ??contour plot?? for bus of input type
+        temp = load_parameters(BUS_PARAMS)
+        # one_room(temp['input_dir'], temp['output_dir'], False, )
+
+        return
+
+    if 'scatter' in targets:
+        temp = load_parameters(SCALE_MODEL_PARAMS)
+        scatter_collect(temp['input_dir'], temp['output_dir'], False)
+        return
+
+    if 'clear' in targets:
+        # remove files from scatter_folder
+        return
+
+    if 'visualize' in targets:
+        print('targets: ')
+        print(targets)
+        # one room viz using website / airavata inputs
+        temp = load_parameters(SCALE_MODEL_PARAMS)
+        temp_viz = load_parameters(VIZ_PARAMS)
+        one_room(temp['input_dir'], temp['output_dir'], True) #implement viz params and viz code
+        # visualize_infection() takes in timesteps of infection and returns a plotted visualization w/ red = inf, green = not inf
+
+        # plot_infection() demonstrates the 'animations' with an XY plot of number individuals infected (X) vs timesteps of 5 mins (Y)
+
+
+        # TODO: get help from Kaushik w/ Airavata inputs
+
+        # TODO: get help from team for website integration
+        return
+
+        # set up variables
+
+    return
+
 
 if __name__ == '__main__':
     # run via:
-    # python main.py data features model
+    # python run.py analysis
     targets = sys.argv[1:]
     main(targets)
-

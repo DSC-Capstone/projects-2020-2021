@@ -1,7 +1,8 @@
 {
-  "folder_path": "data/",
-  "interval": 300,
-  "threshold": 5,
-  "prominence_fs": 1,
-  "binned_fs": 0.5
+    "indir":"./data/out/features.csv",
+    "outdir":"./data/out",
+    "testsize":0.2,
+    "randomstate":125,
+    "method":"Random_Forest",
+    "method_parameters":100
 }

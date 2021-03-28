@@ -1,0 +1,9 @@
+{
+  "data_path": "test",
+  "dynamic_name": "mousewait_all_10000.csv",
+  "static_name": "system_info.csv",
+  "col_to_transform": ["age_category", "processornumber"],
+  "num_cols": ["ram", "#ofcores", "age_category", "processornumber"],
+  "static_cols":["chassistype", "ram", "os", "#ofcores", "age_category", "graphicscardclass", "processornumber", "cpucode", "persona"],
+  "fill_method": "backfill"
+}

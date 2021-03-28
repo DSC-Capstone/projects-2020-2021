@@ -1,65 +1,80 @@
-# Racial_Classification_XAI_Model
+# Snake NeuralBackedDecisionTrees
+DSC180B Group 6 Snake Classification using Neural Backed Decision Trees
 
-keyword: Deep Learning, Convolutional Neural Network, Integrated-Gradient, Grad-CAM, Web Application
+Team Members:
 
-Website: https://michael4706.github.io/XAI_Website/
+Nikolas Racelis-Russell - A15193225
 
-Static Web app: this [demo](https://nicole9925.github.io/facial-analysis-frontend/) (once you clicked the demo, just press submit to run it) is our web application that runs sample image. Make sure you visit the [Web Application](https://michael4706.github.io/XAI_Website/webapp/) (or just click this link) to play with it. If you want to run the web application with your own image, please visit the Web Application section below and follow the intrusctions.
+Weihua (Cedric) Zhao - A14684029 
+
+Rui Zheng - A15046475
+
+## Abstract
+
+Our project focuses on building explanable image classification models on snake images from https://www.aicrowd.com/challenges/snakeclef2021-snake-species-identification-challenge/dataset_files. Our plan is to apply gradcam to images of different snake species, construct a Densenet, and transform them into decision trees to visualize the classification process. 
+
+### Demo
+
+Link to our website:  https://nikolettuce.github.io/DSC180B_06_NeuralBackedDecisionTrees/
+
+#### GradCAM
+
+Our approach, called Gradient-weighted Class Activation Mapping (Grad-CAM), uses the class-specific gradient information flowing into the final convolutional layer of a CNN to produce a coarse localization map of the important regions in the image. [1]
+
+#### Neural Backed Decision Tree
+
+Nowadays, machine learning has been applied in multifaceted areas of our life. While its prominence grows, its interpretabilty leaves people insecure because of the fact that people hardly see through the classfication decision process. Many attempts to solve this problem either ends up with the cost of interpretability or the cost of accuracy. Intended to avoid this dilemma in our snake classification process, we applied Neural-Backed Decision Trees (NBDTs). NBDTs replace a neural network's final linear layer with a differentiable sequence of decisions and a surrogate loss. This forces the model to learn high-level concepts and lessens reliance on highly-uncertain decisions, yielding (1) accuracy: NBDTs match or outperform modern neural networks on CIFAR, ImageNet and better generalize to unseen classes by up to 16%. Furthermore, our surrogate loss improves the original model's accuracy by up to 2%. NBDTs also afford (2) interpretability: improving human trustby clearly identifying model mistakes and assisting in dataset debugging.[2] 
+
+##### Induced Hierarchy
+
+When creating the hierarchy tree, one thing to note is that "[it] requires pre-trained model weights". We took row vectors wk : k ∈ [1, K], each representing a class, from the fully- connected layer weights W; then, we ran hierarchical agglomerative clustering on the normalized class representatives wk/kwkk2. Last but not least, we built the leaf nodes based on the weights. [2]
+
+##### Loss Conversion
+
+### Practical Use
+
+Our project has valid applications in real life. Wild snakes are prevalent on mountains, and hikers have high possibilities to encounter them. A genuine snake classifier would provide useful information to hikers about whether the snake is venomous or not; thus, they can avoid the snake if a certain dangerous species emerge.
+
+### Methods
+Our classiciation starts with a baseline Densenet model with 5 epochs. In terms of performance, it reached a F-score of 0.495 on validation data and accuracy of 0.66 on validation data. We then managed to improve the model later with higher accuracy.
+
+Then we applied Grad-CAM to five different snake pictures with different features. The first category includes pictures where snakes blend in with the background. The second category includes pictures where snakes differ from the background. The third category includes pictures where snakes appear with other objects, like hand. Grad-CAM performs well on localizing the target object. [3]
+
+Last, but not least, we are currently working on transforming the CNN models to decision trees. For now, we have a general hierarchy tree where you can see each decision. Though the decision is not clear for now, we will manage to elucidate them in the upcoming weeks.
+
+When creating the hierarchy tree, one thing to note is that "[it] requires pre-trained model weights". We took row vectors wk : k ∈ [1, K], each representing a class, from the fully- connected layer weights W; then, we ran hierarchical agglomerative clustering on the normalized class representatives wk/kwkk2. Last but not least, we built the leaf nodes based on the weights. [4]
+### Results
+
+#### Heatmaps
+
+<img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/0a00cdd2b8.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam%201.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam_gb%201.jpg" width="200"> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/gb%201.jpg" width="200"> 
 
 
-![sample result](sample_result.png)
+<img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/0a7eded849.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam%204.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam_gb%204.jpg" width="200"> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/gb%204.jpg" width="200"> 
 
-### Introduction
-This project is about visualizing Convolutional Neural Network (CNN) with XAI techniques: Grad-cam and Integrated-Gradient. We used the FairFace dataset to train our models. This dataset contains about 80000+ training images and 10000+ validation images. The dataset contains three different categories(labels): age range(9 classes), race(7 classes), and gender(2 classes). We implemented a model that combined the first 14 layers from resnet50 as pre-trained layers with our self-defined layers. We trained three models on each of the different categories using the same model structure except changing the number of outputs from the final layer to match each category's number of classes. Then, we applied XAI to visualize models' decision-making with heatmaps. We want to examine what features or regions the models focus on given an image. Also, we are interested in comparing the heatmaps generated by the biased and unbiased models. The FairFace Dataset has an equal distribution of race. Therefore, we created a dataset with an unequal distribution of race and trained a biased model with this dataset.
+<img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/0a54501d6d.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam%207.jpg" width="200"/> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/cam_gb%207.jpg" width="200"> <img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/gb%207.jpg" width="200"> 
 
-##### config
-* The parameters to run the scripts. Make sure to visit this file before running the code.
+#### Hierarchy Trees
 
-##### run.py
-* script to train the model, run integrated-gradients, and calculate the statistics for the model.
+<img src="https://github.com/nikolettuce/DSC180B_06_NeuralBackedDecisionTrees/blob/reputation/Screen%20Shot%202021-02-07%20at%205.32.34%20PM.png">
 
-##### src
-* folder that contains the source code.
+### Conclusions
 
-##### models
-* Contained dlib_mod that helps to preprocess the images. You also recommend you to save your trained model here.
+## Installation
 
-##### test_data
-* Contains sample data from FairFace Dataset.
+To use this project, please run build.sh and allocate at least 30 GB of hard drive space to install the data.
 
-### How to run the code
-1. please the my docker image: `michael459165/capstone2:new8` and run the code inside this container.
-2. please go to the config file to change the parameters. This file has 5 sections, each corresponds to a set of parameters to execute a particular task.
-3. Type `python run.py train_model` to train your model.
-4. Type `python run.py generate_stats` to generate statistics and plots.
-5. Type `python run.py run_test` to generate just ONE heatmap for both Integrated Gradient and Grad-CAM on the test sample. This will generate the heatmaps of the class with the HIGHEST predictive probability.
-6. Type `python run.py run_custom_img` to generate just ONE heatmap for both Integrated Gradient and Grad-CAM on YOUR own image. This will generate the heatmaps of the class with the HIGHEST predictive probability.
+Then run python run.py data to first process the data before using the test target
 
-Note: All the functions in util.py are well documented. Please feel free to explore and modify the code!
+To run the CNN and test on the snake dataset, run python run.py test
 
-### Web Application
-We also made a Web App to showcase our work. Please clone [this repository](https://github.com/nicole9925/facial-analysis-webapp) and follow the instruction to run it locally. If you want to deploy the Web App online, please visit [frontend](https://github.com/nicole9925/facial-analysis-frontend) and [backend](https://github.com/nicole9925/facial-analysis-backend) repositories for further instruction. 
+## Resources
 
-### More stuff you can do
-* If you don't want to train the model (because it takes a long time), then please visit the "temp" branch from this repository. There are trained models under the models folder and sample integrated-gradient results and statistics under the visualization folder. Please just download the files you need and run the code from this main branch. 
+1. Grad-CAM Paper https://arxiv.org/pdf/1610.02391v1.pdf
+2. @misc{wan2021nbdt, title={NBDT: Neural-Backed Decision Trees}, author={Alvin Wan and Lisa Dunlap and Daniel Ho and Jihan Yin and Scott Lee and Henry Jin and Suzanne Petryk and Sarah Adel Bargal and Joseph E. Gonzalez}, year={2021}, eprint={2004.00221}, archivePrefix= {arXiv}, primaryClass={cs.CV} }
 
-### Reference
-[1]Selvaraju, Ramprasaath R., et al. "Grad-cam: Visual explanations from deep networks via gradient-based localization." Proceedings of the IEEE international conference on computer vision. 2017.
+3. Grad-CAM code  https://github.com/jacobgil/pytorch-grad-cam
 
-[2]Grad-CAM implementation in Keras[Source code]. https://github.com/jacobgil/keras-grad-cam.
+4. NBDT: https://github.com/alvinwan/neural-backed-decision-trees
 
-[3]Sundararajan, Mukund, Ankur Taly, and Qiqi Yan. "Axiomatic attribution for deep networks." International Conference on Machine Learning. PMLR, 2017.
 
-[4]Integrated Gradients[Source code]. https://github.com/hiranumn/IntegratedGradients.
-
-[5]@inproceedings{karkkainenfairface,
-      title={FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age for Bias Measurement and Mitigation},
-      author={Karkkainen, Kimmo and Joo, Jungseock},
-      booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
-      year={2021},
-      pages={1548--1558}
-    }
-
-[6] FairFace: Face Attribute Dataset for Balanced Race, Gender, and Age[Source code].https://github.com/dchen236/FairFace.
-
-[7] Draelos, Rachel. “Grad-CAM: Visual Explanations from Deep Networks.” Glass Box, 29 May 2020. https://glassboxmedicine.com/2020/05/29/grad-cam-visual-explanations-from-deep-networks/#:~:text=Grad%2DCAM%20can%20be%20used%20for%20understanding%20a%20model's%20predictions,choice%20than%20Guided%20Grad%2DCAM.

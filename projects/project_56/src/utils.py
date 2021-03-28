@@ -1,293 +1,239 @@
 import os
+import re
+import glob
 import numpy as np
-import h5py
-import json
-import torch
-from scipy.misc import imread, imresize
-from tqdm import tqdm
-from collections import Counter
-from random import seed, choice, sample
+
+from concurrent.futures import ThreadPoolExecutor
 
 
-def create_input_files(dataset, karpathy_json_path, image_folder, captions_per_image, min_word_freq, output_folder,
-                       max_len=100):
+
+
+def dir_and_app(appfp):
     """
-    Creates input files for training, validation, and test data.
-
-    :param dataset: name of dataset, one of 'coco', 'flickr8k', 'flickr30k'
-    :param karpathy_json_path: path of Karpathy JSON file with splits and captions
-    :param image_folder: folder with downloaded images
-    :param captions_per_image: number of captions to sample per image
-    :param min_word_freq: words occuring less frequently than this threshold are binned as <unk>s
-    :param output_folder: folder to save files
-    :param max_len: don't sample captions longer than this length
-    """
-
-    assert dataset in {'coco', 'flickr8k', 'flickr30k'}
-
-    # Read Karpathy JSON
-    with open(karpathy_json_path, 'r') as j:
-        data = json.load(j)
-
-    # Read image paths and captions for each image
-    train_image_paths = []
-    train_image_captions = []
-    val_image_paths = []
-    val_image_captions = []
-    test_image_paths = []
-    test_image_captions = []
-    word_freq = Counter()
-
-    for img in data['images']:
-        captions = []
-        for c in img['sentences']:
-            # Update word frequency
-            word_freq.update(c['tokens'])
-            if len(c['tokens']) <= max_len:
-                captions.append(c['tokens'])
-
-        if len(captions) == 0:
-            continue
-
-        path = os.path.join(image_folder, img['filepath'], img['filename']) if dataset == 'coco' else os.path.join(
-            image_folder, img['filename'])
-
-        if img['split'] in {'train', 'restval'}:
-            train_image_paths.append(path)
-            train_image_captions.append(captions)
-        elif img['split'] in {'val'}:
-            val_image_paths.append(path)
-            val_image_captions.append(captions)
-        elif img['split'] in {'test'}:
-            test_image_paths.append(path)
-            test_image_captions.append(captions)
-
-    # Sanity check
-    assert len(train_image_paths) == len(train_image_captions)
-    assert len(val_image_paths) == len(val_image_captions)
-    assert len(test_image_paths) == len(test_image_captions)
-
-    # Create word map
-    words = [w for w in word_freq.keys() if word_freq[w] > min_word_freq]
-    word_map = {k: v + 1 for v, k in enumerate(words)}
-    word_map['<unk>'] = len(word_map) + 1
-    word_map['<start>'] = len(word_map) + 1
-    word_map['<end>'] = len(word_map) + 1
-    word_map['<pad>'] = 0
-
-    # Create a base/root name for all output files
-    base_filename = dataset + '_' + str(captions_per_image) + '_cap_per_img_' + str(min_word_freq) + '_min_word_freq'
-
-    # Save word map to a JSON
-    with open(os.path.join(output_folder, 'WORDMAP_' + base_filename + '.json'), 'w') as j:
-        json.dump(word_map, j)
-
-    # Sample captions for each image, save images to HDF5 file, and captions and their lengths to JSON files
-    seed(123)
-    for impaths, imcaps, split in [(train_image_paths, train_image_captions, 'TRAIN'),
-                                   (val_image_paths, val_image_captions, 'VAL'),
-                                   (test_image_paths, test_image_captions, 'TEST')]:
-
-        with h5py.File(os.path.join(output_folder, split + '_IMAGES_' + base_filename + '.hdf5'), 'a') as h:
-            # Make a note of the number of captions we are sampling per image
-            h.attrs['captions_per_image'] = captions_per_image
-
-            # Create dataset inside HDF5 file to store images
-            images = h.create_dataset('images', (len(impaths), 3, 256, 256), dtype='uint8')
-
-            print("\nReading %s images and captions, storing to file...\n" % split)
-
-            enc_captions = []
-            caplens = []
-
-            for i, path in enumerate(tqdm(impaths)):
-
-                # Sample captions
-                if len(imcaps[i]) < captions_per_image:
-                    captions = imcaps[i] + [choice(imcaps[i]) for _ in range(captions_per_image - len(imcaps[i]))]
-                else:
-                    captions = sample(imcaps[i], k=captions_per_image)
-
-                # Sanity check
-                assert len(captions) == captions_per_image
-
-                # Read images
-                img = imread(impaths[i])
-                if len(img.shape) == 2:
-                    img = img[:, :, np.newaxis]
-                    img = np.concatenate([img, img, img], axis=2)
-                img = imresize(img, (256, 256))
-                img = img.transpose(2, 0, 1)
-                assert img.shape == (3, 256, 256)
-                assert np.max(img) <= 255
-
-                # Save image to HDF5 file
-                images[i] = img
-
-                for j, c in enumerate(captions):
-                    # Encode captions
-                    enc_c = [word_map['<start>']] + [word_map.get(word, word_map['<unk>']) for word in c] + [
-                        word_map['<end>']] + [word_map['<pad>']] * (max_len - len(c))
-
-                    # Find caption lengths
-                    c_len = len(c) + 2
-
-                    enc_captions.append(enc_c)
-                    caplens.append(c_len)
-
-            # Sanity check
-            assert images.shape[0] * captions_per_image == len(enc_captions) == len(caplens)
-
-            # Save encoded captions and their lengths to JSON files
-            with open(os.path.join(output_folder, split + '_CAPTIONS_' + base_filename + '.json'), 'w') as j:
-                json.dump(enc_captions, j)
-
-            with open(os.path.join(output_folder, split + '_CAPLENS_' + base_filename + '.json'), 'w') as j:
-                json.dump(caplens, j)
-
-
-def init_embedding(embeddings):
-    """
-    Fills embedding tensor with values from the uniform distribution.
-
-    :param embeddings: embedding tensor
-    """
-    bias = np.sqrt(3.0 / embeddings.size(1))
-    torch.nn.init.uniform_(embeddings, -bias, bias)
-
-
-def load_embeddings(emb_file, word_map):
-    """
-    Creates an embedding tensor for the specified word map, for loading into the model.
-
-    :param emb_file: file containing embeddings (stored in GloVe format)
-    :param word_map: word map
-    :return: embeddings in the same order as the words in the word map, dimension of embeddings
-    """
-
-    # Find embedding dimension
-    with open(emb_file, 'r') as f:
-        emb_dim = len(f.readline().split(' ')) - 1
-
-    vocab = set(word_map.keys())
-
-    # Create tensor to hold embeddings, initialize
-    embeddings = torch.FloatTensor(len(vocab), emb_dim)
-    init_embedding(embeddings)
-
-    # Read embedding file
-    print("\nLoading embeddings...")
-    for line in open(emb_file, 'r'):
-        line = line.split(' ')
-
-        emb_word = line[0]
-        embedding = list(map(lambda t: float(t), filter(lambda n: n and not n.isspace(), line[1:])))
-
-        # Ignore word if not in train_vocab
-        if emb_word not in vocab:
-            continue
-
-        embeddings[word_map[emb_word]] = torch.FloatTensor(embedding)
-
-    return embeddings, emb_dim
-
-
-def clip_gradient(optimizer, grad_clip):
-    """
-    Clips gradients computed during backpropagation to avoid explosion of gradients.
-
-    :param optimizer: optimizer with the gradients to be clipped
-    :param grad_clip: clip value
-    """
-    for group in optimizer.param_groups:
-        for param in group['params']:
-            if param.grad is not None:
-                param.grad.data.clamp_(-grad_clip, grad_clip)
-
-
-def save_checkpoint(data_name, epoch, epochs_since_improvement, encoder, decoder, encoder_optimizer, decoder_optimizer,
-                    bleu4, is_best, test):
-    """
-    Saves model checkpoint.
-
-    :param data_name: base name of processed dataset
-    :param epoch: epoch number
-    :param epochs_since_improvement: number of epochs since last improvement in BLEU-4 score
-    :param encoder: encoder model
-    :param decoder: decoder model
-    :param encoder_optimizer: optimizer to update encoder's weights, if fine-tuning
-    :param decoder_optimizer: optimizer to update decoder's weights
-    :param bleu4: validation BLEU-4 score for this epoch
-    :param is_best: is this checkpoint the best so far?
-    """
-    state = {'epoch': epoch,
-             'epochs_since_improvement': epochs_since_improvement,
-             'bleu-4': bleu4,
-             'encoder': encoder,
-             'decoder': decoder,
-             'encoder_optimizer': encoder_optimizer,
-             'decoder_optimizer': decoder_optimizer}
-    #added this
-    if test:
-        root = 'test/models/'
-    else:    
-        root = '../../personal_afosado/models/'
+    given one app fp, return the directory to the app, as well as the app name
     
-    filename = root + 'checkpoint_' + data_name + '.pth.tar'
-    torch.save(state, filename)
-    # If this checkpoint is the best so far, store a copy so it doesn't get overwritten by a worse checkpoint
-    if is_best:
-        filename = root + 'BEST_' + 'checkpoint_' + data_name + '.pth.tar'
-        torch.save(state, filename)
-
-
-class AverageMeter(object):
+    appfp --> an app's filepath
+    return --> a list: [directory to app, appname]
     """
-    Keeps track of most recent, average, sum, and count of a metric.
+    
+    direc, app = os.path.split(appfp)
+    if ".gml.bz2" in app:
+        app = app.replace(".gml.bz2", "")
+        return [direc, app]
+    elif ".apk" in app:
+        app = app.replace("apk", "")
+        return [direc, app]
+    elif "m2v_walks.txt" in app:
+        app = app.replace("m2v_walks.txt", "")
+        return [direc, app]
+    else:
+        return appfp
+    
+    
+    
+
+def permutation(lst):
+    if len(lst) == 0:
+        return []
+
+    if len(lst) == 1:
+        return [lst]
+
+    l = []
+
+    for i in range(len(lst)):
+        m = lst[i]
+        remLst = lst[:i] + lst[i+1:]
+
+    for p in permutation(remLst):
+        l.append([m] + p)
+    return l
+
+def list_files(directory):
+    """
+    returns a list of all the files in that directory, with the directory appended to it
+    """
+    
+    return [os.path.join(directory, item) for item in os.listdir(directory)]
+
+
+
+def useful_functions(a, d, dx):
+    """
+    some useful functions for a decompiled APK
+
+
+    a --> APK object
+    d --> array of DalvikVMFormat object
+    dx --> analysis object
+
+
     """
 
-    def __init__(self):
-        self.reset()
 
-    def reset(self):
-        self.val = 0
-        self.avg = 0
-        self.sum = 0
-        self.count = 0
+    ### attributes and methods for a --> APK Class
+    test_obj = a.get_permissions()
+    # Returns all requested permissions.
+    test_obj = a.get_requested_aosp_permissions_details()
+    # Returns requested aosp permissions with details.
+    test_obj = a.get_libraries()
+    # Return the android:name attributes for libraries
+    display(type(test_obj))
+    ### attributes and methods for d --> DalvikVMFormat
+    test_d = d[0].get_all_fields()
+    # Return a list of field items
+    test_d = d[0].get_classes()
+    # Returns all classes --> returns a ClassDefItem
+    test_d = d[0].get_fields()
+    # Returns all field objects --> EncodedField Object
+    test_d = d[1].get_len_methods()
+    # Return the number of methods
+    test_d = d[1].get_methods()
+    # Returns all method objects --> EncodedMethod Objects
+    test_d = d[1].get_strings()
+    # returns all Strings
+    # test_d
+    # for item in test_d:
+    #     if len(item.get_name()) > 1:
+    #         print(item.get_name())
+    ### Prints the fields, or classes, or methods, (can be used for EDA)
+    # ct = 0
+    # for item in d[0].get_fields():
+    #     if ct < 600:
+    #         print(item)
+    #         ct+= 1
+    #     else:
+    #         break
 
-    def update(self, val, n=1):
-        self.val = val
-        self.sum += val * n
-        self.count += n
-        self.avg = self.sum / self.count
 
-
-def adjust_learning_rate(optimizer, shrink_factor):
+def get_graph_info(digraph):
     """
-    Shrinks learning rate by a specified factor.
+    Takes in a networkx digraph and output some statistics for the graph
 
-    :param optimizer: optimizer whose learning rate must be shrunk.
-    :param shrink_factor: factor in interval (0, 1) to multiply learning rate with.
+    params: digraph --> networkx digraph object
+    prints: --> number of nodes, and edges.
     """
 
-    print("\nDECAYING learning rate.")
-    for param_group in optimizer.param_groups:
-        param_group['lr'] = param_group['lr'] * shrink_factor
-    print("The new learning rate is %f\n" % (optimizer.param_groups[0]['lr'],))
+    print("Number of nodes in this graph is: ", len(digraph.nodes()))
+    print("Number of edges in this graph is: ", len(digraph.edges()))
 
 
-def accuracy(scores, targets, k):
+
+
+# get paths to smali files
+def get_path(app):
+    paths = []
+
+    for root, dirs, files in os.walk(app, topdown=False):
+        for name in files:
+            path = os.path.join(root, name)
+            if ".smali" in path:
+                paths.append(path)
+    return paths
+
+# get directory name w/in the directory
+def get_dir_name(fp):
+    dir_names = glob.glob(fp)
+    return dir_names
+
+# get txt of smali files
+def get_txt(fp):
+    file = open(fp, 'r')
+    txt = file.read()
+    return txt
+
+# returns a list of all txt files for 1 app
+def app_smali_to_txt(app_smali_fp):
+    # get all txt files given
+    txt_lst = []
+    for i in app_smali_fp:
+        txt = get_txt(i)
+        txt_lst.append(txt)
+    return txt_lst
+
+
+def all_txt_dir(dir_lst):
+    # get all smali files given a directory
+    fp_lst = []
+    for i in dir_lst:
+        app_smali_fp = get_path(i)
+        fp_lst.append(app_smali_fp)
+
+    all_txt = []
+    for i in fp_lst:
+        # returns a list of txt of an app
+        lst = app_smali_to_txt(i)
+        all_txt.append(lst)
+
+    return all_txt
+
+def fp_builder(rootdir):
     """
-    Computes top-k accuracy, from predicted and true labels.
+    gets to the root, as defined by the user
 
-    :param scores: scores from the model
-    :param targets: true labels
-    :param k: k in top-k accuracy
-    :return: top-k accuracy
+    rootdir --> the folder to stop at
     """
 
-    batch_size = targets.size(0)
-    _, ind = scores.topk(k, 1, True, True)
-    correct = ind.eq(targets.view(-1, 1).expand_as(ind))
-    correct_total = correct.view(-1).float().sum()  # 0D tensor
-    return correct_total.item() * (100.0 / batch_size)
+    current = os.getcwd()
+    folders = []
+    path, folder = os.path.split(current)
+    while True:
+        if folder != "":
+            folders.append(folder)
+            path,folder = os.path.split(path)
+        else:
+            break
+    folders.reverse()
+
+    root_fp = "/"
+    for folder in folders:
+        if folder != rootdir: #build fp until rootdir is reached
+            root_fp = os.path.join(root_fp, folder)
+        else:
+            root_fp = os.path.join(root_fp, rootdir)
+            break
+
+    return root_fp
+
+
+def get_to_directory(root, to_apks):
+    """
+    getting to a directory from root
+    to_apks --> list of paths of directories to get to a folder
+    """
+
+    directory = fp_builder(root)
+    for folder in to_apks:
+        directory = os.path.join(directory, folder)
+
+    return directory
+
+
+
+
+# A
+def A(txt):
+    # get any invokes
+    invoke = '(invoke)(.*?)(;)'
+    apis = re.findall(invoke, txt)
+    api_lst = []
+
+    ### get api ###
+    for i in apis:
+        api = i[1].split("L")[-1]
+        api_lst.append(api)
+
+    ### get family ###
+    family_lst = []
+    for i in api_lst:
+        family = i.split("/")[0][1:]
+        family_lst.append(family)
+
+    ### get invoke types ###
+    invoke_lst = []
+    for i in apis:
+        invoke_type = i[1].split(" ")[0][1:]
+        invoke_lst.append(invoke_type)
+
+    # for distinct returns
+    return set(api_lst), set(family_lst), set(invoke_lst)

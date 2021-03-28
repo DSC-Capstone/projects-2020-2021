@@ -1,36 +1,91 @@
-# DSC180b_project
+# Prediction Task: Utilizing CPU Statistics and Application Usage to Predict a User’s Persona
 
-## 3.8.2021 updates - Alex
-- wrote EDA notebook that is callable from command line
-    - Run EDA with the following command line parameter: `-eda`
-    - EDA can be run with the following parameters: `time` and `limit`
-        - `python run.py -eda -time` will run the EDA and print the time to run it on completion
-- Cleaned old code and adding documentation
-- To do: 
-    - Clean up parameters in `config/params.json` and delete unused parameters
-    - Remove unused methods
-    - update dockerfile with `nbconvert` and `pandoc` to run `EDA.ipynb` from command line
-    - Run EDA on 1000 apps
 
-## 3.5.2021 updates - Alex
-- added argument `-log` for the `<redirect_std_out>` (save console output to log file) parameter 
-- Moved SHNE_code to `src` directory
 
-## 3.2.2021 updates - Alex
+## Homepage
+https://vlw003.github.io
 
-### `run.py` has been updated to include more command line arguments
-- `-t`, `-test`, `-Test`: Run on test set 
-- `-node2vec`, `-n2v`: Run with node2vec instead of word2vec
-- `--skip-embeddings`: Skip the word embeddings stage 
-- `--skip-shne`: Skip SHNE model creation final step
-- `-p`, `-parse`: Only create node dictionaries `dict_A.json`, `dict_B.json`, `dict_P.json`, `dict_I.json`, `api_calls.json`, and `naming_key.json`
-- `-o`, `-overwrite`: Overwrite previous node dictionaries created when parsing
-- `--save-out`: Save console output to file 
-- `-time`: time how long to run `main.py`
+## Medium Blog
+https://predicting-persona-b09group04.medium.com/
 
-### Updated params config file. All parameters used are now found in `config/params.json`.
-- All outputs will be saved under the values for `<out_path>` and `<test_out_path>`
-    - Subdirectories to save configured in respective dictionary. 
-        - For instance word2vec embeddings will be saved under the path `<save_dir>` in the `<word2vec-params>` dictionary int `config/params.json`
-- All filenames parameterizable 
-    
+## Usage
+```
+git clone https://github.com/jonxsong/DSC180AB-Capstone.git
+cd DSC180AB-Capstone
+python run.py test
+```
+
+
+
+## Files
+
+**./config/data-params.json** - directory where data should be output to
+
+**./config/hw-metric-histo-data-params.json** - description of the dataset and features we utilize
+
+**./config/systems-sysinfo-unique-normalized-data-params.json** - description of the dataset and features we utilize
+
+**./config/ucsd-apps-execlass-data-params.json** - description of the dataset and features we utilize
+
+**./config/frgnd_backgrnd_apps-data-params.json** - description of the dataset and features we utilize
+
+**./notebooks/eda.ipynb** - notebook containing data explorations from DSC180B
+
+**./notebooks/dsc180a-notebook.ipynb** - notebook containing data explorations from DSC180A
+
+**./src/data_exploration.py** - file containing relevant methods for data exploration
+
+**./src/model.py** - file containing relevant methods for data modelling
+
+**./requirements.txt** - required packages
+
+**./run.py** - call run.py to run data analysis
+
+
+
+## Data/Output Files
+
+**./data/out/...** - this location should hold all the outputted pictures generated from methods
+
+**./data/raw/...** - this location should hold all the datasets downloaded below
+
+
+
+## Link to download the datasets:
+https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
+
+The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
+
+
+
+## Sources
+Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
+
+
+
+## Responsibilities:
+
+Jon:
+    - Report + main ideas
+    - data analysis - code breakdown
+    - repository structuring
+    - notebook outlining
+    - script writing
+
+Vince:
+    - data modeling
+    - Report + targets
+    - data cleaning
+    - data explorations
+    - classifications
+    - Visual Presentation Checkpoint
+    - Website
+    - Final Report
+    - Slides
+
+Keshan:
+    - data preparation
+    - tabled data
+    - key notes all throughout notebook
+    - graphs + graph analysis
+    - ATL work

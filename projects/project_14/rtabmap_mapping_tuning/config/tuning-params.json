@@ -1,0 +1,7 @@
+{
+    "datadir": "data/poses/",
+    "plotsdir": "results/plots/",
+    "metricdir": "results/metrics/",
+    "metricfile": "metrics.txt",
+    "evaldir": "/tmp/slameval/"
+}

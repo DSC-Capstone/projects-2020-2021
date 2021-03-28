@@ -1,94 +1,143 @@
-"""
-Jon Zhang, Keshan Chen, Vince Wong
-run.py
-"""
 import sys
 import json
-import os
 import pandas as pd
-import numpy as np
-from numpy import array
-from numpy import argmax
-import seaborn as sns
-from functools import reduce
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
-from matplotlib.pyplot import figure
-import matplotlib.pyplot as plt
+from tqdm import tqdm
+from os import listdir
 
-from sklearn.model_selection import train_test_split
-from sklearn.neural_network import MLPClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.linear_model import SGDClassifier
-from sklearn.svm import LinearSVC
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import make_classification
+import nltk
+nltk.download('wordnet')
 
-sys.path.insert(0, 'src')
-from src.data_exploration import *
-from src.model import *
+sys.path.insert(1, './src/')
+from data_preprocessing import *
+from data_downloads import *
+from feature_encoding import *
+from reports import *
+from train import *
 
-def main(targets):
-    """
-    this method will run all the methods within class data_exploration.py
-    """
-    # Parse through the datasets and select only relevant columns
-    cpu_df = data_exploration.parse_cpu_data("data/raw/hw_metric_histo.csv000")
-    sys_df = data_exploration.parse_sys_data("data/raw/system_sysinfo_unique_normalized.csv000")
-    apps_df = data_exploration.parse_app_data('data/raw/frgnd_backgrnd_apps.csv000',
-                                              'data/raw/ucsd_apps_execlass.csv000')
+os.system('mkdir -p data')
 
-    # Create a new reference to the optimized DataFrame
-     optimized_df = data_exploration.optimize_dataframe(cpu_df)
+data_prep_config = json.load(open('config/data_prep.json', 'r'))
+feature_encoding_config = json.load(open('config/feature_encoding.json', 'r'))
+# test_config = json.load(open('config/test.json', 'r'))
+eda_config = json.load(open('config/eda.json', 'r'))
+train_config = json.load(open('config/train.json', 'r'))
+final_report_config = json.load(open('config/final_report.json', 'r'))
 
-    # grab the specific column "HW::CORE:C0:PERCENT" as a feature
-    cpu = data_exploration.get_stats(optimized_df, "name", "HW::CORE:C0:PERCENT:")
+# By default, not testing
+testing = False
 
-    # grab the specific column "HW::CORE:TEMPERATURE:CENTIGRADE" as a feature
-    temp = data_exploration.get_stats(optimized_df, "name", "HW::CORE:TEMPERATURE:CENTIGRADE:")
+# By default, notebook should not be in testing mode
+notebook_config = {'testing': False}
+with open('./config/notebook.json', 'w') as outfile:
+    json.dump(notebook_config, outfile)
 
-    # grab the GUIDs from each dataset and put them into lists
-    sys_guid = data_exploration.get_guid(sys_df, 'guid')
-    hw_guid = data_exploration.get_guid(cpu_df, 'guid')
+def data_prep(data_prep_config):
+    # "raw_8k_fp": "8K-gz/",
+    # "raw_eps_fp": "EPS/",
 
-    # checking for the GUID overlap in both datasets
-    syshw_overlap = [guid for guid in sys_guid if guid in hw_guid]
+    global testing
+    if testing:
+        data_prep_config['testing'] = True
+        data_prep_config['data_dir'] = './test/'
 
-    # objective is to create a dataframe of only matching GUIDs
-    hwcpu_match = data_exploration.get_cpu_guid(cpu, syshw_overlap)
+    data_dir = data_prep_config['data_dir']
+    raw_dir = data_dir + data_prep_config['raw_dir']
 
-    # only grabbing the relevant columns to be matched on
-    hwtemp_match = data_exploration.get_temp_guid(temp, syshw_overlap)
+    # Download RAW data if needed (and if not in testing mode)
+    if not data_prep_config['testing']:
+        if 'raw' not in listdir(data_dir):
+            os.system('mkdir ' + raw_dir)
+        if '8K-gz' not in listdir(raw_dir):
+            download_8k(raw_dir)
+        if 'EPS' not in listdir(raw_dir):
+            download_eps(raw_dir)
+        if 'price_history' not in listdir(raw_dir):
+            download_price_history(raw_dir)
+        if 'sp500.csv' not in listdir(raw_dir):
+            os.system('cp ./test/raw/sp500.csv ' + raw_dir)
+        print(' => All raw data ready!')
 
-    # instantiating our dataframes to be joined
-    hwtemp = pd.DataFrame(hwtemp_match.groupby('guid')['temp_mean'].mean())
-    hwcpu = pd.DataFrame(hwcpu_match.groupby('guid')['utilization_mean'].mean())
+    # Process 8K, EPS and Price History as needed
+    processed_dir = data_dir + data_prep_config['processed_dir']
+    os.system('mkdir -p ' + processed_dir)
 
-    # joining our matched dataframes together, only using relevant columns
-    table = data_exploration.get_table(sys_df, hwcpu, hwtemp)
-    mean_dur = data_exploration.get_mean_durations(apps_df, table)
-    combined = model.get_combined_table(mean_dur, table, "app_type")
+    # handler_clean_8k(data_prep_config['data_dir'])
 
-    # Split into predictor variable and training data
-    Y = model.targets(combined)
-    X = model.features_df(combined)
+    if not testing: # only process eps when it's not testing
+        handler_process_eps(data_dir)
+    # Run part 3, 4
+    updated_merged_df = handle_merge_eps8k_pricehist(data_dir)
+    updated_merged_df.to_csv(processed_dir + 'merged_all_data.csv', index = False)
+    print()
+    print(' => Done Data Prep!')
+    print()
 
-    # train the model and plot the scores
-    show = model.train_model(X, Y)
-    model_scores = model.plot_graphical_model_scores(show)
+def feature_encoding(feature_encoding_config):
+    global testing
+    if testing:
+        feature_encoding_config['data_dir'] = './test/'
 
-    print(show)
+    data_dir = feature_encoding_config['data_dir']
+    data_file = data_dir + feature_encoding_config['data_file']
+    phrase_file = data_dir + feature_encoding_config['phrase_file']
+    out_dir = data_dir + feature_encoding_config['out_dir']
+    n_unigrams = feature_encoding_config['n_unigrams']
+    threshhold = feature_encoding_config['threshhold']
 
-if __name__ == "__main__":
-    targets = sys.argv[1:]
-    main(targets)
+    merged_data, unigram_features = text_encode(data_file, phrase_file, n_unigrams, threshhold, out_dir = out_dir)
+    print(' => Exporting...')
+    merged_data.to_pickle(out_dir + 'feature_encoded_merged_data.pkl')
+    unigram_features.to_csv(out_dir + 'model_unigrams.csv', index = False)
+
+def handle_train(train_config):
+    global testing
+    if testing == True:
+        train_config['data_dir'] = './test/'
+        train_config['testing'] = True
+    train(train_config)
+
+# def handle_final_report(report_config):
+#     # global testing
+#     # if testing == True:
+#     #     report_config['data_dir'] = './test/'
+#     generate_report_from_notebook(report_config)
+#
+# def handle_eda(eda_config):
+#     # global testing
+#     # if testing == True:
+#     #     eda_config['data_dir'] = './test/'
+#     generate_report_from_notebook(eda_config)
+
+def main():
+    if len(sys.argv) == 1:
+        target = 'all'
+    else:
+        target = sys.argv[1]
+
+    # testing = False
+    if target == 'data_prep':
+        data_prep(data_prep_config)
+    elif target == 'feature_encoding':
+        feature_encoding(feature_encoding_config)
+    elif target == 'eda':
+        generate_report_from_notebook(eda_config)
+    elif target == 'train':
+        handle_train(train_config)
+    elif target == 'report':
+        generate_report_from_notebook(final_report_config)
+    elif target == 'test':
+        global testing
+        testing = True
+        notebook_config['testing'] = True
+        eda_config['data_dir'] = './test/'
+        final_report_config['data_dir'] = './test/'
+        with open('./config/notebook.json', 'w') as outfile:
+            json.dump(notebook_config, outfile)
+
+        data_prep(data_prep_config)
+        feature_encoding(feature_encoding_config)
+        generate_report_from_notebook(eda_config)
+        handle_train(train_config)
+        generate_report_from_notebook(final_report_config)
+
+main()

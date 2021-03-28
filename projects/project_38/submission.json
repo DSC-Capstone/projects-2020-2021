@@ -1,7 +1,8 @@
+
 {
-  "config": ["config/data-params.json", "config/inputs.json"],
-  "build": "run.py", 
-  "library": ["src"],
-  "notebook": ["notebooks/DSC180B_Code.ipynb"], 
-  "targets": ["data", "eda", "model"] 
+    "DockerHub Repository": "t2wan/m7",
+    "GitHub Repository": "https://github.com/t2wan/DSC180B-Capstone",
+    "dockerhub-web-id": "maritama/dsc180-capstone-web",
+    "repository-web-id": "https://github.com/maritama/DSC180-Capstone-Web.git",
+    "Comment": "We submit two repos mentioned in Piazza @449"
 }

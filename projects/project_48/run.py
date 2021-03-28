@@ -3,47 +3,79 @@
 from os import listdir, path, makedirs
 import sys
 import json
-from src.data import etl
-from src.baselines import mostPop, randomFor, conBased
+from src.data import etl, api_etl
+from src.models import model, new_user, create_model
+from src.baselines import create_baseline
 
 
 def main(targets):
-    """ Runs data pipeline to parse all the data into these folders and turn movie title data into a csv"""
+    """ Runs data pipeline to parse the data archived data and api data into the LightFM models and return analysis against
+    baselines. Can run on normal or test data."""
 
     if targets == 'test':
         filepath = 'config/test_params.json'
         with open(filepath) as file:
             configs = json.load(file)
-
-        etl.main(configs)
-        #rmse.main(configs)
         
-        print("####################")
-        mostPop.main(configs)
-        randomFor.main(configs)
-        conBased.main(configs)
-        print("####################")
+        etl.main(configs)
+        print('')
+        api_etl.main(filepath)
+        print('')
+        
+        print('########### Created Model and Model Inputs ###########')
+        create_model.main(configs)
+        print(' ')
+        print('########### Generate Recommendations ###########')
+        model.main(configs)
+        print('')
+        print('########### Add User to Model ###########')
+        new_user.main(configs)
+        
+        print('####################')
+        print('########### Baseline ###########')
+        create_baseline.main(configs)
+        model.main(configs, True)
+        print('####################')
 
     if targets == 'data' or targets == 'all':
         filepath = 'config/etl_params.json'
         with open(filepath) as file:
             configs = json.load(file)
-            
+        
         etl.main(configs)
+        print('')
         
-    #if targets == 'train' or targets == 'all':
-    #    filepath = 'config/train_eval_params.json'
-    #    with open(filepath) as file:
-    #        configs = json.load(file)
+    if targets == 'api' or targets == 'all':               
+        filepath = 'config/api_params.json'
         
-    #    train.main(configs)
+        api_etl.main(filepath)
+        print('')
         
-    #if targets == 'rmse' or targets == 'all':
-    #    filepath = 'config/rmse_params.json'
-    #    with open(filepath) as file:
-    #        configs = json.load(file)        
+    if targets == 'models' or targets == 'all':
+        filepath = 'config/models_params.json'
+        with open(filepath) as file:
+            configs = json.load(file)
+            
+        print('########### Created Model and Model Inputs ###########')
+        create_model.main(configs)
+        print(' ')
+        print('########### Generate Recommendations ###########')
+        model.main(configs)
+        print('')
+        print('########### Add User to Model ###########')
+        new_user.main(configs)
         
-    #    rmse.main(configs)
+        
+    if targets == 'baselines' or targets == 'all':
+        filepath = 'config/models_params.json'
+        with open(filepath) as file:
+            configs = json.load(file)        
+        
+        print('####################')
+        print('########### Baseline ###########')
+        create_baseline.main(configs)
+        models.main(configs, True)
+        print('####################')
 
     return None
 

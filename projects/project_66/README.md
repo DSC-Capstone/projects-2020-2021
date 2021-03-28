@@ -1,70 +1,23 @@
-## Interpreting Higgs Interaction Network with Layerwise Relevance Propagation
+# RNASeqToolComparison
+Data Science Senior Capstone Project: Comparing RNA Sequencing Differential Gene Expression Analysis Tools
 
-#### Abstract
+In this project, we want to compare distinct differential gene expression analysis tools on simulated data created with different numbers of genes differentially expressed.
 
-While graph interaction networks achieve exceptional results in Higgs boson identification, GNN explainer methodology is still in its infancy. To introduce GNN interpretation to the particle physics domain, we apply layerwise relevance propagation (LRP) to our existing Higgs boson interaction network (HIN) to calculate relevance scores and reveal what features, nodes, and connections are most influential in prediction. We call this application HIN-LRP. The synergy between the LRP interpretation and the inherent structure of the HIN is such that HIN-LRP is able to illuminate which particles and particle features in a given jet are most significant in Higgs boson identification. The resulting interpretations are ultimately congruent with extant particle physics theory, with the model demonstrably learning the importance of concepts like the presence of muons, characteristics of secondary decay, and salient features such as impact parameter and momentum.
+## Running the project
+* Use the command `launch.sh -i buijoseph21/rna-seq-tool-comparison:v1 -m 6 -P Always` in order to have the necessary software from `compcodeR` (e.g., `generateSyntheticData`, `runDiffExp`, `ABSSeq`, `PoissonSeq`, etc.) to generate the synthetic data & perform differential gene expression analysis. The `-m 6` specifies the number of RAM which is needed to run tools that require more memory. 
 
-#### [READ PAPER](report.pdf)
-<hr>
+## Building the project using `run.py`
+* Use the command `python run.py build` to generate the synthetic data in `data/data<N>.rds`, where N represents the dataset number, using `generateSyntheticData`
+* Use the command `python run.py analysis` to perform `DESeq2`, `edgeR.exact`, `NOISeq`, `PoissonSeq`, `ttest`, `ABSSeq`, and `voom.limma` on the synthetic data created in `data` folder which returns the results in `out/data<N>_<tool>.rds`, where N represents the dataset number & tool represents the software. The output of each tool will be organized in its respective `<tool_name><synthetic_data_num>` folders in the `<tool_name>` folders. 
+* Use the command `python run.py graph` to build area under the curves (AUC), type I error rates, accuracy, sensitivity, specificity, and False Discovery Rates (FDR) graphs to compare how well the tools performed with each other. The output of each of the graphs will be stored in `rna_graphs`.
+* Use the command `python run.py real` to run the whole pipeline mentioned above on the real life dataset: Post-Mortem Molecular Profiling of Schizophrenia, Bipolar Disorder, and Major Depressive Disorder (https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-017-0458-5). 
 
-## Description of contents
+## Running the project on test data
+* `ssh` into dsmlp and `git clone` the repository
+* Use the command `launch.sh -i buijoseph21/rna-seq-tool-comparison:v1 -m 6` in order to have the necessary software from `compcodeR` (e.g., `generateSyntheticData`, `runDiffExp`, `PoissonSeq`, etc.) to generate the test synthetic data & perform differential gene expression analysis. The `-m 6` specifies the number of RAM which is needed to run tools that require more memory. 
+* Use the command `python run.py test` to create a test synthetic dataset of 100 genes differentially expressed where 50 are differentially expressed in condition 1 and 50 are differentially expressed in condition 2. This test dataset contains 5 samples per condition and is a baseline model with no outliers containing abnormal counts. When running `python run.py test`, it should first create a synthetic dataset which will be stored in the `data` folder and named as `test.rds`. Next, the 7 tools will be performed on the `test.rds` where the outputs will be stored in the `out/test` folder which is created when ran. Each tool will produce different results which is stored in `test_<tool>.rds`. For the next step of our pipeline, we want to produce the area under the curve for this test data, which will be stored in `/out/test/test_auc_plot.png` & the summary of all the metrics in `statistics.csv`.
 
-
-* `notebooks`:
-    * `relevance_heatmap.ipynb`: notebook that contains example plots of this project
-* `src`:
-    * `model`
-        * `GraphDataset.py`
-        * `InteractionNetwork.py`
-    * `sanity_check`
-        * `make_data.py`
-    * `util`: utility functions such as I/O or plotting
-        * `copy.py`
-        * `data_io.py`
-        * `model_io.py`
-        * `plot.py`
-    * `LRP.py`: core component of this project
-
-* `run.py`: Entry point for running different targets of this project
-* `test`: directory for storing Dev data
-    * `test.root`: the generated root file for testing purpose
-* `data`
-    * `model`: contains a trained IN state dictionary to start with
-    * `definitions.yml`: contains metadata definition of the data used in this project
-<hr>
-
-## Build Environment
-* [Docker image](https://hub.docker.com/repository/docker/shiro0x19a/higgs-interaction-network) used for this project
-
-<hr>
-
-
-## Usage
-To use `run.py`, a list of supported arguments are provided below
-
-For sanity check of the explanation,
-```
-python run.py sc <arguments>
-```
-|arguments|purpose|
-|-|-|
-|`all`|build all targets, equivalent to using [`data` `train` `plot`] as argument|
-|`data`| generate dummy data for sanity check|
-|`train`| train a dummy IN on the sythesized data|
-|`plot`|create static heatmap plots of precomptued relevance scores|
-
-
-
-For explaining a pre-trained Higgs boson Interaction Network,
-```
-python run.py <arguments>
-```
-|arguments|purpose|
-|-|-|
-|`test`| build all targets, equivalent to using [`data` `train` `plot`] as argument on Dev data|
-|`all`| similar to `test`, but build on actual data|
-|`explain`| generate relevance score for given data|
-|`plot`| create static heatmap plots of precomptued relevance scores|
-
-<br>
-
+## Group Contributions
+* Joseph built the dockerfile/container. He also created the starter code for building the synthetic datasets and performing differential expression analysis tools in `compcodeR` such as `DESeq2`, `edgeR`, `NOISeq`, `voom.limma`, and `ttest`. He was able to create an R script that read all the outputs from each tool mentioned previously to write out to a `num_expressed_by_tool.csv`. He created the notebook that illustrates the timings/duration for each of the tools performed on each synthetic dataset. As for the report, he helped write the Abstract, Background, Dataset (Figure 1), Methods (Creating the synthetic data, DESeq2, NOISeq, edgeR.exact), and briefly explained Figure 3. He also looked over other sections to add onto or revise. 
+* Brandon was responsible for creating the `random` outlier synthetic datasets and performing differential expression analysis tools not built-in `compcodeR`, including `ABSSeq` and `PoissonSeq`. Brandon helped write out to the `num_expressed_by_tool.csv` for his outputs produced by `ABSSeq` and `PoissonSeq`. As for the report, he helped write the Dataset and analysis of Figure 3. He also looked over other sections to add onto or revise. Brandon mainly focused on creating the graphs for the comparisons. 
+* Luigi was responsible for creating the `single` outlier and `poisson` synthetic datasets and helped perform `NOISeq` and `voom.limma` on the synthetic datasets. As for the report, Luigi created the citations, made revisions based on comments suggested by Shannon, and briefly described Figure 2. He wrote the Methods section for ABSSeq and PoissonSeq. Luigi was mainly responsible for the creation of the website and running/creating the pipeline for the real life dataset. 

@@ -1,71 +1,87 @@
-import os
-import json
+#!/usr/bin/env python
+
 import sys
+import json
 
-# import the modules under src
-import src.data.import_data as import_data
-import src.features.build_features as build_features
-import src.models.build_model as build_model
-import src.models.htseq_cts as htseq_cts
+sys.path.insert(0, 'src/data')
+sys.path.insert(0, 'src/analysis')
+sys.path.insert(0, 'src/model')
 
-with open("./config/data_config.json") as f:
-    config = json.load(f)
-data_path = config["download"]["data_path"]
-kallisto_idx_input = config["kallisto_index"]["input"]
-kallisto_idx_output = config["kallisto_index"]["output"]
-kallisto_output = config["kallisto_align"]["output"]
+from data_reddit import get_data
+from data_reddit import parse_reddit
+from format_data_reddit import make_content_text
+from format_data_reddit import make_content_search
+from lsh import *
+#from lsh import process_all
+from lsh import update_df
+from emotion import find_lexicon
+from emotion import limbic_score
+from save_data import save_csv
 
-with open("./config/feature_config.json") as f:
-    feature_config = json.load(f)
-cts_dir = feature_config["cts_dir"]
-
-with open("./config/test_config.json") as f:
-    test_config = json.load(f)
-test_data_path = test_config["data"]
-test_kallisto_output = test_config["output"]
-
-with open("./config/model_config.json") as f:
-    model_config = json.load(f)
-samtools_sh_path = model_config["samtools_sh"]
-htseq_output = model_config["htseq_output"]
-deseq = model_config["deseq"]
-wgcna = model_config["wgcna"]
-
-def main(target):
-    if target == "run.py":
-        # download the data from NCBI
-        # import_data.download_seq(data_path)
-
-        # Convert the Kallisto index
-        # import_data.convert_idx(kallisto_idx_input, kallisto_idx_output)
-
-        # Kallisto Alignment
-        # import_data.align_kallisto(kallisto_idx_output, data_path, kallisto_output)
-
-        # Read counts of Kallisto Alignments
-        # build_features.make_cts(kallisto_output, cts_dir)
-
-        # Samtools preprocessing
-        # build_model.run_shell(samtools_sh_path)
-
-        # HTSeq counts rendering
-        # htseq_cts.cts(htseq_output)
+def main(targets):
+    '''
+    Runs the main project pipeline logic, given the targets.
+    targets must contain: 'data', 'analysis', 'model'. 
+    
+    `main` runs the targets in order of data=>analysis=>model.
+    '''
+    if 'test' in targets:
+        # load short version of data
+        fp = 'test/textdata/drugs_test_year.json'
+        QUERY="test"
+        term1 = 'test/testdata/terms.csv'
+        term2 = 'test/testdata/terms2.csv'
+        terms,ontology,df,QUERY= get_data(term1,term2,fp,QUERY)
+        #format data
+        content_term = make_content_search(terms)
         
-        # DESeq2
-        build_model.run_R(deseq)
+        with open('config/analysis-params.json') as fh:
+            analysis_cfg = json.load(fh)
+        # finding drug terms
+        lsh_ls_term = create_lsh_term(content_term,**analysis_cfg)
+        ls_total = process_all(lsh_ls_term,df,QUERY, **analysis_cfg)
 
-        # WGCNA
-        build_model.run_R(wgcna)
-        print("finished the whole pipeline")
+        update_df(ls_total,df,terms,QUERY) 
         
+        # analysis emotion of sentence
+        find_lexicon(df)
+        df = limbic_score(df)
 
-    if target == "test":
-        import_data.test_download_seq(test_data_path)
-        import_data.convert_idx(kallisto_idx_input, kallisto_idx_output)
-        import_data.test_align_kallisto(kallisto_idx_output, test_data_path, test_kallisto_output)
-        build_features.test_make_cts(test_kallisto_output, cts_dir)
+        #parse dependency for identified sentence
+        save_csv(df,'test_data_result.csv')
+        
+    if 'data' in targets or 'analysis' in targets:
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+        # load data
+        terms,ontology,df,QUERY= get_data(**data_cfg)
+                
+        #format data
+        content_term = make_content_search(terms)
+
+    if 'analysis' in targets:
+        with open('config/analysis-params.json') as fh:
+            analysis_cfg = json.load(fh)
+
+        # get list of matching ontologies
+        lsh_ls_term = create_lsh_term(content_term,**analysis_cfg)
+        ls_total = process_all(lsh_ls_term,df,QUERY, **analysis_cfg)
+ 
+        #update data
+        update_df(ls_total,df,terms,QUERY) 
+        
+        # analysis emotion of sentence
+        find_lexicon(df)
+        df = limbic_score(df)
+
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)
+        # make the data target
+        save_csv(df,**model_cfg)
 
 
-if __name__ == "__main__":
-    target = sys.argv[-1]
-    main(target)
+if __name__ == '__main__':
+    # run via:
+    # python main.py data model
+    targets = sys.argv[1:]
+    main(targets)

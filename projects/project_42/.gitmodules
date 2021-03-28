@@ -1,3 +1,4 @@
 [submodule "AutoPhrase"]
 	path = AutoPhrase
-	url = https://github.com/shangjingbo1226/AutoPhrase.git
+	url = https://github.com/shangjingbo1226/AutoPhrase
+	ignore = dirty

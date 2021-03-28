@@ -1,42 +1,31 @@
-# Autonomous Vehicles Capstone: Odometry and IMU 
+# Data Visualizations and Interface For Autonomous Robots
 
+This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge, which not only allow users to control the Gazebo Robot action by simple interface interaction like clicking button or inputing text, but also monitor the realtime situation of the robot navigating in map. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. After analyzing the performance of A* algorithm versus the performance of RRT* algorithm, it is determined that RRT* performs better. Ultimately, RRT* algorithms is the primary navigation algorithm used and illustrated in this project.
 
-We are Team 4 in the Autonomous Vehicles Data Science Capstone Project. Our project revolves around the IMU, Odometry efforts while we collectively work to build a 1/5 scale racing autonomous vehicle. 
-
-For a vehicle to successfully navigate istelf and even race autonomously, it is essential for the vehicle to be able localize itself within its environment. This is where Odometry and IMU data can greatly support the robot’s navigational ability. Wheel Odometry provides useful measurements to estimate the position of the car through the use of wheel’s circumference and rotations per second. IMU, which stands for Interial Measurement Unit, is 9 axis sensor that can sense linear acceleration, angular velocity, and magnetic fields. Together, these data sources can provide us crucial information in deriving a Position Estimate (how far our robot has traveled) and a Compass Heading (orientation of the robot/where it’s headed).
-
-Our aim is to calibrate, tune, and analyze Odometry and IMU data to provide most accurate Position Estimate, Heading, and data readings to achieve high performant autonomous navigation and racing ability.
-
-*Developed by: Pranav Deshmane and Sally Poon*
-
-### Usage
-
+## Running the project
+First clone the repository:
 ```
-python run.py <target>
+$ git clone https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
 ```
-The Targets are: 
- 
-* `conversion` - This will extract the data from the raw ROS bags, clean them, and convert them to csv files to be analyzed
- 
-* `viz_analysis` - This will run the visualizations used in our analysis for IMU and Odometry calibration, tuning, and testing
+Launch docker container using image:
+```
+$ launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always
+```
+* This command launches a [dockerhub](https://hub.docker.com/repository/docker/dannyluo12/visualization_and_interface) container with the necessary OS libraries, tools, and dependencies to successfully run the project. Certain dependencies will be vital for creating the visualizations and genearting the interface.
 
-* `test` - This will test the conversion and visualization process with sample data chosen from our raw data
+## Building the project using `run.py`
+* Use the command `python run.py data` to create data folder. Will contain directories to properly store image and sensor data that is outputted.
+* Use the command `python run.py clean` to ensure that data is scaled properly to optimize runtime. Includes imaging data for running navigation algorithms as well as executing interface.
+* Use the command `python run.py analyze` to compare the performance of A* algorithm to RRT* for navigation on the same map.
+* Use the command `python run.py test` to run the visualization of RRT algorithm in test data, output images can be found in the testdata/step_out and testdata/test_out directories.
+* Use the command `python run.py all` to run the visualization of RRT algorithm on cleaned data/map, output images can be found in the data/step_out and data/test_out directories.
 
-### Resources
-In the resources folder:
+### Contributions:
+<b>Yuxi Luo</b> <br />
+Contributed to developing visualizations for RRT* and A* algorithms. Tested performance of each navigation algorithm to benchmark each and determine better performer. Collected and cleaned data from alternative groups to enable visualization and interface development. Tested different ROSBAGS for data type compatibility. Investigated various forms of visualization from different ROS topics (diff sensors, camera, lidar, etc.). Helped in managing and updating Github repo, report, and project website.
 
-* `Openlog_Artemis_IMU_Guide` - Guide we developed for SparkFun Openlog Artemis IMU to improve future experience and aid in the installation, setup, and integration with Jetson NX and ROS.
+<b>Seokmin Hong</b> <br />
+Contributed by implementing the UCSD simulated track inside the Gazebo simulator, as well as implementing the RRT* and A* algorithms that can be used for G-Mapping SLAM. Also wrote Rviz scripts and interactive interface scripts to allow autonomous navigation with a simple pressing of a button. Helped teammates by creating and writing the report, as well as creating the demonstration videos of the interactive interface and Gazebo simulations.
 
-* `Calibration_OLA_Artemis` - Calibration guide we developed for SparkFun Openlog Artemis IMU to aid in calibration process, analysis for future students/users
-
-* `Setup for Odometry_IMU` - Guide we developed for the Odometry to aid in tuning process, analysis, and setup of Odometry and VESC interaction to improve experience for future students/users.
-
-* `Apollo3`, `ICM-20948`, `Artemis_Hardware` - Sparkfun Openlog Artemis IMU Hardware Specifications, used to cross reference PIN headers that were needed to be configured correctly during integration process. 
-
-
-
-
-### Additional ROS package 
-* `ros_imu_yaw_pkg` 
-ROS package we developed to aid in the integration of the OLA Artemis IMU to ROS. It allows the orientation quaternion readings derived from the IMU to be easily converted into Euler angles and Yaw heading. This is to improve the debugging process within ROS and helps to easily visualize the Yaw heading. This package can be run in parallel as a complement to the main ROS package used to interface with the OLA Artemis IMU and can easily integrate with the rest of your current ROS system in place as a separate node. Overall, this is to aid in the development process within ROS when deriving Yaw Heading from the OLA Artemis IMU. 
-
+<b>Jia Shi</b> <br />
+Contributed to the research of visualization and interface. Developed an interactive interface with roslibjs and webridge to connect ROS with web page. Worked with teammate to integrate interface with Gazebo robot to allow controlling. Also created visualization demo with ROS bag data from other teams. Helped teammates with the coding and helped with the setup and completion of github repo.

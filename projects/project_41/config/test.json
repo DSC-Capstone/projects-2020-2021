@@ -1,0 +1,8 @@
+{
+    "data_dir": "./test/",
+    "raw_dir": "./test/raw/",
+    "raw_8k_fp": "./test/raw/8K-gz/",
+    "raw_eps_fp": "./test/raw/EPS/",
+    "processed_dir": "./test/processed/",
+    "testing": true
+}

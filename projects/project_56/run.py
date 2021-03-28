@@ -1,138 +1,259 @@
-import json
+from src import utils
+from src.model import model as md
+from src.data import data_androguard
+from src.analysis import andro_analysis
+from src.data import mamadroid_implementation as mama
+from src.data import commongraph as coco
+from scipy.sparse import lil_matrix
+from scipy.sparse import save_npz
+from scipy.sparse import load_npz
+from sklearn.model_selection import train_test_split
+from gensim.models.doc2vec import Doc2Vec
+
+
 import sys
-import torch
-from src.utils import create_input_files
-from src.train import main
-from src.eval import evaluate
-from src.caption import caption_image_beam_search, visualize_att
-from src.counterfactuals import create_mask_input, generate_counterfactuals
-from src.img_caption_explainer import ImageCaptionExplainer
+#from config import data_params
+import numpy as np
+import pandas as pd
 
-def data(test=False):
-    root = ''
-    if test:
-        f = open(root+"config/create_input_files_test.json")
-    else:
-        f = open(root+"config/create_input_files.json")
-    jsonread = json.load(f)
-    create_input_files(dataset=jsonread['dataset'],
-                       karpathy_json_path=root+jsonread['karpathy_json_path'],
-                       image_folder=jsonread['image_folder'],
-                       captions_per_image=jsonread['captions_per_image'],
-                       min_word_freq=jsonread['min_word_freq'],
-                       output_folder=root+jsonread['output_folder'],
-                       max_len=jsonread['max_len'],)
-
-def train(test=False):
-    main(test)
-
-def evaluate_model(test=False):
-    if test:
-        f = open('config/eval_test.json')
-    else:
-        f = open('config/eval.json')
-    jsonread = json.load(f)
-    beam_size = jsonread['beam_size']
-    print("\nBLEU-4 score @ beam size of %d is %.4f." % (beam_size, evaluate(beam_size, test)))
+import os, sys, inspect
+import json
 
 
-def generate_viz(test=False):
-    if test:
-        f = open('config/caption_test.json')
-    else:
-        f = open('config/caption.json')
-    jsonread = json.load(f)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    # Load model
-    checkpoint = torch.load(jsonread['model_fp'], map_location=str(device))
-    decoder = checkpoint['decoder']
-    decoder = decoder.to(device)
-    decoder.eval()
-    encoder = checkpoint['encoder']
-    encoder = encoder.to(device)
-    encoder.eval()
-
-    # Load word map (word2ix)
-    with open(jsonread['wordmap_fp'], 'r') as j:
-        word_map = json.load(j)
-    rev_word_map = {v: k for k, v in word_map.items()}  # ix2word
-
-    # Encode, decode with attention and beam search
-    seq, alphas = caption_image_beam_search(encoder, decoder, jsonread['img_fp'], word_map, jsonread['beam_size'])
-    alphas = torch.FloatTensor(alphas)
-
-    # Visualize caption and attention of best sequence
-    visualize_att(jsonread['img_fp'], seq, alphas, rev_word_map, jsonread['smooth'])
-
-def counterfactual_production(test=False, year=None):
-    if test:
-        fname = 'config/counterfactual_test.json'
-    else:
-        fname = 'config/counterfactual.json'
-    if year == '2014':
-        fname = 'config/counterfactual_2014.json'
-
-    with open(fname, 'r') as f:
-        jsonread = json.load(f)
-    img_dir = jsonread['img_dir']
-    temp_dir = jsonread['temp_dir']
-    out_dir = jsonread['out_dir']
-    annotation_fp = jsonread['annotation_fp']
-    checkpoint_dir = jsonread['checkpoint_dir']
-    model_id = jsonread['model_id']
-
-    create_mask_input(img_dir, temp_dir, out_dir, annotation_fp, False)
-    generate_counterfactuals(temp_dir, checkpoint_dir, model_id)
-
-def explain_model(test=False):
-    if test:
-        fname = 'config/counterfactual_test.json'
-    else:
-        fname = 'config/counterfactual.json'
-
-    with open(fname, 'r') as f:
-        jsonread=json.load(f)
-
-    temp_dir=jsonread['temp_dir']
-    out_dir=jsonread['out_dir']
-    model_fp=jsonread['model_fp']
-    wordmap_fp=jsonread['wordmap_fp']
-    coco_fp=jsonread['annotation_fp']
-    beam_size=jsonread['beam_size']
-    caption_model_id=jsonread['caption_model_id']
-    wordmap_id = jsonread['wordmap_id']
-
-    img_caption = ImageCaptionExplainer(img_dir=temp_dir, out_dir=out_dir, \
-    model_fp=model_fp, wordmap_fp=wordmap_fp, coco_fp=coco_fp, beam_size=beam_size,\
-    caption_model_id=caption_model_id, wordmap_id=wordmap_id)
-
-    for img_id in img_caption.ids:
-        img_caption.explain_image(img_id)
+import os, sys, inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
 
 
-def all():
-    data()
-    train()
-    evaluate_model()
-    generate_viz()
-    counterfactual_production()
-    explain_model()
 
-def coco2014():
-    counterfactual_production(year='2014')
+DATA_PARAMS = 'config/data_params.json'
+MODEL_PARAMS = 'config/model.json'
+TEST_PARAMS = 'config/test.json'
+FEATURE_PARAMS = "config/features.json"
+MAMA_PARAMS = "config/mamadroid_params.json"
 
-def test():
-    data(True)
-    train(True)
-    evaluate_model(True)
-    generate_viz(True)
-    counterfactual_production(test=True)
-    explain_model(test=True)
+
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
+
+def load_params(fp):
+    with open(fp) as fh:
+        param = json.load(fh)
+
+    return param
+
+
+def main(targets):
+    """
+    runs the targets
+    targets --> a list of targets
+    """
+
+    #["data", "feature", "model", "train", "test"]
+    if "data" in targets:
+        data_config = load_params(DATA_PARAMS)
+        data_androguard.train_txt(data_config["malware_dir"], data_config["popular_dir"], data_config["random_dir"], data_config["app_id_out"])
+
+
+
+    elif "feature" in targets:
+        feature_config = load_params(FEATURE_PARAMS)
+        train, test = (feature_config["trainFP"], feature_config["testFP"], feature_config["malware_dir"], feature_config["popular_dir"], feature_config["random_dir"])
+        
+        apps = train + test
+        
+        for app in apps:
+            data_androguard.wrapper(app, feature_config["commonFP"], feature_config["metapathsFP"], feature_config["walksFP"])
+
+
+
+    elif 'test' in targets:
+        with open(TEST_PARAMS) as fh:
+            test_cfg = json.load(fh)
+            
+        benign_dir = test_cfg['test_benign']
+        malicious_dir =test_cfg['test_malicious']
+        
+        apks = utils.list_files(benign_dir) + utils.list_files(malicious_dir)
+        np.random.shuffle(apks)
+        split = round(len(apks) * 0.8)
+        train = apks[:split]
+        test = apks[split:]
+        
+
+        target = test_cfg["test_outputs"]
+        # get txt with labels:
+            
+        txt = test_cfg["app_label"]
+        if os.path.exists(txt):
+            os.remove(txt)
+            data_androguard.train_txt(malicious_dir, benign_dir, benign_dir, target)
+        else:
+            data_androguard.train_txt(malicious_dir, benign_dir, benign_dir, target)
+        
+        print(train)
+        # create features using wrapper
+        apks = train + test
+        
+        for apk in apks:
+            data_androguard.wrapper(apk, target, target, target)
+
+        # build a common graph, run metapath2vec
+        data = pd.read_csv(txt)
+        X, y = coco.metapath2vec(target, train, target, txt, target, test_cfg["modelFP"], testing = True)
+        
+        md.actuals(X, y, X, y)
+        
+        
+    elif "mamadroid" in targets:
+
+        with open(MAMA_PARAMS) as fh:
+            mama_cfg = json.load(fh)
+            
+        
+            
+        malicious_apks = os.listdir(mama_cfg["malware_dir"])
+        popular_apks = os.listdir(mama_cfg["popular_dir"])
+        random_apks = os.listdir(mama_cfg["random_dir"])
+        target = mama_cfg["out_dir"]
+        
+#         # currently use vectorize, have to test with concurrency
+#         mama.create_markovs(mama_cfg["malware_dir"], target, "PACKAGE")
+#         mama.create_markovs(mama_cfg["malware_dir"], target, "FAMILY")
+#         mama.create_markovs(mama_cfg["popular_dir"], target, "PACKAGE")
+#         mama.create_markovs(mama_cfg["popular_dir"], target, "FAMILY")
+#         mama.create_markovs(mama_cfg["random_dir"], target, "PACKAGE")
+#         mama.create_markovs(mama_cfg["random_dir"], target, "FAMILY")
+        
+#         directories = [target]
+#         mama.create_X(directories)
+
+        # perform PCA and classify
+        X_family = load_npz(mama_cfg["family_npz"])
+        X_package = load_npz(mama_cfg["package_npz"])
+        y_family = np.loadtxt(mama_cfg["family_label"])
+        y_package = np.loadtxt(mama_cfg["package_label"])
+        
+        
+        family_mode = model.baseline(X_family
+                                     , X_package
+                                     , y_family
+                                     , y_package
+                                     , [10]
+                                     , mama_cfg["mamadroid_results"])
+        
+    elif "cocodroid" in targets:
+        with open(DATA_PARAMS) as fh: 
+            coco_cfg = json.load(fh)
+            
+        train, test = train_test(coco_cfg["trainFP"], coco_cfg["testFP"], coco_cfg["malware_dir"], coco_cfg["popular_dir"], coco_cfg["random_dir"])
+
+        # get X and y
+        X_train, y_train = coco.metapath2vec(coco_cfg["commonFP"],
+                                 train,
+                                coco_cfg["metapathsFP"],
+                                coco_cfg["app_ids_txt"],
+                                coco_cfg["walksFP"], 
+                                 coco_cfg["cocodroid_model_path"],
+                                             reduced = True, 
+                                             subset = True)
+        
+        X_test, y_test = coco.metapath2vec_testing(coco_cfg["commonFP"], 
+                                                 coco_cfg["cocodroid_model_path"],
+                                                  coco_cfg["walksFP"],
+                                                   coco_cfg["metapathsFP"],
+                                                  test, 
+                                                   coco_cfg["app_ids_txt"])
+        
+        
+        
+        # classification process using models in baseline
+        md.actuals(X_train, y_train, X_test, y_test, coco_cfg["model_results"], "cocodroid")
+        
+        
+        
+        
+        
+        
+    elif "doc2vec" in targets:
+        with open(DATA_PARAMS) as fh: 
+            d2v_cfg = json.load(fh)
+        
+        train, test = train_test(d2v_cfg["trainFP"], d2v_cfg["testFP"], d2v_cfg["malware_dir"], d2v_cfg["popular_dir"], d2v_cfg["random_dir"])
+        
+        
+        wrapper_vec = np.vectorize(data_androguard.wrapper)
+        wrapper_vec(np.array(train), d2v_cfg["commonFP"], d2v_cfg["metapathsFP"], d2v_cfg["walksFP"])
+        
+        # if model exists, no need to do another:
+        if (not os.path.exists(d2v_cfg["doc2vec_model_path"])) & (not os.path.exists(d2v_cfg["doc2vec_labels"])):
+            model, labels = data_androguard.doc2vec_train(train, d2v_cfg["walksFP"], d2v_cfg["app_ids_txt"])
+            model.save(d2v_cfg["doc2vec_model_path"])
+            np.savetxt(d2v_cfg["doc2vec_labels"], labels)
+        else:
+            print("Model exists, will load the model instead.........")
+            model = Doc2Vec.load(d2v_cfg["doc2vec_model_path"])
+            labels = np.loadtxt(d2v_cfg["doc2vec_labels"])
+
+            
+        X_train = [model.docvecs[i] for i in range(len(model.docvecs))]
+        y_train = labels
+        
+        X_test, y_test = data_androguard.doc2vec_test(test, 
+                                      d2v_cfg["walksFP"],
+                                     d2v_cfg["app_ids_txt"],
+                                     model,
+                                     d2v_cfg["commonFP"],
+                                     d2v_cfg["metapathsFP"],
+                                     d2v_cfg["walksFP"])
+        
+        
+        print(len(X_test))
+        print(len(y_test))
+        
+        md.actuals(X_train, y_train, X_test, y_test, d2v_cfg["model_results"], "doc2vec")
+        
+        
+        
+
+
+    return None
+
+def train_test(trainFP, testFP, malwareFP, popularFP, randomFP):
+    """
+    gets train and test arrays
     
+    """  
+    malware_apks = utils.list_files(malwareFP)
+    popular_apks = utils.list_files(popularFP)
+    random_apks = utils.list_files(randomFP)
+    apks = malware_apks + popular_apks + random_apks
 
-if __name__ == '__main__':
-    try:
-        globals()[sys.argv[1]]()
-    except:
-        all()
+    if (not os.path.exists(trainFP)) & (not os.path.exists(testFP)):
+        apks = [utils.dir_and_app(app)[1] for app in apks]
+        np.random.shuffle(apks)
+        split = round(len(apks) * 0.8)
+        train = apks[:split]
+        test = apks[split:]
+        np.savetxt(trainFP, train, fmt = "%s")
+        np.savetxt(testFP, test, fmt = "%s")
+
+    else:
+        train = np.loadtxt(trainFP, dtype = object)
+        test = np.loadtxt(testFP, dtype = object)
+        
+    return [train, test]
+
+
+if __name__ == "__main__":
+    target = sys.argv[1:]
+    main(target)
+
+#     with open(MAMA_PARAMS) as fh:
+#         mama_cfg = json.load(fh)
+        
+#     for item in mama_cfg.values():
+#         print(os.path.exists(item))
+    
+    

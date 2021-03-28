@@ -1,47 +1,107 @@
-# DANE - Data Automation and Network Emulation Tool
+# Data Science Senior Capstone - Viasat VPN Analysis
 
-<img align='right' src='docs/media/dane-transparent-small.png' height=248>
+**Table of Contents**:
+- [Link to Blog page](#blog-page)
+- [Abstract](#abstract)
+- [Approach](#approach)
+- [Running](#running)
+  - [Setup](#setup)
+  - [Logging](#logging)
+  - [Target `data`](#target-data)
+  - [Target `features`](#target-features)
+  - [Target `train`](#target-train)
+- [Report](#report)
 
-DANE is a hackable dataset generation tool to collect network traffic in a variety of configurable network conditions.
+## Link to Blog page
+https://mhrowlan.github.io/streaming_provider_classifier_inside_vpn/
+## Abstract
 
-It runs on Windows, Mac, and Linux.
+Whether to access another country's Netflix library or for privacy, more people are using Virtual Private Networks (VPN) to stream videos than ever before. However, many of the different service providers offer different user experiences that can lead to differences in the network transmissions. This repository contains the implementation of our classifying model to determine what streaming service provider was being used over a VPN. The streaming providers that the model identifies are Amazon Prime, Youtube, Netflix, Youtube Live, Twitch, and an other category consiting of Disney+, Discovery+, and Hulu. This is valuable in understanding the differences in the network work patterns for the different streaming service providers. We achieve an average accuracy of 96.5% on our Random Forest model.
 
-**Table of contents**
-- [Why use DANE?](#why-use-dane)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
+## Approach
 
+We utilize Viasat's [`network-stats`](https://github.com/Viasat/network-stats) to collect network traffic on a per-second, per-connection basis while we are connected to a VPN, then engage in either internet browsing or video streaming behavior.
 
-## Why use DANE?
+Utilizing the output of network-stats, we extract packet-level measurements and engineer features based on the packet sizes, arrival times, and directions.
 
-DANE provides two core functionalities:
+We leverage these features in a classification model to determine whether or not a network-stats output contains video streaming activity.
 
-1. Automatically collect network traffic datasets in a parallelized manner
+## Running
 
-   Manual data collection for network traffic datasets is a long and tedious process—run the tool and you can easily collect multiple hours of data in one hour of time (magic!) with one or many desired 'user' behaviors.
-   
-2. Emulate a diverse range of network conditions that are representative of the real world
+The following targets can be run by calling `python run.py <target_name>`. These targets perform various aspects of the data collection, cleaning, engineering, training, and predicting pipeline.
 
-   Data representation is an increasingly relevant issue in all fields of data science, but generating a dataset while connected to a fixed network doesn't capture diversity in network conditions—in a single file, you can configure DANE to emulate a variety of network conditions, including latency and bandwidth.
+### Setup
 
-You can easily hack the tool to run custom scripts, custom data collection tools, and other custom software dependencies which support your particular research interest.
+To leverage the existing dataset, you must be a member of DSMLP and have access to the shared /teams/ directory.
 
-## Documentation
+Log on to DSMLP via `ssh <username>@dsmlp-login.ucsd.edu`
 
-For all documentation, including a [quick start](https://dane-tool.github.io/dane/guide/quickstart.html), details about the [technical approach](https://dane-tool.github.io/dane/guide/approach.html), and [FAQs](https://dane-tool.github.io/dane/guide/faq.html), please consult the [**website 📖**](https://dane-tool.github.io/dane).  
-https://dane-tool.github.io/dane
+Launch a Docker container with the necessary components via `launch-180.sh -i jeq004/streaming_provider_classifier_inside_vpn -G B05_VPN_XRAY -c 8 -g 1 -m 64`
 
-## Contributing
+Clone this repository: `git clone https://github.com/mhrowlan/streaming_provider_classifier_inside_vpn.git`
 
-See something you'd like improved? Better yet, have some improvements coded up locally you'd like to contribute?
+Navigate to this repository `cd streaming_provider_classifier_inside_vpn`
 
-We welcome you to **submit an Issue** or **make a Pull Request** detailing your ideas!
+Now, you are ready to configure targets for our project build. Details are specified below.
 
-## Acknowledgements
+### Logging
 
-This project was originally created in affiliation with the **Halıcıoğlu Data Science Institute**'s data science program at UC San Diego.  
-https://hdsi.ucsd.edu/, https://dsc-capstone.github.io/
+Logging behavior can be configured in `config/logging.json`.
+| Key | Description |
+| --- | --- |
+| produce_logs | Boolean. Whether or not to write to the log file. Default: `true` |
+| log_file | Path to the log file. Default: `data/logs/project_run.log` |
 
-DANE was motivated and developed with the generous support of **Viasat**.  
-https://viasat.com/
+### Target `data`
+
+Loads data from a source directory then performs cleaning and preprocessing steps on each file. Saves the preprocessed data to a intermediate directory.
+
+If on DSMLP with the proper group membership, this target will symlink existing data from the shared /teams/ directory.
+
+See `config/data-params.json` for configuration:
+| Key | Description |
+| --- | --- |
+| source_dir | Path to directory containing raw data. Default: `data/raw/` |
+| out_dir | Path to store preprocessed data. Default: `data/preprocessed/` |
+
+### Target `features`
+
+Engineers features on the preprocessed data with configurable parameters and saves to an output directory.
+
+See `config/features-params.json` for configuration:
+| Key | Description |
+| --- | --- |
+| source_dir | Path to directory containing preprocessed data. Default: `data/preprocessed/` |
+| out_dir | Path to directory to store feature engineered data. Default: `data/features/` |
+| chunk_size | Milliseconds. We split our variable length data into smaller chunks with consistent time spans. Default: `90000` |
+| rolling_window_1 | Milliseconds. We generate a smoothed mean using rolling windows of multiple lengths, this is the first length. Default `10000` |
+| rolling_window_1 | Milliseconds. This is the second length for our smoothed means. Default `60000` |
+| resample_rate | Time offset. We resample our packet measurements to produce a consistent sample-rate signal for spectral analysis. Default `500ms` |
+| frequency | Hertz. We compute a power spectral density feature on a signal of this sample rate. Default `2.0` |
+
+### Target `train`
+
+Trains a classifier based on the new features and outputs the accuracy between the predicted and true labels. In other words, it prints out the percentage of cases that were correctly classified as streaming.
+
+See `config/train-params.json` for configuration:
+| Key | Description |
+| --- | --- |
+| source | Path to csv containing feature engineered data. Default: `data/features/features.csv` |
+| out | Path to .pkl file which will save the trained model. Default: `data/out/model.pkl` |
+| validation_size | Proportion. This amount of training data will be withheld to evaluate the performance of the trained classifier. Default: `0.3` |
+| classifier | String name of scikit-learn classifier to use. One of 'RandomForest', 'KNN', or 'LogisticRegression'. Default: `RandomForest` |
+| model_params | Scikit-Learn hyperparameters for the chosen model. See scikit-learn documentation. |
+
+### Target `all`
+
+Runs `data`, `features`, `train` in order.
+
+### Target `test`
+
+Runs `data`, `features`, `train` with configuration found in `test/config/`.
+
+Can optionally specify targets after test to only run that target. For example `python run.py test data` will only run the data target with the test config.
+
+## Report
+
+An academic report on the exploration and model built in this repository can be found at [`SPICIVPN_report.pdf`](SPICIVPN_report.pdf)

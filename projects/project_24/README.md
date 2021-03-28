@@ -1,45 +1,83 @@
-Name: Jason Chau, Sung-Lin Chang, Dylan Loe
-
-Welcome to our Stock Predictor. 
-
-IMPORTANT!
-For running actual models:
-
-In order to run our stock predictor, just make sure that you are in the current directory and run the command 
-
-python run.py all - this will let you scrape the data, as well as running our model
+# Politics on Wikipedia
+This project is focused on detecting political controversy in online communities. We use a bag-of-words model and a party-embed model, trained on the ideological books corpus (Sim et al, 2013) as well as congressional record data (api.govinfo.gov), and attempt to generalize this to Wikipedia articles, validating it on edit comments which explicitly mention reverting bias.
 
 
-python run.py test - this will let you run our model on the data pulled from the webscraper, as well as predicting which stocks will
-be bullish or bearish in Dow Jones 30.
+## Usage
 
-python run.py fcn - this will let you run our Fully connected network model on the data pulled from the webscraper
+This code is intended to be run with the dockerfile vasyasha/pow_docker
 
-python run.py build - This command builds the test portion of the code. Please keep in mind this will pull in data from the yahoo finance api,
-so it will require an internet connection to pull in the data and calculate it.
+It relies on data from the ideological books corpus (Sim et al., 2013) with sub-sentential annotations (Iyyer et al., 2014). To download this data please visit https://people.cs.umass.edu/~miyyer/ibc/index.html where you can send an email to the address in order to obtain the full dataset.
+
+Once obtained, please extract the dataset to **/data/full_ibc/**
+
+Once this is done, please alter the config in **/config/get_ibc_params** accordingly.
+
+To run, in terminal type:
+```
+python run.py *target*
+```
+
+## Description of Contents
+
+### `run.py`
+
+Main driver for running the project. The targets and their functions are:
+* `scrape_anames` : scrapes political article names
+* `retrieve_anames` : obtains political articles
+* `ibc` : downloads test IBC data
+* `interpret_ibc` : runs partyembed model on IBC data
+* `revision_xmls` : downloads XML files for nine political Wikipedia articles
+* `partyembed` : runs Rheault and Cochrane model on current-page Wikipedia articles
+* `partyembed_time` : runs Rheault and Cochrane model on Wikipedia edit histories
+* `all` : Runs the whole pipeline.
+* `test`: Runs the pipeline with pre-loaded test data.
+
+### `config/`
+
+* `get_ibc_params.json` : Input parameters for running the ibc target.
+
+* `interpret_ibc_params.json` : Input parameters for running the interpret_ibc target.
+
+### `notebooks/`
+
+* `Partyembed+IBC_EDA.ipynb` : Jupyter notebook for the exploratory data analysis on Party_embed and IBC.
+
+### `src/`
+
+* `libcode.py` : Library code.
+
+### `src/etl/`
+
+* `bias.py` : Preliminary function for extracting bias from Rheault and Cochrane model.
+* `get_anames.py` : Scrapes relevant article names.
+* `get_atexts.py` : Scrapes article contents for the list gathered above.
+* `get_ibc.py` : Downloads sample IBC data. For the full dataset, please see **Usage** above.
+* `get_revision_xmls.py` : Downloads xml files using Wikipedia API for our time series analysis
+
+### `src/models/`
+
+* `difflib_bigrams.py` : Finds text difference between two article states
+* `get_gns_scores.py` : Assigns scores to the article texts according to Gentzkow, Shapiro, Taddy 2019.
+* `get_x2_scores.py` : Gets x2 scores based on the formula from Gentzkow and Shapiro 2010 from the IBC.
+* `gns_histories.py` : Applies Gentzkow and Shapiro 2010 approach on edit histories
+* `loadIBC.py` : This project uses code from (Sim et al., 2013) and (Iyyer et al., 2014). As this was written in a previous version of python, these updated versions replace downloads made during the building process.
+* `partyembed_current_pages.py` : Applies partyembed model to get scores for the current pages of political Wikipedia articles
+* `partyembed_ibc.py` : This file extracts from the partyembed .issue() function the ideological leanings of each word in each sentence of the ideological books corpus. After applying an aggregate function on this data, it writes this to a csv.
+* `partyembed_revisions.py` : Applies partyembed model on edit histories to find change over time.
+* `treeUtil.py` : This project uses code from (Sim et al., 2013) and (Iyyer et al., 2014). As this was written in a previous version of python, these updated versions replace downloads made during the building process.
 
 
------- CONFIG FILE--------------
+## Sources
 
-"NUM_EPOCHS" : 100, ( this is the number of trials you want to use)
-"LEARNING_RATE" : 0.001, ( this is the learning rate)
-"NUM_HIDDEN" : 32, ( number of hidden features)
-"num_days": 5, (number of lag days you will have, we chose 5 because there are 5 trading days)
-"nfeat" : 20, ( this is 4 * num_days)
-"nclass" : 1, 
-"dataset" : "./data/dowJonescorrelation0.4graph.csv", (this is the correlation graph we use for our model)
-"thresh" : 0.4, ( the threshold for the node adjacency)
-"filepath" : "./data/12modowJonesData/", (the dataset to use)
-"timeframe" : "12mo" ( which time period, there is 12mo and 6 mo
+Papers Referenced
+* https://siepr.stanford.edu/sites/default/files/publications/16-028.pdf
 
-Required packages
+* https://www.cs.toronto.edu/~gh/2528/RheaultCochraneOct2018.pdf
 
-yfinance == 0.1.55
-pandas-datareader = 0.9.0
-beautifulsoup4 4.9.3
-tensorflow == 1.12.0
-networkx == 2.1
-numpy == 1.14.3
-scipy == 1.1.0
-sklearn == 0.19.1
-matplotlib == 2.2.2
+Data
+* https://people.cs.umass.edu/~miyyer/ibc/index.html
+
+* https://data.stanford.edu/congress_text
+
+* https://dumps.wikimedia.org
+

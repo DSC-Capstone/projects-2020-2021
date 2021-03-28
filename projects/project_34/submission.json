@@ -1,4 +1,4 @@
 {
-    "GitHub Repository": "https://github.com/Kamui-Jiao/DSC180B-Project",
-    "DockerHub Repository": "https://hub.docker.com/repository/docker/kamuijiao/test"
+  "GitHub Repository": "https://github.com/panyeung/UserWaitPrediction.git",
+  "DockerHub Repository": "payeung/user_wait_dsc180"
 }

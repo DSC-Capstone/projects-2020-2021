@@ -1,5 +1,0 @@
-{
-	"MALWARE_PATH": "test/malware/",
-	"BENIGN_PATH": "test/benign/",
-	"outdir": "data/out/"
-}

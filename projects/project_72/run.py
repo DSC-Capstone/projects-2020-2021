@@ -1,87 +1,40 @@
 #!/usr/bin/env python
-
+from src.data.etl import fetch_and_save,transform_data,save_zip_file
+from src.model.model import loss_p,loss_s,loss_ps
+from src.model.ManHoleGraph import ManHoleGraph
+from src.analysis.analysis import showLoss, makePlot
+import pandas as pd
 import sys
 import json
-
-sys.path.insert(0, 'src/data')
-sys.path.insert(0, 'src/analysis')
-sys.path.insert(0, 'src/model')
-
-from data_reddit import get_data
-from data_reddit import parse_reddit
-from format_data_reddit import make_content_text
-from format_data_reddit import make_content_search
-from lsh import *
-#from lsh import process_all
-from lsh import update_df
-from emotion import find_lexicon
-from emotion import limbic_score
-from save_data import save_csv
+import os
 
 def main(targets):
-    '''
-    Runs the main project pipeline logic, given the targets.
-    targets must contain: 'data', 'analysis', 'model'. 
-    
-    `main` runs the targets in order of data=>analysis=>model.
-    '''
-    if 'test' in targets:
-        # load short version of data
-        fp = 'test/textdata/drugs_test_year.json'
-        QUERY="test"
-        term1 = 'test/testdata/terms.csv'
-        term2 = 'test/testdata/terms2.csv'
-        terms,ontology,df,QUERY= get_data(term1,term2,fp,QUERY)
-        #format data
-        content_term = make_content_search(terms)
-        
-        with open('config/analysis-params.json') as fh:
-            analysis_cfg = json.load(fh)
-        # finding drug terms
-        lsh_ls_term = create_lsh_term(content_term,**analysis_cfg)
-        ls_total = process_all(lsh_ls_term,df,QUERY, **analysis_cfg)
-
-        update_df(ls_total,df,terms,QUERY) 
-        
-        # analysis emotion of sentence
-        find_lexicon(df)
-        df = limbic_score(df)
-
-        #parse dependency for identified sentence
-        save_csv(df,'test_data_result.csv')
-        
-    if 'data' in targets or 'analysis' in targets:
+    if 'data' in targets:
         with open('config/data-params.json') as fh:
             data_cfg = json.load(fh)
-        # load data
-        terms,ontology,df,QUERY= get_data(**data_cfg)
-                
-        #format data
-        content_term = make_content_search(terms)
 
-    if 'analysis' in targets:
-        with open('config/analysis-params.json') as fh:
-            analysis_cfg = json.load(fh)
-
-        # get list of matching ontologies
-        lsh_ls_term = create_lsh_term(content_term,**analysis_cfg)
-        ls_total = process_all(lsh_ls_term,df,QUERY, **analysis_cfg)
- 
-        #update data
-        update_df(ls_total,df,terms,QUERY) 
-        
-        # analysis emotion of sentence
-        find_lexicon(df)
-        df = limbic_score(df)
-
-        with open('config/model-params.json') as fh:
-            model_cfg = json.load(fh)
         # make the data target
-        save_csv(df,**model_cfg)
+        os.mkdir("data")
+        save_zip_file(data_cfg["links"][1])
+    if 'graph' in targets: 
+        graph = ManHoleGraph()
+        graph.buildGraph()
+        graph.exportCSV()
+    
+    if 'test' in targets: 
+        with open('config/model-params.json') as fh:
+            corr_cfg = json.load(fh)
+        covid_series = pd.read_csv('test/testdata/test_series.csv')
+        offsetDict = showLoss(covid_series["cases_specimen"],
+                covid_series["cases_reported"],
+                corr_cfg["correlations"][0],
+                corr_cfg["correlations"][1],
+                [loss_ps,loss_p,loss_s])
+        covid_series["cases_specimen"] = covid_series["cases_specimen"] / 10000
+        makePlot(offsetDict["sp"], offsetDict["p"], offsetDict["s"], "correlationsTestPlot.png", covid_series)
+    return
 
 
 if __name__ == '__main__':
-    # run via:
-    # python main.py data model
     targets = sys.argv[1:]
     main(targets)

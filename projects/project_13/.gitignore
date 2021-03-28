@@ -1,15 +1,11 @@
-Final_Viz_Analysis
-test_final_viz
-data/clean
-data/testclean
-
-# DS Store
-.DS_Store
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+steps/
+testdata/step_out/
+testdata/test_out/
+data/
 
 # C extensions
 *.so

@@ -1,43 +1,39 @@
-# DSC180B_Project
+# Political Analysis on Senatorial Twitter Account Using Machine Learning
+ 
+### Project Description
+The modern American political landscape often seems void of bipartisanship. Nowhere is this stark divide between red and blue more evident than in the halls of the US Capitol, where the Senate and House of Representatives convene to carry out the duties of the legislative branch. While us average Americans rarely watch the daily proceedings of the Senate or House, Twitter has given us a unique window into the debates and discourse that shape our democracy. In fact, the 116th Congress, which served from January 3, 2019 to January 3, 2021 broke records by tweeting a total of 2.3 million tweets! As such, it is clear that Twitter is quickly becoming a digital public forum for American politicians. This surplus of tweets from the 116th Congress enables us to analyze the Twitter (following-follower) relationships between politicians on and across the two sides of the aisle. This project’s main inquiry is into whether there is a tangible difference in the way that Democrat members of Congress speak and interact on social media in comparison to Republican members of Congress. If there are such differences, this project will leverage them to train a suitable ML model on this data for node classification. That is to say, this project aims to determine a Senator’s political affiliation based off of a) their Twitter relationships to other Senators b) their speech patterns, and c) other mine-able features on Twitter. In order to truly utilize the complex implicit relationships hidden in the Twitter graph, we can use models such as Graph Convolutional Networks, which apply the concept of “convolutions” from CNNs to a graph network-oriented framework, and GraphSage model.
 
-URL: https://sdevinl.github.io/DSC180B_Project/
+### run.py
+We implement the GCN and GraphSage models as our main models for training and comparison.
 
-**Disclaimer:**   
-  We want to make it clear that the graphsage implentation found in this repo is not our own. We have made minor alterations to the code in order to better serve our overall project in regards to NBA team rankings. The original graphsage implementation can be found here https://github.com/williamleif/GraphSAGE . We would also like to cite their paper:
-  
-     @inproceedings{hamilton2017inductive,
-	     author = {Hamilton, William L. and Ying, Rex and Leskovec, Jure},
-	     title = {Inductive Representation Learning on Large Graphs},
-	     booktitle = {NIPS},
-	     year = {2017}
-	   }
-  For more information on how to run graphsage as well as the requirements for grapshage be sure to checkout the original graphsage's implementation.
+- parameters:
+  - model: The choice of models. We only implement the GCN and GraphSage. 
+  - dataset: The choice of datasets. There are multiple datasets, including data_voting, data_voting_senti. The differences between these datasets are features. The adjacency matrix of each dataset stays the same.
+  - output_path: The output of project will be stored in json file.
+  - agg_func: The choice of aggregated function in the graphSage model. We only support MEAN aggregator. The default is MEAN.
+  - num_neigh: The number of neighbors in the graphSage model. The default is 10.
+  - n: The number of hidden layers in the GCN model. This can be tuned to reach higher accuracy.
+  - self_weight: The weight of self-loop in the GCN model.
+  - hidden_neurons: The number of hidden neurons in the GCN model. The default is 200 and it can be tuned to reach higher accuracy.
+  - device: The device for training the model. We only support cuda.
+  - epochs: The number of epochs for both models. The default is 200 epochs.
+  - lr: The learning rate for both models. The default is 1e-4. This can be tuned for higher accuracy.
+  - val_size: The size of testing data. The default is 0.3.
+  - test: The parameter for running test data on models.
 
-**About:**  
-  This repository contains an implementation of a GraphSAGE for node classification on an NBA dataset. The goal being able to classify the ranks of NBA teams using player stats and a graph representation of matchups between teams in a season. 
-  
-**Setting Up Docker Image**  
-  The docker image that was created in order to have an environment able to run this project is found on the repo at aubarrio/graphsage . 
-    
-**Model**  
-  data: The data we use in this project is a compound of multiple webscraped data found on https://www.basketball-reference.com we used stats such as player and team stats, along with team schedules for the season. The seasons for which we collected data range from 2011 to the 2019 season.  
+- some examples for using the project:
+  - python run.py
+  - python run.py --test
+  - python run.py --n_GCN
+  - python run.py --dataset data_voting
+  - python run.py --model n_GCN --n 2 --self_weight 20
 
-**Basic Parameters**  
-  Since we are in early stages of developing we only have one parameter of choice and that is [train, test]. This is to distinguish the data being input into the model.  
-    train: Parameter train will train the model on all available features (181 different features)  
-    test: Parameter test will train the model on 2 features (Rank and Id) which is meant to use as an evaluation of how our data is performing  
-    
-**Examples run.py**  
-  python run.py test  
-  python run.py  
   
-  The run.py file will run a graphsage model with the mean aggregator on our NBA data. For more information on how to change the overall model or change the parameters of a model refer to the original graphsage implementation.
-  
-**Output**  
-  Direct terminal output outlining the training, validation and test accuracies of our model.  
-  In the sage_outputs folder you will find files that contain data on the model:
-  	The rawOutputs folder contains a json file that includes the raw output probabilites of our NBA test set.
-	The stats folder will contain all accuracies and losses captured whilst training your model.
-	
-**Acknowledgements**   
-  As mentioned in the disclaimer the original version of this code can be found here https://github.com/williamleif/GraphSAGE. An appreciation to the original creators of this code and a thank you for allowing this code to be available and ready to use on projects such as ours. 
+
+# Our Project Website
+
+Please view our website [here](https://anuragpamuru.github.io/dsc-180b-capstone-b03/)
+
+
+### Contributers: 
+Yimei Zhao, Anurag Pamuru, Yueting Wu

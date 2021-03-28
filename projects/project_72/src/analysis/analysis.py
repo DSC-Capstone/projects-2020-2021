@@ -1,33 +1,34 @@
-from snapy import MinHash, LSH
+import numpy as np
+import matplotlib.pyplot as plt
 
-def create_lsh(content, n_permutations, n_gram):
-    labels = content.keys()
-    values = content.values()
-    #Create MinHash object
-    minhash = MinHash(values, n_gram=n_gram, permutations=n_permutations, hash_bits=64, seed=3)
-    #Create LSH model
-    lsh = LSH(minhash, labels, no_of_bands=5)
-    return lsh
+def offset(X, y, offset, f):
+    if offset >= 0:
+        return f(X.shift(offset)[offset:], y[offset:])
+    return f(X.shift(offset)[:offset], y[:offset])
 
-def create_lsh_all(content_ls,n_permutations, n_gram):
-    lsh_ls = {}
-    for i in content_ls:
-        lsh_ls[i] = create_lsh(content_ls[i], n_permutations, n_gram)
-    return lsh_ls
+def showLoss(X,y,lower,upper,fs):
+    spearmanPearsonLosses = []
+    spearmanLosses = []
+    pearsonLosses = []
+    for i in range(lower, upper):
+        print(f"Offset: {i}. \n\tSpearman/Pearson Loss Score: \
+            {round(offset(X, y, i, fs[0]), 2)}\n\tPearson Loss Score: \
+            {round(offset(X, y, i, fs[1]), 2)}\n\tSpearman Loss Score: \
+            {round(offset(X, y, i, fs[2]), 2)}")
+        spearmanPearsonLosses.append(offset(X, y, i, fs[0]))
+        pearsonLosses.append(offset(X,y,i,fs[1]))
+        spearmanLosses.append(offset(X,y,i, fs[2]))
+    SPindex = np.argmin(spearmanPearsonLosses)
+    Pindex = np.argmin(pearsonLosses)
+    Sindex = np.argmin(spearmanLosses)
+    return {"sp": SPindex + lower, "p": Pindex + lower, "s": Sindex + lower}
 
-def get_similar_ls(content_ls,n_permutations, n_gram):
-    lsh_ls = create_lsh_all(content_ls,n_permutations, n_gram)
-    edge_list = {}
-    for i in lsh_ls:
-        edge_list[i] = lsh_ls[i].edge_list(jaccard_weighted=True)
-    
-    similar_ls = []
-    for e in edge_list:
-        edges = edge_list[e]
-        for i in edges:
-            if type(i[1])==int and type(i[0])==str:
-                similar_ls.append(i)
-            elif (type(i[0])==int and type(i[1])==str):
-                similar_ls.append(i)
-    return similar_ls
+def makePlot(spOffset, pOffset, sOffset, fileName, df):
+    fig, ax = plt.subplots(figsize=(20, 10))
+    plt.plot(df["Date"], df["cases_reported"], linewidth=5, label="Case Reported")
+    plt.plot(df["Date"], df["cases_specimen"].shift(spOffset), linestyle="--", linewidth=3, label="Highest Spearman/Pearson Combo")
+    plt.plot(df["Date"], df["cases_specimen"].shift(sOffset), linestyle=":", linewidth=3, label="Highest Spearman")
+    plt.plot(df["Date"], df["cases_specimen"].shift(pOffset), linestyle=":", linewidth=3, label="Highest Pearson")
 
+    plt.legend()
+    plt.savefig(f"figures/{fileName}")

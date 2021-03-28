@@ -1,56 +1,41 @@
-from mesa_geo import GeoAgent, GeoSpace
-from mesa.time import BaseScheduler
-from mesa.time import SimultaneousActivation
-from mesa import datacollection
-from mesa.datacollection import DataCollector
-from mesa import Model
 import pandas as pd
 import numpy as np
-import random
-import plotly
-import plotly.express as px
-import plotly.graph_objects as go
-import sys
-import shapely
-from shapely.geometry import Polygon, Point, LineString
-
-import os.path
+import os
 import json
+# import brickschema
+import re
+import sys
+sys.path.append('./src')
 
-from src.data.build_datasets import DatasetMaker
-from src.models.run_model import RunAll
-from src.visualization.viz import Visualize
-from src.visualization.viz_gif import GifMaker
 
-# silencing all warnings
-import warnings
-warnings.filterwarnings('ignore')
+def run(action_arg):
+    """Runs the tool"""
 
-if __name__ == '__main__':
+    if action_arg == 'clean':
+        from src.utils import clean_extra_contents
+        clean_extra_contents()
 
-    if len(sys.argv) == 1:
-        print('> using given parameters')
-        # extracting parameters from default config file
-        params = DatasetMaker().make_data('bus_params')
+    elif action_arg == 'env-setup':
+        os.system('chmod +x dependencies.sh')
+        os.system('sh dependencies.sh')
+        print('Requirements installed!')
 
+    elif action_arg == 'all' or action_arg == 'test':
+        if not os.path.isdir('../brick-builder') \
+        and not os.path.isdir('../reconciliation-api'):
+            run('env-setup')
+        run('brickify')
+
+    elif action_arg == 'brickify':
+        from src.execute import automatic_OR
+        filename = automatic_OR()
+
+        os.system(
+            'python ../brick-builder/make.py brick_builder_template.txt:' + filename)
     else:
-        try:
-            print('> using test parameters')
-            # extracting parameters from given test file
-            params = DatasetMaker().make_data('test')
+        print('Please specify a valid argument!')
 
-        except:
-            print('invalid data')
 
-    # initiating the model, running the model, and recording agent data for each step
-    agent_data, results = RunAll().run_program(params)
-
-    print('> Working on Visualization \n .')
-    # making the results graph showing number of healthy and sick passangers in each step
-    Visualize().make_viz(results,params)
-    print(" .")
-    #making the gif of the bus showing the location of healhty and sick people in each step
-    GifMaker().make_gif(agent_data,params)
-    print(" .")
-    print('> Visualization Done')
-    print('> results saved in figures folder')
+if __name__ == "__main__":
+    action = 'brickify' if len(sys.argv) == 1 else sys.argv[1]
+    run(action)

@@ -1,0 +1,7 @@
+{
+    "single_source": "test/testdata/single_image/",
+    "lap_source": "test/testdata/track_laps/",
+    "single_data_fp" : "data/single_img/",
+    "lap_data_fp" : "data/lap_data/"
+
+}

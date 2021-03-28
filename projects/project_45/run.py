@@ -1,85 +1,85 @@
-import json
-import os
 import sys
-import numpy as np
-from src.preprocessing import bbc_preprocessing, news_preprocessing
-import src.model as model
-sys.path.insert(0, 'src')
-from src import ner_eda as eda
-import src.utils as utils
-import pickle
+import json
 
+sys.path.insert(0, 'src/data')
+sys.path.insert(0, 'src/utils')
+sys.path.insert(0, 'src/models')
 
+from clean import remove_data
+from scrape import scrape_data
+from fbpreprocessing import fb_preprocessing
+from model_preprocessing import get_data
+from run_models import run_models
+from youtube import get_youtube
 
+def gather_data(data_params):
+    with open('config/chromedriver.json') as fh:
+        chromedriver_path = json.load(fh)['chromedriver_path']
+
+    print("Scraping data...")
+    scrape_data(chromedriver_path,
+                data_params['all_links_pickle_path'],
+                data_params['fbworkouts_path'],
+                data_params['comments_path'])
+    print("Scraping done.")
+
+    print("Querying Youtube API...")
+    get_youtube(data_params['fbworkouts_path'],
+                data_params['youtube_csv_path'])
+    print("Querying done")
+
+def preprocess(data_params, d):
+    print("Preprocessing...")
+    fb_preprocessing(
+        fbworkouts_path = data_params['fbworkouts_path'],
+        fbworkouts_clean_path = data_params['fbworkouts_clean_path'],
+        comments_path = data_params['comments_path'],
+        fbcommenters_path = data_params['fbcommenters'],
+        user_item_interactions_path = data_params['user_item_interactions_path'],
+        fbworkouts_meta_path = data_params['fbworkouts_meta_path'],
+        all_links_pickle_path = data_params['all_links_pickle_path'],
+        youtube_csv_path = data_params['youtube_csv_path'],
+        d=d
+        )
+    print("Data preprocessing done.")
+
+def run_model(data_params, k):
+    data = get_data(data_params['user_item_interactions_path'])
+    run_models(data, k=k)
 
 def main(targets):
-    # Load the AutoPhrase module
-    os.system('git submodule init && git submodule update')
+    if 'clean' in targets:
+        remove_data()
+        print("Data cleaned.")
+        return
+
+    if 'test' in targets:
+        with open('config/test-params.json') as fh:
+            data_params = json.load(fh)
+
+        preprocess(data_params, d=0)
+        run_model(data_params, k=None)
+        return
+
+    with open('config/data-params.json') as fh:
+        data_params = json.load(fh)
 
     if 'all' in targets:
-        targets = 'all preprocessing autophrase model'
-        para = json.load(open('config/all_cfg.json'))
-        
-    if 'test' in targets:
-        targets = 'test preprocessing autophrase model'
-        para = json.load(open('config/all_cfg.json'))
+        gather_data(data_params)
+        preprocess(data_params, d=5)
+        run_model(data_params, k=20)
+        return
 
-    if 'preprocessing' in targets:
-        print("Preprocessing 20 News Dataset")
-        os.makedirs('data/temp',exist_ok=True)
-        news_preprocessing('data/temp')
-        
-    if 'autophrase' in targets:
-        print("Running AutoPhrase")
-        auto_para = ' '.join([f'{param}={value}' for param, value in json.load(open('config/autophrase_cfg.json')).items()])
-        os.system(f'cd AutoPhrase/ && {auto_para} ./auto_phrase.sh')
-        os.system(f'cd ..')
-        
-        
-        
+    if 'data' in targets:
+        gather_data(data_params)
+        preprocess(data_params, d=5)
+
     if 'model' in targets:
-        if 'all' in targets:
-            print("Load Data")
-            newsgroups_train_X,newsgroups_test_X,newsgroups_val_X, newsgroups_train_y,newsgroups_test_y,newsgroups_val_y = utils.load_20_news()
-        if 'test' in targets:
-            print("Load Data")
-            newsgroups_train_X,newsgroups_test_X,newsgroups_val_X, newsgroups_train_y,newsgroups_test_y,newsgroups_val_y = utils.load_20_news_test(500)
-        
-        print("Build the model")
-        if para["feature"] == "all":
-            autophrase = utils.phrase_preprocess(para['autophrase_result'])
-            ner = utils.ner_preprocess(para["ner_result"])
-            vocab_lst = autophrase + ner
-        elif para["feature"] == "ner":
-            vocab_lst = utils.ner_preprocess(para["ner_result"])
-        elif para["feature"] == "autophrase":
-            vocab_lst = utils.phrase_preprocess(para['autophrase_result'])
+        run_model(data_params, k=20)
 
-        vocab_lst =np.unique(vocab_lst)
-        combining = False
-        if combining == "True":
-            combining = True
-        
-        clf = model.build_model(newsgroups_train_X, newsgroups_train_y,model = para['model'], vectorizing = para['vectorizing'], vocab_lst = vocab_lst, combining = combining)
-        print('=========================================================')
-        print("Evaluate on Validation Dataset")
-        val_pred = clf.predict(newsgroups_val_X) 
-        utils.evaluate(newsgroups_val_y, val_pred)
-        print('=========================================================')
-        
-        print('=========================================================')
-        print("Evaluate on Test Dataset")
-        val_pred = clf.predict(newsgroups_test_X) 
-        utils.evaluate(newsgroups_test_y, val_pred)
-        print('=========================================================')
-
-        filename = para["model_save"]
-        with open(filename + 'model.pkl', 'wb') as file:
-            pickle.dump(clf, file)
+    return
 
 
-        
-    
-        
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    targets = sys.argv[1:]
+    main(targets)

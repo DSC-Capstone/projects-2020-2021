@@ -1,0 +1,7 @@
+{
+    "datafile": "results/metrics/metrics.txt",
+    "paramdir": "data/poses",
+    "launchfile": "/tmp/slameval/mapping_base.launch",
+    "outparamdir": "results/mapping/params/best_params.yaml",
+    "outlaunchdir": "results/mapping/launch/mapping.launch"
+}

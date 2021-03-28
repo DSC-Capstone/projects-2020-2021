@@ -1,4 +1,7 @@
 {
-    "GitHub Repository": "https://github.com/YikaiHao/DSC180_Winter.git",
-    "DockerHub Repository": "yikaihao/dsc180_docker:latest"
+  "config": ["config/data-params.json", "config/inputs.json"],
+  "build": "run.py", 
+  "library": ["src"],
+  "notebook": ["notebooks/DSC180B_Code.ipynb"], 
+  "targets": ["data", "eda", "model"] 
 }

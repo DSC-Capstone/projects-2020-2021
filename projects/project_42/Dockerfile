@@ -1,31 +1,11 @@
-FROM openjdk:8
-
-MAINTAINER Vincent Le <vil069@ucsd.edu>
-
+FROM ucsdets/scipy-ml-notebook
+LABEL maintainer="Daniel Lee <dhl011@ucsd.edu> & Yuxuan Fan <yufan@ucsd.edu>"
 USER root
-
-RUN \   
-    echo "===> install g++" && \
-    apt-get update && apt-get install -y --force-yes g++
-
-RUN \
-    echo "===> install make, curl, perl" && \
-    apt-get update && apt-get install -y --force-yes make curl perl
-
-RUN apt-get update && apt-get install -y python3.7 && apt-get install -y python3-pip
-RUN apt-get update && apt-get install -y git
-RUN pip3 install jupyter
-RUN pip3 install notebook
-RUN pip3 install pandas
-RUN pip3 install matplotlib
-RUN pip3 install numpy
-RUN pip3 install nltk
-RUN pip3 install seaborn
-RUN pip3 install scikit-learn
-RUN pip3 install flask
-RUN pip3 install pyspark
-RUN rm -f /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python
-
-COPY /run_jupyter.sh /
-RUN chmod 755 /run_jupyter.sh
-USER $NB_UID
+# FFmpeg, JDK 8
+RUN apt-get update && apt-get install -y ffmpeg openjdk-8-jdk
+# PyTorch
+RUN pip uninstall --no-cache-dir -y torch torchvision && \
+    pip install --no-cache-dir torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+# Other Python Dependencies
+RUN pip install --no-cache-dir bar_chart_race gensim pandarallel pandas-profiling sentence-transformers spacy && \
+    python -m spacy download en_core_web_sm

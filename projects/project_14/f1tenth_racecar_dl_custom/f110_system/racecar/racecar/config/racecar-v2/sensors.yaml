@@ -1,0 +1,3 @@
+
+imu_node:
+  device: /dev/imu

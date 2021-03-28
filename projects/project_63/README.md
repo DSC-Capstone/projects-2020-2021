@@ -1,32 +1,19 @@
-# AutoBrick: A system for end-to-end automation of building point labels to Brick turtle files
+# DSC180B-Capstone-Project
+- dataset available for download at https://www.kaggle.com/crawford/gene-expression
+  - #Make sure to unzip files into 'data/raw' folder#
+- get data: in the command line enter `Rscript run-data.R data`
+- analysis: in the command line enter `Rscript run-data.R analysis`
+  - the resulting graphs will be in the data/out folder 
 
-![alt text](https://github.com/Advitya17/AutoBrickify/blob/main/autobrick_workflow.png?raw=true)
+- data: contains the raw and cleaned versions of the datasets we're working with. Also will hold the graphs from analysis
+- src: contains the analysis, cleaning, and data etl scripts.
+  - analysis: golubAnalysis.R contains the script we used to do tests and generate plots
+  - cleaning: golubCleaning.R contains the script we used to clean the raw datasets found in data/raw
+  - data: etl.R contains the scirpt to extract the data for run-data.R
+  
+Acknowledgements
+- Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression
 
-## Setup
+  - Science 286:531-537. (1999). Published: 1999.10.14
 
-Clone the repository and cd into the root directory.
-
-`git clone https://github.com/Advitya17/AutoBrickify` & `cd AutoBrickify`
-
-Then run the command below to setup the tool environment.
-
-`python run.py env-setup` (alternatively you can build with the Dockerfile!)
-
-This'll print a message to the console at the end to confirm setup.
-
-#### `python run.py test` (Only for 180B Submission, can ignore otherwise)
-
-## Instructions
-
-### Step 1
-Specify your configurations in config/data-params.json. 
-
-Detailed instructions are available in the `config/README.md` file in this repository.
-
-
-### Step 2
-Run the project from the root directory.
-
-`python run.py`
-
-Your Turtle object file (`output.ttl`) will be generated in the root directory!
+  - T.R. Golub, D.K. Slonim, P. Tamayo, C. Huard, M. Gaasenbeek, J.P. Mesirov, H. Coller, M. Loh, J.R. Downing, M.A. Caligiuri, C.D. Bloomfield, and E.S. Lander

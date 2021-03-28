@@ -1,18 +1,11 @@
-Ubuntu:
+1 GPU, 4 CPU, 32 GB RAM
 
-*  python `$ sudo apt install python` #pdf-box requires python version < 3.8
-*  pdf-box `$ sudo apt-get install python-pdfbox`
-*  Django `$ sudo apt-get install Django==3.1.5` 
-*  g++ 4.8 `$ sudo apt-get install g++-4.8`
-*  Java 8 `$ sudo apt-get install openjdk-8-jdk`
-*  curl `$ sudo apt-get install curl`
-*  seaborn `sudo apt-get install -y python3-seaborn`
-
-MacOS:
-
-*  python `$ pip install python` #pdf-box requires python version < 3.8
-*  pdf-box `$ pip install python-pdfbox` 
-*  Django `$ pip install Django==3.1.5`
-*  g++ 6 `$ brew install gcc6`
-*  Java 8 `$ brew update; brew tap caskroom/cask; brew install Caskroom/cask/java`
-*  seaborn `$ pip install -U seaborn`
+numpy=1.18.5
+pandas=1.1.4
+scipy=1.4.1
+tensorflow=2.3.1
+torch=1.2.0+cu92
+sklearn=0.22.2.post1
+scikit-surprise=1.1.1
+json=2.0.9
+kaggle=1.5.10

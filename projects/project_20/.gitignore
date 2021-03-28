@@ -1,9 +1,5 @@
-# hidden/unnecessary files
-.ipynb_checkpoints
-__pycache__
-.vscode
-
-# only capturing symlinks to datasets
-/data/*
-!/data/*.json.gz
-!/data/*.b 
+#this is a gitignore file
+data/
+*.ipynb_checkpoints/
+* __pycache__/
+*.DS_Store

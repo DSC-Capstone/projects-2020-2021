@@ -1,49 +1,37 @@
-## Where to begin?
-### Begin by uploading your twitter API credentials into a json file as under a new .env director. The file path should look like this: .env/twitter_credentials.json
 
-The json file should be structured as
+# The Spread of Misinformation on Reddit
+Observing how different forms of misinformation and conspiracies are spread through social media.
 
-```json
-{
-   "CONSUMER_KEY":"your-consumer-key-here",
-   "CONSUMER_SECRET":"your-consumer-secret-here",
-   "ACCESS_TOKEN":"your-access-token-here",
-   "ACCESS_TOKEN_SECRET":"your-access-token-secret-here"
-}
-```
+## Overview
+With the amount of actively spread misinformation circulating popular social media platforms, our goal is to explore if various forms of misinformation follow varying patterns of diffusion. The scope of our project will be limited to two misinformation types -- myth and political misinformation, and focused on Reddit. Our data will be obtained from Reddit archive [pushshift.io](http://pushshift.io).
 
-If you do not have twitter API credentials, please visit https://developer.twitter.com/en/docs/twitter-api to apply for a developer account.
+## Contents
+- `src` contains the source code of our project, including algorithms for data extraction, analysis, and modelling.
+- `notebooks` contain some examples of the models this code will generate, detailing our findings under the circumstances in which we conducted our testing.
+- `config` contains easily changable parameters to test the data under various circumstances or change directories as needed.
+- `run.py` will build and run different the different parts of the source code, as needed by the user.
+- `references` cite the sources we used to construct this project.
+- `requirements.txt` lists the Python package dependencies of which the code relies on. 
 
-To install the dependencies, run the following command from the root directory of the project: pip install ```-r requirements.txt```
+## How to Run
+- Install the dependencies by running `pip install -r requirements.txt` from the root directory of the project.
+- Alternatively, you may reference our Docker image to recreate our environment, located [here](https://hub.docker.com/r/cindyhuynh/reddit-misinformation).
+- Due to the open source nature of the PushShift archive, there is no need for any API use or developer account. 
 
-## How to use run.py:
-run.py takes in one argument, a choice between *data*, *eda*, *test*
-
-## Directories
-* A directory titled *data* will be created with 4 subdirectories: *graphs, raw, processed*
-   * *graphs* will hold any charts from eda functions
-   * *processed* will hold any statistic data from eda functions
-   * *raw* will hold raw tweet data
-* Each of the above directories will be split into two additional subdirectories, *news* and *election*
-   * *news* will hold any data related to news stations
-   * *election* will hold any data related to the election dataset
-
-## Description of arguments (targets)
-
-### data
-* Your twitter API credentials for use in downloading data to be used in our project.
-* The target will download all tweets as specified in the config file *news_params.json*
-
-### eda
-* The eda target will generate statistics and visualizations after data has been gathered from the *data* target
-* Currently we have built a wordcloud visualization that will be stored in *graphs* and a statistic of most common hashtags per news station stored in *processed*
-
-### compile and embed
-* Performs graph embedding calculations as described in the methodology section of the report
-
-### test
-* The test target is designed for grading functionality in the DSC180B capstone course and will test three functionalities:
-   * *etl_news* checks that test data is available for use
-   * *eda* generates visualizations and statistics based on the test data, stores in *test/testreport*
-   * *similarity* will generate similarity hashtag vectors to be used in our main analysis *test/testreport*
-
+### Building the project stages using `run.py`
+- To download the data, run `python run.py data`
+	- This downloads reddit comments from specified subreddits between a certain time period. The subreddits and time period are specified in `config/data_params.json`
+- To create visualizations of EDA charts, run `python run.py eda`
+	- This creates bar charts representing the dataset we have collected. It also shows visualizes statitics of one-time posters and average number of posts in each category and subreddit.
+- To get user polarities, run `python run.py user_polarity`
+	- This generates a metric for all users collected in the data, getting filepaths from `config/user_polarity_params.json`
+- To generate common user matrices, run `python run.py matrices`
+	- This creates two matrices demonstrating, for every possible pair of subreddits, the number and average user polarity of the users in that subset. Filepaths are specified in `config/matrix_params.json`. 
+	- NOTE: user_polarities should be run at least once before running `matrices`.
+- To create visualizations of user polarities and matrices, run `python run.py visualize`
+	- This creates bar charts representing the general user polarity spread, as well as charts showing how users of different types cross into other subreddits. These bar charts will be replaced by heatmaps in a future update for easier visualization. Filepaths are specified in `config/visualize_params.json`. 
+	- NOTE: `user_polarities` and `matrices` should be run at least once before running `visualize`.
+- To run the full pipeline, run `python run.py all`
+	- This will run all the targets. These targets include: `data`, `eda`, `user_polarity`, `matrices`, and `visualize`
+- To run the full pipeline on test data, run `python run.py test`
+	- This will run all the targets on test data. These targets include: `data`, `eda`, `user_polarity`, `matrices`, and `visualize`

@@ -1,3 +1,11 @@
+Final_Viz_Analysis
+test_final_viz
+data/clean
+data/testclean
+
+# DS Store
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,13 +135,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-
-#new updates
-ori_table.csv
-predict_report.json
-predictions.csv
-training_report.json
-model.joblib
-features.csv
-EDA.html

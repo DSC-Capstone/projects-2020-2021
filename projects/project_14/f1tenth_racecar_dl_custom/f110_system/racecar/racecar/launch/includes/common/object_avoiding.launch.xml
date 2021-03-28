@@ -1,0 +1,12 @@
+<launch>
+  <arg name="racecar_version" />
+  <arg name="object_avoiding_config"
+       default="$(find racecar)/config/$(arg racecar_version)/object_avoiding.yaml" />
+
+  <rosparam file="$(arg object_avoiding_config)" command="load" />
+
+  <node pkg="joy" type="joy_node" name="joy_node" />
+
+  <node pkg="racecar" type="object_avoiding.py" name="object_avoiding_node" />
+
+</launch>

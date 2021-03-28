@@ -1,4 +1,7 @@
-.data/
-__pycache__
-.ipynb_checkpoints
-.vim/
+
+data/.DS_Store
+data/out/.DS_Store
+src/.DS_Store
+.DS_Store
+.RData
+.Rhistory

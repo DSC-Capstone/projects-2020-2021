@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mapping and Localization using RTABMAP</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <ul id="project_list" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <ul id="project_list2" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list2" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list2" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">DSC 180B Project</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-trigger" href="" data-target="project_list">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="dropdown-trigger" href="" data-target="project_list2">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list2">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list2">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text text-lighten-2">Mapping and Localization</h1>
+        <div class="row center">
+          <h5 class="header col s12 light"><b>Uses RTABMAP- SLAM in ROS to create maps of environments</b></h5>
+        </div>
+        <div class="row center">
+          <center>
+              <a href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Mapping Github</a>
+          </center>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="imgs/mapping_top.jfif" alt="Cool AV control"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Overview</h5>
+            <p class="light">In order for the car to navigate indoors, it requires precision within a few inches. Hence, cars can’t always rely on GPS (which provide accuracy in 1-2 meters). In this section, we aim to create a map for our car. The purpose of this is to allow the car to be able to localize(find) itself within a new environment. This map is created through a process called, SLAM (Simultaneous Localization and Mapping). We are using RTABMAP, a SLAM algorithm, to process the data for map creation through ROS</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br><br>
+          <center>
+            <img class="responsive-img" src="imgs/mapping_overview.png" alt="Rtabmap logo">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <center>
+            <img class="responsive-img" src="imgs/mapping_ed.png" alt="Process">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Experiment Design</h5>
+            <p class="light">We drive our car manually around the track while it receives image data from our RGB-D camera. We made sure to drive the car around slowly so that it can accurately process each image so that the car is able to map and localize simultaneously. We also used the yellow line on the track as a guide for the car to follow in order to keep experiments consistent. Consistency is key when creating these mappings. The algorithm is constantly comparing new image data to old image data, so when the car goes too fast or not following a consistent path, the car won’t be able to localize itself even if the car has been to the same relative location it has been in. The goal is to create as many “greens” as possible. This means that the car has found a match with the new image data and old image data</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Dataset</h5>
+            <p class="light">In the dataset, we have image data and position data. In each image, we are able to see key points on them, and when the algorithm is able to find a match between two points on two different images, it draws a blue line to connect the two points for a loop closure. Along with image data, we have positional data such as the x,y,z positions along with wheel rotational angles</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br><br>
+          <center>
+            <img class="responsive-img" src="imgs/mapping_dataset.png" alt="Dataset">
+          </center>
+        </div>
+        <div class="col s12 m12">
+          <p id="mapping_hidden_content1_p" class="light"></p>
+          <a id="mapping_hidden_content1" class="btn-floating btn-large waves-effect waves-light red left" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <center>
+            <img class="responsive-img" src="imgs/mapping_analysis.png" alt="Analysis">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Analysis</h5>
+            <p class="light">We will be using the Absolute Trajectory Error (ATE) as our main metric to evaluate our mapping. This metric measures the distance between the path created by the sensors and the true path. Using this, we’re able to see how close our mapping is to the real world</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="mapping_hidden_content2_p" class="light"></p>
+          <a id="mapping_hidden_content2" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="icon-block">
+            <h5 class="center">Conclusion</h5>
+            <p class="light">We now have a map of the environment and our car is able to properly localize itself. The following images are 2D and 3D visualizations of the track. In the 2D image, black spots are areas in which there are objects in them, white are areas where the car has seen, and the dark gray are areas in which the car hasn’t seen yet.</p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col s12 m6">
+          <center>
+            <img class="responsive-img" src="imgs/mapping_conc2d.png" alt="Conc 2D">
+          </center>
+        </div>
+        <div class="col s12 m6">
+          <center>
+            <img class="responsive-img" src="imgs/mapping_conc3d.png" alt="Conc 3D">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center">Demo Videos</h5>
+        </div>
+        <br><br><br><br>
+        <div class="col s12 m6">
+          <video class="responsive-video" controls>
+            <source src="vids/map3d.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col s12 m6">
+          <video class="responsive-video" controls>
+            <source src="vids/rtabmap_demo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Construction and localization for unknown environments</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="imgs/mapping_bottom.png" alt="Mapping bottom"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">Project Developed and Executed as part of UCSD's DSC 180B class.</p>
+          <p class="grey-text text-lighten-4">Team members: Siddharth Saha, Jay Chong and Youngseo Do.</p> 
+          <p class="grey-text text-lighten-4">Mentors: Dr. Jack Silberman and Aaron Fraenkel</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Github Repositories</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping using RTABMAP</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Object Segmentation using Detectron2</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera Tuning in bright conditions</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Full Reports</h5>
+          <ul>
+            <li><a class="white-text" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li><br>
+            <li><a class="white-text" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+          </ul>
+          <h5 class="white-text"><a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Contact Us</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Website Made by <a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Siddharth Saha</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

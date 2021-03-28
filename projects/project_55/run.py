@@ -1,64 +1,92 @@
-# dependencies & imports
-
-import sys, json, os
-import warnings 
+import sys
+import json
 import pandas as pd
-import matplotlib.pyplot as plt
 
-warnings.filterwarnings("ignore")
 sys.path.insert(0, 'src')
+from util import *
+from data.make_dataset import clean_df
+from data.reduce_api import run_reduce_api
+from features.build_features import build_mat
+from features.word2vec import build_w2v
+from features.node2vec import build_n2v
+from features.metapath2vec import build_m2v
+from features.build_new_features import build_mat as new_build_mat
+from models.run_model import run_model 
+from models.clf import run_clf
+from visualization.eda import generate
 
-from data import make_dataset
-from features import build_features, build_images, build_labels
+def load_params(fp):
+    """
+    Load params from json file 
+    """
+    with open(fp) as fh:
+        param = json.load(fh)
 
-# define main
+    return param
+
 def main(targets):
-
-    if ('test' in targets):
-        
-        # get test params
-        with open('config/test_params.json') as fh:
-            data_cfg = json.load(fh)
-        
-        raw_fp = data_cfg['raw_path']
-        test_fn = data_cfg['file_name']
-        market_fn = data_cfg['market_name']
-        time_wdw = data_cfg['time_wdw']
-        img_fp = data_cfg['output_img_path']
-        label_fp = data_cfg["output_lable_path"]
-        
-        data_file = os.path.join(raw_fp, test_fn)
-        data = pd.read_csv(data_file, parse_dates = ['time'])
-        
-        market_file = os.path.join(raw_fp, market_fn)
-        market_data = pd.read_csv(market_file, parse_dates = ['time'])
-
-    # all case
-    else:
-        
-        # get all params
-        with open('config/data_params.json') as fh:
-            data_cfg = json.load(fh)
-        
-        raw_fp = data_cfg['raw_path']
-        time_wdw = data_cfg['time_wdw']
-        img_fp = data_cfg['output_img_path']
-        
-        # merged 8:30-9:30 data
-        data = make_dataset.merge_data(raw_fp)
-        
-    # data with volatility
-    data = build_features.feature_engineer(data, time_wdw)
-    # data for gramian angular field
-    data_gaf = make_dataset.gaf_df(data)
-    # creates images from polar coordinates, saves them to img_fp
-    build_images.gramian_img(img_fp, data_gaf)
-    # creates a table of image id and its corresponding label, saves it to label_fp
-    build_labels.label (data, market_data, label_fp)
+    """
+    Runs the main project pipeline logic, given the target 
+    targets must contain: 'baseline_df' ...
+    """
+    if 'baseline_df' in targets:
+        params = load_params('config/data-params.json')
+        clean_df(**params)
     
-    return 
+    if 'reduce_api' in targets:
+        params = load_params('config/reduce_api.json')
+        run_reduce_api(**params)
+
+    if 'eda' in targets:
+        params = load_params('config/eda-params.json')
+        generate(**params)
+
+    if 'feature_build' in targets:
+        params = load_params('config/feature-params.json')
+        build_mat(**params)
+
+    if 'new_feature_build' in targets:
+        params = load_params('config/new_feature-params.json')
+        new_build_mat(**params)
+    
+    if 'run_model' in targets:
+        params = load_params('config/test-params.json')
+        run_model(**params)
+
+    if 'word2vec' in targets:
+        params = load_params('config/word2vec.json')
+        build_w2v(**params)
+
+    if 'node2vec' in targets:
+        params = load_params('config/node2vec.json')
+        build_n2v(**params)
+
+    if 'metapath2vec' in targets:
+        params = load_params('config/metapath2vec.json')
+        build_m2v(**params)
+        
+    if 'clf' in targets:
+        params = load_params('config/clf.json')
+        run_clf(**params)
+
+
+    if 'test' in targets:
+        params = load_params('config/test/data-params.json')
+        clean_df(**params)
+        params = load_params('config/test/feature-params.json')
+        build_mat(**params)
+        params = load_params('config/test/test-params.json')
+        run_model(**params)
+        params = load_params('config/test/word2vec.json')
+        build_w2v(**params)
+        params = load_params('config/test/node2vec.json')
+        build_n2v(**params)
+        params = load_params('config/test/metapath2vec.json')
+        build_m2v(**params)
+        params = load_params('config/test/clf.json')
+        run_clf(**params)
+   
 
 if __name__ == '__main__':
-    
     targets = sys.argv[1:]
     main(targets)

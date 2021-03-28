@@ -1,85 +1,90 @@
-import json
+#!/usr/bin/env/python
+
+import yaml
 import argparse
-from src.data.data_loader import data_loader
-from src.data.data_loader_sen import data_loader_sen
-from src.models.GCN_model import n_hidden_GCN
-import pandas as pd
-import numpy as np
-import networkx as nx
-import random
+import sys
+import os
+from pathlib import Path
 
-import tensorflow as tf
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dropout, Dense
-from tensorflow.keras import Sequential
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.callbacks import TensorBoard, EarlyStopping, Callback
-import tensorflow as tf
-from tensorflow.keras.regularizers import l2
-from spektral.layers import GraphConv
-import pathlib
+sys.path.insert(0, 'src')
 
-def main():
-    # Training settings
-    local_path = str(pathlib.Path().parent.absolute())
-    local_data = local_path + '/data'
-    local_output = local_path + '/config/model-output.json'
-    parser = argparse.ArgumentParser(description='Running model')
-    parser.add_argument('--model', type=str, default='n_GCN', choices=['n_GCN', 'graphsage'],
-                        help='model to use for training (default: 2layerGNN)')
-    parser.add_argument('--dataset', type=str, default='data_voting_senti', choices=['data_voting', 'data_voting_senti'],
-                        help='data set type (default data_voting )')
-    parser.add_argument('--output_path', type=str, default=local_output,
-                        help='path for the output json file')
-    parser.add_argument('--agg_func', type=str, default='MEAN', choices=['MEAN'],
-                        help='aggregate functions used in graphsage dafault is mean')
-    parser.add_argument('--num_neigh', type=int, default=10,
-                        help='Number of neighbors used in graphsage default is 10')
-    parser.add_argument('--n', type=int, default=0,
-                        help='Number of hidden layers if the model is n_GCN')
-    parser.add_argument('--self_weight', type=float, default=10,
-                        help='The weight of selp loop if the model is n_GCN')
-    parser.add_argument('--hidden_neurons', type=int, default=200,
-                        help='hidden neurons in hidden layer (GCN) (default: 200)')
-    parser.add_argument('--device', type=str, default='cuda',
-                        help='Device for training the model (dafault: cuda)')
-    parser.add_argument('--epochs', type=int, default=200,
-                        help='number of epochs to train (default: 200)')
-    parser.add_argument('--lr', type=float, default=1e-4,
-                        help='learning rate (default: 1e-4)')
-    parser.add_argument('--val_size', type=float, default=0.3,
-                        help='Validtion size (default: 0.3)')
-    parser.add_argument('--test', action = 'store_true', help='running test')
-    args = parser.parse_args()
-    if args.test:
-        with open('test/testdata/test.json') as f:
-             data = json.load(f)
-        X, y, A = np.array(data['X']), np.array(data['y']), np.array(data['A'])
-        model = n_hidden_GCN(A, X, y, 0)
-        hist = model.train_model()
-    else:
-        if args.dataset == 'data_voting':
-            loader = data_loader("data/voting_features.csv", "data/edges.csv")
-            X, y, A = loader.get_data()
-            if args.model == 'n_GCN':
-                model = n_hidden_GCN(A,X,y, N=args.n, hidden_neurons=args.hidden_neurons, self_weight=args.self_weight, val_size=args.val_size, F=79)
-                hist = model.train_epoch(epochs=args.epochs, lr=args.lr)
-            if args.model == 'graphsage':
-                model = GraphSage(A, X, y, device=args.device, agg_func=args.agg_func, hidden_neuron=args.hidden_neurons, len_walk=args.len_walk, num_neigh=args.num_neigh, val_size=args.val_size, F=79)
-                hist = model.train_epoch(epochs = args.epochs, lr=args.lr)
-        elif args.dataset == "data_voting_senti":
-            loader = data_loader_sen("data/voting_features.csv","data/tweets.csv", "data/edges.csv")
-            X, y, A = loader.get_data()
-            if args.model == 'n_GCN':
-                model = n_hidden_GCN(A,X,y, N=args.n, hidden_neurons=args.hidden_neurons, self_weight=args.self_weight, val_size=args.val_size, F=1079)
-                hist = model.train_epoch(epochs=args.epochs, lr=args.lr)
-            if args.model == 'graphsage':
-                model = GraphSage(A, X, y, device=args.device, agg_func=args.agg_func, hidden_neuron=args.hidden_neurons, len_walk=args.len_walk, num_neigh=args.num_neigh, val_size=args.val_size, F=1079)
-                hist = model.train_epoch(epochs = args.epochs, lr=args.lr)
-    with open(args.output_path, 'w') as f:
-            json.dump(hist, f)
+from pipeline import WikiPipeline
+
+PAGES_ARGS_PATH = 'config/pages-param.yml'
+SENT_ARGS_PATH = 'config/sentiment-param.yml'
+RESULTS_ARGS_PATH = 'config/results-param.yml'
+TEST_PARGS_PATH = 'config/test-pparam.yml'
+TEST_SARGS_PATH = 'config/test-sparam.yml'
+TEST_RARGS_PATH = 'config/test-rparam.yml'
+
+def read_yml(path):
+    with open(path, 'r') as ymlfile:
+        return yaml.load(ymlfile, Loader=yaml.SafeLoader)
+
+def run_pages(argpath):
+    args = read_yml(argpath)
+    for entry in args:
+        lang = entry['lang']
+        param = entry['param']
+        print(f'running pages for lang {lang}...')
+        pl = WikiPipeline(lang)
+        pl.pages_full(**param)
+
+def run_sentiment(argpath):
+    args = read_yml(argpath)
+    for entry in args:
+        lang = entry['lang']
+        param = entry['param']
+        print(f'running sentiment for lang {lang}...')
+        pl = WikiPipeline(lang)
+        pl.sentiment_full(**param)
+
+def run_results(argpath):
+    args = read_yml(argpath)
+    for entry in args:
+        lang = entry['lang']
+        param = entry['param']
+        print(f'running results for lang {lang}...')
+        pl = WikiPipeline(lang)
+        pl.results_full(**param)
 
 if __name__ == '__main__':
-    main()
-    # Examples:
-    # python run.py --model graph --dataset data_voting
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-p', 
+        '--pages', 
+        help='obtain list of pages to analyze from wikipedia', 
+        action='store_true'
+    )
+    parser.add_argument(
+        '-s', 
+        '--sentiment', 
+        help='run sentiment analysis on pages from list', 
+        action='store_true'
+    )
+    parser.add_argument(
+        '-r', 
+        '--results', 
+        help='stats and visuals from sentiment analysis', 
+        action='store_true'
+    )
+    parser.add_argument(
+        '-t', 
+        '--test', 
+        help='run test suite', 
+        action='store_true'
+    )
+
+    args = parser.parse_args()
+    if args.test:
+        print('running test suite...')
+        run_pages(TEST_PARGS_PATH)
+        run_sentiment(TEST_SARGS_PATH)
+        run_results(TEST_RARGS_PATH)
+        print('tests are done')
+    if args.pages:
+        run_pages(PAGES_ARGS_PATH)
+    if args.sentiment:
+        run_sentiment(SENT_ARGS_PATH)
+    if args.results:
+        run_results(RESULTS_ARGS_PATH)

@@ -1,123 +1,115 @@
-# Brian Cheng
-# Eric Liu
-# Brent Min
-
-# run.py is a file that 
-# [TODO]
+#!/usr/bin/env python
 
 import argparse
-import time
+import os
+import sys
+import json
+import shutil
 
-from src.data.run_data import run_data
-from src.model.top_pop import top_pop
-from src.model.cosine_rec import cosine_rec
-from src.functions import get_params
+#from src.gradcam import *
 
-def main(params=None):
-    """
-    The main function that runs all code. Typically, this function will be called from the command
-    line so arguments will be read from there. Optionally, this function can be called from another
-    file with input parameters to ignore command line arguments.
+data_ingest_params = './config/data-params.json'
+fp_params = './config/file_path.json'
+gradcam_params = './config/gradcam_params.json'
+ig_params = './config/ig_params.json'
+train_params = './config/train_params.json'
+test_params = './config/test_params.json'
 
-    :param:     params      Optional command line arguments in dictionary form. If not None, then
-                            command line arguments will be ignored
-    """
-    # params will only be not None if this function is called from the website
-    # in that case, change the behavior of the script accordingly
-    if(params != None):
-        if(params["recommender"] == "top_pop"):
-            return top_pop(None, None, params)
-        if(params['recommender'] == 'cosine_rec'):
-            return cosine_rec(None, None, params)
-        elif(params["recommender"] == "debug"):
-            results = top_pop(None, None, params)
-            results["notes"].append(f"\nInput is: {str(params)}")
-            results["notes"].append(f"\nOutput is: {str(results['recommendations'])}")
-            return results
-        else:
-            return str(params)
+def load_params(fp):
+    with open(fp) as fh:
+        param = json.load(fh)
+    return param
 
-    # all command line arguments
-    # for a description of the arguments, refer to the README.md or run "python run.py -h"
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--data", action="store_true", help="The program will run data " \
-        "scraping code if this flag is present.")
-    parser.add_argument("-c", "--clean", action="store_true", help="The program will run data " \
-        "cleaning code if this flag is present.")
-    parser.add_argument("--data-config", default=["config/data_params.json"], type=str, nargs=1,
-        help="Where to find data parameters. By default \"config/data_params.json\".")
-    parser.add_argument("--web-config", default=["config/web_params.json"], type=str, nargs=1,
-        help="Where to find simulated web parameters. By default \"config/web_params.json\".")
-    parser.add_argument("--top-pop", action="store_true", help="The program will print the " \
-        "the top 10 most popular/well received climbs based on the web params.")
-    parser.add_argument("--cosine", action="store_true", help="The program will print the " \
-        "the top 10 most similar climbs based on the web params.")
-    parser.add_argument("--test", action="store_true", help="The program will run all code in a " \
-        "simplified manner. If this flag is present, it will run top popular and cosine "
-        "recommenders using pre-cleaned data in MongoDB. Using the --test flag is equivalent to " \
-        "running the project using \"python run.py --top-pop --cosine --debug\".")
-    parser.add_argument("--delete", action="store_true", help="The program will wipe out all " \
-        "data from MongoDB. This will not work since the MongoDB login is read only.")
-    parser.add_argument("--upload", action="store_true", help="The program will upload cleaned " \
-        "data to MongoDB. This will not work since the MongoDB login is read only.")
-    parser.add_argument("--debug", action="store_true", help="The program will do various print " \
-        "statements if this flag is present.")
-
-    # parse all arguments
-    args = vars(parser.parse_args())
-
-    # override args if the test flag is present
-    # for a more complete description of what this is doing, refer to README.md or look at 
-    # https://github.com/DSC180-RC/Rock-Climbing-Recommender/blob/master/README.md
-    if(args["test"]):
-        # override command line args
-        args["data"] = False
-        args["clean"] = False
-        args["data_config"] = ["config/data_params.json"]
-        args["web_config"] = ["config/web_params.json"]
-        args["top_pop"] = True
-        args["cosine"] = True
-        args["delete"] = False
-        args["upload"] = False
-        args["debug"] = True
-
-    # debug print after all command line args are set
-    if(args["debug"]):
-        print("Command line args:")
-        print(args)
-        print()
+def main(targets):
     
-    # read the config files
-    data_params = get_params(args["data_config"][0])
-    web_params = get_params(args["web_config"][0])
-
-    # debug print for config files
-    if(args["debug"]):
-        print("Data config file:")
-        print(data_params)
-        print()
-        print("Web config file:")
-        print(web_params)
-        print()
-
-    # run data code
-    run_data(data_params, args)
-
-    # run top pop code if requested
-    if(args["top_pop"]):
-        print("Top pop results:")
-        print(top_pop(args, data_params, web_params))
-        print()
-
-    # run top pop code if requested
-    if(args["cosine"]):
-        print("Cosine rec results:")
-        print(cosine_rec(args, data_params, web_params))
-        print()
-
-# run.py cannot be imported as a module
+    if 'clean' in targets:
+        shutil.rmtree('results/gradcam/', ignore_errors=True)
+        shutil.rmtree('results/model_prediction/', ignore_errors=True)
+        shutil.rmtree('results/integrated_gradient/', ignore_errors=True)
+        os.mkdir('results/gradcam')
+        os.mkdir('results/model_prediction')
+        os.mkdir('results/integrated_gradient')
+    
+    if "gradcam" in targets:      
+        # Check if directory "results" is created
+        if not os.path.isdir('results/gradcam'):
+            os.makedirs('results/gradcam')
+        
+        gradcam_fp = load_params(fp_params)['gradcam_path']
+        input_gradcam_params = load_params(gradcam_params)
+        input_images = input_gradcam_params["load_image_path"]["image_input_path_train_covered"]
+        save_images = input_gradcam_params['save_image_path']
+        model_path = input_gradcam_params['model_path']
+        
+        if "custom_image_path" in input_gradcam_params:
+            custom_image_path = input_gradcam_params['custom_image_path']
+            os.system("python " + gradcam_fp + " --image-path " + input_images + " --custom-image-path " + custom_image_path + " --save-path-gb " + save_images['gb_path'] + " --save-path-cam-gb " + save_images['cam_gb_path'] + " --save-path-cam " + save_images['cam_path'] + " --model-path " + model_path + " --use-cuda")
+        else:
+            os.system("python " + gradcam_fp + " --image-path " + input_images + " --save-path-gb " + save_images['gb_path'] + " --save-path-cam-gb " + save_images['cam_gb_path'] + " --save-path-cam " + save_images['cam_path'] + " --model-path " + model_path + " --use-cuda")
+       
+    if "training" in targets:
+        if not os.path.isdir('models'):
+            os.makedirs('models')  
+        train_fp = load_params(fp_params)['train_path']
+        input_train_params = load_params(train_params)
+        model_name = input_train_params['model_name']
+        feature_extract = input_train_params['feature_extracting']
+        batch_size = input_train_params['batch_size']
+        learning_rate = input_train_params['learning_rate']
+        num_epochs = input_train_params['num_epochs']
+        if feature_extract:
+            os.system("python " + train_fp + " --model-name " + model_name + " --batch-size " + str(batch_size) + " --learning-rate " + str(learning_rate) + " --num-epochs " + str(num_epochs) + " --use-cuda --feature-extracting")
+        else:
+            os.system("python " + train_fp + " --model-name " + model_name + " --batch-size " + str(batch_size) + " --learning-rate " + str(learning_rate) + " --num-epochs " + str(num_epochs) + " --use-cuda")
+  
+    if "testing" in targets:
+        if not os.path.isdir('models'):
+            print("No models available. Train a model first")
+            sys.exit(0)
+        
+        if not os.path.isdir('results/model_prediction'):
+            os.mkdir('results/model_prediction')
+            
+        test_fp = load_params(fp_params)['test_path']
+        input_test_params = load_params(test_params)
+        model_name = input_test_params['model_name']
+        model_path = input_test_params['model_path']
+        batch_size = input_test_params['batch_size']
+        test_size = input_test_params['test_size']
+        
+        if model_name not in model_path:
+            print("Model name and model path mismatch, please check your parameters again!")
+            sys.exit(0)
+        
+        if "custom_image_path" in input_test_params:
+            custom_image_path = input_test_params['custom_image_path']
+            os.system("python " + test_fp + " --model-name " + model_name + " --model-path " + model_path + " --custom-image-path " + custom_image_path + " --batch-size " + str(batch_size) + " --use-cuda")
+        else:
+            os.system("python " + test_fp + " --model-name " + model_name + " --model-path " + model_path + " --batch-size " + str(batch_size) + " --test-size " + str(test_size) + " --use-cuda")
+        
+    if "ig" in targets:
+        if not os.path.isdir('models'):
+            print("No models available. Train a model first")
+            sys.exit(0)
+            
+        if not os.path.isdir('results/integrated_gradient'):
+            os.mkdir('results/integrated_gradient')
+            
+        ig_fp = load_params(fp_params)['ig_path']
+        input_ig_params = load_params(ig_params)
+        img_load_path = input_ig_params['image_load_path']
+        img_save_path = input_ig_params['image_save_path']
+        model_path = input_ig_params['model_path']
+        
+        if "custom_image_path" in input_ig_params:
+            custom_image_path = input_ig_params['custom_image_path']
+            os.system("python " + ig_fp + " --custom-image-path " + custom_image_path + " --img-load-path " + img_load_path + " --img-save-path " + img_save_path + " --model-path " + model_path + " --use-cuda")
+        else:
+            os.system("python " + ig_fp + " --img-load-path " + img_load_path + " --img-save-path " + img_save_path + " --model-path " + model_path + " --use-cuda")
+        
 if __name__ == '__main__':
-    # keep track of how long the program has run for
-    start_time = time.time()
-    main()
-    print("--- %s seconds ---" % (time.time() - start_time))
+    if not os.path.isdir('results'):
+        os.makedirs('results')
+    targets = sys.argv[1:]
+    main(targets)
+

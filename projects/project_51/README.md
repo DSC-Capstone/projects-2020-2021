@@ -1,54 +1,23 @@
-# DSC180b-Capstone
+The purpose of this code is generating captions from an image and creating attention maps to help explain the model’s reasoning for the captions generated.
+In order to test the robustness of the model we also use counterfactual images to see how the model's prediction changes when certain object are removed. 
+Using this infomation we can also generate an object importance map to show which object in an image are most important to the caption generation process.
 
-Project repository for Recommender Systems group 3
+This project has six targets: data, train, evaluate_model, generate_viz, counterfactual_production, and explain_model. 
+  - **data**: This target loads in the COCO dataset and prepares it for our image captioning model. 
+  - **train**: This target builds the encoder and decoder in our image captioning model and trains it with the COCO dataset. 
+  - **evaluate_model**: This target evaluates the trained model using beam search caption generation and BLEU score. 
+  - **generate_viz**: This target generates a visualization of the attention maps at each stage of the caption generation process.
+  - **counterfactual_production**: This target creates all of the files necessary to generate the counterfactuals (such as masks) and 
+                                   then produces the counterfactual images.
+  - **explain_model**: This target takes all of the counterfactual images and generates caption based on the new counterfactuals. 
+                       Then compares the caption change from the original caption to generate a visualization to explain object 
+                       importance using BERT similarity score.
 
-This project is focused on creating music recommendations for users and their parents.
-
-# HOW TO RUN
-
-Our project's current targets are: load-data, task0, task1, task2, all, test
-
-Our project's current config files are: test.json and run.json
-
-### Targets
-
-load-data: Pulls our training data from a S3 bucket where we store it and creates a new 'data'
-repository to store it.
-
-task0: Generates a list of sample parent recommendations and saves them to data/recommendations as a csv file.
-
-task1: Generates a list of parent-user recommendations and saves them to data/recommendations as a csv file.
-
-task2: Generates a list of user-parent recommendations base on a user's listening history. Saves
-these recommendations to data/recommendations as a csv file.
-
-all: runs load-data, task0, task1, and task2 in succession
-
-test: Runs through the same load-data, task0, task1, task2 pipeline but uses a pre-stored user access code.
-This allows us to 'test' our recommendation models without having to authenticate ourselves every
-single time. The test data in this case is a user account that we have permission to read from.
-
-### Configs
-
-Our configuration files are relatively simple given our project's reliance on listening histories and
-otherwise limited user information. The values in each file are the same, but we have created two files
-so that logic can be quickly tested without having to constantly change the configuration parameters during
-development.
-
-username: The username of the Spotify account that we are creating recommendations for
-parent_age: The age of the user's parent
-genre: The parent's preferred genre of music
-artist: The parent's preferred artist
-
-This information would normally be provided by users through a form on our website, but for this situation
-we just reference configuration files.
+To run the four targets, clone our repo to the dsmlp server and execute the command ‘python run.py all’ to run all the targets in sequence or 
+'python run.py <target>' to run a single target. To run on a small set of test data execute: ‘python run.py test’. The output images will be saved 
+ to the same directory as run.py.
 
 
-### IN THE FUTURE
+Docker Repo: https://hub.docker.com/layers/140345085/afosado/capstone_project/final_docker/images/sha256-198c698d15e7a67d1bba8180a30c21dbf00dfd5e839189a94c06e6ffe96f9fac?context=explore
 
-We plan on adding a clean-data target that isolates some of the small preprocessing that our code does: dropping na values
-small transformations, etc.
-
-Instead of caching an auth_token for a specific user, we want to just directly load listening history. This would be a more
-straightforward procedure, the problem is that we inevitably have to authenticate regardless of if we have our user data predownloaded or not. Spotify has another authentication flow that would better suit itself to this situation, and we will be looking into that in the future.
-
+Demo Website: https://afosado.github.io/180b_capstone_xai/index.html

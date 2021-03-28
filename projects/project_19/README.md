@@ -1,25 +1,64 @@
-# NBA-Game-Prediction
-Project Group: MengYuan Shi, Austin Le
+# Graph-based Product Recommendation
+DSC180B Capstone Project on Graph Data Analysis
 
-This repository contains a data science project that discover the NBA Game Prediction. We investigate the social network for individual NBA players and the relationship between each team. We will use team's statistics and players' statistics and analysis for predicting who wins the games by leveraging the team's statistics and players' statistics from 2015 season to 2019 season. We will use GraphSAGE which is a generalizable embedding framework to create a graph classification.
+Project Website: https://nhtsai.github.io/graph-rec/
 
+## Project
+Amazon Product Recommendation using a graph neural network approach.
 
-### Warning
-Our group has altered and used the graphsage implementation that can be received from https://github.com/williamleif/GraphSAGE . We made minor changes within the model and inputs to align with the goals of our project, but we would like to cite them as a source for the main graphsage implementation.
+### Requirements
+- dask
+- pandas
+- torch
+- torchtext
+- dgl
 
+## Data
+### Datasets
+Amazon Product Dataset from Professor Julian McAuley ([link](http://jmcauley.ucsd.edu/data/amazon/links.html))
+* Product Reviews (5-core)
+* Product Metadata
+* Product Image Features
 
-### Running the project
-- `python run.py` can be run from the command line to ingest data, train a model, and present relevant statistics for model performance to the shell
-  - Reads in CSV file from eightthirtyfour for play by play data
-  - Runs algorithm to create network between each player based on their playing time
-  - Appends all player edges from all season onto a single graph 
-  - Embedd player categorical statistics onto each node 
-  - runs graphSage model to learn over features
+## GraphSAGE Model
 
-### Outputs
-  - The outputs printed will be the corresponding accuracies obtained after the training
-  - ~5min runtime
+## PinSAGE
 
-### Responsibility 
-- Austin Le: Responsible for the data cleaning and data scraping and the coding part as well as the report.
-- MengYuan Shi: Responsible for the paper researching and writing the report part as well as the visualization.
+### Graph & Features
+The graph is a heterogeneous, bipartite user-product graph, connected by reviews.
+ * Product Nodes (`ASIN`)
+   * Features: `title`, `price`, image representation
+ * User Nodes (`reviewerID`)
+ * Edges (`user`, `reviewed`, `product`) and (`product`, `reviewed-by`, `user`)
+   * Features: `helpful`, `overall`
+
+### Data Configuration (`config/data-params.json`)
+
+### Model
+We use an unsupervised PinSage model (adapted from [DGL](https://github.com/dmlc/dgl/tree/master/examples/pytorch/pinsage)).
+
+### Model Configuration (`config/pinsage-model-params.json`)
+- `name`: model configuration name
+- `random-walk-length`: maximum number traversals for a single random walk, `default: 2`
+- `random-walk-restart-prob`: termination probability after each random walk traversal, `default: 0.5`
+- `num-random-walks`:  number of random walks to try for each given node, `default: 10`
+- `num-neighbors`: number of neighbors to select for each given node, `default: 3`
+- `num-layers`: number of sampling layers, `default: 2`
+- `hidden-dims`: dimension of product embedding, `default: 64 or 128`
+- `batch-size`: batch size, `default: 64`
+- `num-epochs`: number of training epochs, `default: 500`
+- `batches-per-epoch`: number of batches per training epoch, `default: 512`
+- `num-workers`: number of workers, `default: 3 or (#cores - 1)
+- `lr`: learning rate, `default: 3e-4`
+- `k`: number of recommendations, `default: 500`
+- `model-dir`: directory of existing model to continue training
+- `existing-model`: filename of existing model to continue training, `default: null`
+- `id-as-features`: use id as features, makes model transductive
+- `eval-freq`: evaluates model on validation set when `epoch % eval-freq == 0`, also evaluates model after last training epoch
+- `save-freq`: saves model when `epoch % save-freq == 0`, also saves model after last training epoch
+
+## References
+* [GraphSAGE Homepage](http://snap.stanford.edu/graphsage/)
+* [GraphSAGE Research Paper](https://arxiv.org/abs/1706.02216)
+* [PinSage Article](https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48)
+* [PinSage Research Paper](https://arxiv.org/abs/1806.01973)

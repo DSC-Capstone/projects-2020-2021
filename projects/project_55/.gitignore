@@ -1,10 +1,5 @@
-.DS_Store
-
-NewAPI/
-India/imgs/models/model_1.pth
-*.pth
-
 # Byte-compiled / optimized / DLL files
+dev_notebooks
 __pycache__/
 *.py[cod]
 *$py.class

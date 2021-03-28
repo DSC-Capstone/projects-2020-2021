@@ -1,0 +1,7 @@
+{
+  "folder_path": "data/",
+  "interval": 300,
+  "threshold": 5,
+  "prominence_fs": 1,
+  "binned_fs": 0.5
+}

@@ -1,71 +1,82 @@
-## Asnapp
+# StockMarket_explainableAI
+Contributing Members: 
+- Sohyun Lee
+- Shin Ehara
+- Jou-Ying Lee
 
-Asnapp is a workout video recommender web application. 
+## Abstract
+Deep learning architectures are now publicly recognized and repeatedly proven to be powerful in a wide range of high-level prediction tasks. While these algorithms’ modeling generally have beyond satisfactory performances with apposite tuning, the long-troubling issue of this specific learning lies in the un-explainability of model learning and predicting. This interpretability of “how” machines learn is often times even more important than ensuring machines outputting “correct” predictions. Especially in the field of finance, users’ ability to dissect how and why an algorithm reached a conclusion from a business standpoint is integral for later applications of i.e., to be incorporated for business decision making, etc. This project studies similar prior work done on image recognition in the financial market and takes a step further on explaining predictions outputted by the Convolutional Neural Network by applying the Grad-CAM algorithm. 
 
-Authors: Amanda Shu, Peter Peng, Najeem Kanishka
+Project Website at: https://connielee99.github.io/Explainable-AI-in-Finance/
 
-### Website URL
-The website is now live on: https://workout-recommender.herokuapp.com/
+## Instructions on Runing Project
+* This project aims to apply the Grad-CAM technique to a CNN model trained on images that represent closing prices during the first hour of market exchange. 
+* **To engineer data and create a CNN model**, you would need to run each notebook in `notebooks` folder in the following order:
+	* **1. Run every cell in `Data Processing.ipynb`**
+		* This notebooke is preprocessing the raw data by extracting closing prices during first hour after market open and labeling depends on prices increasing or decreasing
+		* **Input:** `raw_NIFTY100.csv`
+		* **output:** `first_combined.csv` contains closing prices during the first hour of market exchange
+	* **2. Run every cell in `Image Conversion.ipynb`**
+		* This notebook is for an image conversion with `first_combined.csv` data. We will converse data into image with Gramian Angular Algorithm.
+		*  **Input:**`first_combined.csv`
+		*  **output** `.png` images in `imgs` folder
+	* **3. Run every cell in `CNN.ipynb`**
+		* This notebook uses FastAI, a PyTorch-based deep learning library, to build the neural network, which is able to figure out the relationship between input features and find hidden relationship with them. The input data is an image dataset with labels, which is converted from time series with Gramian Angular Field algorithm as described in the previous sections.
 
-### Video Demonstration
-For a demonstration of the project, visit: https://www.youtube.com/watch?v=QJFg0HguGuI
+* **To run Grad-CAM**: 
+	- Clone the Grad-CAM submodule we have included in repo homepage.
+	- Navigate to <i>StockMarket_explainableAI/test</i> and put <i>test_imgs</i> folder inside this cloned submodule folder.
+	- Set your directory to be in this submodule, and run the following command (feel free to modify the last part in the code for specific images):
+		* python3 main.py demo1 -a resnet34 -t layer4 -i test_imgs/2017-01-03.png -k 1
 
-### Data
-The data is scraped from https://www.fitnessblender.com/. We are using the data for academic purposes only.
+## Directory Structure
+* **config**</br>
+	This folder contains json files for main and testing parameters
+	* `data_params.json`</br>contains parameters for running main on all data
+	* `test_params.json`</br>contains parameters for running main on test data
+* **data**</br>
+	This folder contains all stock data from time series to image representation</br>
+	**imgs**</br>
+	* This folder contains all images converted from time series. ex) 2017-01-02.png
+	
+	**raw data**</br>
+	* `raw_NIFTY100.csv`</br>contains raw stoack market data; time series data
 
-### Code Organization
+	**processed data**</br>
+	* `first_combined.csv`</br>contains closing prices during the first hour of market exchange
+	* `gramian_df.csv`</br>contains data after implementing gramian angular algorithm
+	* `label_dir_2.csv`</br>contains data with label Whether the price goes up or down that day
+* **gradcam_submodule @ fd10ff7**</br>
+	This folder is the submodule for gradcam
+	
+* **notebooks**</br>
+	This folder is the notebook directory
+	
+	* `CNN + Grad-CAM.ipynb`</br>is the development notebook for CNN and GradCam implementation
+	* `Data Processing.ipynb`</br>is the notebook that wraps together data cleaning to feature engineering
+	* `EDA.ipynb`</br>is the notebook with eda work demonstration
+	* `Image Conversion.ipynb`</br>is the notebook with image conversion work done
+* **references**</br>
+	This folder contains additional information/references in regards to our project
+	
+	**report_img**</br>
+	* This folder contains images extracted from coded notebooks and included in the written report
 
-- `run.py`: Run to get data and model results.
-- `app.py`: Runs flask web application.
-- `workout_db.sql`: Contains sql statements for creation of tables in database.
-- `requirements.txt`: Python packages required to run project
-- `wsgi.py & Procfile & runtime.txt`: Entrypoint for Heroku, used in website deployment
+* **src**</br>
+	This folder contains library codes extracted from notebooks
+	
+	**features**</br>
+	* `build_features.py`</br>scripts to build features from merged data
+	* `build_labels.py`</br>scripts to create labels for image classification
+	* `build_images.py`</br>scripts to convert and save time series data to images
+	
+	**model**</br>
+	* `gradcam.py`</br>scripts to implement gradcam
 
-**Source**
-- The `src/data` folder contains `scrape.py`, the web-scraping script that writes three data files into `data/raw` folder. `fbpreprocessing.py` takes these raw data files and outputs cleaned/transformed data files into `data/preprocessed` folder. `youtube.py` grabs youtube related data from the Youtube API. `model_preprocessing` reads in preprocessed data and transforms the data into what is needed for model inputs.
-- `src/models` contains `run_models.py` which trains and evaluates the models. Models are implemented in `lightm_fm.py` and `top_popular.py`
-- The `src/utils` folder has `clean.py` which implements the standard target `clean`.
-- The `src/app` folder holds files for the web application. `forms.py` contains wtforms classes for registration/login pages. `recommendations.py` holds code for filtering user preferences and building recommendation lists. `register.py` contains helper functions to create the sql insertion/update statements for registering users and updating their workout preferences.
-
-**Static**:
-- The`images` folder holds a gif ([source](https://www.pinterest.at/pin/512495632597411529/)) used for the loading page. No copyright intended.
-- The `js` folder contains several javascript files. `overlay.js` is for the display of the popup videos on the recommendation page. `workout_info.js` is for registration and update preferences pages. `rec.js` is for the loading page and recommendation engine logic on the recommendations page.
-- `libraries/slick` has several files for the carousel, `styles` has a css file, and `favicon.io` is the dumbbell icon
-- `vendor` holds several javascript files (Bootstrap, JQuery) for styling/theming of the website
-
-**Config**: `data-params.json` has file paths outputs for data collection/preprocessing and `test-params.json` has the data paths for the test target. To webscrape, this folder should also include `chromedriver.json`. To gather Youtube data, `api_key.json` specifies the api key. To run the app, `db_config.json` has the database configurations.
-
-**Notebook**: `eda.ipynb` is a notebook with exploratory data analysis on scraped data. `param_comparision.ipynb` is a notebook reporting the recommendation models' performance across a couple parameters. `top_popular_extension.ipynb` is a notebook looking into adding Youtube API data into the top popular recommender. `KNN_collab.ipynb` contains results of a KNN collaborative filtering model from surprise package and a pure collaborative filtering from LightFM.
-
-**Templates**: Holds html files for the various endpoints.
-
-**Testdata/raw**: These are fake datasets meant to be used with the test target.
-
-**Docker**: Docker related files. See [here](https://github.com/amandashu/Workout_Recommender/blob/main/docker/README_DOCKER.md)
-
-**Materials**: Contains pdfs for presentation slides and a report detailing our methods/implementations.
-
-### Set Up Project Environment
-There are two ways to run this project: a) Docker (preferred) or b) Locally <br>
-a) To Run in Docker:<br>
-  1) Pull the container with `docker pull nkanishka/workout-recommender`
-  2) Run the container using:
-  * General Use: `docker run -it -p 5000:5000 workout-recommender`
-  * DSMLP Only: `launch.sh -i nkanishka/workout_recommender_dsmlp -c 4 -m 8` <br><br>`kubectl port-forward <Kubernates Cluster Name> 5000`<br><br> `ssh -N -L 5000:127.0.0.1:5000 <AD Name>@dsmlp-login.ucsd.edu`
-  3) Inside container/cluster, type `cd Workout_Recommender`. Note that in the DSMLP environment, you will need to manually clone this repo.
-  4) If using website, go to [localhost:5000](localhost:5000)
-    <br>
-
-b) To run locally, install requiremnents.txt into a virtualenv. Make sure you have Python 3.8+ and Pip installed.
-
-### Run the Project Stages
-- To get the data, run `python run.py data`. This scrapes the data and cleans the data and saves these files into `/data/raw` and `data/preprocessed` respectively.
-  - Note: for scraping, this assumes that there is a file `config/chromedriver.json` that specifies where the path to the downloaded chromedriver.exe file for your Chrome version lies in the attribute `chromedriver_path`.
-  - Note: for making requests to Youtube API, this assumes that there is a file `config/api_key.json` that specifies the api key in the `api_key` attribute.
-- To run model results, run `python run.py model`. This takes in the preprocessed data, trains the models, and prints out the NDCG scores for each model.
-- Standard target `clean` is implemented, and it will delete the `data` folder.
-- Standard target `all` is implemented, and it equivalent to running `python run.py data model`.
-- Standard target `test` is implemented, and runs the data preprocessing and modeling results on the test data. The purpose of this target is purely to check the implementation of the code.
-- Use `python app.py` to run the app locally.
-  - Note: this assumes that there is a file `config/db_config.json`, which has database host, user, password, and name information.
-  - And a file `config/flask_keys.json` which has a Flask secret key
+* **test**</br>
+      This folder contains test results and test images
+      		
+* **`Dockerfile`**</br>
+	This is the dockerfile necessary to build the environment for this project development
+* **`run.py`**</br>
+	This is the main python file to execute our program

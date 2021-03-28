@@ -1,98 +1,91 @@
-### Background
+# Makeup Recommender
 
-The purpose of phrase mining is to extract high-quality phrases from a large amount of text corpus. It identifies the phrases instead of an unigram word, which provides a much more understanding of the text.  In this study, we apply AutoPhrase method into two different datasets and compare the decreasing quality ranked list of phrase ranked list in multi-words and single word. Our datasets are from the abstract of Scientific papers in English with the English knowledge base from Wikipedia. Through this project, we will be able to understand the advantages of the AutoPhrase method and how to implement Autophrase in two datasets by identifying different outcomes it produces. 
-
-
-### Requirements
-##### If you run in the local:
-Linux or MacOS with g++, Java and gensim installed.
+This project is a recommender that will provide a one-stop shop experience where a user will get recommended an array of products to create an entire makeup look based on similar products that the user enjoys, products that similar users have purchased, as well as products that are personalized to the user including skin type, skin tone, allergies, and budget. Our project aims to utilize collaborative filtering recommendations along with content-based filtering to ensure user satisfaction and success when creating their desired look.
 
 
-##### You can also use our docker images to run the code. No need any install. It stores in submission.json file.
+## How To Run
+
+To install all dependencies, run the following command from the root directory of the project:
+> ```pip install -r requirements.txt```
+
+### Running the Project
+
+To run the project, each command must start from the root directory of the project with:
+> ```python run.py```
+
+This base command can be modified with various different flags:
+| Flag                | Type | Default Value             | Description                                                       |
+|---------------------|------|---------------------------|-------------------------------------------------------------------|
+| --item_data              |      |                      | Scrape item dataset from www.sephora.com.                              |
+| --review_data              |      |                      | Scrape review dataset from www.sephora.com.                              |
+| --features          |      |                           | Clean dataset and create features.                                |
+| --model             |      |                           | Run model to create recommendations.                              |
+| --accuracy          |      |                           | Evaluate accuracy of model.                                       |
+| --test              |      |                           | Train model on a test dataset.                                    |
+| --all               |      |                           | Train and evaluate accuracy of baseline model and our recommender model.      |
 
 
-### Purpose of the Code
+## Website
 
-For Final Replication, our code would do the data ingestion proportion first, to pull data as the input corpus for future use from the cloud. Then to perform some basic EDA on it. We would run the autophrase algorithm along with phrasal segmentation, analyzing the results. At the end, we manually label the high-quality phrases and select 3 phrases and put those into the phrase embedding model to return five most similar phrases as the result.
-
-### Code Content
-Some Python Scripts, involved in etl.py, eda.py, auto.py,visual.py, and example.py to download, process data, analyze, visualize data and find the most similar phrase by building the model.
-
-	
-### How to Run the Code
-
-##### To get the data:     -      run python run.py etl
+To visit the webpage copy and paste this URL into your browser: https://makeup-recommender.herokuapp.com/
 
 
-This downloads the data from Illinois University in the directory specified in config/etl-params.json and do data cleaning process. You can find the result in the data/raw folder.
+## Document History
+
+**Project Proposal**: https://docs.google.com/document/d/1bAXSUrQHcss8uU_eeqIJ4ewX3N-I8RLAjGJi77Zqw6c/edit
+
+**Check-in**: https://docs.google.com/document/d/18rve8FbhRN8VXoO99ixB6nh96uWYtR-DNQMrjIwCr8Y/edit
+
+**Report Checkpoint**: https://docs.google.com/document/d/1Xh3Ddskyy4niA7ZbzBUc9hoaR0bsrLKWgni9YzXTtZY/edit#
+
+**Final Report**: https://docs.google.com/document/d/1WRj9ukUa-ozK3xtao-khCdradUQsR1k23tn4ELvQE3U/edit#
+
+**Presentation Slides**: https://docs.google.com/presentation/d/1WYmy2IKTuVGE193Pq5t9v2BRTVCKxFHXy5zfLZN1K_I/edit?usp=sharing
 
 
+## Credits
 
+### For Usage of Scraping Script
 
-##### To do the EDA for the data     -       run python run.py eda
-
-
-This performs exploratory data analysis and saves the figures in the location specified in config/eda-params.json. You can find the graphs in the data/eda folder.
-
-
-
-##### To run autophrase algorithm and get the segementation result       -        run python run.py auto
-
-
-This performs autophrase algorithm and phrasal segmentation saves the results in the location specified in config/auto-params.json. You can find the result in the data/output folder.
-
-
-
-##### To analyze the output of autophrase           -         run python run.py visual
-
-
-This performs analysis on the results and saves the figures in the location specified in config/visual-params.json. You can find the two distributions in the data/output folder.
-
-
-##### To find the most 5 similar phrases           -         run python run.py example
-
-
-This ask the users to manually label the high-quality phrase. It builds the word2vec model on the phrasal segmentation results to obtain phrase embedding based on random sampleing. It also report the top-5 similar phrases based on the 3 high-quality phrases from your previous annotations.However, if the users want to try their own sampling, they can manually label the high-quality phrases in sample.txt, which stored the output file by changing the configuration. You can find the result in the data/output/example folder.
-
-
-##### To run whole project       -          run python run.py all
-
-It will complete the whole process with results. The defualt is the dataset DBLP.txt, if you want to try other dataset, edit the configuation file to your own dataset. All of the input and result can find the in the data folder.
-
-
-##### To make a test run.          -        run python run.py test
-
-It will implement dataset DBLP.5k.txt, which is a test data to check the whole process is working. DBLP.5k.txt is sampled from the original dataset DBLP.txt. This compares the result between tf-idf scores, autophrase quality scores, and their multiplication.
-
-
-### Notebook Contents
-In the notebook, it will help the users visulized all the results from the run.py with some brief explanations.
-
-
-
-### Work Cited
-
-Professor Jingbo Shang’s Github: https://github.com/shangjingbo1226/AutoPhrase
-
-
-Jingbo Shang, Jialu Liu, Meng Jiang, Xiang Ren, Clare R Voss, Jiawei Han, "Automated Phrase Mining from Massive Text Corpora", accepted by IEEE Transactions on Knowledge and Data Engineering, Feb. 2018.
-
+https://github.com/jjone36/Cosmetic
 
 
 
 ### Responsibilities
-We discussed the general idea of the replication project and outlined the steps of the process together.
 
+**Alex Kim**:
+* Scraped eye products and reviews
+* Designed website
+* Cleaned dataset
+* Encode ingredient data
+* Write rough draft of report (Abstract, Description of Data, Method, Metrics, Results)
+* Deploy website on Heroku
+* Use Flask to connect model to website (not implemented in final product)
+* Fix UI with Streamlit
+* Filter recommendations
+* Edit report
 
-Tiange Wan: some of code portion and report portion, and revised the report portion.
+**Justin Lee**:
+* Fixed script to scrape data from Sephora
+* Scraped lip products and reviews
+* Coded data ingestion pipeline
+* Incorporate run.py
+* Code collaborative filtering model
+* Create docker container
+* Deploy website on Heroku
+* Use Flask to connect model to website (not implemented in final product)
+* Organize code and documentation
 
-
-Yicen Ma: some of code portion and report portion, and revised the code portion.
-
-
-Anant Gandhi: participated in another repo
-
-
-
-
-
+**Shayal Singh**:
+* Fixed script to scrape data from Sephora
+* Scraped face and cheek products and reviews
+* Coded website layout
+* Top popular baseline
+* Write rough draft of report (Website, Conclusion)
+* Deploy website on Heroku
+* Use Flask to connect model to website (not implemented in final product)
+* Display recommendations
+* Visual presentation slides
+* Fix UI with Streamlit
+* Filter recommendations
+* Finalize website

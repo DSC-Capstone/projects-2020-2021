@@ -1,1 +1,5 @@
-
+.DS_Store
+data/.DS_Store
+.ipynb_checkpoints/
+notebooks/data/.ipynb_checkpoints/
+data/.DS_Store

@@ -1,31 +1,25 @@
-# Data Visualizations and Interface For Autonomous Robots
+# NBA-Game-Prediction
+Project Group: MengYuan Shi, Austin Le
 
-This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge, which not only allow users to control the Gazebo Robot action by simple interface interaction like clicking button or inputing text, but also monitor the realtime situation of the robot navigating in map. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. After analyzing the performance of A* algorithm versus the performance of RRT* algorithm, it is determined that RRT* performs better. Ultimately, RRT* algorithms is the primary navigation algorithm used and illustrated in this project.
+This repository contains a data science project that discover the NBA Game Prediction. We investigate the social network for individual NBA players and the relationship between each team. We will use team's statistics and players' statistics and analysis for predicting who wins the games by leveraging the team's statistics and players' statistics from 2015 season to 2019 season. We will use GraphSAGE which is a generalizable embedding framework to create a graph classification.
 
-## Running the project
-First clone the repository:
-```
-$ git clone https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface.git
-```
-Launch docker container using image:
-```
-$ launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always
-```
-* This command launches a [dockerhub](https://hub.docker.com/repository/docker/dannyluo12/visualization_and_interface) container with the necessary OS libraries, tools, and dependencies to successfully run the project. Certain dependencies will be vital for creating the visualizations and genearting the interface.
 
-## Building the project using `run.py`
-* Use the command `python run.py data` to create data folder. Will contain directories to properly store image and sensor data that is outputted.
-* Use the command `python run.py clean` to ensure that data is scaled properly to optimize runtime. Includes imaging data for running navigation algorithms as well as executing interface.
-* Use the command `python run.py analyze` to compare the performance of A* algorithm to RRT* for navigation on the same map.
-* Use the command `python run.py test` to run the visualization of RRT algorithm in test data, output images can be found in the testdata/step_out and testdata/test_out directories.
-* Use the command `python run.py all` to run the visualization of RRT algorithm on cleaned data/map, output images can be found in the data/step_out and data/test_out directories.
+### Warning
+Our group has altered and used the graphsage implementation that can be received from https://github.com/williamleif/GraphSAGE . We made minor changes within the model and inputs to align with the goals of our project, but we would like to cite them as a source for the main graphsage implementation.
 
-### Contributions:
-<b>Yuxi Luo</b> <br />
-Contributed to developing visualizations for RRT* and A* algorithms. Tested performance of each navigation algorithm to benchmark each and determine better performer. Collected and cleaned data from alternative groups to enable visualization and interface development. Tested different ROSBAGS for data type compatibility. Investigated various forms of visualization from different ROS topics (diff sensors, camera, lidar, etc.). Helped in managing and updating Github repo, report, and project website.
 
-<b>Seokmin Hong</b> <br />
-Contributed by implementing the UCSD simulated track inside the Gazebo simulator, as well as implementing the RRT* and A* algorithms that can be used for G-Mapping SLAM. Also wrote Rviz scripts and interactive interface scripts to allow autonomous navigation with a simple pressing of a button. Helped teammates by creating and writing the report, as well as creating the demonstration videos of the interactive interface and Gazebo simulations.
+### Running the project
+- `python run.py` can be run from the command line to ingest data, train a model, and present relevant statistics for model performance to the shell
+  - Reads in CSV file from eightthirtyfour for play by play data
+  - Runs algorithm to create network between each player based on their playing time
+  - Appends all player edges from all season onto a single graph 
+  - Embedd player categorical statistics onto each node 
+  - runs graphSage model to learn over features
 
-<b>Jia Shi</b> <br />
-Contributed to the research of visualization and interface. Developed an interactive interface with roslibjs and webridge to connect ROS with web page. Worked with teammate to integrate interface with Gazebo robot to allow controlling. Also created visualization demo with ROS bag data from other teams. Helped teammates with the coding and helped with the setup and completion of github repo.
+### Outputs
+  - The outputs printed will be the corresponding accuracies obtained after the training
+  - ~5min runtime
+
+### Responsibility 
+- Austin Le: Responsible for the data cleaning and data scraping and the coding part as well as the report.
+- MengYuan Shi: Responsible for the paper researching and writing the report part as well as the visualization.

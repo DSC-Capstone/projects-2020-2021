@@ -3,12 +3,12 @@ import torch
 from torch_geometric.data import Dataset, Data
 import itertools
 import numpy as np
-import uproot
+import uproot3 as uproot
 import glob
 import multiprocessing
 from pathlib import Path
+import tqdm
 import yaml
-from tqdm.notebook import tqdm
 
 class GraphDataset(Dataset):
     def __init__(self, root, features, labels, spectators, transform=None, pre_transform=None,
@@ -60,6 +60,7 @@ class GraphDataset(Dataset):
     def process(self):
         """
         Handles conversion of dataset file at raw_path into graph dataset.
+
         Args:
             raw_path (str): The absolute path to the dataset file
             k (int): Number of process (0,...,max_events // n_proc) to determine where to read file
@@ -78,22 +79,14 @@ class GraphDataset(Dataset):
                                           namedecode='utf-8')
             
             n_samples = label_array_all[self.labels[0]].shape[0]
-            print(n_samples)
 
-            """y = np.zeros((n_samples,2))
+            y = np.zeros((n_samples,2))
             y[:,0] = label_array_all['sample_isQCD'] * (label_array_all['label_QCD_b'] + \
                                                         label_array_all['label_QCD_bb'] + \
                                                         label_array_all['label_QCD_c'] + \
                                                         label_array_all['label_QCD_cc'] + \
                                                         label_array_all['label_QCD_others'])
-            y[:,1] = label_array_all['label_H_bb']"""
-            y = np.zeros((n_samples,6))
-            y[:,0] = label_array_all['sample_isQCD'] * label_array_all['label_QCD_b']
-            y[:,1] = label_array_all['sample_isQCD'] * label_array_all['label_QCD_bb']
-            y[:,2] = label_array_all['sample_isQCD'] * label_array_all['label_QCD_c']
-            y[:,3] = label_array_all['sample_isQCD'] * label_array_all['label_QCD_cc']
-            y[:,4] = label_array_all['sample_isQCD'] * label_array_all['label_QCD_others']
-            y[:,5] = label_array_all['label_H_bb']
+            y[:,1] = label_array_all['label_H_bb']
 
 
             spec_array = tree.arrays(branches=self.spectators,
@@ -101,14 +94,14 @@ class GraphDataset(Dataset):
                                      namedecode='utf-8')
             z = np.stack([spec_array[spec] for spec in self.spectators],axis=1)            
 
-            for i in tqdm(range(n_samples)):
+            for i in tqdm.tqdm(range(n_samples)):
                 if i%self.n_events_merge == 0:
                     datas = []                    
                 if self.remove_unlabeled:
                     if np.sum(y[i:i+1],axis=1)==0:
                         continue
                 n_particles = len(feature_array[self.features[0]][i])
-                if n_particles<6: continue
+                if n_particles<2: continue
                 pairs = np.stack([[m, n] for (m, n) in itertools.product(range(n_particles),range(n_particles)) if m!=n])
                 edge_index = torch.tensor(pairs, dtype=torch.long)
                 edge_index=edge_index.t().contiguous()

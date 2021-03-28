@@ -1,6 +1,9 @@
 {
-  "feature_address" : "data/raw/cora.content",
-  "edges_address" : "data/raw/cora.cites",
-  "encoding" : [{"column" : 1434, "encoding_types" : "one_hot"}],  
-  "directed" : true
+	"data-dir": "../../data",
+	"dataset-name": "Amazon_Electronics",
+	"metadata-fn": "meta_Electronics.json.gz",
+	"reviews-fn": "reviews_Electronics_5.json.gz",
+	"image-fn": "image_features_Electronics.b",
+	"data-out-fn": "processed_Amazon_Electronics.pkl",
+	"include-images": true
 }

@@ -1,3 +1,7 @@
+__pycache__
 .ipynb_checkpoints
-*.pyc
-*.pyo
+dask-worker-space
+core*
+update_blog.sh
+test/output
+docs

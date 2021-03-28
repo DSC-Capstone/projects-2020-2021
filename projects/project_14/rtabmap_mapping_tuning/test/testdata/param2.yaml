@@ -1,0 +1,45 @@
+database_path: rtabmap.db
+frame_id: robot_footprint
+odom_frame_id: odom
+subscribe_depth: true
+subscribe_scan: true
+ground_truth_frame_id: world
+ground_truth_base_frame_id: robot_footprint_gt
+Rtabmap:
+    # Rate (Hz) at which new nodes are added to map
+    DetectionRate: 1
+    TimeThr: 700
+Reg:
+    # 2D SLAM
+    Force3DoF: true
+    # Loop Closure Constraint 
+    # 0=Visual, 1=ICP (1 requires scan)
+    Strategy: 0
+
+
+Kp:
+    # Loop Closure Detection 
+    # 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE
+    DetectorStrategy: 7
+    # Maximum visual words per image (bag-of-words)
+    MaxFeatures: 400
+
+SURF:
+    # Used to extract more or less SURF features
+    HessianThreshold: 100
+
+Vis:
+    # Minimum visual inliers to accept loop closure
+    MinInliers: 15
+    InlierDistance: .1
+
+Mem:
+    # Set to false to avoid saving data when robot is not moving
+    NotLinkedNodesKept: false
+    RehearsalSimilarity: 0.45
+
+RGBD:
+    NeighborLinkRefining: true
+    AngularUpdate: 0.01
+    LinearUpdate: 0.01
+    OptimizeFromGraphEnd: false

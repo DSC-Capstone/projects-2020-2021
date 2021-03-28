@@ -1,11 +1,6 @@
-# Jupyter Notebook
+data/raw/
+data/temp/
 .ipynb_checkpoints
-
-data/
-__pycache__
-
-dask-worker-space/
-
-
-
-
+.DS_Store
+.ipynb_checkpoints/
+.__pycache__

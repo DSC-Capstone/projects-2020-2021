@@ -1,10 +1,36 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import os
-import shutil
 
-def run_create_data_rscript(data, n_vars, samples_per_cond, rep_id, n_diffexp, upregulated_ratio, dispersion, outlier_type, outlier_ratio, output_file, seq_depth):
-    os.system("/opt/conda/envs/r-bio/bin/Rscript src/syntheticDataFunc.R " + data + ' ' + str(n_vars) + ' ' + str(samples_per_cond) + ' ' + str(rep_id) + ' ' + str(n_diffexp) + ' ' + str(upregulated_ratio) + ' ' + str(dispersion) + ' ' + outlier_type + ' ' + str(outlier_ratio) + ' ' + output_file + ' ' + seq_depth)
-    return
+def get_file_names(file_path):
+    raw_files = []
+    os.chdir(file_path)
+    print("\nGetting file names from DSMLP:\n")
+    raw_files = os.listdir()
+    print(raw_files)
+    os.chdir("/datasets/home/40/840/r1cummin/alzheimers_gene_analysis")
+    return raw_files
 
-def run_rscript_test(string):
-    os.system("/opt/conda/envs/r-bio/bin/Rscript src/test.R " + string)
+#for test
+def shorten_data(test_1,test_2):
+    print("Creating the shorten files for testing:")
+    os.system("zcat test/testdata/"+test_1+" | head -70000 > "+test_1[0:9]+".fastq.gz")
+    os.system("zcat test/testdata/"+test_2+" | head -70000 > "+test_2[0:9]+".fastq.gz")
+    print("Files created successfully!")
+    return test_1[0:9]+".fastq.gz", test_2[0:9]+".fastq.gz"
+
+
+
+# In[ ]:
+
+# for test
+def create_path(test_1,test_2):
+    print("attempting to create symlink")
+    os.system("ln -s /teams/DSC180A_FA20_A00/b04genetics/group_1/raw_data/"+test_1+" test/testdata/"+test_1)
+    os.system("ln -s /teams/DSC180A_FA20_A00/b04genetics/group_1/raw_data/"+test_2+" test/testdata/"+test_2)
+    print("Symlink created!")
     return

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Camera Tuning Intel Realsense</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <ul id="project_list" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <ul id="project_list2" class="dropdown-content">
+    <li><a class="black" href="mapping.html">Mapping and Localization</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="nav_detectron.html">Object Detection</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="tuning.html">Camera Tuning</a></li>
+  </ul>
+  <ul id="repos_list2" class="dropdown-content">
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Navigation</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera</a></li>
+  </ul>
+  <ul id="reports_list2" class="dropdown-content">
+    <li><a class="black" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li>
+    <li class="divider"></li>
+    <li><a class="black" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+  </ul>
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">DSC 180B Project</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="dropdown-trigger" href="" data-target="project_list">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="dropdown-trigger" href="" data-target="project_list2">Project Sections<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="repos_list2">GitHub Repositories<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="" data-target="reports_list2">PDF Reports<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text text-lighten-2">Camera Tuning</h1>
+        <div class="row center">
+          <h5 class="header col s12 light"><b>Uses ROS and Intel Realsense D455 Depth Camera for camera tuning</b></h5>
+        </div>
+        <div class="row center">
+          <center>
+              <a href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity" class="btn-large waves-effect waves-light teal lighten-1">Camera Github</a>
+          </center>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="imgs/tuning_top.png" alt="Tuning top"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Overview</h5>
+            <p class="light">In this section, we aim to tune our depth camera to address its light sensitivity problems. Natural sunlight raises a problem for our car since it cannot properly filter the mask during the daylight setting. We use one of ROS plugins in conjunction with Intel Realsense Depth D455 Camera node to experiment with different camera configurations. Our tuning work involves both finding the best tuned configuration that sets off light intensity and validating the realtime performance of the car running one lap around the track. </p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/tuning_overview.png" alt="Tuning Overview">
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <br><br><br>
+          <center>
+            <img class="responsive-img" src="imgs/tuning_ed.png" alt="Tuning Experiment Design">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Experiment Design</h5>
+            <p class="light">We run our car manually on the track by setting up a launch file that supports the ROS package that loads .yaml files that store parameter levels, allowing us to view and edit parameters manually with GUI or command-line tools. We generate a collection of .bag files with the rosbag command, which takes in the image topic that we have selected. We make sure to repeat this process both during the day and night in order to capture sets of images with non-bright and bright conditions, as well as tuned images under bright conditions</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="tuning_hidden_content1_p" class="light"></p>
+          <a id="tuning_hidden_content1" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Dataset</h5>
+            <p class="light">We export a single lap of images recorded with ROS and compare that with other sets of a single lap’s images. The images are read in with the Python OpenCV package. A single image which closely matches that of another set in position and appearance of the track environment are compared together to determine how similar they are in terms of pixels, luminance, contrast and structure. The entire lap set of approximately 60~70 images are compared with sets before and after tuning, to observe the variability of luminescence in realtime.</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <br><br>
+          <center>
+            <img class="responsive-img" src="imgs/tuning_raw.png" alt="Raw tuning">
+          </center>
+        </div>
+        <div class="col s12 m12">
+          <p id="tuning_hidden_content2_p" class="light"></p>
+          <a id="tuning_hidden_content2" class="btn-floating btn-large waves-effect waves-light red left" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <center>
+            <img class="responsive-img" src="imgs/tuning_analysis.png" alt="Tuning Analysis">
+          </center>
+        </div>
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Analysis</h5>
+            <p class="light">We used evaluation metrics SSIM (Structural Similarity Index) and MSE (Mean Squared Error) to measure the similarity between tuned and default images. Some parameter levels were very useful in closely aligning tuned images to features and noise of the default image, whereas others led to worse results. On the left, you can see the top significant improvements in SSIM.</p>
+          </div>
+        </div>
+        <div class="col s12 m12">
+          <p id="tuning_hidden_content3_p" class="light"></p>
+          <a id="tuning_hidden_content3" class="btn-floating btn-large waves-effect waves-light red right" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Conclusion</h5>
+            <p class="light">The image on the right shows our best tuned result, which was significantly better compared to our poor baseline figures of SSIM = 0.5922, MSE = 19243. Using this best tuned configuration in our self-implementation of realtime performance, the returned values were 8.065 for our default image set and 6.907 for the tuned image set, giving us the similarity level of 86%</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <center>
+            <img class="responsive-img" src="imgs/tuning_conc.png" alt="Tuning Conc">
+          </center>
+        </div>
+        <div class="col s12 m12">
+          <p id="tuning_hidden_content4_p" class="light"></p>
+          <a id="tuning_hidden_content4" class="btn-floating btn-large waves-effect waves-light red left" onclick="hidden_content(this.id)"><i class="material-icons">arrow_downward</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Camera tuning enables consistency in luminescence during car’s runtime</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="imgs/tuning_bottom.png" alt="Tuning Bottom"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">Project Developed and Executed as part of UCSD's DSC 180B class.</p>
+          <p class="grey-text text-lighten-4">Team members: Siddharth Saha, Jay Chong and Youngseo Do.</p> 
+          <p class="grey-text text-lighten-4">Mentors: Dr. Jack Silberman and Aaron Fraenkel</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Github Repositories</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/rtabmap_mapping_tuning">Mapping using RTABMAP</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_image_segmentation">Object Segmentation using Detectron2</a></li><br>
+            <li><a class="white-text" href="https://github.com/UCSDAutonomousVehicles2021Team1/autonomous_navigation_light_sensitivity">Camera Tuning in bright conditions</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Full Reports</h5>
+          <ul>
+            <li><a class="white-text" href="reports/dsc180a_team_1_result_replication_report.pdf">RTABMAP Navigation Tuning</a></li><br>
+            <li><a class="white-text" href="reports/dsc180b_team_1_project_report.pdf">Experiments, Object Segmentation and Camera Tuning</a></li>
+          </ul>
+          <h5 class="white-text"><a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Contact Us</a></h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Website Made by <a class="white-text text-lighten-3" href="mailto:omadityasiddharth123@gmail.com, sisaha@ucsd.edu">Siddharth Saha</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

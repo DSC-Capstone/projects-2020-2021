@@ -1,4 +1,4 @@
 {
-    "file": "DBLP.txt",
-    "out_path": "data/raw/"
+	"outputdir": "./data",
+	"chromeexecdir": "/Users/justinlee/Downloads/chromedriver"
 }

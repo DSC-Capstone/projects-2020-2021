@@ -1,108 +1,221 @@
+# import custom modules
 import sys
-sys.path.append("./src")
+sys.path.insert(0, "src/util")
+sys.path.insert(0, "src/model")
+sys.path.insert(0, "src/data_util")
+
+# imports for model
+import torch
+import torchvision
 import os
+import torch.optim as optim
 import numpy as np
-from tensorflow.keras.optimizers import Adam
-from model_trans import *
-from util import *
-from training import *
-import json
-from tensorflow.keras.applications import resnet_v2
-import pandas as pd
-from tensorflow import keras
-from tensorflow.keras.models import load_model
-import PIL.Image as Image
-tf.compat.v1.disable_eager_execution()
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.utils.checkpoint as cp
+from torchvision import datasets, models, transforms
+from sklearn.metrics import f1_score
 
-if __name__ == '__main__':
+from baseline import *
+
+from nbdt.model import SoftNBDT
+from nbdt.model import HardNBDT
+from nbdt.loss import SoftTreeSupLoss
+from nbdt.loss import HardTreeSupLoss
+
+from wn_utils import *
+from graph import *
+from dir_grab import *
+from hierarchy import *
+from debug_data import *
+from write_to_json import *
+from loss import *
+
+from datetime import datetime
+
+def main(targets):
+    '''
+    runs project code based on targets
     
-    targets = sys.argv[1:]
-   
-    with open("./config/parameters.json") as param:
-        data = json.load(param)
-    param.close()
+    configure filepaths based on data-params.json
     
-    model_param = data["model_param"]
-    load_data = data["load_data"]
-    generate_stats = data["generate_stats"]
-    run_test = data["run_test"]
-    run_custom_img = data["run_custom_img"]
-
-    #Train model
-    if "train_model" in targets:
-
-        lr, epochs, batch_size, mapping_path, save_directory, save_path,log_directory, log_path = model_param.values()
-        if not os.path.exists(save_directory):
-            os.mkdir(save_directory)
-        if not os.path.exists(log_directory):
-            os.mkdir(log_directory)
-
-        train_label_path, train_image_path, valid_label_path, valid_image_path, target, size = load_data.values()
-
-        num_classes = pd.read_csv(valid_label_path)[target].nunique()
-
-
-        train_gen = create_generator(train_label_path,
-                                     train_image_path,
-                                     target,
-                                     size,
-                                     batch_size,
-                                     mapping_path,
-                                     resnet_v2.preprocess_input, 
-                                     is_training = True)
-
-        valid_gen = create_generator(valid_label_path,
-                                     valid_image_path,
-                                     target,
-                                     size,
-                                     batch_size,
-                                     mapping_path,
-                                     resnet_v2.preprocess_input, 
-                                     is_training = False)
-
-        model = build_model(num_classes = num_classes)
-
-        print(model.summary())
-
-        training(model, train_gen, valid_gen, lr, epochs, save_path, log_path)
+    targets:
+    data - builds data from build.sh, will run if no model folder is found.
+    test - checks if data target has been run, runs model to train
+    hierarchy - creates induced hierarchy and visualizes it
+    '''
     
-    #generate statistics
-    if "generate_stats" in targets:
-        log_path, label_path, image_path, target, save_path, model_path, mapping_path = generate_stats.values()
-        if not os.path.exists(save_path):
-            os.mkdir(save_path)
+    if 'data' in targets:
+        print('---> Running data target...')
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
+        
+        # check for directory's existence and rename, raise if no directory exists
+        DATA_DIR = data_cfg['dataDir']
+        if os.path.isdir(os.path.join(DATA_DIR, 'train')): # default name after extraction
+            os.rename(
+                os.path.join(DATA_DIR, 'train'),
+                os.path.join(DATA_DIR, 'train_snakes_r1')
+            )
+        elif not os.path.isdir(os.path.join(DATA_DIR, 'train')) | os.path.isdir(os.path.join(DATA_DIR, 'train_snakes_r1')):
+            raise Exception('Please run build.sh before running run.py')
+        
+        # important name variables
+        TRAIN_DIR = os.path.join(DATA_DIR, 'train_snakes_r1')
+        VALID_DIR = os.path.join(DATA_DIR, 'valid_snakes_r1') # new dir to be made
+        train_pct = 0.8
+        
+        # delete corrupted data from download
+        delete_corrupted(TRAIN_DIR)
+
+        # create validation set
+        create_validation_set(DATA_DIR, TRAIN_DIR, VALID_DIR, train_pct)
+        
+        print("---> Finished running data target.")
+        
+    if 'train' in targets:
+        print('---> Running train target...')
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
             
-        model = load_model(model_path)
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)
+            print('---> loaded model config')
+            
+        # check that data target has been ran
+        VALID_DIR = os.path.join(data_cfg['dataDir'], 'valid_snakes_r1')
+        if not os.path.isdir(VALID_DIR):
+            raise Exception('Please run data target before running test')
         
-        print("model loaded")
-        generator = create_generator(label_path,
-                                         image_path,
-                                         target,
-                                         224,
-                                         128,
-                                         mapping_path,
-                                         resnet_v2.preprocess_input, 
-                                         is_training = False)
-
-
-        generate_curves(log_path, save_path)
-        create_stats(model, generator, target, label_path, mapping_path, save_path)
-    
-    #run on test sample
-    if "run_test" in targets:
-        model_path, mapping, image_path, to_save = run_test.values()
-        face_img = Image.open(image_path)
-        ig = integrated_grad_PIL(model_path, mapping, face_img, to_save = to_save)
-        gradcam, guided = grad_cam(model_path, mapping, face_img, to_save = to_save)
+        if 'SoftTreeSupLoss' in targets:
+            criterion = SoftTreeLoss_wrapper(data_cfg)
+        elif 'HardTreeSupLoss' in targets:
+            criterion = HardTreeLoss_wrapper(data_cfg)
+        else:
+            criterion = nn.CrossEntropyLoss()
         
-    #test your own image
-    if "run_custom_img" in targets:
-        model_path, mapping, image_path, to_save = run_custom_img.values()
-        to_save = bool(to_save)
-        face_img = detect_face(image_path, to_save = to_save)
-        ig = integrated_grad_PIL(model_path, mapping, face_img, to_save = to_save)
-        gradcam, guided = grad_cam(model_path, mapping, face_img, to_save = to_save)
+        # create and train model
+        model_ft, loss_train, acc_train, fs_train, loss_val, acc_val, fs_val = run_model(data_cfg, model_cfg, criterion)
         
-
-
-    
+        # write performance to data/model_logs
+        write_model_to_json(
+            loss_train,
+            acc_train,
+            fs_train,
+            loss_val,
+            acc_val,
+            fs_val,
+            n_epochs = model_cfg['nEpochs'],
+            model_name = model_cfg['modelName'],
+            fp = model_cfg['performancePath']
+        )
+        
+        print("---> Finished running train target.")
+        
+    if 'test' in targets:
+        print('---> Running test target...')
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
+            
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)
+            print('---> loaded model config')
+        
+        # check that data target has been ran
+        VALID_DIR = os.path.join(data_cfg['dataDir'], 'valid_snakes_r1')
+        if not os.path.isdir(VALID_DIR):
+            raise Exception('Please run data target before running test')
+        
+        # create and train model
+        print("!!! Please enter either 1 for (SoftTreeSupLoss, SoftNBDT) or 2 for (HardTreeSupLoss, HardNBDT) !!!")
+        loss_type = input()
+        
+        assert (
+            loss_type in ['1','2']
+        ), "Please input either 1 or 2."
+        
+        if loss_type == '1':
+            loss_type = 'SoftTreeSupLoss'
+        elif loss_type == '2':
+            loss_type = 'HardTreeSupLoss'
+        
+        run_nbdt(data_cfg, model_cfg, loss_type)
+        
+        print("---> Finished running test target.")
+        
+    if "hierarchy" in targets:
+        print('---> Runnning hierarchy target')
+        
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
+            
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)
+            print('---> loaded model config')
+            
+        # use pretrained densenet
+        model = models.densenet121(pretrained=True)
+        # set features from classes, in this case 45, input_size always 224
+        model.classifier = nn.Linear(model.classifier.in_features, model_cfg['nClasses'])
+        input_size = model_cfg['inputSize']
+        
+        ## load state dict from previous
+        if not os.path.exists(data_cfg['hierarchyModelPath']):
+            raise Exception('Please run train target before hierarchy target, or change hierarchyModelPath in data-params if model has been trained.')
+        model_weights = torch.load(data_cfg['hierarchyModelPath'])
+        model.load_state_dict(model_weights)
+        
+        # generate hierarchy
+        print("---> Generating hierarchy...")
+        generate_hierarchy(
+            dataset='snakes',
+            arch = data_cfg['hierarchyModel'],
+            model = model,
+            method = 'induced'
+        )
+        print("---> Finished generating hierarchy.")
+        
+        # test hierarchy
+        print("---> Testing hierarchy...")
+        test_hierarchy(
+            'snakes',
+            os.path.join(data_cfg['hierarchyPath'], data_cfg['hierarchyJSON'])
+        )
+        
+        generate_hierarchy_vis(
+            os.path.join(data_cfg['hierarchyPath'], data_cfg['hierarchyJSON']),
+            'snakes'
+        )
+        
+    if "nbdt_loss" in targets:
+        print('---> Runnning nbdt_loss target')
+        
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
+            
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)        
+        
+        
+    if "inference" in targets:
+        print('---> Runnning baseline_cnn target')
+        
+        with open('config/data-params.json') as fh:
+            data_cfg = json.load(fh)
+            print('---> loaded data config')
+            
+        with open('config/model-params.json') as fh:
+            model_cfg = json.load(fh)
+            print('---> loaded model config')
+        
+        print("---> Finished running baseline_cnn target.")
+        
+        
+if __name__ == '__main__':
+    targets = sys.argv[1:]
+    main(targets)

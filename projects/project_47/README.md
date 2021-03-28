@@ -1,123 +1,69 @@
-# Analyzing Movies Using Phrase Mining
 
-https://a04-capstone-group-02.github.io/movie-analysis-webpage/
 
-## Setup
+# OnSight: Outdoor Rock Climbing Recommendations
 
-### Clone the repository
+Recommendations for outdoor rock climbing has historically been limited to word of mouth, guide books, and most popular climbs. With our project OnSight, we believe we can offer personalized recommendations for outdoor rock climbers.
 
-```
-git clone --recursive https://github.com/A04-Capstone-Group-02/movie-analysis.git
-```
+Disclaimer: With rock climbing, especially outdoors, there is an inherent risk that is taken when you decide to climb. Although our recommender tries to offer routes similar to the ones users have done, there is still a risk that the route may be too hard and therefore dangerous. This is not a problem that is solely put on the recommender, but a problem with rock climbing as a whole. There is no standard in climbing grades, but rather it is an agreement among the climbers that have climbed that route. Therefore climbing grades are subjective, and climbs may be harder and more dangerous than a user expects. We realize this, and we encourage everyone to look at the safety information of each climb on its corresponding climbing page on Mountain Project.
 
-### Download dataset
+## How To Run
 
-Download the [CMU Movie Summary Corpus dataset](http://www.cs.cmu.edu/~ark/personas/data/MovieSummaries.tar.gz) and move its files to `data/raw/`, or run the `download` target.
+We suggest for casual users to simply use our website to run the project. The website URL is https://dsc180b-rc-rec.herokuapp.com/. Note that this project runs on a free dyno, so if you are the first user to open the website in about half an hour, then the website may take a minute to load. Be patient!
 
-Note that to run this repository on the UCSD DSMLP server, the dataset must be manually uploaded, since the DSMLP server cannot connect to the data source link.
+However, if you are interested in making changes or diving deep into the code, you can run the project and customize it by either creating your own Heroku project or running the project on the command line.
 
-### Docker
+### Creating your own Heroku project
+To have your own version of OnSight running on Heroku, do the following steps:
+ 1. Fork the OnSight GitHub repository to your own GitHub account
+ 2. Create a new project on Heroku
+ 3. In the Heroku app dashboard, go to the "Deploy" tab
+ 4. Under the "Deployment method" section, select GitHub and connect the Heroku app to your forked repository
+ 5. In the Heroku app dashboard, go to the "Settings" tab
+ 6. Under the "Config Vars" section, click on "Reveal Config Vars" and fill in the config variables as shown in the table below. 
 
-Build a docker container with the `Dockerfile` or the remote image `991231/movie-analysis` in the docker hub.
+|Config Vars|Value|Description|
+|-|-|-|
+|PROJECT_PATH|mysite/|Since the django webserver is stored in the "mysite/" folder, but the Procfile (tells Heroku how to start the web server) is in the project root, we need to tell Heroku to look in the "mysite/" folder for the webserver code|
+|GOOGLE_MAPS_API_KEY|Your API key|Your Google Maps API key needs to have the following APIs enabled on the key: "Maps JavaScript API", "Places API", and "Maps Embed API". This key is not strictly necessary, but without the key the map will not work and location can only be entered by manually typing in a latitude and longitude, which is not very UX friendly.|
 
-### Note
+7. Make sure you deploy the Heroku app again from the "Deploy" tab on the Heroku dashboard and you should be all set!
 
-To run the `clustering` target, we highly recommend enabling GPU to ensure reasonable running time, since this target heavily interacts with a transformer model. Running other targets without GPU will not be an issue.
+### Running the Project on the Command Line
 
-## Run
+To run the project, every command must start with "python run.py" from the root directory of the project. By default, "python run.py" will do absolutely nothing. You must use at least one of the following flags to actually get some response:
 
-Execute the running script with the following command:
+|Flag|Type|Default Value|Description|
+|-|-|-|-|
+|-d, --data|bool|False|Use this flag to run all data scraping code. This will take a very long time, upwards of one week total to scrape all the data. It is recommended *not* to run this. Be aware that this will only store data locally. |
+|-c, --clean|bool|False|Use this flag to run all data cleaning code. It is expected that all files defined in the "state" key of data_params.json are present in the raw data folder.|
+|-\-data-config|str|"config/data_params.json"|The location at which data parameters can be found|
+|-\-web-config|str|"config/web_params.json"|The location at which web parameters can be found. These parameters simulate a user using the website.|
+|-\-top-pop|bool|False|Use this flag to print the top N most popular climbs. This does not use locally saved data, but rather uses saved data in MongoDB. Additionally, the exact climbs and number of climbs are determined by the web_params.json file.|
+|-\-cosine|bool|False|Use this flag to print the top N most similar climbs to the users favorite. This does not use locally saved data, but rather uses saved data in MongoDB. Additionally, the exact climbs and number of climbs are determined by the web_params.json file.|
+|-\-test|bool|False|Use this flag to run the two implemented models based on default config files. Using the --test flag will override all other present flags and is equivalent to running "python run.py --top-pop --cosine --debug".|
+|-\-delete|bool|False|Use this flag to wipe out all data from MongoDB. This will not do anything since the MongoDB login is set to read only.|
+|-\-upload|bool|False|Use this flag to upload cleaned data to MongoDB. This will not do anything since the MongoDB login is set to read only.|
+|-\-debug|bool|False|Use this flag activate various print statements throughout the project.|
 
-```
-python run.py [all] [test] [download] [data] [eda] [classification] [clustering]
-```
+### Description of Parameters
 
-### `all` target
+#### Data Parameters
 
-Run `data`, `eda`, `classification` and `clustering` targets in this exact order.
+|Parameter Name|Type|Default Value|Description|
+|-|-|-|-|
+|raw_data_folder|str|"data/raw/"|The location at which raw data will be saved. Note that this path is relative to the project root.|
+|clean_data_folder|str|"data/cleaned/"|The location at which clean data will be saved. Note that this path is relative to the project root.|
+|states|dict|Too long to copy here...|Although the parameter is called states, this is really just the areas to scrape/clean and the urls at which they can be found. The file will be named based on the key string, and the area url to scrape is the value string. By default this contains all 50 states, with the state name as key and state area url as value.|
 
-### `test` target
+#### Web Parameters
+Be aware that all these parameters do is simulate a user using the website. Each of the parameters here refer to a form element on the website.
 
-Runs the same 4 targets in the same order as the `all` target, but using the test data in `test/data/raw` and the test configurations.
+|Parameter Name|Type|Default Value|Description|
+|-|-|-|-|
+|user_url|str|Too long to copy here...|The "Mountain Project URL" form element on the website. This value is only used if the user requests personalized recommendations. The default value is a user with a lot of climbs rated, about 600 in March 2021. You can find the actual default value in the config file.|
+|location|[float, float]|[43.444918, -71.707888]|The "Latitude" and "Longitude" form elements on the website. This location is the center of the circle where climbs will be looked for. The default value is some random location in New Hampshire.|
+|max_distance|int|50|The "Max Distance (mi)" form element on the website. This value is the radius of the circle where climbs will be looked for. The default value is 50 miles, which should be sufficient to encompass any climbing area.|
+|recommender|str|"top_pop"|The "Recommenders" form element on the website. This is the recommender to use and will be any of "top_pop" or "cosine_rec". There is an additional hidden debug recommender that uses the string of "debug". The debug recommender is not accessible without modifying the "mysite/bootstrap4/forms.py" file|
+|num_recs|int|10|The "Number of Recommendations" form element on the website. This is the maximum number of recommendations that will be displayed once the user hits submit.|
+|difficulty_range|{"boulder": [int, int], "route: [int, int]}|{"boulder": [0, 3], "route": [11, 16]}|The "Boulder", "V_-V_", "Route", and "5.\_-5.\_" form elements on the website. Due to the way data is cleaned, bouldering V grades and route 5. grades are converted to integers starting at 0 on different scales. You can find the scales defined in code. The two default difficulty ranges correspond to V0-V3 and 5.8-5.10d. Note that if the user does not want boulders or routes, the corresponding difficulty range will be [-1, -1]|
 
-### `download` target
-
-Download the CMU Movie Summary Corpus dataset and set up the `data` directory.
-
-### `data` target
-
-Run the ETL pipeline to process the raw data. This target will run AutoPhrase to extract quality phrases, clean categories, combine the processed data into a dataframe, and generate a profile report of the dataset.
-
-The configuration file for this target is `etl.json` (or `etl_test.json` for `test` target), which contains the following items:
-
-- `data_in`: the path to the input data (relative to the root)
-- `false_positive_phrases`: phrases to remove from the quality phrase list
-- `false_positive_substrings`: substrings to remove from the quality phrase list
-
-The configuration file for the AutoPhrase submodule is `autophrase.json`, which contains the following items:
-
-- `MIN_SUP`: the minimum count of a phrase to include in the training process
-- `MODEL`: the path to the output model (relative to the root)
-- `RAW_TRAIN`: the path to the raw corpus for training (relative to the root)
-- `TEXT_TO_SEG`: the path to the raw corpus for segmentation (relative to the root)
-- `THREAD`: the number of threads to use
-
-### `eda` target
-
-Run the EDA pipeline. This target will find the temporal change of quality phrase distributions and generate visualizations to show the findings.
-
-The configuration file for this target is `eda.json` (or `eda_test.json` for `test` target), which contains the following items:
-
-- `data_in`: the path to the input data (relative to the root)
-- `data_out`: the path to the output directory (relative to the root)
-- `example_movie`: example movie to profile
-- `year_start`: the earliest year to analyze
-- `year_end`: the latest year to analyze
-- `decade_start`: the earliest decade to analyze
-- `decade_end`: the latest decade to analyze
-- `phrase_count_threshold`: the minimum count of a quality phrase to be included in the analysis
-- `stop_words`: the stop words to ignore in the analysis
-- `compact`: whether to output a full or compact visualization
-- `n_bars`: number of bars to display in the bar plots
-- `movie_name_overflow`: number of characters in visualization until ellipses
-- `dpi`: subplot dpi (dot per inches)
-- `fps`: fps (frame per second) of the bar chart race animation
-- `seconds_per_period`: the time each subplot will take in the bar chart race animation
-
-### `classification` target
-
-Run the classification pipeline. This target will transform the data into a TF-IDF matrix, fit a one-vs-rest logistic regression as the classifier and tune the parameters if specified.
-
-The configuration file for this target is `classification.json`, which contains the following items:
-
-- `data`: the path to the input data (relative to the root)
-- `baseline`: a boolean indicator to specify running baseline (true-like) or parameter tuning (false-like)
-- `top_genre`: a number to specify the number of genres in the final output plot, default is 10 
-- `top_phrase`: a number of specify the number of words/phrases in the final output plot, default is 10
-
-### `clustering` target
-
-Run the clustering pipeline. This target will pick representative sentences based on average sublinear TF-IDF score on the quality phrases, calculate document embeddings by average the Sentence-BERT embeddings of the representative sentences, and visualize the clusters.
-
-The configuration file for this target is `clustering.json`, which contains the following items:
-
-- `clu_num_workers`: the number of workers to use
-- `clu_rep_sentences_path`: the path to the checkpoint representative sentences file (relative to the root), or an empty string `""` to disable the checkpoint
-- `clu_doc_embeddings_path`: the path to the checkpoint document embeddings file (relative to the root), or an empty string `""` to disable the checkpoint
-- `clu_dim_reduction`: the dimensionality reduction method to apply on the document embeddings for visualization, choose one from `{"PCA", "TSNE"}`
-- `clu_sbert_base`: the sentence transformer model to use, can be either a pretrained model or a path to the saved model
-- `clu_sbert_finetune`: enable finetuning or not
-- `clu_sbert_finetune_config`: configurations for finetuning, will only be used if finetuning is enabled
-  - `train_size`: total number of training pairs to sample
-  - `sample_per_pair`: number of training pairs to sample per sampled document pair
-  - `train_batch_size`: batch size for training
-  - `epochs`: number of epochs to train
-- `clu_num_clusters`: number of clusters to generate
-- `clu_num_rep_features`: number of top representative features to store
-- `clu_rep_features_min_support`: the minimum support of a feature to be analyzed with summarizing the clusters
-
-## Contributors
-
-- Daniel Lee
-- Huilai Miao
-- Yuxuan Fan

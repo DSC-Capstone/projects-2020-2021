@@ -1,8 +1,6 @@
 {
-    "data_dir": "./test/",
-    "raw_dir": "./test/raw/",
-    "raw_8k_fp": "./test/raw/8K-gz/",
-    "raw_eps_fp": "./test/raw/EPS/",
-    "processed_dir": "./test/processed/",
-    "testing": true
+    "username": "gazzaniga3",
+    "parent_age": 42,
+    "genres": ["pop"],
+    "artists": ["Backstreet Boys"]
 }

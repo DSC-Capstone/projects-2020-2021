@@ -1,4 +1,4 @@
 {
-    "dockerhub-id": "pdeshman/ucsd_180a_pdeshman:latest",
-    "repository-id": "https://github.com/SallyPoon/DSC180Q2.git"
+    "GitHub Repository": "https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface",
+    "DockerHub Repository": "https://hub.docker.com/repository/docker/dannyluo12/visualization_and_interface"
 }

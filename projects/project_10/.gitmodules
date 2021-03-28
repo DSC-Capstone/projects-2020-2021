@@ -1,6 +1,3 @@
-[submodule "starter-scripts"]
-	path = scripts/client/starter-scripts
-	url = https://github.com/dane-tool/starter-scripts.git
 [submodule "network-stats"]
-	path = scripts/network-stats
-	url = https://github.com/viasat/network-stats.git
+	path = network-stats
+	url = https://github.com/Viasat/network-stats.git

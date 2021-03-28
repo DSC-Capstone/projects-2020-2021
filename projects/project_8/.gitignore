@@ -1,9 +1,10 @@
+### Project:
+
 /data/
+/built/
+/config.json
 
-.DS_Store
-
-.ipynb_checkpoints
-
+### Python:
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

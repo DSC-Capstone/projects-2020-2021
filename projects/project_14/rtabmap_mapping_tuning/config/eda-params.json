@@ -1,0 +1,6 @@
+{
+    "files": ["test/testdata/param1_slam.txt", "test/testdata/param1_odom.txt", "test/testdata/param1_gt.txt"],
+    "outdir": "data/report",
+    "report_in_path": "notebooks/report.ipynb",
+    "report_out_path": "results/report.html"
+}

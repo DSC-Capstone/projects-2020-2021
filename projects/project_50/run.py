@@ -1,85 +1,64 @@
-import sys
-import json
+# dependencies & imports
 
-sys.path.insert(0, 'src/data')
-sys.path.insert(0, 'src/utils')
-sys.path.insert(0, 'src/models')
+import sys, json, os
+import warnings 
+import pandas as pd
+import matplotlib.pyplot as plt
 
-from clean import remove_data
-from scrape import scrape_data
-from fbpreprocessing import fb_preprocessing
-from model_preprocessing import get_data
-from run_models import run_models
-from youtube import get_youtube
+warnings.filterwarnings("ignore")
+sys.path.insert(0, 'src')
 
-def gather_data(data_params):
-    with open('config/chromedriver.json') as fh:
-        chromedriver_path = json.load(fh)['chromedriver_path']
+from data import make_dataset
+from features import build_features, build_images, build_labels
 
-    print("Scraping data...")
-    scrape_data(chromedriver_path,
-                data_params['all_links_pickle_path'],
-                data_params['fbworkouts_path'],
-                data_params['comments_path'])
-    print("Scraping done.")
-
-    print("Querying Youtube API...")
-    get_youtube(data_params['fbworkouts_path'],
-                data_params['youtube_csv_path'])
-    print("Querying done")
-
-def preprocess(data_params, d):
-    print("Preprocessing...")
-    fb_preprocessing(
-        fbworkouts_path = data_params['fbworkouts_path'],
-        fbworkouts_clean_path = data_params['fbworkouts_clean_path'],
-        comments_path = data_params['comments_path'],
-        fbcommenters_path = data_params['fbcommenters'],
-        user_item_interactions_path = data_params['user_item_interactions_path'],
-        fbworkouts_meta_path = data_params['fbworkouts_meta_path'],
-        all_links_pickle_path = data_params['all_links_pickle_path'],
-        youtube_csv_path = data_params['youtube_csv_path'],
-        d=d
-        )
-    print("Data preprocessing done.")
-
-def run_model(data_params, k):
-    data = get_data(data_params['user_item_interactions_path'])
-    run_models(data, k=k)
-
+# define main
 def main(targets):
-    if 'clean' in targets:
-        remove_data()
-        print("Data cleaned.")
-        return
 
-    if 'test' in targets:
-        with open('config/test-params.json') as fh:
-            data_params = json.load(fh)
+    if ('test' in targets):
+        
+        # get test params
+        with open('config/test_params.json') as fh:
+            data_cfg = json.load(fh)
+        
+        raw_fp = data_cfg['raw_path']
+        test_fn = data_cfg['file_name']
+        market_fn = data_cfg['market_name']
+        time_wdw = data_cfg['time_wdw']
+        img_fp = data_cfg['output_img_path']
+        label_fp = data_cfg["output_lable_path"]
+        
+        data_file = os.path.join(raw_fp, test_fn)
+        data = pd.read_csv(data_file, parse_dates = ['time'])
+        
+        market_file = os.path.join(raw_fp, market_fn)
+        market_data = pd.read_csv(market_file, parse_dates = ['time'])
 
-        preprocess(data_params, d=0)
-        run_model(data_params, k=None)
-        return
-
-    with open('config/data-params.json') as fh:
-        data_params = json.load(fh)
-
-    if 'all' in targets:
-        gather_data(data_params)
-        preprocess(data_params, d=5)
-        run_model(data_params, k=20)
-        return
-
-    if 'data' in targets:
-        gather_data(data_params)
-        preprocess(data_params, d=5)
-
-    if 'model' in targets:
-        run_model(data_params, k=20)
-
-    return
-
+    # all case
+    else:
+        
+        # get all params
+        with open('config/data_params.json') as fh:
+            data_cfg = json.load(fh)
+        
+        raw_fp = data_cfg['raw_path']
+        time_wdw = data_cfg['time_wdw']
+        img_fp = data_cfg['output_img_path']
+        
+        # merged 8:30-9:30 data
+        data = make_dataset.merge_data(raw_fp)
+        
+    # data with volatility
+    data = build_features.feature_engineer(data, time_wdw)
+    # data for gramian angular field
+    data_gaf = make_dataset.gaf_df(data)
+    # creates images from polar coordinates, saves them to img_fp
+    build_images.gramian_img(img_fp, data_gaf)
+    # creates a table of image id and its corresponding label, saves it to label_fp
+    build_labels.label (data, market_data, label_fp)
+    
+    return 
 
 if __name__ == '__main__':
+    
     targets = sys.argv[1:]
     main(targets)

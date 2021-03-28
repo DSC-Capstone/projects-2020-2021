@@ -1,64 +1,56 @@
-# Graph-based Product Recommendation
-DSC180B Capstone Project on Graph Data Analysis
+# GNN-on-3d-points
 
-Project Website: https://nhtsai.github.io/graph-rec/
+### Abstract:
+   This research focuses on 3D shape classification. Our goal is to predict the category of shapes consisting of 3D data points. We aim to implement Graph Neural Network models and compare the performances with PointNet, a popular architecture for 3d points cloud classification tasks. Not only will we compare standard metrics such as accuracy and confusion matrix, we will also explore the model's resilience of data transformation. Besides, we also tried combining PointNet with graph pooling layers.
+   
+   
+See project website here: https://ctwayen.github.io/Graph-Neural-Network-on-3D-Points/
 
-## Project
-Amazon Product Recommendation using a graph neural network approach.
+Docker name: ctwayen/project_docker
 
-### Requirements
-- dask
-- pandas
-- torch
-- torchtext
-- dgl
+Docker web path: https://hub.docker.com/repository/docker/ctwayen/project_docker
 
-## Data
-### Datasets
-Amazon Product Dataset from Professor Julian McAuley ([link](http://jmcauley.ucsd.edu/data/amazon/links.html))
-* Product Reviews (5-core)
-* Product Metadata
-* Product Image Features
+### Instruction:
 
-## GraphSAGE Model
+   If it is the first time you running this project, please download the data through python run.py all --mode download; You could also use the parameter --method to choose knn or fix-radius to construct the graph you like. Their corresponding parameters are --k and --r.The raw dataset would automatically download into the path 'data/modelnet/ModelNet40'. The points data is stored in 'data/modelnet/modelnet_points'. The consturcted graph trainning data is in 'data/modelnet/modelnet_(knn/fix_radius)(k/r){your param}'. Do not move those files. It may cause problems
+   
+   We support training Pointnet and GCN two models.Using --model to choose which one you want to train: GCN or pointNet.
+   
+   Shared paramaters are (default values are the best combination we found):
+   
+   --lr：Learning rate
+   
+   --bs: batch size
+   
+   --base: dataset path. If you are using default data, you do not need to specify this.Otherwise, write the graph dataset you just constructed
+   
+   --data: 10 or 40. Choose 10 to run 10 categories classfication and 40 for 40 categories
+   
+   --epoch: epoch
+   
+   --val_size: validation size. For example, 0.2 will have 20 % data as validation data
+   
+   --model_path: The path to store trained_model. Default is 'trained_models'
+   
+   --ouput_path: The path to store the ouput csv file
+   
+   Parameters that only used in GCN:
+   
+   --pool: Which pooling to use. SAG or ASA
+   
+   --ratio: The pooling ratio. For example, 0.4 will pool out 60% of data each time
+   
+#### Important! Training GCN will take about 7-10 minutes for one epoch. Training PointNet will take about 50s for one epoch. Please manage your time for training process.
 
-## PinSAGE
+   
+### Notebooks and results:
 
-### Graph & Features
-The graph is a heterogeneous, bipartite user-product graph, connected by reviews.
- * Product Nodes (`ASIN`)
-   * Features: `title`, `price`, image representation
- * User Nodes (`reviewerID`)
- * Edges (`user`, `reviewed`, `product`) and (`product`, `reviewed-by`, `user`)
-   * Features: `helpful`, `overall`
+   Besides training your own models, we also offered few trained models. You could check notebooks/Analyzing results to see our training results for different hyperparamters setting. You could also check how to use a trained_model there.
+   
+   You could also check the data augmentation's effects on models in the notebook/analyzing resistence file
+   
+   You could check how pooling layer affect result in the notebook/analyzing pooling file
 
-### Data Configuration (`config/data-params.json`)
-
-### Model
-We use an unsupervised PinSage model (adapted from [DGL](https://github.com/dmlc/dgl/tree/master/examples/pytorch/pinsage)).
-
-### Model Configuration (`config/pinsage-model-params.json`)
-- `name`: model configuration name
-- `random-walk-length`: maximum number traversals for a single random walk, `default: 2`
-- `random-walk-restart-prob`: termination probability after each random walk traversal, `default: 0.5`
-- `num-random-walks`:  number of random walks to try for each given node, `default: 10`
-- `num-neighbors`: number of neighbors to select for each given node, `default: 3`
-- `num-layers`: number of sampling layers, `default: 2`
-- `hidden-dims`: dimension of product embedding, `default: 64 or 128`
-- `batch-size`: batch size, `default: 64`
-- `num-epochs`: number of training epochs, `default: 500`
-- `batches-per-epoch`: number of batches per training epoch, `default: 512`
-- `num-workers`: number of workers, `default: 3 or (#cores - 1)
-- `lr`: learning rate, `default: 3e-4`
-- `k`: number of recommendations, `default: 500`
-- `model-dir`: directory of existing model to continue training
-- `existing-model`: filename of existing model to continue training, `default: null`
-- `id-as-features`: use id as features, makes model transductive
-- `eval-freq`: evaluates model on validation set when `epoch % eval-freq == 0`, also evaluates model after last training epoch
-- `save-freq`: saves model when `epoch % save-freq == 0`, also saves model after last training epoch
-
-## References
-* [GraphSAGE Homepage](http://snap.stanford.edu/graphsage/)
-* [GraphSAGE Research Paper](https://arxiv.org/abs/1706.02216)
-* [PinSage Article](https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48)
-* [PinSage Research Paper](https://arxiv.org/abs/1806.01973)
+Author: @Xinrui Zhan.If you find any bug, contact me through the email: ctwayen@outlook.com 
+   
+   

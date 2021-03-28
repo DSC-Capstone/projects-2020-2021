@@ -1,0 +1,18 @@
+Ubuntu:
+
+*  python `$ sudo apt install python` #pdf-box requires python version < 3.8
+*  pdf-box `$ sudo apt-get install python-pdfbox`
+*  Django `$ sudo apt-get install Django==3.1.5` 
+*  g++ 4.8 `$ sudo apt-get install g++-4.8`
+*  Java 8 `$ sudo apt-get install openjdk-8-jdk`
+*  curl `$ sudo apt-get install curl`
+*  seaborn `sudo apt-get install -y python3-seaborn`
+
+MacOS:
+
+*  python `$ pip install python` #pdf-box requires python version < 3.8
+*  pdf-box `$ pip install python-pdfbox` 
+*  Django `$ pip install Django==3.1.5`
+*  g++ 6 `$ brew install gcc6`
+*  Java 8 `$ brew update; brew tap caskroom/cask; brew install Caskroom/cask/java`
+*  seaborn `$ pip install -U seaborn`

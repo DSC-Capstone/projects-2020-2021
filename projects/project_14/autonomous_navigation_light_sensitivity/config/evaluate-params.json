@@ -1,0 +1,4 @@
+{
+    "indir": ["data/lap_data/default_lap/", "data/lap_data/tuned_lap/"],
+    "outdir": "results/runtime_performance_result/"
+}

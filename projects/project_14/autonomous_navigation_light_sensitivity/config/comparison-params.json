@@ -1,0 +1,4 @@
+{
+    "files": ["data/single_img/default_track.jpg", "data/single_img/default_track_light.jpg", "data/single_img/best_tuned.jpg"],
+    "outdir": "results/metric_results"
+}

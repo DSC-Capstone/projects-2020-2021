@@ -1,69 +1,53 @@
 #!/usr/bin/env python
 
-import os
+from os import listdir, path, makedirs
 import sys
 import json
+from src.data import etl
+from src.baselines import mostPop, randomFor, conBased
 
-sys.path.insert(0, 'src')
-from etl import convert_txt
-from model import autophrase
-from weight_phrases import change_weight
-from webscrape import webscrape
-from website import activate_website
-from utils import convert_report
 
-#def main(targets):
-def main():
-    data_config = json.load(open('config/data-params.json'))
-    model_config = json.load(open('config/model-params.json'))
-    weight_config = json.load(open('config/weight-params.json'))
-    webscrape_config = json.load(open('config/webscrape-params.json'))
-    website_config = json.load(open('config/website-params.json'))
-    report_config = json.load(open('config/report-params.json'))
-    test_config = json.load(open('config/test-params.json'))
+def main(targets):
+    """ Runs data pipeline to parse all the data into these folders and turn movie title data into a csv"""
 
-    os.system('git submodule update --init')
-    
-    # Getting the target
-    # If no target is given, then run 'website'
-    if len(sys.argv) == 1:
-        targets = 'website'
-    else:
-        targets = sys.argv[1]
+    if targets == 'test':
+        filepath = 'config/test_params.json'
+        with open(filepath) as file:
+            configs = json.load(file)
+
+        etl.main(configs)
+        #rmse.main(configs)
         
-    if 'data' in targets:
-        convert_txt(**data_config)
-    if 'autophrase' in targets:
-        autophrase(data_config['outdir'], data_config['pdfname'], model_config['outdir'], model_config['filename'])
-    if 'weight' in targets:
-        try:
-            unique_key = '_' + sys.argv[2]
-            change_weight(unique_key, **weight_config)
-        except:
-            change_weight(unique_key='', **weight_config)
-    if 'webscrape' in targets:
-        try:
-            unique_key = '_' +  sys.argv[2]
-            webscrape(unique_key, **webscrape_config)
-        except:
-            webscrape(unique_key='', **webscrape_config)
-    if 'report' in targets:
-        convert_report(report_config['experiment_in_path'], report_config['experiment_out_path'])
-        convert_report(report_config['analysis_in_path'], report_config['analysis_out_path'])
-    if 'website' in targets:
-        activate_website(**website_config)
-    if 'test' in targets:
-        convert_txt(test_config['indir'], data_config['outdir'], test_config['pdfname'],)
-        autophrase(data_config['outdir'], test_config['pdfname'], model_config['outdir'], model_config['filename'])
-        change_weight(unique_key='', **weight_config)
-        webscrape(unique_key='', **webscrape_config)
-        convert_report(report_config['experiment_in_path'], report_config['experiment_out_path'])
-        convert_report(report_config['analysis_in_path'], report_config['analysis_out_path'])
-    return
+        print("####################")
+        mostPop.main(configs)
+        randomFor.main(configs)
+        conBased.main(configs)
+        print("####################")
 
-#if __name__ == '__main__':
-#    # run via:
-#    # python main.py data features model
-#    targets = sys.argv
-#    main(targets)
-main()
+    if targets == 'data' or targets == 'all':
+        filepath = 'config/etl_params.json'
+        with open(filepath) as file:
+            configs = json.load(file)
+            
+        etl.main(configs)
+        
+    #if targets == 'train' or targets == 'all':
+    #    filepath = 'config/train_eval_params.json'
+    #    with open(filepath) as file:
+    #        configs = json.load(file)
+        
+    #    train.main(configs)
+        
+    #if targets == 'rmse' or targets == 'all':
+    #    filepath = 'config/rmse_params.json'
+    #    with open(filepath) as file:
+    #        configs = json.load(file)        
+        
+    #    rmse.main(configs)
+
+    return None
+
+
+if __name__ == '__main__':
+    targets = sys.argv[1]
+    main(targets)

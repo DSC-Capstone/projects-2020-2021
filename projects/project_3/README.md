@@ -1,27 +1,49 @@
-# The Sentiment of U.S. Presidential Elections on Twitter
-This project investigates the public sentiment on Twitter regarding the 2016 and 2020 U.S. Presidential Elections. Political tensions in the United States came to a head in 2020 as people disputed President Donald Trump's handling of various major events that the year brought such as the COVID-19 pandemic and the killing of George Floyd and subsequent racial protests, and we aim to identify if this was quantifiably reflected in people's behavior on social media. To do this, we perform sentiment analysis on tweets related to the elections and conduct permutation testing to analyze how sentiment may differ between the two years and between and within politically left- and right-leaning groups of users. 
+## Where to begin?
+### Begin by uploading your twitter API credentials into a json file as under a new .env director. The file path should look like this: .env/twitter_credentials.json
 
+The json file should be structured as
 
-### Running The Project
-- All commands specified here are to be run from within this project's root directory
-- To install necessary dependencies, run `pip install -r requirements.txt`
-- Note: to get the data necessary to replicate this project, access to the Twitter API is needed
+```json
+{
+   "CONSUMER_KEY":"your-consumer-key-here",
+   "CONSUMER_SECRET":"your-consumer-secret-here",
+   "ACCESS_TOKEN":"your-access-token-here",
+   "ACCESS_TOKEN_SECRET":"your-access-token-secret-here"
+}
+```
 
-### Using `run.py`
-- This project uses publicly available 2016 and 2020 presidential election datasets located at https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/PDI7IN and https://github.com/echen102/us-pres-elections-2020. Given the 2016 dataset is not uniformly structured, you must manually download the txt files of tweet ids from the dataset's website to the directory `data/raw/2016`. The 2020 dataset can be downloaded programmatically using the `data` target, as follows.
+If you do not have twitter API credentials, please visit https://developer.twitter.com/en/docs/twitter-api to apply for a developer account.
 
-- To get hydrated tweets for the 2016 and 2020 tweet ids, run the command `python run.py data`
-    * This samples from the 2016 tweet ids located in `data/raw/2016` and stores them in txt files in `data/temp/2020/tweet_ids/`
-    * It also directly downloads tweets for the 2020 election from the dataset's GitHub page falling within the date range specified in `config/etl-params.json`, samples from them, and stores them in txt files in `data/temp/2020/tweet_ids/`
-    * It then rehydrates the tweets using `twarc` and saves the them in jsonl format in the `hydrated_tweets/` directory within each year's respective data directory
+To install the dependencies, run the following command from the root directory of the project: pip install ```-r requirements.txt```
 
-- To clean the rehydrated tweets, run the command `python run.py clean`
-    * This takes the rehydrated tweets obtained from running `python run.py data` and creates a single csv file of tweets for each year with fields for the features of interest specified in `config/clean-params.json`
-    * For the purpose of performing sentiment analysis later, tweets in languages other than English are filtered out.
-    * The resulting csvs are stored as `clean/clean_tweets.csv` within each year's data directory.
+## How to use run.py:
+run.py takes in one argument, a choice between *data*, *eda*, *test*
 
-- To run the main analysis, run `python run.py compute` from the project root directory
-    * For each year, this subsets the tweets into left and right leaning, classifies the the different types of dialogue, performs sentiment analysis on the various subsets of data, and conducts permutation testing on the subsets of the data between the two years, producing plots of the results.
-    
-- To run the `clean` and `compute` targets on fake test data, run the command `python run.py test`
+## Directories
+* A directory titled *data* will be created with 4 subdirectories: *graphs, raw, processed*
+   * *graphs* will hold any charts from eda functions
+   * *processed* will hold any statistic data from eda functions
+   * *raw* will hold raw tweet data
+* Each of the above directories will be split into two additional subdirectories, *news* and *election*
+   * *news* will hold any data related to news stations
+   * *election* will hold any data related to the election dataset
+
+## Description of arguments (targets)
+
+### data
+* Your twitter API credentials for use in downloading data to be used in our project.
+* The target will download all tweets as specified in the config file *news_params.json*
+
+### eda
+* The eda target will generate statistics and visualizations after data has been gathered from the *data* target
+* Currently we have built a wordcloud visualization that will be stored in *graphs* and a statistic of most common hashtags per news station stored in *processed*
+
+### compile and embed
+* Performs graph embedding calculations as described in the methodology section of the report
+
+### test
+* The test target is designed for grading functionality in the DSC180B capstone course and will test three functionalities:
+   * *etl_news* checks that test data is available for use
+   * *eda* generates visualizations and statistics based on the test data, stores in *test/testreport*
+   * *similarity* will generate similarity hashtag vectors to be used in our main analysis *test/testreport*
 

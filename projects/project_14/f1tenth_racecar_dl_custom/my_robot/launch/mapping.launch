@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Arguments for launch file with defaults provided -->
+  <arg name="gui_cfg"                 default="~/.ros/rtabmap_gui.ini" />
+  <arg name="database_path"           default="rtabmap.db"/>
+  <arg name="rgb_topic"               default="/camera/color/image_raw"/>
+  <arg name="depth_topic"             default="/camera/aligned_depth_to_color/image_raw"/>
+  <arg name="camera_info_topic"       default="/camera/color/camera_info"/>
+
+
+   <node pkg="tf"
+        type="static_transform_publisher"
+        name="odom_base_link"
+        args="0 0 0 0 0 0 odom base_link 100" />
+
+  <node pkg="tf"
+        type="static_transform_publisher"
+        name="base_link_camera_link"
+        args="0 0 0 0 0 0 base_link camera_link 100" />
+
+  <node pkg="tf"
+        type="static_transform_publisher"
+        name="camera_link_cloud"
+        args="0 0 0 0 0 0 camera_link cloud 100" />
+
+  <!-- Mapping Node -->
+  <group ns="rtabmap">
+    <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen">
+      
+      <!--param name="approx_sync"                 type="bool" value="true"/-->
+      <!-- RTAB-Map Inputs -->
+      <!--param name='queue_size'                     type="string" value="20.0"/-->
+      <remap from="scan" to="/scan"/>
+      <remap from="odom" to="/vesc/odom"/>
+      <remap from="rgb/image" to="$(arg rgb_topic)"/>
+      <remap from="depth/image" to="$(arg depth_topic)"/>
+      <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+
+      <!-- RTAB-Map Output -->
+      <remap from="grid_map" to="/map"/>
+      
+
+      <rosparam file="$(find my_robot)/params/best_params.yaml" command="load"/>
+      <!-- localization mode -->
+      <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
+      <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>
+      <param name="Mem/InitWMWithAllNodes" type="string" value="$(arg localization)"/>
+    </node>
+    <!-- visualization with rtabmapviz -->
+    <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(arg gui_cfg)" output="screen">
+      <param name="subscribe_depth"             type="bool" value="false"/>
+      <param name="subscribe_scan"              type="bool" value="true"/>
+      <param name="frame_id"                    type="string" value="base_link"/>
+      <param name="approx_sync"                 type="bool" value="true"/>
+      
+      <remap from="rgb/image"       to="$(arg rgb_topic)"/>
+      <remap from="depth/image"     to="$(arg depth_topic)"/>
+      <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+      <remap from="scan"            to="/scan"/>
+      <remap from="odom"            to="/vesc/odom"/>
+    </node>
+  </group>
+</launch>

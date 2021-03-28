@@ -1,91 +1,67 @@
-# Prediction Task: Utilizing CPU Statistics and Application Usage to Predict a User’s Persona
+# AutoPhrase for Financial Documents Interpretation 
+
+Our main targets are data preparation, feature encoding, eda (optional), train, report (optional), and test. Users can configure parameters for these targets in the ./config files.
 
 
+## Data Prep
 
-## Homepage
-https://vlw003.github.io
-
-## Medium Blog
-https://predicting-persona-b09group04.medium.com/
-
-## Usage
-```
-git clone https://github.com/jonxsong/DSC180AB-Capstone.git
-cd DSC180AB-Capstone
-python run.py test
-```
+The data preparation target scrapes, cleans, and consolidates companies' 8-K documents. Furthermore, it curates features such as EPS as well as price movements for the given companies.
+<br />
+* `data_dir` is the file path to download files: 8-K's, EPS, etc.
+* `raw_dir` is the directory to the raw data
+* `raw_8k_fp` is the file path with newly downloaded 8-K's (should be the same as to_dir)
+* `raw_eps_fp` is the file path with newly downloaded EPS information (should be the same as to_dir)
+* `processed_dir` is the directory to the processed data
+* `testing` is the status of whether we are doing testing (by default is false)
 
 
+## Feature Encoding
 
-## Files
-
-**./config/data-params.json** - directory where data should be output to
-
-**./config/hw-metric-histo-data-params.json** - description of the dataset and features we utilize
-
-**./config/systems-sysinfo-unique-normalized-data-params.json** - description of the dataset and features we utilize
-
-**./config/ucsd-apps-execlass-data-params.json** - description of the dataset and features we utilize
-
-**./config/frgnd_backgrnd_apps-data-params.json** - description of the dataset and features we utilize
-
-**./notebooks/eda.ipynb** - notebook containing data explorations from DSC180B
-
-**./notebooks/dsc180a-notebook.ipynb** - notebook containing data explorations from DSC180A
-
-**./src/data_exploration.py** - file containing relevant methods for data exploration
-
-**./src/model.py** - file containing relevant methods for data modelling
-
-**./requirements.txt** - required packages
-
-**./run.py** - call run.py to run data analysis
+The feature encoding target creates encoded text vectors for each 8-K: both unigrams and quality phrases outputed by the AutoPhrase method.
+<br />
+* `data_file` is the file path with all data files from data prep target: processed, raw, models, etc.
+* `phrase_file` is the file path to the quality phrases outputted by AutoPhrase
+* `n_unigrams` sets the top n unigrams to be encoded based on PMI (may not be exacly `n_unigrams` total due to overlap of top unigrams within each class)
+* `threshhold` takes quality phrases with a quality score above it to be encoded
 
 
+## Train
 
-## Data/Output Files
+Trains Random Forest models using 3 feature sets on encoded data: baseline, baseline + unigrams, and baseline + phrases. The selected classifier and set model parameters were decided through comparing validation accuracy.  
 
-**./data/out/...** - this location should hold all the outputted pictures generated from methods
-
-**./data/raw/...** - this location should hold all the datasets downloaded below
-
-
-
-## Link to download the datasets:
-https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
-
-The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
+* `data_dir` is the file path with all data files from data prep targed: processed, raw, models, etc.
+* `input_file` is the file path (from `data_dir`) to outputed files by the feature encoding target
+* `output_file` is the desired file path to download trained, outputed models
+* `testing` is the status of whether we are doing testing (by default is false)
 
 
+## EDA and Report (optional)
 
-## Sources
-Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
+Exports Jupyter notebooks to HTML with EDA and result analysis from the models.
+<br />
+* `report_name` is the desired name of report
+* `data_dir` is the file path with all data files from data prep target: processed, raw, models, etc.
+* `notebook_dir` is the file path containing the repo's notebooks
+* `notebook_file` is the desired file path (from `notebook_dir`) of outputed notebook
+* `report_dir` is the desired directory our outputed HTML report
+* `report_file` is the desired file name of outputed report in `report_dir`
 
 
+## Test
 
-## Responsibilities:
+Test target will run the whole project with only test data
 
-Jon:
-    - Report + main ideas
-    - data analysis - code breakdown
-    - repository structuring
-    - notebook outlining
-    - script writing
 
-Vince:
-    - data modeling
-    - Report + targets
-    - data cleaning
-    - data explorations
-    - classifications
-    - Visual Presentation Checkpoint
-    - Website
-    - Final Report
-    - Slides
+## Correct order of excution
 
-Keshan:
-    - data preparation
-    - tabled data
-    - key notes all throughout notebook
-    - graphs + graph analysis
-    - ATL work
+* data_prep: `python run.py data_prep`
+* feature_encoding: `python run.py feature_encoding`
+* (optional) eda: `python run.py eda`
+* train: `python run.py train`
+* (optional) report: `python run.py report`
+
+
+## Project Links
+
+* [Project Website](https://shy218.github.io/dsc180-project/)
+* [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase)

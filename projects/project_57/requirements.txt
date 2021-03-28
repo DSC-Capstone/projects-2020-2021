@@ -1,13 +1,2 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
-pip==21.0.1
-numpy==1.18.5
-argparse==1.1
-opencv-python==4.4.0.46
-matplotlib==3.2.1
-torchvision==0.8.2+cu92
-future==0.18.2
-torch==1.7.1+cu92
-pandas==1.1.4
-seaborn==0.10.1
-Pillow==6.2.2
-
+matplotlib==2.0.0
+numpy==1.12.1

@@ -1,89 +1,123 @@
-# Restaurant Recommender System
-There are multiple factors that go into a rating: wait time, service, quality of food, cleanliness, or even atmosphere - for example, a restaurant could have positive sentiment towards the food but negative sentiment towards the service. In order to solve this problem, our aim is to include such sentiments that can be found in the review text and turn that into data which can be used to further improve business recommendations to users.
+# Analyzing Movies Using Phrase Mining
 
-This repository is a recommender system with a primary focus on the text reviews analysis through TF-IDF (term frequency-inverse document frequency) and targeted sentiment analysis with AutoPhrase to attach sentiments to aspects of a restaurant. In building the recommender system, we learned that review texts can hold the same importance as the numerical statistics because they contain key phrases that characterize how they felt about the review. The ultimate goal is designing a website for deploying our recommender system and showing its functionality.
+https://a04-capstone-group-02.github.io/movie-analysis-webpage/
 
-Visit our `website` branch to try some queries on a preprocessed Las Vegas / Phoenix dataset!
+## Setup
 
-## Important Things:
-* This repository is contains two branches. The `main` branch contains the source code for our methods. The `website` branch contains the code to run our recommender sebsite on Flask.
-* In our implementation and analysis, we use the Autophrase as our core NLP analysis method by submoduling into our repository.
-* The Docker Image and Tag is `launch.sh -i catherinehou99/yelp-recommender-system:latest -c 8 -m 20 -P Always`
-- If you would like to learn more details about the AutoPhrase method, please refer to the original github repository: https://github.com/shangjingbo1226/AutoPhrase. Namely, you will find the system requirements, all the tools used and detailed explanation of the output.
-- Jingbo Shang, Jialu Liu, Meng Jiang, Xiang Ren, Clare R Voss, Jiawei Han, "**[Automated Phrase Mining from Massive Text Corpora](https://arxiv.org/abs/1702.04457)**", accepted by IEEE Transactions on Knowledge and Data Engineering, Feb. 2018.
-
-## Before You Run:
-* In order to use Yelp's academic dataset, you will need to go to their [Website](https://www.yelp.com/dataset) and agree to the Terms of Use Agreement before you download the dataset. Save the dataset to the directory `data/raw`
-* This repo uses AutoPhrase as the git submodule, run the command `git submodule update --init` after cloning this repo.
-
-## How to Use this Repository:
-1. Run the test target in the `main` branch if you would like to test the targets.
-2. In `config/data-params` you can choose which city you would like to subset. For test target, the city can be Las Vegas or Phoenix.
-3. Once you successfully run the targets, the generated files will be saved to `data/tmp`. These files need to be used in the `data` folder of the`website` branch.
-4. If you would like to run the website on Flask, head over to the website branch!
-
-## Default Run
+### Clone the repository
 
 ```
-$ python3 run.py -- all
+git clone --recursive https://github.com/A04-Capstone-Group-02/movie-analysis.git
 ```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- all
-This will run all the targets below (data, sentiment, eda, tfidf)
 
-For each of the target:
-* data: prepares necessary folders, reads in Yelp json files, and filters the dataset to contain rows relevant to the specified city.
-* sentiment: performs sentiment analysis on the reviews. It will take in the reviews dataframe and output the positive/negative sentences counts.
-* eda: performs the eda analysis of the dataset and autophrase result.
-* test: runs the above targets on a test dataset which runs around 3mins.
-* clean: removes all the files generated with keeping the html report in the `data/eda` folder.
+### Download dataset
 
-```
-$ python3 run.py -- data
-```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- data
-* Check if the reference folder exists in the user local drive. If not, create all the necessary folder for projects
-* Read the dataframes for further analysis.
+Download the [CMU Movie Summary Corpus dataset](http://www.cs.cmu.edu/~ark/personas/data/MovieSummaries.tar.gz) and move its files to `data/raw/`, or run the `download` target.
 
-```
-$ python3 run.py -- sentiment
-```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- sentiment
-* Perform sentiment analysis on the reviews text
-* Outputs a city_name.csv in the `data/tmp` folder contains, for each restaurant, the positive phrases and the number of times they were mentioned in a review.
+Note that to run this repository on the UCSD DSMLP server, the dataset must be manually uploaded, since the DSMLP server cannot connect to the data source link.
+
+### Docker
+
+Build a docker container with the `Dockerfile` or the remote image `991231/movie-analysis` in the docker hub.
+
+### Note
+
+To run the `clustering` target, we highly recommend enabling GPU to ensure reasonable running time, since this target heavily interacts with a transformer model. Running other targets without GPU will not be an issue.
+
+## Run
+
+Execute the running script with the following command:
 
 ```
-$ python3 run.py -- eda
+python run.py [all] [test] [download] [data] [eda] [classification] [clustering]
 ```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- eda
-* Perform the EDA analysis on the AutoPhrase result of individual user
-* Perform the EDA analysis on individual city review dataset such as sentiment analysis, feature exploration
-* Convert all the EDA analysis into an HTML report stored under data/eda
-* After running this tag go to the data/eda directory to see the report.html
 
-```
-$ python3 run.py -- tfidf
-```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- tfidf
-* Run restaurant-restaurant based recommendation methods using TF-IDF and cosine similarity score
-* Generate the TF-IDF results CSV file of two cities, Las Vegas and Phoenix and store in the reference folder
-* Two TF-IDF results CSV are using in the website building as backend database for generating recommendation
+### `all` target
 
+Run `data`, `eda`, `classification` and `clustering` targets in this exact order.
 
-```
-$ python3 run.py -- clean
-```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- clean
-* Remove all the generated files, plots, dataframes under the reference folder
-* Keep the HTML file in the eda/data folder for report visualization
-* Be careful: this will clear all the outputs running so far and can not be reversed!!
+### `test` target
 
-```
-$ python3 run.py -- test
-```
-The default running file is run.py and can be simply run through the command line: python3 run.py -- test
-* Run all the targets on the test data set we generated 
+Runs the same 4 targets in the same order as the `all` target, but using the test data in `test/data/raw` and the test configurations.
 
-### Responsibilities
-* Catherine Hou developed the sentiment/eda/data tag and the food query on the website.
-* Vincent Le created the dockerfile and developed the website (not in main branch).
-* Shenghan Liu developed TF-IDF/clean/data tag, user AutoPhrase EDA, and the restaurant query on the website.
+### `download` target
+
+Download the CMU Movie Summary Corpus dataset and set up the `data` directory.
+
+### `data` target
+
+Run the ETL pipeline to process the raw data. This target will run AutoPhrase to extract quality phrases, clean categories, combine the processed data into a dataframe, and generate a profile report of the dataset.
+
+The configuration file for this target is `etl.json` (or `etl_test.json` for `test` target), which contains the following items:
+
+- `data_in`: the path to the input data (relative to the root)
+- `false_positive_phrases`: phrases to remove from the quality phrase list
+- `false_positive_substrings`: substrings to remove from the quality phrase list
+
+The configuration file for the AutoPhrase submodule is `autophrase.json`, which contains the following items:
+
+- `MIN_SUP`: the minimum count of a phrase to include in the training process
+- `MODEL`: the path to the output model (relative to the root)
+- `RAW_TRAIN`: the path to the raw corpus for training (relative to the root)
+- `TEXT_TO_SEG`: the path to the raw corpus for segmentation (relative to the root)
+- `THREAD`: the number of threads to use
+
+### `eda` target
+
+Run the EDA pipeline. This target will find the temporal change of quality phrase distributions and generate visualizations to show the findings.
+
+The configuration file for this target is `eda.json` (or `eda_test.json` for `test` target), which contains the following items:
+
+- `data_in`: the path to the input data (relative to the root)
+- `data_out`: the path to the output directory (relative to the root)
+- `example_movie`: example movie to profile
+- `year_start`: the earliest year to analyze
+- `year_end`: the latest year to analyze
+- `decade_start`: the earliest decade to analyze
+- `decade_end`: the latest decade to analyze
+- `phrase_count_threshold`: the minimum count of a quality phrase to be included in the analysis
+- `stop_words`: the stop words to ignore in the analysis
+- `compact`: whether to output a full or compact visualization
+- `n_bars`: number of bars to display in the bar plots
+- `movie_name_overflow`: number of characters in visualization until ellipses
+- `dpi`: subplot dpi (dot per inches)
+- `fps`: fps (frame per second) of the bar chart race animation
+- `seconds_per_period`: the time each subplot will take in the bar chart race animation
+
+### `classification` target
+
+Run the classification pipeline. This target will transform the data into a TF-IDF matrix, fit a one-vs-rest logistic regression as the classifier and tune the parameters if specified.
+
+The configuration file for this target is `classification.json`, which contains the following items:
+
+- `data`: the path to the input data (relative to the root)
+- `baseline`: a boolean indicator to specify running baseline (true-like) or parameter tuning (false-like)
+- `top_genre`: a number to specify the number of genres in the final output plot, default is 10 
+- `top_phrase`: a number of specify the number of words/phrases in the final output plot, default is 10
+
+### `clustering` target
+
+Run the clustering pipeline. This target will pick representative sentences based on average sublinear TF-IDF score on the quality phrases, calculate document embeddings by average the Sentence-BERT embeddings of the representative sentences, and visualize the clusters.
+
+The configuration file for this target is `clustering.json`, which contains the following items:
+
+- `clu_num_workers`: the number of workers to use
+- `clu_rep_sentences_path`: the path to the checkpoint representative sentences file (relative to the root), or an empty string `""` to disable the checkpoint
+- `clu_doc_embeddings_path`: the path to the checkpoint document embeddings file (relative to the root), or an empty string `""` to disable the checkpoint
+- `clu_dim_reduction`: the dimensionality reduction method to apply on the document embeddings for visualization, choose one from `{"PCA", "TSNE"}`
+- `clu_sbert_base`: the sentence transformer model to use, can be either a pretrained model or a path to the saved model
+- `clu_sbert_finetune`: enable finetuning or not
+- `clu_sbert_finetune_config`: configurations for finetuning, will only be used if finetuning is enabled
+  - `train_size`: total number of training pairs to sample
+  - `sample_per_pair`: number of training pairs to sample per sampled document pair
+  - `train_batch_size`: batch size for training
+  - `epochs`: number of epochs to train
+- `clu_num_clusters`: number of clusters to generate
+- `clu_num_rep_features`: number of top representative features to store
+- `clu_rep_features_min_support`: the minimum support of a feature to be analyzed with summarizing the clusters
+
+## Contributors
+
+- Daniel Lee
+- Huilai Miao
+- Yuxuan Fan

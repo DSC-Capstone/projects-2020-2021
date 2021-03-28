@@ -1,0 +1,17 @@
+<launch>
+  <arg name="input" default="/camera/color/image_raw" />
+  <arg name="detection_threshold" default="0.93" />
+  <arg name="model" default="$(find detectron2_ros)/config/model.yaml" />
+  <arg name="anns" default="$(find detectron2_ros)/dataset/annotations.json" />
+  <arg name="imgs" default="$(find detectron2_ros)/dataset/" />
+  <arg name="weights" default="$(find detectron2_ros)/model/model_final.pth" />
+
+  <node pkg="detectron2_ros" type="detectron2_ros" name="detectron2_ros" output="screen" >
+    <param name="input" value="$(arg input)" />
+    <param name="detection_threshold" value="$(arg detection_threshold)" />
+    <param name="model" value="$(arg model)" />
+    <param name="anns" value="$(arg anns)" />
+    <param name="imgs" value="$(arg imgs)" />
+    <param name="weights" value="$(arg weights)" />
+  </node>
+</launch>

@@ -1,0 +1,11 @@
+{
+    "input_path": [
+        "/teams/DSC180A_FA20_A00/a04malware/malware/",
+        "/teams/DSC180A_FA20_A00/a04malware/random-apps/",
+        "/teams/DSC180A_FA20_A00/a04malware/popular-apps/"
+        
+    ],
+    "app_type": ["malware", "random-apps", "popular-apps"],
+    "output_path": "/teams/DSC180A_FA20_A00/a04malware/personal-group2/new_data/data-params",
+    "sampling_lst": [1000, 581, 324]
+}

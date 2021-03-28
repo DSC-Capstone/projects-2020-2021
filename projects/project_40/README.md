@@ -1,17 +1,45 @@
-# DSC180B_Project checkpoint_1
+# DSC180B-NER-Project
+This project focuses on the task of document classification using a BBC News Dataset and a 20 News Group Dataset. We implemented various feature based classification models and compared the results. We have analysed the advantages and shortcomings of each method.
 
-# Background
-In the PC industry, there are different computer setups for omnifarious PC users. Different types of customers have different needs and budget for their computers. For instance, we think that gamers prefer desktops or laptops with high-end GPU and CPU while office users prefer the ones with decent CPU and long battery life. Hence, being aware of the different needs from different customers could help computer retailers dramatically with marketing and resource allocation. With this background, we decided to build a machine learning model that can predict a users’ persona based on the information of their computers.
+## Webpage
+* https://dsc180b-a04-capstone-group-06.github.io/News-Classification-Webpage/
 
-# How To Run: Classification of Your Own Audio Files
-1. Clone this repository.
-2. On the command line, navigate to this repository locally.
-3. on the command line, use
+## Datasets Used
+* BBC news: https://www.kaggle.com/pariza/bbc-news-summary </br>
+  * Download this dataset
+* 20 news group: http://qwone.com/~jason/20Newsgroups/ 
+  * This dataset is fetched by using the sklearn package
+## Environment Required
+* Please use the docker image: ``` littlestone111/dsc180b-ner-project  ```
 
-    *python run.py test*     runs the pipeline with the test-project target. This will run the test build classifier. THIS PROCESS WOULD LAST HOURS!!!
-    
-    *python run.py build-classifier*    to build all classifier. THIS PROCESS WOULD LAST HOURS!!!
-    
-    *python run.py hypo-test*      to run the hypothesis test on column 'ram' with other columns.
-    
-    *python run.py chi-square-test*     to run the hypothesis test on column 'ram' with other columns.
+## Run
+```
+$ launch-180.sh -i littlestone111/dsc180b-ner-project -G [group]
+$ python run.py [all] [preprocessing] [autophrase] [model] [test]
+```
+
+```test``` :        target will build the Tf-Idf models on the small subset of 20 new groups dataset and save the models to the model folder.</br>
+```all```:          target will run everthing inlcuded in project, and return the final prediction on the test dataset for document classification.</br>
+```preprocessing```: target will preprocess 20 news group data for AutoPhrase, so that they can be used for training the model.</br>
+```autophrase```:   target will run Professor Shang's Autophrase model to extract quality phrases from the dataset.</br>
+```model```:        target will build the SVM+ALL+TF-IDF combined vocab list model for 20 news group dataset. </br>
+
+</br>
+Output: <br>
+
+* ```model.pkl```: the parameter of the final model.
+
+## Group Members
+* Rachel Ung
+* Siyu Dong
+* Yang Li
+
+## Our Findings
+
+The BERT classification on the five-class BBC News dataset does not outperform any of our implemented models. From our results table, we observed that our models have F1-Score and Accuracy performances at around 0.95, indicating they are high-performing classifiers. The best of them is the SVM+ALL(TF-IDF) classifier, or the Support Vector Machine with the All Vector Vocabulary List and Tf-Idf Representations, which uses the vocabulary from both NER results and AutoPhrase results. Because the quality phrases between different domains are likely to differ, we expect these results to be optimal features for our predictors. 
+
+For the 20 News Group dataset, the SVM+ALL(TF-IDF) classifer also outperformed the other models, with the F1-Score and Accuracy being 0.84. Considering the classes are huge (i.e. 20 classes), these results verify our model is high-performing. Applying our best model on the five-class BBC News dataset, we attained a F1-Score at 0.9525, and Accuracy at 0.9528; while for the 20 News Group, we yielded a F1-Score at 0.8463 and Accuracy at 0.8478. 
+
+
+
+
